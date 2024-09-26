@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function ModeToggle() {
+function ModeToggleComponent() {
   const { setTheme } = useTheme();
 
   return (
@@ -26,18 +26,20 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          <SunIcon className="h-4 w-4 mr-2" />
+          <SunIcon className="mr-2 h-4 w-4" />
           Light
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <MoonIcon className="h-4 w-4 mr-2" />
+          <MoonIcon className="mr-2 h-4 w-4" />
           Dark
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          <LaptopIcon className="h-4 w-4 mr-2" />
+          <LaptopIcon className="mr-2 h-4 w-4" />
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
+
+export const ModeToggle = React.memo(ModeToggleComponent);
