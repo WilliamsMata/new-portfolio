@@ -2,6 +2,7 @@ import Header from "@/components/common/Header";
 import { FlipWords } from "@/components/ui/flip-words";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { TracingBeam } from "@/components/ui/tracing-beam";
 
 const words = ["beautiful", "fast", "responsive", "accessible"];
 
@@ -20,10 +21,12 @@ export default function Home() {
             </div>
           </div>
         </HeroHighlight>
-
-        <div>
-          <HoverBorderGradient>Hola mundo</HoverBorderGradient>
-        </div>
+        <TracingBeam>
+          <div>
+            <HoverBorderGradient>Hola mundo</HoverBorderGradient>
+            <div className="h-[5000px]"></div>
+          </div>
+        </TracingBeam>
       </main>
     </div>
   );
