@@ -84,9 +84,12 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px]"
       >
-        <DashboardIcon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-card px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+          <DashboardIcon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        </span>
       </button>
     </div>
   );

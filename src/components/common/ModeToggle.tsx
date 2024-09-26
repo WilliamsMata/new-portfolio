@@ -1,6 +1,4 @@
 "use client";
-
-import * as React from "react";
 import { LaptopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 
@@ -11,12 +9,26 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { memo, useEffect, useState } from "react";
 
 function ModeToggleComponent() {
+  const [isOpen, setIsOpen] = useState(false);
   const { setTheme } = useTheme();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) setIsOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen]);
+
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false} open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
           <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -42,4 +54,4 @@ function ModeToggleComponent() {
   );
 }
 
-export const ModeToggle = React.memo(ModeToggleComponent);
+export const ModeToggle = memo(ModeToggleComponent);
