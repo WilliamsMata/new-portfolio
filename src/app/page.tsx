@@ -1,7 +1,7 @@
+import FloatingDockComponent from "@/components/common/FloatingDockComponent";
 import Header from "@/components/common/Header";
 import { FlipWords } from "@/components/ui/flip-words";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 
 const words = ["Frontend", "Backend", "Mobile"];
@@ -29,11 +29,13 @@ export default function Home() {
         </HeroHighlight>
         <TracingBeam>
           <div>
-            <HoverBorderGradient>Hola mundo</HoverBorderGradient>
+            {/* <HoverBorderGradient>Hola mundo</HoverBorderGradient> */}
             <div className="h-[5000px]"></div>
           </div>
         </TracingBeam>
       </main>
+
+      <FloatingDockComponent />
     </div>
   );
 }
