@@ -4,7 +4,7 @@ import { HeroHighlight } from "@/components/ui/hero-highlight";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 
-const words = ["beautiful", "fast", "responsive", "accessible"];
+const words = ["Frontend", "Backend", "Mobile"];
 
 export default function Home() {
   return (
@@ -13,11 +13,17 @@ export default function Home() {
 
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
         <HeroHighlight containerClassName="h-screen">
-          <div className="flex items-center justify-center px-4">
-            <div className="mx-auto text-4xl font-normal text-neutral-600 dark:text-neutral-400">
-              Build
-              <FlipWords words={words} /> <br />
-              websites with Aceternity UI
+          <div className="flex flex-col items-center justify-center px-4 text-4xl sm:text-5xl md:text-6xl">
+            <h1 className="">Williams Mata R</h1>
+
+            <div className="inset-x-06 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
+            <div className="inset-x-06 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
+            <div className="inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
+            <div className="inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
+
+            <div className="flex items-center">
+              <FlipWords words={words} duration={1500} />
+              <span>Developer</span>
             </div>
           </div>
         </HeroHighlight>
