@@ -313,6 +313,47 @@ export const skills: Skill[] = [
     ],
   },
   {
+    title: "Mobile",
+    skillsData: [
+      {
+        title: "React Native",
+        iconPath: "/icons/react.svg",
+        url: "https://reactnative.dev/",
+        description:
+          "React Native is a popular open-source framework for building cross-platform mobile applications using JavaScript and React. It allows developers to write code once and deploy it on multiple platforms, such as iOS and Android, which reduces development time and effort. React Native provides a set of components and APIs for building native user interfaces, accessing device features, and interacting with native modules. It also supports features like hot reloading, code push updates, and native performance optimizations.",
+      },
+      {
+        title: "Expo",
+        iconPath: "/icons/expo.svg",
+        url: "https://expo.dev/",
+        description:
+          "Expo is a free and open-source platform for building universal React applications with JavaScript and TypeScript. It provides a set of tools and services that simplify the development process, including a development server, build tools, and cloud services. Expo supports features such as hot reloading, code push updates, and native performance optimizations. It also provides a set of APIs for accessing device features, such as camera, geolocation, and notifications, which makes it easier to build cross-platform mobile applications.",
+        needInvertColor: true,
+      },
+      {
+        title: "React Native Paper",
+        iconPath: "/icons/react-native-paper.svg",
+        url: "https://callstack.github.io/react-native-paper/",
+        description:
+          "React Native Paper is a popular UI component library for building cross-platform mobile applications with React Native. It provides a set of customizable and accessible components that follow Google's Material Design guidelines. React Native Paper includes components such as buttons, cards, dialogs, and menus, as well as a powerful theming system that allows for easy customization of the look and feel of the application.",
+      },
+      {
+        title: "UI Kitten",
+        iconPath: "/icons/uikitten.png",
+        url: "https://akveo.github.io/react-native-ui-kitten/",
+        description:
+          "UI Kitten is a popular UI component library for building cross-platform mobile applications with React Native. It provides a set of customizable and accessible components that follow Google's Material Design guidelines. UI Kitten includes components such as buttons, cards, dialogs, and menus, as well as a powerful theming system that allows for easy customization of the look and feel of the application.",
+      },
+      {
+        title: "NativeWind",
+        iconPath: "/icons/nativewind.svg",
+        url: "https://www.nativewind.dev/",
+        description:
+          "NativeWind uses Tailwind CSS as scripting language to create a universal style system for React Native. NativeWind components can be shared between platforms and will output their styles as CSS StyleSheet on web and StyleSheet.create for native. It's goals are to to provide a consistent styling experience across all platforms, improve Developer UX and code maintainability. NativeWind achieves this by pre-compiling your styles and uses a minimal runtime to selectively apply responsive styles.",
+      },
+    ],
+  },
+  {
     title: "Tools",
     skillsData: [
       {
