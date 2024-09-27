@@ -177,7 +177,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={href}>
+    <Link href={href} target={href.startsWith("#") ? undefined : "_blank"}>
       <motion.div
         ref={ref}
         style={{ width, height }}
