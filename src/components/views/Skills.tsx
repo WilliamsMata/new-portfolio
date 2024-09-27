@@ -13,7 +13,7 @@ const tabs = skills.map(({ title, skillsData }) => ({
 export const Skills = () => {
   return (
     <section className="flex min-h-screen flex-col items-center">
-      <h2 className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-semibold text-transparent">
+      <h2 className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-semibold text-transparent">
         My Skills
       </h2>
 

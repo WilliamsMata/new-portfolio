@@ -10,7 +10,7 @@ export function SkillDataCard(skill: SkillData) {
       <div>
         <div
           className={`relative aspect-square w-full ${
-            needInvertColor ? "invert" : ""
+            needInvertColor ? "dark:invert" : ""
           }`}
         >
           <Image
@@ -21,9 +21,7 @@ export function SkillDataCard(skill: SkillData) {
           />
         </div>
 
-        <h3 className="mt-2 text-center text-lg font-semibold text-white">
-          {title}
-        </h3>
+        <h3 className="mt-2 text-center text-lg font-semibold">{title}</h3>
       </div>
     </SkillModalTrigger>
   );

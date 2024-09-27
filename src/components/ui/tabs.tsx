@@ -1,8 +1,9 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 type Tab = {
   title: string;
@@ -25,6 +26,7 @@ export const Tabs: FC<TabsProps> = ({
   tabClassName,
   contentClassName,
 }) => {
+  const matches = useMediaQuery("(min-width: 640px)");
   const [active, setActive] = useState<Tab>(propTabs[0]);
   const [tabs, setTabs] = useState<Tab[]>(propTabs);
 
@@ -37,6 +39,10 @@ export const Tabs: FC<TabsProps> = ({
   };
 
   const [hovering, setHovering] = useState(false);
+
+  useEffect(() => {
+    if (!matches) setHovering(false);
+  }, [active, matches]);
 
   return (
     <>
@@ -64,7 +70,7 @@ export const Tabs: FC<TabsProps> = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 rounded-full bg-gray-200 dark:bg-zinc-800",
+                  "absolute inset-0 rounded-full bg-blue-100 dark:bg-purple-600",
                   activeTabClassName,
                 )}
               />

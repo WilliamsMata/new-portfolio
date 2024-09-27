@@ -85,7 +85,7 @@ export const SkillModalTrigger: FC<SkillModalTriggerProps> = ({
 
 export const SkillModalBody: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <ModalBody className="border-none md:rounded-3xl">
+    <ModalBody className="rounded-3xl border-none md:rounded-3xl">
       <BackgroundGradient>{children}</BackgroundGradient>
     </ModalBody>
   );
