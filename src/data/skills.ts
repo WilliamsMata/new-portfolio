@@ -52,7 +52,6 @@ export const skills: Skill[] = [
       },
     ],
   },
-
   {
     title: "Frameworks",
     skillsData: [
@@ -100,6 +99,11 @@ export const skills: Skill[] = [
           "ExpressJS is a popular backend web application framework for Node.js. It provides a set of features and tools for building web applications and APIs, such as routing, middleware, and HTTP utilities. With ExpressJS, developers can create robust and scalable web applications with minimal code. It also supports various templating engines, including EJS and Pug, for generating dynamic HTML pages. It is known for its simplicity, flexibility, and ease of use.",
         needInvertColor: true,
       },
+    ],
+  },
+  {
+    title: "Frontend",
+    skillsData: [
       {
         title: "Tailwind",
         iconPath: "/icons/tailwind.svg",
@@ -114,61 +118,49 @@ export const skills: Skill[] = [
         description:
           "Material UI is a popular React-based frontend framework that provides a set of pre-built React components and styles based on Google's Material Design guidelines. It allows developers to quickly and easily create modern and responsive user interfaces with minimal effort. Material UI includes a variety of components such as buttons, forms, menus, and icons, as well as a powerful theming system that allows for easy customization of the look and feel of the application.",
       },
-    ],
-  },
-
-  {
-    title: "Tools",
-    skillsData: [
       {
-        title: "Docker",
-        iconPath: "/icons/docker.svg",
-        url: "https://www.docker.com/",
+        title: "Chakra UI",
+        iconPath: "/icons/chakra-ui.svg",
+        url: "https://chakra-ui.com/",
         description:
-          "Docker is an open-source platform that allows developers to create, deploy, and run applications in isolated containers. It provides a lightweight and portable environment for running applications, which eliminates many of the compatibility issues that can arise when running applications on different systems. Docker containers can be easily moved between different environments, such as development, testing, and production, without requiring any changes to the application code. Docker also provides a powerful set of tools for managing and scaling containers, including Docker Compose and Kubernetes.",
-      },
-      {
-        title: "Figma",
-        iconPath: "/icons/figma.svg",
-        url: "https://www.figma.com/",
-        description:
-          "Figma is a cloud-based design and prototyping tool used for creating user interfaces, web designs, and mobile applications. It provides a collaborative platform that allows multiple designers to work on the same project in real-time, which makes it easier to collaborate and share feedback. Figma includes a variety of features such as vector networks, design libraries, and interactive components, which makes it easier to create and manage complex designs. It also allows developers to inspect designs, generate code snippets, and export assets for development.",
-      },
-      {
-        title: "Firebase",
-        iconPath: "/icons/firebase.svg",
-        url: "https://firebase.google.com/",
-        description:
-          "Firebase is a mobile and web application development platform, owned by Google, that provides a set of tools and services for building, managing, and growing web and mobile applications. Firebase includes a variety of features such as real-time database, cloud storage, authentication, hosting, and analytics, which helps developers to quickly create, launch, and scale their applications without having to manage infrastructure. Firebase also provides SDKs and APIs for various platforms, including web, iOS, and Android, allowing developers to easily integrate Firebase services into their applications.",
-      },
-      {
-        title: "Git",
-        iconPath: "/icons/git.svg",
-        url: "https://git-scm.com/",
-        description:
-          "Git is a popular version control system that helps developers to manage changes to their codebase over time. It allows developers to track changes to their code, collaborate with other developers, and revert changes when necessary. Git provides a set of commands and tools for creating, branching, merging, and managing code repositories, both locally and remotely. It also provides a powerful set of features for resolving conflicts and managing code reviews. Git is widely used in the software development community and is an essential tool for managing codebases of all sizes.",
-      },
-      {
-        title: "Jest",
-        iconPath: "/icons/jest.svg",
-        url: "https://jestjs.io/",
-        description:
-          "Jest is a popular JavaScript testing framework used to test JavaScript code, particularly for React applications. It is developed by Facebook and provides a powerful set of features for testing code, including a test runner, assertion library, and mocking capabilities. Jest allows developers to write tests in a simple and intuitive way, using a combination of test suites, test cases, and assertions. It also provides tools for code coverage analysis, parallel testing, and snapshot testing.",
-      },
-      {
-        title: "MongoDB",
-        iconPath: "/icons/mongo.svg",
-        url: "https://www.mongodb.com/",
-        description:
-          "MongoDB is a popular NoSQL database that allows developers to store and manage unstructured data in a flexible and scalable way. It uses a document-based data model, which means that data is stored in JSON-like documents that can have different structures and fields. MongoDB provides a set of features and tools for managing data, including CRUD (Create, Read, Update, Delete) operations, aggregation, indexing, and querying. It also supports various advanced features such as replication, sharding, and scaling.",
-      },
-      {
-        title: "MySQL",
-        iconPath: "/icons/mysql.svg",
-        url: "https://www.mysql.com/",
-        description:
-          "MySQL is a popular open-source relational database management system that uses SQL (Structured Query Language) for managing and manipulating data. It provides a reliable and scalable platform for storing and retrieving data in a structured way. MySQL supports various features such as indexing, transactions, and replication, which make it suitable for a wide range of applications. It is widely used in the web development community, particularly for building web applications and data-driven websites.",
+          "Chakra UI is a popular React component library that provides a set of accessible and customizable UI components for building web applications. It is designed to be simple, modular, and themeable, and includes a variety of components such as buttons, forms, modals, and navigation bars. Chakra UI also provides a powerful theming system that allows developers to easily customize the appearance of the components to match the design of their application.",
         needInvertColor: true,
+      },
+      {
+        title: "Radix UI",
+        iconPath: "/icons/radix-ui.svg",
+        url: "https://www.radix-ui.com/",
+        description:
+          "Radix UI is a collection of low-level, modular UI components for building design systems and web applications. It provides a set of accessible and customizable components that can be used to create complex user interfaces with minimal effort. Radix UI components are designed to be unstyled by default, which allows developers to easily customize the appearance and behavior of the components to match the design of their application. Radix UI also provides a set of utilities and tools for building responsive and accessible web applications.",
+        needInvertColor: true,
+      },
+      {
+        title: "Tanstack Query",
+        iconPath: "/icons/tanstack-query.svg",
+        url: "https://react-query.tanstack.com/",
+        description:
+          "React Query is a popular library used for managing server state in React applications. It provides a set of hooks and utilities that simplify the process of fetching, caching, and updating data from remote APIs. React Query provides an intuitive and declarative API for making network requests that supports features like pagination, caching, and error handling. It also integrates well with other popular libraries and frameworks, including Redux, GraphQL, and TypeScript.",
+      },
+      {
+        title: "React Hook Form",
+        iconPath: "/icons/react-hook-form.svg",
+        url: "https://react-hook-form.com/",
+        description:
+          "React Hook Form is a lightweight and flexible library used for managing forms in React applications. It provides a simple and intuitive API for building forms using custom React hooks and supports various form inputs, such as text inputs, checkboxes, and radio buttons. React Hook Form is designed to be performant and efficient, with features like conditional validation and asynchronous form submission. It also integrates well with other popular libraries and frameworks, such as Zod for form validation and Material UI for styling.",
+      },
+      {
+        title: "Zustand",
+        iconPath: "/icons/zustand.svg",
+        url: "https://zustand.surge.sh/",
+        description:
+          "Zustand is a simple and flexible state management library for React applications. It provides a way to manage global application state using a minimal API and a functional programming model. Zustand allows developers to define stores that hold application state and update it using actions. It also supports features like derived state, middleware, and devtools, which make it easier to build complex and scalable applications. Zustand is designed to be lightweight and performant, with a focus on simplicity and developer experience.",
+      },
+      {
+        title: "Framer Motion",
+        iconPath: "/icons/framer-motion.svg",
+        url: "https://www.framer.com/motion/",
+        description:
+          "Framer Motion is a popular animation library for React applications. It provides a simple and intuitive API for creating animations and gestures, such as transitions, keyframes, and drag-and-drop interactions. Framer Motion uses a declarative syntax and supports features like spring physics, layout animations, and gesture recognition.",
       },
       {
         title: "NextAuth",
@@ -178,40 +170,11 @@ export const skills: Skill[] = [
           "NextAuth.js is an open-source authentication library for Next.js applications. It provides a simple and flexible way to implement various authentication providers, such as Google, Facebook, and GitHub, as well as custom authentication strategies. NextAuth.js allows developers to easily add authentication to their Next.js applications without having to manage the complexities of authentication protocols and security concerns. It also provides a set of features such as session management, CSRF protection, and JWT signing.",
       },
       {
-        title: "Playwright",
-        iconPath: "/icons/playwright.svg",
-        url: "https://playwright.dev/",
-        description:
-          "Playwright is a Node.js library to automate Chromium, Firefox, and WebKit with a single API. It enables cross-browser web automation that is ever-green, capable, reliable, and fast. Playwright is used for web testing, web scraping, and automating browser tasks. It supports multiple languages, including JavaScript, TypeScript, Python, C#, and Java. Playwright runs headless by default but can be configured to run full (non-headless) browsers. It can generate screenshots and PDFs of pages and has robust support for user interactions, including clicks, types, and scrolls.",
-      },
-      {
-        title: "PostgreSQL",
-        iconPath: "/icons/postgresql.svg",
-        url: "https://www.postgresql.org/",
-        description:
-          "PostgreSQL, also known as Postgres, is a powerful, open-source object-relational database system that uses and extends the SQL language. It offers many features that safely store and scale complex data workloads. PostgreSQL is known for its robust architecture, reliability, and data integrity. It's ACID-compliant and has powerful add-ons such as the popular PostGIS geospatial database extender. PostgreSQL is used as a primary database for many web applications as well as mobile and analytics applications. It's highly extensible, allowing users to define their own data types, index types, functional languages, and more.",
-      },
-      {
-        title: "Prisma",
-        iconPath: "/icons/prisma.svg",
-        url: "https://www.prisma.io/",
-        description:
-          "Prisma is a modern database toolkit and ORM (Object-Relational Mapping) for building database-driven applications. It provides a type-safe and efficient way to communicate with databases, and supports various databases such as MySQL, PostgreSQL, SQLite and MongoDB. Prisma allows developers to model their database schema using a declarative syntax, and generates type-safe and efficient database queries based on the schema. It also provides a set of tools for database migrations, schema management, and data modeling.",
-        needInvertColor: true,
-      },
-      {
         title: "React Router",
         iconPath: "/icons/react-router.svg",
         url: "https://reactrouter.com/en/main",
         description:
           "React Router is a popular library used for routing in React applications. It provides a set of components and tools for managing the navigation and URL structure of a React application. React Router allows developers to define routes and navigate between them declaratively using JSX syntax. It also provides advanced features such as nested routes, routing with parameters, and programmatic navigation.",
-      },
-      {
-        title: "React Hook Form",
-        iconPath: "/icons/react-hook-form.svg",
-        url: "https://react-hook-form.com/",
-        description:
-          "React Hook Form is a lightweight and flexible library used for managing forms in React applications. It provides a simple and intuitive API for building forms using custom React hooks and supports various form inputs, such as text inputs, checkboxes, and radio buttons. React Hook Form is designed to be performant and efficient, with features like conditional validation and asynchronous form submission. It also integrates well with other popular libraries and frameworks, such as Zod for form validation and Material UI for styling. .",
       },
       {
         title: "Redux",
@@ -228,12 +191,39 @@ export const skills: Skill[] = [
           "Socket.IO is a JavaScript library that enables real-time, bidirectional, and event-based communication between a client and a server. It consists of two parts: a client-side library that runs in the browser, and a server-side library for Node.js. Both components have a nearly identical API. Socket.IO primarily uses the WebSocket protocol with HTTP long-polling as a fallback option. It provides features such as broadcasting to multiple sockets, storing data associated with each client, and asynchronous I/O. Socket.IO is used in various applications such as chat and messaging applications, collaboration tools, real-time dashboards, and multiplayer games.",
         needInvertColor: true,
       },
+    ],
+  },
+  {
+    title: "Backend",
+    skillsData: [
       {
-        title: "TanStack Query",
-        iconPath: "/icons/tanstack-query.svg",
-        url: "https://tanstack.com/query/latest",
+        title: "NodeJS",
+        iconPath: "/icons/node.svg",
+        url: "https://nodejs.org/",
         description:
-          "TanStack Query is a popular JavaScript library used for managing remote data. It provides a set of hooks and utilities that simplify the process of fetching, caching, and updating data from remote APIs. TanStack Query provides an intuitive and declarative API for making network requests that supports features like pagination, caching, and error handling. It also integrates well with other popular libraries and frameworks, including React, Redux, tRPC and GraphQL.",
+          "Node.js is a popular JavaScript runtime built on the V8 JavaScript engine. It allows developers to run JavaScript code on the server-side, enabling them to build scalable and efficient web applications. Node.js provides a set of APIs for interacting with the file system, network, and other system resources, as well as a package manager called npm for installing and managing dependencies. Node.js is widely used in the web development community for building web servers, APIs, and microservices.",
+      },
+      {
+        title: "Docker",
+        iconPath: "/icons/docker.svg",
+        url: "https://www.docker.com/",
+        description:
+          "Docker is an open-source platform that allows developers to create, deploy, and run applications in isolated containers. It provides a lightweight and portable environment for running applications, which eliminates many of the compatibility issues that can arise when running applications on different systems. Docker containers can be easily moved between different environments, such as development, testing, and production, without requiring any changes to the application code. Docker also provides a powerful set of tools for managing and scaling containers, including Docker Compose and Kubernetes.",
+      },
+      {
+        title: "Prisma",
+        iconPath: "/icons/prisma.svg",
+        url: "https://www.prisma.io/",
+        description:
+          "Prisma is a modern database toolkit and ORM (Object-Relational Mapping) for building database-driven applications. It provides a type-safe and efficient way to communicate with databases, and supports various databases such as MySQL, PostgreSQL, SQLite and MongoDB. Prisma allows developers to model their database schema using a declarative syntax, and generates type-safe and efficient database queries based on the schema. It also provides a set of tools for database migrations, schema management, and data modeling.",
+        needInvertColor: true,
+      },
+      {
+        title: "TypeORM",
+        iconPath: "/icons/typeorm.svg",
+        url: "https://typeorm.io/",
+        description:
+          "TypeORM is an Object-Relational Mapping (ORM) library for TypeScript and JavaScript applications. It provides a set of tools and features for interacting with relational databases, such as MySQL, PostgreSQL, and SQLite, using an object-oriented approach. TypeORM allows developers to define database models using TypeScript classes and decorators, and provides a set of APIs for querying, updating, and deleting data from the database. It also supports features such as migrations, transactions, and data validation.",
       },
       {
         title: "tRPC",
@@ -243,6 +233,132 @@ export const skills: Skill[] = [
           "tRPC is a modern TypeScript-based framework for building scalable and efficient backend APIs. It provides a lightweight and flexible approach to API development, with a focus on simplicity, performance, and developer experience. tRPC allows developers to define API endpoints using a simple and intuitive syntax, and provides automatic TypeScript typings and documentation. It also supports various transport protocols, including HTTP, WebSocket, and gRPC. tRPC includes a set of features such as request validation, response compression, and caching, which makes it easier to build robust and scalable APIs.",
       },
       {
+        title: "Nats",
+        iconPath: "/icons/nats.svg",
+        url: "https://nats.io/",
+        description:
+          "NATS is a lightweight and high-performance messaging system for building distributed systems. It provides a simple and efficient way to connect services and applications using publish-subscribe and request-reply patterns. NATS is designed to be fast, secure, and scalable, with support for features such as message queuing, load balancing, and fault tolerance. It is widely used in cloud-native applications, microservices architectures, and IoT (Internet of Things) applications.",
+      },
+      {
+        title: "Firebase",
+        iconPath: "/icons/firebase.svg",
+        url: "https://firebase.google.com/",
+        description:
+          "Firebase is a mobile and web application development platform, owned by Google, that provides a set of tools and services for building, managing, and growing web and mobile applications. Firebase includes a variety of features such as real-time database, cloud storage, authentication, hosting, and analytics, which helps developers to quickly create, launch, and scale their applications without having to manage infrastructure. Firebase also provides SDKs and APIs for various platforms, including web, iOS, and Android, allowing developers to easily integrate Firebase services into their applications.",
+      },
+      {
+        title: "Linux",
+        iconPath: "/icons/linux.svg",
+        url: "https://www.linux.org/",
+        description:
+          "Linux is a popular open-source operating system that is widely used in the web development community for building web servers, hosting websites, and running applications. It provides a stable and secure platform for running web applications and services, with support for various programming languages, tools, and frameworks. Linux is known for its reliability, performance, and flexibility, and is used in a wide range of applications, from small personal websites to large-scale enterprise applications.",
+      },
+      {
+        title: "Vercel",
+        iconPath: "/icons/vercel.svg",
+        url: "https://vercel.com/",
+        description:
+          "Vercel is a cloud platform for deploying and hosting web applications. It provides a set of tools and features that simplify the deployment process, including automatic builds, previews, and scaling. Vercel supports various frontend frameworks and libraries, such as Next.js, Gatsby, and React, as well as serverless functions and APIs. It also provides a global content delivery network (CDN) and SSL encryption, which ensures fast and secure delivery of web applications to users around the world.",
+        needInvertColor: true,
+      },
+      {
+        title: "Railway",
+        iconPath: "/icons/railway.svg",
+        url: "https://railway.app/",
+        description:
+          "Railway is a platform for deploying and managing web applications. It provides a simple and intuitive way to deploy applications to the cloud, with support for various programming languages, frameworks, and databases. Railway supports features such as automatic deployments, environment variables, and database migrations, which make it easier to manage and scale web applications. It also provides a set of tools for monitoring, logging, and debugging applications, which helps developers to quickly identify and fix issues.",
+        needInvertColor: true,
+      },
+    ],
+  },
+  {
+    title: "Databases",
+    skillsData: [
+      {
+        title: "PostgreSQL",
+        iconPath: "/icons/postgresql.svg",
+        url: "https://www.postgresql.org/",
+        description:
+          "PostgreSQL, also known as Postgres, is a powerful, open-source object-relational database system that uses and extends the SQL language. It offers many features that safely store and scale complex data workloads. PostgreSQL is known for its robust architecture, reliability, and data integrity. It's ACID-compliant and has powerful add-ons such as the popular PostGIS geospatial database extender. PostgreSQL is used as a primary database for many web applications as well as mobile and analytics applications. It's highly extensible, allowing users to define their own data types, index types, functional languages, and more.",
+      },
+      {
+        title: "MySQL",
+        iconPath: "/icons/mysql.svg",
+        url: "https://www.mysql.com/",
+        description:
+          "MySQL is a popular open-source relational database management system that uses SQL (Structured Query Language) for managing and manipulating data. It provides a reliable and scalable platform for storing and retrieving data in a structured way. MySQL supports various features such as indexing, transactions, and replication, which make it suitable for a wide range of applications. It is widely used in the web development community, particularly for building web applications and data-driven websites.",
+        needInvertColor: true,
+      },
+      {
+        title: "SQLite",
+        iconPath: "/icons/sqlite.svg",
+        url: "https://www.sqlite.org/",
+        description:
+          "SQLite is a lightweight and self-contained relational database management system that is embedded in many applications. It is serverless, zero-configuration, and transactional, which makes it easy to use and deploy in various environments. SQLite stores data in a single file, which can be easily shared and copied between different systems. It supports standard SQL features, such as transactions, triggers, and views, and is widely used in mobile applications, desktop applications, and embedded systems.",
+      },
+      {
+        title: "MongoDB",
+        iconPath: "/icons/mongo.svg",
+        url: "https://www.mongodb.com/",
+        description:
+          "MongoDB is a popular NoSQL database that allows developers to store and manage unstructured data in a flexible and scalable way. It uses a document-based data model, which means that data is stored in JSON-like documents that can have different structures and fields. MongoDB provides a set of features and tools for managing data, including CRUD (Create, Read, Update, Delete) operations, aggregation, indexing, and querying. It also supports various advanced features such as replication, sharding, and scaling.",
+      },
+      {
+        title: "Redis",
+        iconPath: "/icons/redis.svg",
+        url: "https://redis.io/",
+        description:
+          "Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures such as strings, lists, sets, and hashes, and provides a set of commands for managing and manipulating these data structures. Redis is known for its speed, scalability, and high availability, which makes it suitable for use cases that require low latency and high throughput. It is widely used in web applications, real-time analytics, and caching systems.",
+      },
+    ],
+  },
+  {
+    title: "Tools",
+    skillsData: [
+      {
+        title: "Figma",
+        iconPath: "/icons/figma.svg",
+        url: "https://www.figma.com/",
+        description:
+          "Figma is a cloud-based design and prototyping tool used for creating user interfaces, web designs, and mobile applications. It provides a collaborative platform that allows multiple designers to work on the same project in real-time, which makes it easier to collaborate and share feedback. Figma includes a variety of features such as vector networks, design libraries, and interactive components, which makes it easier to create and manage complex designs. It also allows developers to inspect designs, generate code snippets, and export assets for development.",
+      },
+      {
+        title: "Git",
+        iconPath: "/icons/git.svg",
+        url: "https://git-scm.com/",
+        description:
+          "Git is a popular version control system that helps developers to manage changes to their codebase over time. It allows developers to track changes to their code, collaborate with other developers, and revert changes when necessary. Git provides a set of commands and tools for creating, branching, merging, and managing code repositories, both locally and remotely. It also provides a powerful set of features for resolving conflicts and managing code reviews. Git is widely used in the software development community and is an essential tool for managing codebases of all sizes.",
+      },
+      {
+        title: "GitHub",
+        iconPath: "/icons/github.svg",
+        url: "https://github.com/",
+        description:
+          "GitHub is a popular code hosting platform that allows developers to collaborate on projects, share code, and build software together. It provides a set of tools and features for managing code repositories, such as version control, issue tracking, and code reviews. GitHub also provides a platform for hosting static websites, running continuous integration and deployment pipelines, and managing project documentation. It is widely used in the open-source community and by companies of all sizes to build and deploy software.",
+        needInvertColor: true,
+      },
+      {
+        title: "VSCode",
+        iconPath: "/icons/vscode.svg",
+        url: "https://code.visualstudio.com/",
+        description:
+          "Visual Studio Code is a popular open-source code editor developed by Microsoft. It provides a set of features and tools for writing, editing, and debugging code, such as syntax highlighting, code completion, and integrated terminal. Visual Studio Code supports various programming languages and frameworks, and provides extensions for adding additional functionality and customizing the editor. It also includes features such as version control, debugging, and task running, which make it easier to develop and maintain codebases of all sizes.",
+      },
+      {
+        title: "Jest",
+        iconPath: "/icons/jest.svg",
+        url: "https://jestjs.io/",
+        description:
+          "Jest is a popular JavaScript testing framework used to test JavaScript code, particularly for React applications. It is developed by Facebook and provides a powerful set of features for testing code, including a test runner, assertion library, and mocking capabilities. Jest allows developers to write tests in a simple and intuitive way, using a combination of test suites, test cases, and assertions. It also provides tools for code coverage analysis, parallel testing, and snapshot testing.",
+      },
+      {
+        title: "Playwright",
+        iconPath: "/icons/playwright.svg",
+        url: "https://playwright.dev/",
+        description:
+          "Playwright is a Node.js library to automate Chromium, Firefox, and WebKit with a single API. It enables cross-browser web automation that is ever-green, capable, reliable, and fast. Playwright is used for web testing, web scraping, and automating browser tasks. It supports multiple languages, including JavaScript, TypeScript, Python, C#, and Java. Playwright runs headless by default but can be configured to run full (non-headless) browsers. It can generate screenshots and PDFs of pages and has robust support for user interactions, including clicks, types, and scrolls.",
+      },
+      {
         title: "Zod",
         iconPath: "/icons/zod.svg",
         url: "https://zod.dev/",
@@ -250,9 +366,5 @@ export const skills: Skill[] = [
           "Zod is a TypeScript-first schema validation library used for validating data objects in JavaScript and TypeScript applications. It provides a simple and intuitive API for defining data schemas and validating data objects against those schemas. Zod supports various data types, such as strings, numbers, arrays, and objects, as well as advanced features like union types, intersection types, and conditional types. It also provides a set of tools for data parsing, serialization, and transformation. Zod is designed to be lightweight and performant, with a focus on type safety and developer experience.",
       },
     ],
-  },
-  {
-    title: "Otro",
-    skillsData: [],
   },
 ];

@@ -42,7 +42,7 @@ export const Tabs: FC<TabsProps> = ({
     <>
       <div
         className={cn(
-          "no-visible-scrollbar relative flex w-full max-w-full flex-row flex-wrap items-center justify-center overflow-auto [perspective:1000px] sm:overflow-visible",
+          "no-visible-scrollbar relative z-10 flex w-full max-w-full flex-row flex-wrap items-center justify-center overflow-auto [perspective:1000px] sm:overflow-visible",
           containerClassName,
         )}
       >
@@ -111,7 +111,7 @@ export const FadeInDiv: FC<FadeInDivProps> = ({
           layoutId={tab.value}
           style={{
             scale: 1 - idx * 0.1,
-            top: hovering ? idx * -40 : idx < 3 ? -100 : 0,
+            top: hovering ? idx * -35 : idx < 3 ? -100 : 0,
             zIndex: -idx,
             opacity: idx < 3 ? 1 - idx * 0.1 : 0,
           }}
