@@ -1,4 +1,3 @@
-"use client";
 import { skills } from "@/data/skills";
 import { Tabs } from "../ui/tabs";
 import { SkillContentTab } from "../skills/SkillContentTab";
