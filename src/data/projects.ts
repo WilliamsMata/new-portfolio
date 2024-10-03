@@ -7,12 +7,50 @@ export interface Project {
   projectTech: ProjectTech[];
 }
 
-interface ProjectTech {
+export interface ProjectTech {
   title: string;
   color: string;
 }
 
 export const projects: Project[] = [
+  {
+    title: "Breezili",
+    description:
+      "Breezili is a social network designed to publish different tourist places, where people can review and rate them. It has a settings panel, user editing and an administration panel where you can add new posts and manage users.",
+    githubUrl: "https://github.com/WilliamsMata/breezili",
+    projectUrl: "https://breezili.com/",
+    imagePath: "/projects/breezili.jpg",
+    projectTech: [
+      {
+        title: "NextJS",
+        color: "#00d9fe",
+      },
+      {
+        title: "Tailwind",
+        color: "#00bdf7",
+      },
+      {
+        title: "Prisma",
+        color: "#60a5fa",
+      },
+      {
+        title: "NextAuth",
+        color: "#d03be6",
+      },
+      {
+        title: "tRPC",
+        color: "#f87171",
+      },
+      {
+        title: "PostgreSQL",
+        color: "#336791",
+      },
+      {
+        title: "Redis",
+        color: "#d7305f",
+      },
+    ],
+  },
   {
     title: "Teslo Shop",
     description:
@@ -104,6 +142,76 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "NestJS Products Microservice",
+    description:
+      "This project is a microservice that provides a RESTful API for managing products, auth, payments and orders. The microservice is built with NestJS and uses MongoDB, Postgresql and mysql as the database.",
+    imagePath: "/projects/microservices.png",
+    githubUrl:
+      "https://github.com/nest-microservices-williams/products-launcher",
+    projectUrl:
+      "https://github.com/nest-microservices-williams/products-launcher",
+    projectTech: [
+      {
+        title: "NestJS",
+        color: "#00d9fe",
+      },
+      {
+        title: "Prisma",
+        color: "#60a5fa",
+      },
+      {
+        title: "Docker",
+        color: "#0db7ed",
+      },
+      {
+        title: "PostgreSQL",
+        color: "#336791",
+      },
+      {
+        title: "SQLite",
+        color: "#f9bd29",
+      },
+      {
+        title: "MongoDB",
+        color: "#00a142",
+      },
+      {
+        title: "NATS",
+        color: "#ff0000",
+      },
+      {
+        title: "Stripe",
+        color: "#008cdd",
+      },
+    ],
+  },
+  {
+    title: "Pokedex",
+    description:
+      "This react native project is a Pokedex that allows users to search for Pokemon by name. The app displays detailed information about each Pokemon, including its abilities, stats, previos and next pokemon.",
+    githubUrl: "https://github.com/WilliamsMata/pokedex-app",
+    projectUrl: "https://github.com/WilliamsMata/pokedex-app",
+    imagePath: "/projects/pokedex.jpg",
+    projectTech: [
+      {
+        title: "React Native",
+        color: "#00d9fe",
+      },
+      {
+        title: "React Navigation",
+        color: "#00bdf7",
+      },
+      {
+        title: "TanStack Query",
+        color: "#f87171",
+      },
+      {
+        title: "react native paper",
+        color: "#00bdf7",
+      },
+    ],
+  },
+  {
     title: "Rock, paper & Scissors",
     description:
       "This is my first project, the classic rock paper scissors game. The user plays against the computer which randomly chooses an option. The project is an advanced difficulty FrontEnd Mentor challenge.",
@@ -122,6 +230,54 @@ export const projects: Project[] = [
       {
         title: "JavaScript",
         color: "#f8dd2e",
+      },
+    ],
+  },
+  {
+    title: "Telegram Karma Bot",
+    description:
+      "Karma Bot is a simple Telegram bot for tracking karma points in a group chat. Users can give each other karma points by responding to messages with +1 or -1. The bot also provides commands for checking a user's current karma score and for seeing a leaderboard of the top users with the most karma. Built with Node.js and MongoDB.",
+    imagePath: "/projects/karma-bot.png",
+    githubUrl: "https://github.com/WilliamsMata/karma_bot",
+    projectUrl: "https://t.me/karma_tg_bot",
+    projectTech: [
+      {
+        title: "NodeJS",
+        color: "#00d9fe",
+      },
+      {
+        title: "Telegraf",
+        color: "#00bdf7",
+      },
+      {
+        title: "MongoDB",
+        color: "#00a142",
+      },
+    ],
+  },
+  {
+    title: "Trading Telegram bot",
+    description:
+      "This project is a trading bot that uses the Binance API to buy and sell cryptocurrencies. The bot uses technical analysis to make decisions and send alert to a telegram bot.",
+    imagePath: "/projects/trading-bot.png",
+    githubUrl: "https://github.com/WilliamsMata/nestjs-trading-bot.git",
+    projectUrl: "https://t.me/trading_test_vzla_bot",
+    projectTech: [
+      {
+        title: "NestJS",
+        color: "#00d9fe",
+      },
+      {
+        title: "MongoDB",
+        color: "#00a142",
+      },
+      {
+        title: "Binance API",
+        color: "#f9bd29",
+      },
+      {
+        title: "Telegram",
+        color: "#0088cc",
       },
     ],
   },
