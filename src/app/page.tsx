@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
 
         <TracingBeam>
-          <div className="flex flex-col">
+          <div className="flex flex-col md:gap-0">
             <Skills />
 
             <Projects />

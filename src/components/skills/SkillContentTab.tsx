@@ -3,7 +3,7 @@ import { SkillDataCard } from "./SkillDataCard";
 
 export function SkillContentTab({ title, skillsData }: Skill) {
   return (
-    <div className="h-[calc(100vh-3rem)] w-full md:h-[37rem]">
+    <div className="h-[46rem] w-full md:h-[37rem]">
       <div className="relative h-full w-full">
         <div className="absolute inset-0 h-full w-full scale-[0.80] transform rounded-full bg-red-500 bg-gradient-to-r from-blue-500 to-teal-500 blur-3xl" />
 

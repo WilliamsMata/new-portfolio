@@ -19,7 +19,8 @@ export const Skills = () => {
       <SkillModal>
         <Tabs tabs={tabs} />
       </SkillModal>
-      <div className="h-screen"></div>
+
+      <div className="h-[46rem]"></div>
     </section>
   );
 };
