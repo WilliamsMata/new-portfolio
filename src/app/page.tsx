@@ -2,6 +2,7 @@ import FloatingDockComponent from "@/components/common/FloatingDockComponent";
 import Header from "@/components/common/Header";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { Hero } from "@/components/views/Hero";
+import { Projects } from "@/components/views/Projects";
 import { Skills } from "@/components/views/Skills";
 
 export default function Home() {
@@ -13,10 +14,15 @@ export default function Home() {
         <Hero />
 
         <TracingBeam>
-          <Skills />
-          <div>
-            {/* <HoverBorderGradient>Hola mundo</HoverBorderGradient> */}
-            <div className="h-[5000px]"></div>
+          <div className="flex flex-col">
+            <Skills />
+
+            <Projects />
+
+            <div>
+              {/* <HoverBorderGradient>Hola mundo</HoverBorderGradient> */}
+              <div className="h-[5000px]"></div>
+            </div>
           </div>
         </TracingBeam>
       </main>
