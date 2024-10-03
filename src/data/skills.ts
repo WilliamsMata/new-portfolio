@@ -240,6 +240,13 @@ export const skills: Skill[] = [
           "NATS is a lightweight and high-performance messaging system for building distributed systems. It provides a simple and efficient way to connect services and applications using publish-subscribe and request-reply patterns. NATS is designed to be fast, secure, and scalable, with support for features such as message queuing, load balancing, and fault tolerance. It is widely used in cloud-native applications, microservices architectures, and IoT (Internet of Things) applications.",
       },
       {
+        title: "Supabase",
+        iconPath: "/icons/supabase.svg",
+        url: "https://supabase.io/",
+        description:
+          "Supabase is an open-source platform for building and deploying backend applications. It provides a set of tools and services that simplify the development process, including a real-time database, authentication, and storage. Supabase is built on top of PostgreSQL and provides a set of APIs and SDKs for interacting with the database, authentication, and storage services. It also includes features such as serverless functions, webhooks, and monitoring, which make it easier to build and scale backend applications.",
+      },
+      {
         title: "Firebase",
         iconPath: "/icons/firebase.svg",
         url: "https://firebase.google.com/",
