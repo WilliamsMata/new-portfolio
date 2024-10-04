@@ -1,10 +1,15 @@
-import Image from "next/image";
-
 import type { SkillData } from "@/interfaces";
 import { SkillModalTrigger } from "./SkillModal";
+import { SkillImage } from "./SkillImage";
 
-export function SkillDataCard(skill: SkillData) {
+interface SkillDataCardProps {
+  skill: SkillData;
+  parentTitle: string;
+}
+
+export function SkillDataCard({ skill, parentTitle }: SkillDataCardProps) {
   const { title, iconPath, needInvertColor } = skill;
+
   return (
     <SkillModalTrigger skill={skill} key={title}>
       <div>
@@ -13,11 +18,10 @@ export function SkillDataCard(skill: SkillData) {
             needInvertColor ? "dark:invert" : ""
           }`}
         >
-          <Image
-            src={iconPath}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 60vw, (max-width: 1200px) 40vw, 33vw"
+          <SkillImage
+            parentTitle={parentTitle}
+            title={title}
+            iconPath={iconPath}
           />
         </div>
 

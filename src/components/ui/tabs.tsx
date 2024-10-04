@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { createContext, useContext, FC, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -19,6 +19,21 @@ interface TabsProps {
   contentClassName?: string;
 }
 
+interface TabContextProps {
+  activeTab: Tab;
+  setActiveTab: (tab: Tab) => void;
+}
+
+const TabContext = createContext<TabContextProps | undefined>(undefined);
+
+export const useTab = () => {
+  const context = useContext(TabContext);
+  if (!context) {
+    throw new Error("useTab must be used within a TabProvider");
+  }
+  return context;
+};
+
 export const Tabs: FC<TabsProps> = ({
   tabs: propTabs,
   containerClassName,
@@ -29,6 +44,7 @@ export const Tabs: FC<TabsProps> = ({
   const matches = useMediaQuery("(min-width: 640px)");
   const [active, setActive] = useState<Tab>(propTabs[0]);
   const [tabs, setTabs] = useState<Tab[]>(propTabs);
+  const [hovering, setHovering] = useState(false);
 
   const moveSelectedTabToTop = (idx: number) => {
     const newTabs = [...propTabs];
@@ -38,14 +54,12 @@ export const Tabs: FC<TabsProps> = ({
     setActive(newTabs[0]);
   };
 
-  const [hovering, setHovering] = useState(false);
-
   useEffect(() => {
     if (!matches) setHovering(false);
   }, [active, matches]);
 
   return (
-    <>
+    <TabContext.Provider value={{ activeTab: active, setActiveTab: setActive }}>
       <div
         className={cn(
           "no-visible-scrollbar relative z-10 flex w-full max-w-full flex-row flex-wrap items-center justify-center overflow-auto [perspective:1000px] sm:overflow-visible",
@@ -89,7 +103,7 @@ export const Tabs: FC<TabsProps> = ({
         hovering={hovering}
         className={cn("mt-32", contentClassName)}
       />
-    </>
+    </TabContext.Provider>
   );
 };
 
@@ -106,9 +120,12 @@ export const FadeInDiv: FC<FadeInDivProps> = ({
   tabs,
   hovering,
 }) => {
+  const { activeTab } = useTab();
+
   const isActive = (tab: Tab) => {
-    return tab.value === tabs[0].value;
+    return tab.value === activeTab.value;
   };
+
   return (
     <div className="relative h-full w-full">
       {tabs.map((tab, idx) => (

@@ -11,9 +11,15 @@ export function SkillContentTab({ title, skillsData }: Skill) {
           <h3 className="text-2xl font-semibold">{title}</h3>
 
           <div className="flex w-full flex-row flex-wrap items-center justify-center">
-            {skillsData.map((skill) => (
-              <SkillDataCard {...skill} key={skill.title} />
-            ))}
+            {skillsData.map((skill) => {
+              return (
+                <SkillDataCard
+                  skill={skill}
+                  parentTitle={title}
+                  key={skill.title}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
