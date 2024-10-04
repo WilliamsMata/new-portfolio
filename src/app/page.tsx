@@ -1,6 +1,7 @@
 import FloatingDockComponent from "@/components/common/FloatingDockComponent";
 import Header from "@/components/common/Header";
 import { TracingBeam } from "@/components/ui/tracing-beam";
+import { About } from "@/components/views/About";
 import { Hero } from "@/components/views/Hero";
 import { Projects } from "@/components/views/Projects";
 import { Skills } from "@/components/views/Skills";
@@ -14,7 +15,9 @@ export default function Home() {
         <Hero />
 
         <TracingBeam>
-          <div className="flex flex-col md:gap-0">
+          <div className="flex flex-col gap-12">
+            <About />
+
             <Skills />
 
             <Projects />
