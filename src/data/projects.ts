@@ -1,16 +1,4 @@
-export interface Project {
-  title: string;
-  description: string;
-  imagePath: string;
-  githubUrl: string;
-  projectUrl: string;
-  projectTech: ProjectTech[];
-}
-
-export interface ProjectTech {
-  title: string;
-  color: string;
-}
+import type { Project } from "@/interfaces";
 
 export const projects: Project[] = [
   {
@@ -256,7 +244,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Trading Telegram bot",
+    title: "Telegram Trading bot",
     description:
       "This project is a trading bot that uses the Binance API to buy and sell cryptocurrencies. The bot uses technical analysis to make decisions and send alert to a telegram bot.",
     imagePath: "/projects/trading-bot.png",

@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 import Image from "next/image";
-import { SkillData } from "@/data/skills";
+import { SkillData } from "@/interfaces";
 import { buttonVariants } from "../ui/button";
 import { Modal, ModalBody, ModalContent, useModal } from "../ui/animated-modal";
 import { cn } from "@/lib/utils";

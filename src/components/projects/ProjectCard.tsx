@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { Project } from "@/data/projects";
+import type { Project } from "@/interfaces";
 import { PinContainer } from "../ui/3d-pin";
 import Image from "next/image";
 import { Badge } from "../ui/badge";

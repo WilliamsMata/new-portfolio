@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import type { SkillData } from "@/data/skills";
+import type { SkillData } from "@/interfaces";
 import { SkillModalTrigger } from "./SkillModal";
 
 export function SkillDataCard(skill: SkillData) {

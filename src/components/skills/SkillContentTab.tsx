@@ -1,4 +1,4 @@
-import type { Skill } from "@/data/skills";
+import type { Skill } from "@/interfaces";
 import { SkillDataCard } from "./SkillDataCard";
 
 export function SkillContentTab({ title, skillsData }: Skill) {

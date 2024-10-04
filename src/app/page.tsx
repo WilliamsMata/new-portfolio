@@ -18,11 +18,6 @@ export default function Home() {
             <Skills />
 
             <Projects />
-
-            <div>
-              {/* <HoverBorderGradient>Hola mundo</HoverBorderGradient> */}
-              <div className="h-[5000px]"></div>
-            </div>
           </div>
         </TracingBeam>
       </main>
