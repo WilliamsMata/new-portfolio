@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -21,10 +21,31 @@ export const TextGenerateEffect = ({
   onFinish,
 }: TextGenerateEffectProps) => {
   const [scope, animate] = useAnimate();
-  const wordsArray = words.split(" ");
+  const paragraphsArray = words.split("\n");
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isAnimating, setIsAnimating] = useState(true);
 
-  const animationTime = wordsArray.length * stagerDuration * 1000;
+  const totalWordsCount = paragraphsArray.reduce(
+    (count, paragraph) => count + paragraph.split(" ").length,
+    0,
+  );
+  const animationTime = totalWordsCount * stagerDuration * 1000;
+
+  const completeAnimation = () => {
+    animate(
+      "span",
+      {
+        opacity: 1,
+        filter: filter ? "blur(0px)" : "none",
+      },
+      {
+        duration: 0,
+      },
+    );
+
+    onFinish?.();
+    setIsAnimating(false);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,9 +65,7 @@ export const TextGenerateEffect = ({
 
           observer.disconnect();
 
-          if (onFinish) {
-            setTimeout(onFinish, animationTime);
-          }
+          setTimeout(() => completeAnimation(), animationTime);
         }
       },
       { threshold: 0.1 },
@@ -62,26 +81,38 @@ export const TextGenerateEffect = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scope.current, words, onFinish]);
 
-  const renderWords = () => (
+  const renderParagraphs = () => (
     <motion.div ref={scope}>
-      {wordsArray.map((word, idx) => (
-        <motion.span
-          key={word + idx}
-          className="opacity-0"
-          style={{
-            filter: filter ? "blur(10px)" : "none",
-          }}
-        >
-          {word}{" "}
-        </motion.span>
+      {paragraphsArray.map((paragraph, pIdx) => (
+        <p key={`paragraph-${pIdx}`} className="mb-4">
+          {paragraph.split(" ").map((word, wIdx) => (
+            <motion.span
+              key={`${word}-${pIdx}-${wIdx}`}
+              className="opacity-0"
+              style={{
+                filter: filter ? "blur(10px)" : "none",
+              }}
+            >
+              {word}{" "}
+            </motion.span>
+          ))}
+        </p>
       ))}
     </motion.div>
   );
 
   return (
-    <div className={cn("text-2xl font-bold", className)} ref={containerRef}>
+    <div
+      className={cn(
+        "text-2xl font-bold",
+        isAnimating ? "cursor-pointer" : "",
+        className,
+      )}
+      ref={containerRef}
+      onClick={completeAnimation}
+    >
       <div className="mt-4">
-        <div className="leading-snug tracking-wide">{renderWords()}</div>
+        <div className="leading-snug tracking-wide">{renderParagraphs()}</div>
       </div>
     </div>
   );
