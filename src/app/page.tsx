@@ -2,6 +2,7 @@ import FloatingDockComponent from "@/components/common/FloatingDockComponent";
 import Header from "@/components/common/Header";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { About } from "@/components/views/About";
+import { Contact } from "@/components/views/Contact";
 import { Hero } from "@/components/views/Hero";
 import { Projects } from "@/components/views/Projects";
 import { Skills } from "@/components/views/Skills";
@@ -21,6 +22,8 @@ export default function Home() {
             <Skills />
 
             <Projects />
+
+            <Contact />
           </div>
         </TracingBeam>
       </main>
