@@ -8,7 +8,7 @@ export const GenerateText = () => {
     <div className="mx-8 flex flex-col items-center justify-center gap-4">
       <TextGenerateEffect
         words={text1}
-        className="text-center text-lg md:text-2xl"
+        className="text-center text-lg font-normal md:text-2xl"
         stagerDuration={0.15}
       />
     </div>
