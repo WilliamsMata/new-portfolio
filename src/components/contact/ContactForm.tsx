@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { sendMessageSchema } from "@/schema/send-message.schema";
 import { sendMessage } from "@/actions/sendMessage";
 import { motion } from "framer-motion";
+import { Toaster } from "@/adapter/sonner.adapter";
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof sendMessageSchema>>({
@@ -32,9 +33,18 @@ export default function ContactForm() {
     const { errors } = await sendMessage(values);
 
     if (errors) {
-      console.log(errors);
+      const error =
+        typeof errors === "string"
+          ? errors
+          : Object.values(errors)
+              .flatMap((e) => e)
+              .join(", ");
+
+      Toaster.error(error, { position: "bottom-left" });
       return;
     }
+
+    Toaster.success("Message sent successfully", { position: "bottom-left" });
 
     form.reset();
   }

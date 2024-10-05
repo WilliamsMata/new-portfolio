@@ -20,55 +20,44 @@ export async function sendMessage(data: Input) {
 
   const { name, email, message } = result.data;
 
-  try {
-    const [oneHourResult, dayResult] = await Promise.all([
-      oneHourRateLimiter.limit(email),
-      dayRateLimiter.limit(email),
-    ]);
+  const { success: oneHourSuccess } = await oneHourRateLimiter.limit(email);
 
-    const { success: oneHourSuccess } = oneHourResult;
-    const { success: daySuccess } = dayResult;
-
-    if (!oneHourSuccess) {
-      return {
-        errors: "You have reached the limit of one hour",
-      };
-    }
-
-    if (!daySuccess) {
-      return {
-        errors: "You have reached the limit of one day",
-      };
-    }
-
-    const { data, error } = await resend.emails.send({
-      from: "message@williamsmata.com",
-      to: "williams.rm99@gmail.com",
-      subject: `New message from ${name}`,
-      react: EmailTemplate({ name, email, message }),
-    });
-
-    if (error) {
-      console.error(error);
-      return {
-        errors: error.message,
-      };
-    }
-
-    console.log({
-      data,
-      name,
-      email,
-      message,
-    });
-
+  if (!oneHourSuccess) {
     return {
-      success: true,
+      errors: "You have reached the limit of one hour per email",
     };
-  } catch (error: any) {
+  }
+
+  const { success: daySuccess } = await dayRateLimiter.limit(email);
+
+  if (!daySuccess) {
+    return {
+      errors: "You have reached the limit of one day per email",
+    };
+  }
+
+  const { data: emailData, error } = await resend.emails.send({
+    from: "message@williamsmata.com",
+    to: "williams.rm99@gmail.com",
+    subject: `New message from ${name}`,
+    react: EmailTemplate({ name, email, message }),
+  });
+
+  if (error) {
     console.error(error);
     return {
       errors: error.message,
     };
   }
+
+  console.log({
+    emailData,
+    name,
+    email,
+    message,
+  });
+
+  return {
+    success: true,
+  };
 }
