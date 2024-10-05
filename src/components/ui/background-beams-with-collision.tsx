@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
@@ -13,58 +15,65 @@ export const BackgroundBeamsWithCollision = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
 
+  // Función para calcular el valor relativo al ancho de la pantalla
+  const calculateRelativePosition = (percentage: number) => {
+    return (window.innerWidth * percentage) / 100;
+  };
+
   const beams = [
     {
-      initialX: 10,
-      translateX: 10,
+      initialX: calculateRelativePosition(1), // 1% del ancho de la pantalla
+      translateX: calculateRelativePosition(1), // 1% del ancho de la pantalla
       duration: 7,
       repeatDelay: 3,
       delay: 2,
     },
     {
-      initialX: 600,
-      translateX: 600,
-      duration: 3,
-      repeatDelay: 3,
-      delay: 4,
-    },
-    {
-      initialX: 100,
-      translateX: 100,
+      initialX: calculateRelativePosition(10), // 10% del ancho de la pantalla
+      translateX: calculateRelativePosition(10), // 10% del ancho de la pantalla
       duration: 7,
       repeatDelay: 7,
       className: "h-6",
     },
     {
-      initialX: 400,
-      translateX: 400,
+      initialX: calculateRelativePosition(25), // 25% del ancho de la pantalla
+      translateX: calculateRelativePosition(25), // 25% del ancho de la pantalla
+      duration: 8,
+      repeatDelay: 14,
+      className: "h-12",
+      delay: 2,
+    },
+    {
+      initialX: calculateRelativePosition(40), // 40% del ancho de la pantalla
+      translateX: calculateRelativePosition(40), // 40% del ancho de la pantalla
       duration: 5,
       repeatDelay: 14,
       delay: 4,
     },
     {
-      initialX: 800,
-      translateX: 800,
+      initialX: calculateRelativePosition(60), // 60% del ancho de la pantalla
+      translateX: calculateRelativePosition(60), // 60% del ancho de la pantalla
+      duration: 3,
+      repeatDelay: 3,
+      delay: 4,
+    },
+    {
+      initialX: calculateRelativePosition(80), // 80% del ancho de la pantalla
+      translateX: calculateRelativePosition(80), // 80% del ancho de la pantalla
       duration: 11,
       repeatDelay: 2,
       className: "h-20",
     },
     {
-      initialX: 1000,
-      translateX: 1000,
-      duration: 4,
+      initialX: calculateRelativePosition(100), // 100% del ancho de la pantalla
+      translateX: calculateRelativePosition(100), // 100% del ancho de la pantalla
+      duration: 3,
       repeatDelay: 2,
       className: "h-12",
     },
-    {
-      initialX: 1200,
-      translateX: 1200,
-      duration: 6,
-      repeatDelay: 4,
-      delay: 2,
-      className: "h-6",
-    },
   ];
+
+  const { isIntersecting, ref } = useIntersectionObserver();
 
   return (
     <div
@@ -74,14 +83,17 @@ export const BackgroundBeamsWithCollision = ({
         className,
       )}
     >
-      {beams.map((beam) => (
-        <CollisionMechanism
-          key={beam.initialX + "beam-idx"}
-          beamOptions={beam}
-          containerRef={containerRef}
-          parentRef={parentRef}
-        />
-      ))}
+      <div ref={ref}>
+        {beams.map((beam) => (
+          <CollisionMechanism
+            key={beam.initialX + "beam-idx"}
+            beamOptions={beam}
+            containerRef={containerRef}
+            parentRef={parentRef}
+            isIntersecting={isIntersecting}
+          />
+        ))}
+      </div>
 
       {children}
       <div
@@ -112,8 +124,9 @@ const CollisionMechanism = React.forwardRef<
       delay?: number;
       repeatDelay?: number;
     };
+    isIntersecting: boolean;
   }
->(({ parentRef, containerRef, beamOptions = {} }) => {
+>(({ parentRef, containerRef, beamOptions = {}, isIntersecting }, ref) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;
@@ -126,39 +139,54 @@ const CollisionMechanism = React.forwardRef<
   const [cycleCollisionDetected, setCycleCollisionDetected] = useState(false);
 
   useEffect(() => {
+    let rafId: number;
+    let lastCheckTime = 0;
+    const checkInterval = 100; // 100ms
+
     const checkCollision = () => {
-      if (
-        beamRef.current &&
-        containerRef.current &&
-        parentRef.current &&
-        !cycleCollisionDetected
-      ) {
-        const beamRect = beamRef.current.getBoundingClientRect();
-        const containerRect = containerRef.current.getBoundingClientRect();
-        const parentRect = parentRef.current.getBoundingClientRect();
+      const now = performance.now();
 
-        if (beamRect.bottom >= containerRect.top) {
-          const relativeX =
-            beamRect.left - parentRect.left + beamRect.width / 2;
-          const relativeY = beamRect.bottom - parentRect.top;
+      if (now - lastCheckTime >= checkInterval) {
+        lastCheckTime = now;
 
-          setCollision({
-            detected: true,
-            coordinates: {
-              x: relativeX,
-              y: relativeY,
-            },
-          });
-          setCycleCollisionDetected(true);
+        if (
+          beamRef.current &&
+          containerRef.current &&
+          parentRef.current &&
+          !cycleCollisionDetected
+        ) {
+          const beamRect = beamRef.current.getBoundingClientRect();
+          const containerRect = containerRef.current.getBoundingClientRect();
+          const parentRect = parentRef.current.getBoundingClientRect();
+
+          if (beamRect.bottom >= containerRect.top) {
+            const relativeX =
+              beamRect.left - parentRect.left + beamRect.width / 2;
+            const relativeY = beamRect.bottom - parentRect.top;
+
+            setCollision({
+              detected: true,
+              coordinates: {
+                x: relativeX,
+                y: relativeY,
+              },
+            });
+            setCycleCollisionDetected(true);
+          }
         }
       }
+
+      rafId = requestAnimationFrame(checkCollision);
     };
 
-    const animationInterval = setInterval(checkCollision, 50);
+    if (isIntersecting) {
+      rafId = requestAnimationFrame(checkCollision);
+    }
 
-    return () => clearInterval(animationInterval);
+    // Limpiar el requestAnimationFrame al desmontar el componente
+    return () => cancelAnimationFrame(rafId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cycleCollisionDetected, containerRef]);
+  }, [cycleCollisionDetected, containerRef, parentRef, isIntersecting]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {

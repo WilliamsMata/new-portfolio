@@ -19,7 +19,7 @@ export const TracingBeam: FC<TracingBeamProps> = ({ children, className }) => {
 
   useEffect(() => {
     if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
+      setSvgHeight(contentRef.current.offsetHeight - 28);
     }
   }, []);
 

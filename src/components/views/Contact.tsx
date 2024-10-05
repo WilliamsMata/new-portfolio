@@ -4,7 +4,7 @@ import { BackgroundGradient } from "../ui/background-gradient";
 
 export const Contact = () => {
   return (
-    <section className="flex flex-col items-center px-8">
+    <section className="flex flex-col items-center">
       <BackgroundBeamsWithCollision>
         <h2 className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-semibold text-transparent">
           Contact
