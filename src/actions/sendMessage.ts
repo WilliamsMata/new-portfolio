@@ -5,7 +5,7 @@ import { sendMessageSchema } from "@/schema/send-message.schema";
 import { z } from "zod";
 import { EmailTemplate } from "@/components/email/send-email-template";
 import { resend } from "@/lib/resend";
-import { dayRateLimiter, oneHourRateLimiter } from "@/lib/redis";
+import { dayRateLimiter } from "@/lib/redis";
 import { headers } from "next/headers";
 
 type Input = z.infer<typeof sendMessageSchema>;
@@ -24,41 +24,12 @@ export async function sendMessage(data: Input) {
   const ip =
     headers().get("x-forwarded-for") || headers().get("cf-connecting-ip");
 
-  if (ip) {
-    const { success: oneHourIpSuccess } = await oneHourRateLimiter.limit(ip);
-    if (!oneHourIpSuccess) {
-      return {
-        errors: "You have reached the limit of emails per hour by IP address",
-      };
-    }
-  } else {
-    const { success: oneHourSuccess } = await oneHourRateLimiter.limit(email);
+  const { success } = await dayRateLimiter.limit(ip ?? email);
 
-    if (!oneHourSuccess) {
-      return {
-        errors:
-          "You have reached the limit of emails per hour by email address",
-      };
-    }
-  }
-
-  if (ip) {
-    const { success: dayIpSuccess } = await dayRateLimiter.limit(ip);
-
-    if (!dayIpSuccess) {
-      return {
-        errors: "You have reached the limit of 3 emails per day by IP address",
-      };
-    }
-  } else {
-    const { success: daySuccess } = await dayRateLimiter.limit(email);
-
-    if (!daySuccess) {
-      return {
-        errors:
-          "You have reached the limit of 3 emails per day by email address",
-      };
-    }
+  if (!success) {
+    return {
+      errors: "You have reached the limit of 3 emails per day",
+    };
   }
 
   const { data: emailData, error } = await resend.emails.send({
