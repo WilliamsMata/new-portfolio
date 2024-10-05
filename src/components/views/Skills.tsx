@@ -1,13 +1,7 @@
-"use client";
-
 import { skills } from "@/data/skills";
-import dynamic from "next/dynamic";
 import { SkillContentTab } from "../skills/SkillContentTab";
 import { SkillModal } from "../skills/SkillModal";
-
-const Tabs = dynamic(() => import("../ui/tabs").then((mod) => mod.Tabs), {
-  ssr: false,
-});
+import { Tabs } from "../ui/tabs";
 
 const tabs = skills.map(({ title, skillsData }) => ({
   title,

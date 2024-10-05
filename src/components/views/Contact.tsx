@@ -1,16 +1,6 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import ContactForm from "../contact/ContactForm";
+import { BackgroundBeamsWithCollision } from "../ui/background-beams-with-collision";
 import { BackgroundGradient } from "../ui/background-gradient";
-
-const BackgroundBeamsWithCollision = dynamic(
-  () =>
-    import("../ui/background-beams-with-collision").then(
-      (mod) => mod.BackgroundBeamsWithCollision,
-    ),
-  { ssr: false },
-);
 
 export const Contact = () => {
   return (

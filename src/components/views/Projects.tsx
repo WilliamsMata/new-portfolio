@@ -1,10 +1,5 @@
 import { projects } from "@/data/projects";
-import dynamic from "next/dynamic";
-
-const ProjectList = dynamic(
-  () => import("../projects/ProjectList").then((mod) => mod.ProjectList),
-  { ssr: false },
-);
+import { ProjectList } from "../projects/ProjectList";
 
 export const Projects = () => {
   return (
