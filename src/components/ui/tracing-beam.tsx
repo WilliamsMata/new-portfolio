@@ -18,9 +18,28 @@ export const TracingBeam: FC<TracingBeamProps> = ({ children, className }) => {
   const [svgHeight, setSvgHeight] = useState(0);
 
   useEffect(() => {
+    const handleResize = () => {
+      if (contentRef.current) {
+        setSvgHeight(contentRef.current.offsetHeight - 28);
+      }
+    };
+
+    // Inicialmente, calculamos el valor
+    handleResize();
+
+    // Usamos ResizeObserver para detectar cambios en el tamaño del div
+    const resizeObserver = new ResizeObserver(handleResize);
     if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight - 28);
+      resizeObserver.observe(contentRef.current);
     }
+
+    window.addEventListener("resize", handleResize);
+
+    // Limpiamos el observer cuando el componente se desmonta
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const y1 = useSpring(
