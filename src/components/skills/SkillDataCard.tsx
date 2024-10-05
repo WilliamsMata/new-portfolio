@@ -12,21 +12,19 @@ export function SkillDataCard({ skill, parentTitle }: SkillDataCardProps) {
 
   return (
     <SkillModalTrigger skill={skill} key={title}>
-      <div>
-        <div
-          className={`relative aspect-square w-full ${
-            needInvertColor ? "dark:invert" : ""
-          }`}
-        >
-          <SkillImage
-            parentTitle={parentTitle}
-            title={title}
-            iconPath={iconPath}
-          />
-        </div>
-
-        <h3 className="mt-2 text-center text-lg font-semibold">{title}</h3>
+      <div
+        className={`relative aspect-square w-full ${
+          needInvertColor ? "dark:invert" : ""
+        }`}
+      >
+        <SkillImage
+          parentTitle={parentTitle}
+          title={title}
+          iconPath={iconPath}
+        />
       </div>
+
+      <h3 className="mt-2 text-center text-lg font-semibold">{title}</h3>
     </SkillModalTrigger>
   );
 }
