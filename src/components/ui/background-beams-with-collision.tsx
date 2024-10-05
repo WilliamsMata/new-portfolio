@@ -5,6 +5,15 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
 
+interface Beam {
+  initialX: number;
+  translateX: number;
+  duration: number;
+  repeatDelay: number;
+  delay?: number;
+  className?: string;
+}
+
 export const BackgroundBeamsWithCollision = ({
   children,
   className,
@@ -14,64 +23,66 @@ export const BackgroundBeamsWithCollision = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
+  const [beams, setBeams] = useState<Beam[]>([]);
 
-  // Función para calcular el valor relativo al ancho de la pantalla
-  const calculateRelativePosition = (percentage: number) => {
-    return (window.innerWidth * percentage) / 100;
-  };
+  useEffect(() => {
+    const calculateRelativePosition = (percentage: number) => {
+      return (window.innerWidth * percentage) / 100;
+    };
 
-  const beams = [
-    {
-      initialX: calculateRelativePosition(1), // 1% del ancho de la pantalla
-      translateX: calculateRelativePosition(1), // 1% del ancho de la pantalla
-      duration: 7,
-      repeatDelay: 3,
-      delay: 2,
-    },
-    {
-      initialX: calculateRelativePosition(10), // 10% del ancho de la pantalla
-      translateX: calculateRelativePosition(10), // 10% del ancho de la pantalla
-      duration: 7,
-      repeatDelay: 7,
-      className: "h-6",
-    },
-    {
-      initialX: calculateRelativePosition(25), // 25% del ancho de la pantalla
-      translateX: calculateRelativePosition(25), // 25% del ancho de la pantalla
-      duration: 8,
-      repeatDelay: 14,
-      className: "h-12",
-      delay: 2,
-    },
-    {
-      initialX: calculateRelativePosition(40), // 40% del ancho de la pantalla
-      translateX: calculateRelativePosition(40), // 40% del ancho de la pantalla
-      duration: 5,
-      repeatDelay: 14,
-      delay: 4,
-    },
-    {
-      initialX: calculateRelativePosition(60), // 60% del ancho de la pantalla
-      translateX: calculateRelativePosition(60), // 60% del ancho de la pantalla
-      duration: 3,
-      repeatDelay: 3,
-      delay: 4,
-    },
-    {
-      initialX: calculateRelativePosition(80), // 80% del ancho de la pantalla
-      translateX: calculateRelativePosition(80), // 80% del ancho de la pantalla
-      duration: 11,
-      repeatDelay: 2,
-      className: "h-20",
-    },
-    {
-      initialX: calculateRelativePosition(100), // 100% del ancho de la pantalla
-      translateX: calculateRelativePosition(100), // 100% del ancho de la pantalla
-      duration: 3,
-      repeatDelay: 2,
-      className: "h-12",
-    },
-  ];
+    setBeams([
+      {
+        initialX: calculateRelativePosition(1),
+        translateX: calculateRelativePosition(1),
+        duration: 7,
+        repeatDelay: 3,
+        delay: 2,
+      },
+      {
+        initialX: calculateRelativePosition(10),
+        translateX: calculateRelativePosition(10),
+        duration: 7,
+        repeatDelay: 7,
+        className: "h-6",
+      },
+      {
+        initialX: calculateRelativePosition(25),
+        translateX: calculateRelativePosition(25),
+        duration: 8,
+        repeatDelay: 14,
+        className: "h-12",
+        delay: 2,
+      },
+      {
+        initialX: calculateRelativePosition(40),
+        translateX: calculateRelativePosition(40),
+        duration: 5,
+        repeatDelay: 14,
+        delay: 4,
+      },
+      {
+        initialX: calculateRelativePosition(60),
+        translateX: calculateRelativePosition(60),
+        duration: 3,
+        repeatDelay: 3,
+        delay: 4,
+      },
+      {
+        initialX: calculateRelativePosition(80),
+        translateX: calculateRelativePosition(80),
+        duration: 11,
+        repeatDelay: 2,
+        className: "h-20",
+      },
+      {
+        initialX: calculateRelativePosition(100),
+        translateX: calculateRelativePosition(100),
+        duration: 3,
+        repeatDelay: 2,
+        className: "h-12",
+      },
+    ]);
+  }, []);
 
   const { isIntersecting, ref } = useIntersectionObserver();
 
