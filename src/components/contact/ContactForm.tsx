@@ -1,54 +1,121 @@
 "use client";
 
-import { useState } from "react";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { sendMessageSchema } from "@/schema/send-message.schema";
+import { sendMessage } from "@/actions/sendMessage";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useForm<z.infer<typeof sendMessageSchema>>({
+    resolver: zodResolver(sendMessageSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsSubmitting(true);
+  async function onSubmit(values: z.infer<typeof sendMessageSchema>) {
+    const { errors } = await sendMessage(values);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    if (errors) {
+      console.log(errors);
+      return;
+    }
 
-    setIsSubmitting(false);
-
-    // Reset form
-    event.currentTarget.reset();
-  };
+    form.reset();
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" placeholder="John Doe" required />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          type="email"
-          placeholder="john@example.com"
-          required
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field, fieldState }) => (
+            <FormItem>
+              <FormLabel>Your name</FormLabel>
+              <FormControl>
+                <motion.div
+                  animate={
+                    fieldState.invalid ? { x: [-10, 10, -10, 10, 0] } : {}
+                  }
+                  transition={{ duration: 0.5 }}
+                >
+                  <Input placeholder="John Doe" {...field} />
+                </motion.div>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
-        <Textarea
-          id="message"
-          placeholder="Your message here..."
-          className="min-h-[100px]"
-          required
+
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field, fieldState }) => (
+            <FormItem>
+              <FormLabel>Your email</FormLabel>
+              <FormControl>
+                <motion.div
+                  animate={
+                    fieldState.invalid ? { x: [-10, 10, -10, 10, 0] } : {}
+                  }
+                  transition={{ duration: 0.5 }}
+                >
+                  <Input placeholder="john@example.com" {...field} />
+                </motion.div>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
-        {isSubmitting ? "Sending..." : "Send Message"}
-      </Button>
-    </form>
+
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field, fieldState }) => (
+            <FormItem>
+              <FormLabel>Your message</FormLabel>
+              <FormControl>
+                <motion.div
+                  animate={
+                    fieldState.invalid ? { x: [-10, 10, -10, 10, 0] } : {}
+                  }
+                  transition={{ duration: 0.5 }}
+                >
+                  <Textarea placeholder="Your message here..." {...field} />
+                </motion.div>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <Button
+          disabled={form.formState.isSubmitting}
+          className="w-full"
+          type="submit"
+          onClick={() => {
+            form.clearErrors();
+          }}
+        >
+          {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+        </Button>
+      </form>
+    </Form>
   );
 }
