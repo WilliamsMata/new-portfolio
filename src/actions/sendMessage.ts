@@ -24,7 +24,7 @@ export async function sendMessage(data: Input) {
 
   if (!oneHourSuccess) {
     return {
-      errors: "You have reached the limit of one hour per email",
+      errors: "You have reached the limit of emails per hour",
     };
   }
 
@@ -32,7 +32,7 @@ export async function sendMessage(data: Input) {
 
   if (!daySuccess) {
     return {
-      errors: "You have reached the limit of one day per email",
+      errors: "You have reached the limit of 3 emails per day",
     };
   }
 
