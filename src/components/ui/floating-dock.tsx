@@ -177,7 +177,11 @@ function IconContainer({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={href} target={href.startsWith("#") ? undefined : "_blank"}>
+    <a
+      href={href}
+      target={href.startsWith("#") ? undefined : "_blank"}
+      aria-label={title}
+    >
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -204,6 +208,6 @@ function IconContainer({
           {icon}
         </motion.div>
       </motion.div>
-    </Link>
+    </a>
   );
 }

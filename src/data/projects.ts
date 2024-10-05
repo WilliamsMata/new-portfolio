@@ -31,11 +31,11 @@ export const projects: Project[] = [
       },
       {
         title: "PostgreSQL",
-        color: "#336791",
+        color: "#1486e0",
       },
       {
         title: "Redis",
-        color: "#d7305f",
+        color: "#ff4278",
       },
     ],
   },
@@ -153,7 +153,7 @@ export const projects: Project[] = [
       },
       {
         title: "PostgreSQL",
-        color: "#336791",
+        color: "#1486e0",
       },
       {
         title: "SQLite",

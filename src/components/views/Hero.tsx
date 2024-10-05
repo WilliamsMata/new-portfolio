@@ -31,17 +31,17 @@ export const Hero = () => {
         </div>
 
         <div className="mt-4">
-          <button className="relative p-[3px]">
+          <a
+            href="/files/resume.pdf"
+            className="relative block p-[3px]"
+            target="_blank"
+          >
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500" />
-            <a
-              className="group relative flex items-center rounded-[6px] bg-background px-8 py-2 text-base transition duration-200 hover:bg-transparent"
-              href="/files/resume.pdf"
-              target="_blank"
-            >
+            <span className="group relative flex items-center rounded-[6px] bg-background px-8 py-2 text-base transition duration-200 hover:bg-transparent">
               Resume
               <FileIcon className="ml-2 h-5 w-5" />
-            </a>
-          </button>
+            </span>
+          </a>
         </div>
       </section>
     </HeroHighlight>
