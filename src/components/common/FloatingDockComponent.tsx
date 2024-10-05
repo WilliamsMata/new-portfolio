@@ -45,8 +45,8 @@ const links = [
 const FloatingDockComponent = () => {
   return (
     <FloatingDock
-      mobileClassName="fixed bottom-8 right-8"
-      desktopClassName="fixed bottom-8 right-8"
+      mobileClassName="fixed bottom-8 right-8 z-[999]"
+      desktopClassName="fixed bottom-8 right-8 z-[999]"
       items={links}
     />
   );
