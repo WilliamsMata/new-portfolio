@@ -72,7 +72,7 @@ export const BackgroundBeamsWithCollision = ({
     },
   ];
 
-  const { isIntersecting, ref } = useIntersectionObserver();
+  const [ref, isIntersecting] = useIntersectionObserver();
 
   return (
     <div
