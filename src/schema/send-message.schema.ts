@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 // Función de validación personalizada para verificar si el correo es de Gmail o Hotmail
-const isGmailOrHotmail = (email: string) => {
+const isValidEmail = (email: string) => {
   const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
   const hotmailRegex = /^[a-zA-Z0-9._%+-]+@hotmail\.com$/;
   const outlookRegex = /^[a-zA-Z0-9._%+-]+@outlook\.com$/;
@@ -26,7 +26,7 @@ export const sendMessageSchema = z.object({
   email: z
     .string({ message: "Email is required" })
     .email()
-    .refine(isGmailOrHotmail, {
+    .refine(isValidEmail, {
       message: "Invalid email address",
     }),
 

@@ -14,10 +14,7 @@ export default function Header() {
       const currentScrollY = window.scrollY;
       const isScrollingDown = currentScrollY > lastScrollY.current;
 
-      controls.start({
-        y: isScrollingDown ? "-120%" : 0,
-        transition: { duration: 0.2 },
-      });
+      controls.start({ y: isScrollingDown ? "-120%" : 0 });
 
       lastScrollY.current = currentScrollY;
     };
@@ -33,6 +30,7 @@ export default function Header() {
     <motion.header
       className="fixed left-0 right-0 top-0 z-[998] border-b bg-background shadow-md"
       initial={{ y: 0 }}
+      transition={{ duration: 0.2 }}
       animate={controls}
     >
       <div className="container mx-auto flex items-center justify-between px-8 py-2">
