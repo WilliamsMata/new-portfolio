@@ -1,11 +1,11 @@
 "use server";
 
-import { sendMessageSchema } from "@/schema/send-message.schema";
+import { headers } from "next/headers";
 import { z } from "zod";
-import { EmailTemplate } from "@/components/email/send-email-template";
+import { sendMessageSchema } from "@/schema/send-message.schema";
 import { resend } from "@/lib/resend";
 import { dayRateLimiter } from "@/lib/redis";
-import { headers } from "next/headers";
+import { EmailTemplate } from "@/components/email/send-email-template";
 
 type Input = z.infer<typeof sendMessageSchema>;
 
@@ -20,8 +20,10 @@ export async function sendMessage(data: Input) {
 
   const { name, email, message } = result.data;
 
+  const headerStore = headers();
+
   const ip =
-    headers().get("x-forwarded-for") || headers().get("cf-connecting-ip");
+    headerStore.get("x-forwarded-for") || headerStore.get("cf-connecting-ip");
 
   const { success } = await dayRateLimiter.limit(ip ?? email);
 
