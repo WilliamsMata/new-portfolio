@@ -25,7 +25,7 @@ export function SkillImage({
       src={iconPath}
       alt={title}
       fill
-      sizes="(max-width: 768px) 60vw, (max-width: 1200px) 40vw, 33vw"
+      sizes="(max-width: 768px) 60vw, (max-width: 1200px) 33vw, 20vw"
     />
   );
 }
