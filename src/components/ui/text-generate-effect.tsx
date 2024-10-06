@@ -29,7 +29,8 @@ export const TextGenerateEffect = ({
     (count, paragraph) => count + paragraph.split(" ").length,
     0,
   );
-  const animationTime = totalWordsCount * stagerDuration * 1000;
+  const animationTime =
+    totalWordsCount * stagerDuration * 1000 + duration * 1000;
 
   const completeAnimation = () => {
     animate(
