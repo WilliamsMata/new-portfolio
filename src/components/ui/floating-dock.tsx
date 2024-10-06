@@ -15,7 +15,6 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import Link from "next/link";
 import { FC, useRef, useState } from "react";
 
 interface FloatingDockProps {
@@ -70,13 +69,14 @@ const FloatingDockMobile = ({
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
-                <Link
+                <a
                   href={item.href}
                   key={item.title}
+                  target={item.href.startsWith("#") ? undefined : "_blank"}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
                 >
                   <div className="h-4 w-4">{item.icon}</div>
-                </Link>
+                </a>
               </motion.div>
             ))}
           </motion.div>
