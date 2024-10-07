@@ -24,7 +24,7 @@ export const Hero = () => {
 
         <div className="mt-4 max-w-[30rem] text-center">
           <p className="text-base md:text-lg lg:text-xl">
-            I&apos;m a software engineer specialized in building{" "}
+            I&apos;m a software developer specialized in building{" "}
             <Highlight>beautiful, scalable and high-performing</Highlight> web
             and mobile applications.
           </p>
