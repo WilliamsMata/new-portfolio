@@ -37,7 +37,7 @@ export const LinkPreview = ({
   isStatic = false,
   imageSrc = "",
 }: LinkPreviewProps) => {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   let src;
   if (!isStatic) {
@@ -46,7 +46,7 @@ export const LinkPreview = ({
       screenshot: true,
       meta: false,
       embed: "screenshot.url",
-      colorScheme: theme,
+      colorScheme: resolvedTheme ?? "dark",
       "viewport.isMobile": true,
       "viewport.deviceScaleFactor": 1,
       "viewport.width": width * 3,
