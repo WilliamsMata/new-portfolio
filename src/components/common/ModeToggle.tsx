@@ -1,7 +1,8 @@
 "use client";
+
+import { memo, useEffect, useState } from "react";
 import { LaptopIcon, MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,7 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { memo, useEffect, useState } from "react";
 
 function ModeToggleComponent() {
   const [isOpen, setIsOpen] = useState(false);
