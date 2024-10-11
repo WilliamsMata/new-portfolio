@@ -16,16 +16,16 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Williams Mata portfolio",
+  title: "Williams Mata",
   description:
-    "Welcome to the web development portfolio of Williams Mata. I am a skilled fullstack developer with experience creating modern, beautiful and dynamic websites. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together.",
+    "I am a fullstack developer with experience creating modern, beautiful and dynamic websites and mobile apps. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together.",
   openGraph: {
     type: "website",
-    title: "Williams Mata portfolio",
+    title: "Williams Mata",
     description:
-      "Welcome to the web development portfolio of Williams Mata. I am a skilled fullstack developer with experience creating modern, beautiful and dynamic websites. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together.",
+      "I am a fullstack developer with experience creating modern, beautiful and dynamic websites and mobile apps. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together.",
     url: "https://williamsmata.com",
-    siteName: "Williams Mata portfolio",
+    siteName: "Williams Mata Rojas",
   },
 };
 
