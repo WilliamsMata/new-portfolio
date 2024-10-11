@@ -23,10 +23,16 @@ interface ToastOptions {
 
 export class Toaster {
   static success(message: string, options?: ToastOptions) {
-    toast.success(message, options);
+    toast.success(message, {
+      position: "bottom-left",
+      ...options,
+    });
   }
 
   static error(message: string, options?: ToastOptions) {
-    toast.error(message, options);
+    toast.error(message, {
+      position: "bottom-left",
+      ...options,
+    });
   }
 }

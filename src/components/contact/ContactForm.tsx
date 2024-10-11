@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -16,9 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { sendMessageSchema } from "@/schema/send-message.schema";
 import { sendMessage } from "@/actions/sendMessage";
-import { motion } from "framer-motion";
 import { Toaster } from "@/adapter/sonner.adapter";
-import { useState } from "react";
 
 export default function ContactForm() {
   const [disableByLimit, setDisableByLimit] = useState(false);
@@ -41,34 +41,19 @@ export default function ContactForm() {
         : "Send Message";
 
   async function onSubmit(values: z.infer<typeof sendMessageSchema>) {
-    const { errors } = await sendMessage(values);
+    const { error } = await sendMessage(values);
 
-    if (errors) {
-      const error =
-        typeof errors === "string"
-          ? errors
-          : Object.values(errors)
-              .flatMap((e) => e)
-              .join(", ");
-
-      Toaster.error(error, { position: "bottom-left" });
-
-      if (error.includes("reached the limit")) {
-        setDisableByLimit(true);
-        setTimeout(
-          () => {
-            setDisableByLimit(false);
-          },
-          1000 * 60 * 5,
-        );
-      }
-
-      return;
+    if (!error) {
+      Toaster.success("Message sent successfully");
+      return form.reset();
     }
 
-    Toaster.success("Message sent successfully", { position: "bottom-left" });
+    Toaster.error(error);
 
-    form.reset();
+    if (error.includes("reached the limit")) {
+      setDisableByLimit(true);
+      setTimeout(() => setDisableByLimit(false), 1000 * 60 * 5);
+    }
   }
 
   return (

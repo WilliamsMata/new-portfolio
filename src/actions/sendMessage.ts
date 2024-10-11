@@ -14,7 +14,7 @@ export async function sendMessage(data: Input) {
 
   if (!result.success) {
     return {
-      errors: result.error.flatten().fieldErrors,
+      error: result.error.message,
     };
   }
 
@@ -29,7 +29,7 @@ export async function sendMessage(data: Input) {
 
   if (!success) {
     return {
-      errors: "You have reached the limit of 3 emails per day",
+      error: "You have reached the limit of 3 emails per day",
     };
   }
 
@@ -43,7 +43,7 @@ export async function sendMessage(data: Input) {
   if (error) {
     console.error(error);
     return {
-      errors: error.message,
+      error: error.message,
     };
   }
 
