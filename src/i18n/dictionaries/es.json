@@ -384,5 +384,268 @@
       }
     ],
     "learnMore": "Aprende más"
+  },
+  "projects": {
+    "title": "Mis proyectos",
+    "description": "Sólo los proyectos personales se muestran aquí. Estos no son todos los que tengo, puedes encontrar más en mi",
+    "projects": [
+      {
+        "title": "Breezili",
+        "description": "Breezili es una red social diseñada para publicar diferentes lugares turísticos, donde la gente puede reseñarlos y puntuarlos. Cuenta con un panel de configuración, edición de usuarios y un panel de administración donde puedes añadir nuevas publicaciones y gestionar usuarios.",
+        "githubUrl": "https://github.com/WilliamsMata/breezili",
+        "projectUrl": "https://breezili.com/",
+        "imagePath": "/projects/breezili.jpg",
+        "projectTech": [
+          {
+            "title": "NextJS",
+            "color": "#00d9fe"
+          },
+          {
+            "title": "Tailwind",
+            "color": "#00bdf7"
+          },
+          {
+            "title": "Prisma",
+            "color": "#60a5fa"
+          },
+          {
+            "title": "NextAuth",
+            "color": "#d03be6"
+          },
+          {
+            "title": "tRPC",
+            "color": "#f87171"
+          },
+          {
+            "title": "PostgreSQL",
+            "color": "#1486e0"
+          },
+          {
+            "title": "Redis",
+            "color": "#ff4278"
+          }
+        ]
+      },
+      {
+        "title": "Teslo Shop",
+        "description": "Este proyecto de e-commerce es una réplica de la tienda en línea de Tesla, pero centrada en la venta de ropa para hombres, mujeres y niños. Además de ropa, el sitio web podría ofrecer accesorios como gorras, mochilas y mucho más. La web tendría paneles administrativos para gestionar el inventario, las ventas y el envío de los productos. Los clientes podrían comprar por Internet y utilizar PayPal para realizar pagos seguros y fiables.",
+        "githubUrl": "https://github.com/WilliamsMata/ecommerce",
+        "imagePath": "/projects/teslo-shop.png",
+        "projectUrl": "https://ecommerce.williamsmata.com/",
+        "projectTech": [
+          {
+            "title": "NextJS",
+            "color": "#00d9fe"
+          },
+          {
+            "title": "MUI",
+            "color": "#007ffd"
+          },
+          {
+            "title": "Prisma",
+            "color": "#60a5fa"
+          },
+          {
+            "title": "NextAuth",
+            "color": "#d03be6"
+          },
+          {
+            "title": "PayPal",
+            "color": "#0096d4"
+          },
+          {
+            "title": "MySQL",
+            "color": "#f9bd29"
+          }
+        ]
+      },
+      {
+        "title": "App de clima",
+        "description": "Esta aplicación de clima proporciona información en tiempo real sobre el tiempo en la ubicación actual del usuario o en cualquier ubicación especificada. La aplicación muestra la temperatura actual, la probabilidad de lluvia, la velocidad del viento y otros datos meteorológicos relevantes. Los usuarios también pueden ver las previsiones horarias y diarias.",
+        "githubUrl": "https://github.com/WilliamsMata/weather-app",
+        "imagePath": "/projects/weather-app.png",
+        "projectUrl": "https://weatherapp.williamsmata.com",
+        "projectTech": [
+          {
+            "title": "SolidJS",
+            "color": "#00d9fe"
+          },
+          {
+            "title": "Tailwind",
+            "color": "#00bdf7"
+          },
+          {
+            "title": "TanStack Query",
+            "color": "#f87171"
+          },
+          {
+            "title": "Solid Router",
+            "color": "#d03be6"
+          }
+        ]
+      },
+      {
+        "title": "Calendar.io",
+        "description": "Esta aplicación de calendario permite a los usuarios crear y gestionar eventos fácilmente. Los usuarios pueden iniciar sesión en la aplicación y añadir eventos a su calendario y establecer recordatorios. La aplicación ofrece varias vistas, como la diaria, la semanal y la mensual, que facilitan la visualización de los próximos eventos.",
+        "githubUrl": "https://github.com/WilliamsMata/calendar-app",
+        "imagePath": "/projects/calendario.png",
+        "projectUrl": "https://calendario.williamsmata.com/",
+        "projectTech": [
+          {
+            "title": "ReactJS",
+            "color": "#00d9fe"
+          },
+          {
+            "title": "Tailwind",
+            "color": "#00bdf7"
+          },
+          {
+            "title": "Redux",
+            "color": "#a855f7"
+          },
+          {
+            "title": "ExpressJS",
+            "color": "#d03be6"
+          },
+          {
+            "title": "MongoDB",
+            "color": "#00a142"
+          }
+        ]
+      },
+      {
+        "title": "NestJS Microservicios de productos",
+        "description": "Este proyecto es un backend de microservicios que proporciona una API RESTful para la gestión de productos, auth, pagos y pedidos. Los microservicios están construido con NestJS y utilizan MongoDB, Postgresql y mysql como base de datos.",
+        "imagePath": "/projects/microservices.png",
+        "githubUrl": "https://github.com/nest-microservices-williams/products-launcher",
+        "projectUrl": "https://github.com/nest-microservices-williams/products-launcher",
+        "projectTech": [
+          {
+            "title": "NestJS",
+            "color": "#00d9fe"
+          },
+          {
+            "title": "Prisma",
+            "color": "#60a5fa"
+          },
+          {
+            "title": "Docker",
+            "color": "#0db7ed"
+          },
+          {
+            "title": "PostgreSQL",
+            "color": "#1486e0"
+          },
+          {
+            "title": "SQLite",
+            "color": "#f9bd29"
+          },
+          {
+            "title": "MongoDB",
+            "color": "#00a142"
+          },
+          {
+            "title": "NATS",
+            "color": "#ff0000"
+          },
+          {
+            "title": "Stripe",
+            "color": "#008cdd"
+          }
+        ]
+      },
+      {
+        "title": "Pokedex",
+        "description": "Este proyecto react native es una Pokedex que permite a los usuarios buscar Pokemon por su nombre. La aplicación muestra información detallada sobre cada Pokemon, incluyendo sus habilidades, estadísticas, pokemon anteriores y siguientes.",
+        "githubUrl": "https://github.com/WilliamsMata/pokedex-app",
+        "projectUrl": "https://github.com/WilliamsMata/pokedex-app",
+        "imagePath": "/projects/pokedex.jpg",
+        "projectTech": [
+          {
+            "title": "React Native",
+            "color": "#00d9fe"
+          },
+          {
+            "title": "React Navigation",
+            "color": "#00bdf7"
+          },
+          {
+            "title": "TanStack Query",
+            "color": "#f87171"
+          },
+          {
+            "title": "react native paper",
+            "color": "#00bdf7"
+          }
+        ]
+      },
+      {
+        "title": "Piedras, papel o tijeras",
+        "description": "Este es mi primer proyecto, el clásico juego de piedra, papel o tijera. El usuario juega contra el ordenador, que elige una opción al azar. El proyecto es un reto 'FrontEnd Mentor' de dificultad avanzada.",
+        "githubUrl": "https://github.com/WilliamsMata/rockpaperscissors",
+        "imagePath": "/projects/rock-paper-scissors.png",
+        "projectUrl": "https://rockpaperscissors.williamsmata.com/",
+        "projectTech": [
+          {
+            "title": "HTML",
+            "color": "#f8652c"
+          },
+          {
+            "title": "SASS",
+            "color": "#cf6895"
+          },
+          {
+            "title": "JavaScript",
+            "color": "#f8dd2e"
+          }
+        ]
+      },
+      {
+        "title": "Telegram Karma Bot",
+        "description": "Karma Bot es un sencillo bot de Telegram para el seguimiento de puntos de karma en un chat de grupo. Los usuarios pueden darse puntos de karma unos a otros respondiendo a los mensajes con +1 o -1. El bot también proporciona comandos para comprobar la puntuación de karma actual de un usuario y para ver una tabla de clasificación de los usuarios con más karma. Construido con Node.js y MongoDB.",
+        "imagePath": "/projects/karma-bot.png",
+        "githubUrl": "https://github.com/WilliamsMata/karma_bot",
+        "projectUrl": "https://t.me/karma_tg_bot",
+        "projectTech": [
+          {
+            "title": "NodeJS",
+            "color": "#00d9fe"
+          },
+          {
+            "title": "Telegraf",
+            "color": "#00bdf7"
+          },
+          {
+            "title": "MongoDB",
+            "color": "#00a142"
+          }
+        ]
+      },
+      {
+        "title": "Telegram Trading bot",
+        "description": "Este proyecto es un bot de trading que utiliza la API de Binance para comprar y vender criptodivisas. El bot utiliza el análisis técnico para tomar decisiones y enviar alertas a un bot de telegram.",
+        "imagePath": "/projects/trading-bot.png",
+        "githubUrl": "https://github.com/WilliamsMata/nestjs-trading-bot.git",
+        "projectUrl": "https://t.me/trading_test_vzla_bot",
+        "projectTech": [
+          {
+            "title": "NestJS",
+            "color": "#00d9fe"
+          },
+          {
+            "title": "MongoDB",
+            "color": "#00a142"
+          },
+          {
+            "title": "Binance API",
+            "color": "#f9bd29"
+          },
+          {
+            "title": "Telegram",
+            "color": "#0088cc"
+          }
+        ]
+      }
+    ]
   }
 }

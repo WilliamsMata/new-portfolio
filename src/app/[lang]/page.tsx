@@ -7,7 +7,7 @@ import { Hero } from "@/components/views/Hero";
 import { Projects } from "@/components/views/Projects";
 import { Skills } from "@/components/views/Skills";
 import { getDictionary } from "@/i18n/getDictionary";
-import { Locale } from "@/i18n/i18n-config";
+import type { Locale } from "@/i18n/i18n-config";
 
 export default async function Home({
   params: { lang },
@@ -29,7 +29,7 @@ export default async function Home({
 
             <Skills dictionary={dictionary.skills} />
 
-            <Projects />
+            <Projects dictionary={dictionary.projects} />
 
             <Contact />
           </div>
