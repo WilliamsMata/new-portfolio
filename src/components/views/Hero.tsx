@@ -1,10 +1,19 @@
+import type { FC } from "react";
+import type { Dictionary } from "@/i18n/getDictionary";
+import { FileIcon } from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import { FlipWords } from "../ui/flip-words";
-import { FileIcon } from "@radix-ui/react-icons";
 
 const words = ["Frontend", "Backend", "Mobile"];
 
-export const Hero = () => {
+interface HeroProps {
+  dictionary: Dictionary["hero"];
+}
+
+export const Hero: FC<HeroProps> = ({ dictionary }) => {
+  const { title, description } = dictionary;
+
   return (
     <HeroHighlight containerClassName="h-screen">
       <section className="flex flex-col items-center justify-center px-4 text-4xl sm:text-5xl md:text-6xl">
@@ -17,16 +26,20 @@ export const Hero = () => {
         <div className="inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
         <div className="inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
 
-        <div className="flex items-center">
+        <div
+          className={cn(
+            "flex items-center",
+            title.developer === "Desarrollador" && "flex-row-reverse",
+          )}
+        >
           <FlipWords words={words} duration={1500} />
-          <span>Developer</span>
+          <span>{title.developer}</span>
         </div>
 
         <div className="mt-4 max-w-[30rem] text-center">
           <p className="text-base md:text-lg lg:text-xl">
-            I&apos;m a software developer specialized in building{" "}
-            <Highlight>beautiful, scalable and high-performing</Highlight> web
-            and mobile applications.
+            {description.first} <Highlight>{description.highlight}</Highlight>{" "}
+            {description.second}
           </p>
         </div>
 
@@ -38,7 +51,7 @@ export const Hero = () => {
           >
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500" />
             <span className="group relative flex items-center rounded-[6px] bg-background px-8 py-2 text-base transition duration-200 hover:bg-transparent">
-              Resume
+              {dictionary.resume}
               <FileIcon className="ml-2 h-5 w-5" />
             </span>
           </a>

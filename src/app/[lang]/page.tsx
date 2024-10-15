@@ -6,14 +6,22 @@ import { Contact } from "@/components/views/Contact";
 import { Hero } from "@/components/views/Hero";
 import { Projects } from "@/components/views/Projects";
 import { Skills } from "@/components/views/Skills";
+import { getDictionary } from "@/i18n/getDictionary";
+import { Locale } from "@/i18n/i18n-config";
 
-export default function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}) {
+  const dictionary = await getDictionary(lang);
+
   return (
     <div className="flex min-h-screen flex-col font-[family-name:var(--font-geist-sans)]">
       <Header />
 
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <Hero />
+        <Hero dictionary={dictionary.hero} />
 
         <TracingBeam>
           <div className="flex flex-col gap-12">

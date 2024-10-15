@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "title": {
+      "developer": "Developer"
+    },
+    "description": {
+      "first": "I'm a software developer specialized in building",
+      "highlight": "beautiful, scalable and high-performing",
+      "second": "web and mobile applications."
+    },
+    "resume": "Resume"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "title": {
+      "developer": "Desarrollador"
+    },
+    "description": {
+      "first": "Soy un desarrollador de software especializado en crear aplicaciones web y móviles",
+      "highlight": "modernas, escalables y de alto rendimiento.",
+      "second": ""
+    },
+    "resume": "Curriculum"
+  }
+}
