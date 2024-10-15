@@ -24,7 +24,10 @@
       "highlight": "beautiful, scalable and high-performing",
       "second": "web and mobile applications."
     },
-    "resume": "Resume"
+    "resume": {
+      "title": "Resume",
+      "path": "/files/resume.pdf"
+    }
   },
   "about": {
     "title": "About Me",

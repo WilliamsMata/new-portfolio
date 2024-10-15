@@ -12,7 +12,7 @@ interface HeroProps {
 }
 
 export const Hero: FC<HeroProps> = ({ dictionary }) => {
-  const { title, description } = dictionary;
+  const { title, description, resume } = dictionary;
 
   return (
     <HeroHighlight containerClassName="h-screen">
@@ -45,13 +45,13 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
 
         <div className="mt-4">
           <a
-            href="/files/resume.pdf"
+            href={resume.path}
             className="relative block p-[3px]"
             target="_blank"
           >
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500" />
             <span className="group relative flex items-center rounded-[6px] bg-background px-8 py-2 text-base transition duration-200 hover:bg-transparent">
-              {dictionary.resume}
+              {resume.title}
               <FileIcon className="ml-2 h-5 w-5" />
             </span>
           </a>

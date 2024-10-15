@@ -24,7 +24,10 @@
       "highlight": "modernas, escalables y de alto rendimiento.",
       "second": ""
     },
-    "resume": "Curriculum"
+    "resume": {
+      "title": "Curriculum",
+      "path": "/files/curriculum.pdf"
+    }
   },
   "about": {
     "title": "Sobre mí",
