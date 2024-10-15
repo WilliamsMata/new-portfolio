@@ -19,9 +19,16 @@ import { Input } from "@/components/ui/input";
 import { sendMessageSchema } from "@/schema/send-message.schema";
 import { sendMessage } from "@/actions/sendMessage";
 import { Toaster } from "@/adapter/sonner.adapter";
+import type { Dictionary } from "@/i18n/getDictionary";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  dictionary: Dictionary["contact"]["form"];
+}
+
+export default function ContactForm({ dictionary }: ContactFormProps) {
   const [disableByLimit, setDisableByLimit] = useState(false);
+
+  const { button: dictionaryButton, form: dictionaryForm, action } = dictionary;
 
   const form = useForm<z.infer<typeof sendMessageSchema>>({
     resolver: zodResolver(sendMessageSchema),
@@ -33,27 +40,29 @@ export default function ContactForm() {
   });
 
   const buttonMessage = form.formState.isSubmitting
-    ? "Sending..."
+    ? dictionaryButton.sending
     : disableByLimit
-      ? "You have reached the limit"
+      ? dictionaryButton.limitReached
       : form.formState.isSubmitSuccessful
-        ? "Message sent successfully"
-        : "Send Message";
+        ? dictionaryButton.submitted
+        : dictionaryButton.submit;
 
   async function onSubmit(values: z.infer<typeof sendMessageSchema>) {
-    const { error } = await sendMessage(values);
+    const { error, getLimit } = await sendMessage(values);
 
     if (!error) {
-      Toaster.success("Message sent successfully");
+      Toaster.success(dictionaryButton.submitted);
       return form.reset();
     }
 
-    Toaster.error(error);
-
-    if (error.includes("reached the limit")) {
+    if (getLimit) {
+      Toaster.error(action.errors.limitReached);
       setDisableByLimit(true);
       setTimeout(() => setDisableByLimit(false), 1000 * 60 * 5);
+      return;
     }
+
+    Toaster.error(error);
   }
 
   return (
@@ -64,7 +73,7 @@ export default function ContactForm() {
           name="name"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Your name</FormLabel>
+              <FormLabel>{dictionaryForm.name.label}</FormLabel>
               <FormControl>
                 <motion.div
                   animate={
@@ -72,10 +81,23 @@ export default function ContactForm() {
                   }
                   transition={{ duration: 0.5 }}
                 >
-                  <Input placeholder="John Doe" {...field} />
+                  <Input
+                    placeholder={dictionaryForm.name.placeholder}
+                    {...field}
+                  />
                 </motion.div>
               </FormControl>
-              <FormMessage />
+              {fieldState.error && (
+                <FormMessage>
+                  {
+                    dictionaryForm.name.errors[
+                      fieldState.error.type === "too_small"
+                        ? "tooSmall"
+                        : "tooBig"
+                    ]
+                  }
+                </FormMessage>
+              )}
             </FormItem>
           )}
         />
@@ -85,7 +107,7 @@ export default function ContactForm() {
           name="email"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Your email</FormLabel>
+              <FormLabel>{dictionaryForm.email.label}</FormLabel>
               <FormControl>
                 <motion.div
                   animate={
@@ -93,10 +115,15 @@ export default function ContactForm() {
                   }
                   transition={{ duration: 0.5 }}
                 >
-                  <Input placeholder="john@example.com" {...field} />
+                  <Input
+                    placeholder={dictionaryForm.email.placeholder}
+                    {...field}
+                  />
                 </motion.div>
               </FormControl>
-              <FormMessage />
+              {fieldState.error && (
+                <FormMessage>{dictionaryForm.email.errors.invalid}</FormMessage>
+              )}
             </FormItem>
           )}
         />
@@ -106,7 +133,7 @@ export default function ContactForm() {
           name="message"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Your message</FormLabel>
+              <FormLabel>{dictionaryForm.message.label}</FormLabel>
               <FormControl>
                 <motion.div
                   animate={
@@ -114,10 +141,23 @@ export default function ContactForm() {
                   }
                   transition={{ duration: 0.5 }}
                 >
-                  <Textarea placeholder="Your message here..." {...field} />
+                  <Textarea
+                    placeholder={dictionaryForm.message.placeholder}
+                    {...field}
+                  />
                 </motion.div>
               </FormControl>
-              <FormMessage />
+              {fieldState.error && (
+                <FormMessage>
+                  {
+                    dictionaryForm.message.errors[
+                      fieldState.error.type === "too_small"
+                        ? "tooSmall"
+                        : "tooBig"
+                    ]
+                  }
+                </FormMessage>
+              )}
             </FormItem>
           )}
         />

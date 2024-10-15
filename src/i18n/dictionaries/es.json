@@ -647,5 +647,50 @@
         ]
       }
     ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "card": {
+      "title": "Ponte en contacto conmigo",
+      "description": "Envíeme un mensaje y le responderé lo antes posible."
+    },
+    "form": {
+      "button": {
+        "sending": "Enviando...",
+        "limitReached": "Has alcanzado el límite",
+        "submitted": "Mensaje enviado correctamente",
+        "submit": "Enviar"
+      },
+      "form": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Nombre",
+          "errors": {
+            "tooSmall": "El nombre es demasiado corto",
+            "tooBig": "El nombre es demasiado largo"
+          }
+        },
+        "email": {
+          "label": "Correo electrónico",
+          "placeholder": "correo@ejemplo.com",
+          "errors": {
+            "invalid": "Correo electrónico no válido"
+          }
+        },
+        "message": {
+          "label": "Mensaje",
+          "placeholder": "Tu mensaje aquí...",
+          "errors": {
+            "tooSmall": "El mensaje es demasiado corto",
+            "tooBig": "El mensaje es demasiado largo"
+          }
+        }
+      },
+      "action": {
+        "errors": {
+          "limitReached": "Has alcanzado el límite de 3 correos al dia"
+        }
+      }
+    }
   }
 }

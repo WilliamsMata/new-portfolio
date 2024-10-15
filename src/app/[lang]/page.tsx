@@ -31,7 +31,7 @@ export default async function Home({
 
             <Projects dictionary={dictionary.projects} />
 
-            <Contact />
+            <Contact dictionary={dictionary.contact} />
           </div>
         </TracingBeam>
       </main>

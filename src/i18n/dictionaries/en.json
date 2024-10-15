@@ -647,5 +647,50 @@
         ]
       }
     ]
+  },
+  "contact": {
+    "title": "Contact",
+    "card": {
+      "title": "Get in touch",
+      "description": "Send me a message and I'll get back to you as soon as possible."
+    },
+    "form": {
+      "button": {
+        "sending": "Sending...",
+        "limitReached": "You have reached the limit",
+        "submitted": "Message sent successfully",
+        "submit": "Send Message"
+      },
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Name",
+          "errors": {
+            "tooSmall": "Name is too short",
+            "tooBig": "Name is too long"
+          }
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "email@example.com",
+          "errors": {
+            "invalid": "Invalid email"
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Your message here...",
+          "errors": {
+            "tooSmall": "Message is too short",
+            "tooBig": "Message is too long"
+          }
+        }
+      },
+      "action": {
+        "errors": {
+          "limitReached": "You have reached the limit of 3 emails per day"
+        }
+      }
+    }
   }
 }
