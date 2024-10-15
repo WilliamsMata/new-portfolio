@@ -42,13 +42,21 @@ export const useSkillModal = () => {
   return context;
 };
 
-export const SkillModal: FC<PropsWithChildren> = ({ children }) => {
+interface SkillModalProps {
+  children: React.ReactNode;
+  learnMoreText: string;
+}
+
+export const SkillModal: FC<SkillModalProps> = ({
+  children,
+  learnMoreText,
+}) => {
   return (
     <SkillModalProvider>
       <Modal>
         {children}
         <SkillModalBody>
-          <SkillModalContent />
+          <SkillModalContent learnMoreText={learnMoreText} />
         </SkillModalBody>
       </Modal>
     </SkillModalProvider>
@@ -91,7 +99,13 @@ export const SkillModalBody: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export const SkillModalContent = () => {
+interface SkillModalContentProps {
+  learnMoreText: string;
+}
+
+export const SkillModalContent: FC<SkillModalContentProps> = ({
+  learnMoreText,
+}) => {
   const { activeSkill } = useSkillModal();
   return (
     <ModalContent className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-white dark:bg-neutral-950">
@@ -122,7 +136,7 @@ export const SkillModalContent = () => {
               "flex items-center self-end transition-transform active:scale-90",
             )}
           >
-            Learn more <BoxArrowUp className="mb-1 ml-2 h-4 w-4" />
+            {learnMoreText} <BoxArrowUp className="mb-1 ml-2 h-4 w-4" />
           </a>
         </div>
       )}

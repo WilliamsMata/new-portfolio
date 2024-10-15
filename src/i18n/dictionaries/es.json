@@ -26,5 +26,363 @@
   "about": {
     "title": "Sobre mí",
     "text": "Soy un desarrollador full-stack especializado en la creación de aplicaciones web y móviles que ofrecen experiencias de usuario optimizadas y eficientes. Con más de 2 años de experiencia en desarrollo de software, he trabajado tanto en proyectos independientes como en equipos multidisciplinares. Mi enfoque abarca desde la creación de interfaces intuitivas en el frontend hasta la implementación de arquitecturas robustas y escalables en el backend. \n Tengo un profundo interés por las tecnologías emergentes y siempre busco mejorar mis habilidades a través de nuevos retos y del aprendizaje continuo. Mi objetivo es crear soluciones tecnológicas innovadoras que no solo cumplan los requisitos empresariales, sino que superen las expectativas de los usuarios."
+  },
+  "skills": {
+    "title": "Mis conocimientos",
+    "skills": [
+      {
+        "title": "Lenguajes",
+        "skillsData": [
+          {
+            "title": "HTML",
+            "iconPath": "/icons/html5.svg",
+            "url": "https://developer.mozilla.org/es/docs/Glossary/HTML",
+            "description": "HTML (Hypertext Markup Language) es un lenguaje de marcado utilizado para crear páginas web. Permite definir la estructura y el contenido de una página web mediante etiquetas y atributos que indican cómo deben mostrarse los elementos en un navegador web. HTML es la base de la mayoría de las páginas web de Internet y se utiliza junto con otros lenguajes como CSS y JavaScript para crear sitios web dinámicos e interactivos. Las últimas versiones de HTML incluyen nuevas funciones como multimedia, gráficos y animaciones para mejorar la experiencia del usuario en la web."
+          },
+          {
+            "title": "CSS",
+            "iconPath": "/icons/css.svg",
+            "url": "https://developer.mozilla.org/es/docs/Web/CSS",
+            "description": "CSS (Cascading Style Sheets) es un lenguaje de hojas de estilo utilizado para describir la presentación de una página web. Permite controlar el diseño, la tipografía, el color y otros aspectos visuales de una página web independientemente del contenido. CSS se utiliza junto con HTML para crear páginas web visualmente atractivas y con capacidad de respuesta. Permite a los desarrolladores web crear diseños coherentes y eficaces para las páginas web, y también facilita el mantenimiento y la actualización de los estilos de las páginas web. Con CSS se pueden crear diseños complejos y efectos dinámicos, lo que lo convierte en una herramienta esencial para crear un diseño web moderno."
+          },
+          {
+            "title": "JavaScript",
+            "iconPath": "/icons/javascript.svg",
+            "url": "https://developer.mozilla.org/es/docs/Web/javascript",
+            "description": "JavaScript es un lenguaje de programación de alto nivel orientado a objetos que se utiliza para crear sitios web interactivos y dinámicos. Junto con HTML y CSS, es una de las tres tecnologías básicas para crear páginas web. JavaScript permite a los desarrolladores web añadir interactividad y comportamiento a las páginas web, como responder a las entradas del usuario, actualizar contenidos dinámicamente y crear animaciones y efectos visuales. También se utiliza para crear aplicaciones web, programación del lado del servidor y desarrollo de juegos."
+          },
+          {
+            "title": "TypeScript",
+            "iconPath": "/icons/typescript.svg",
+            "url": "https://www.typescriptlang.org/",
+            "description": "TypeScript es un superconjunto de JavaScript que añade tipado estático opcional al lenguaje. Está diseñado para que las aplicaciones JavaScript a gran escala sean más manejables y fáciles de mantener. TypeScript permite detectar errores y fallos en tiempo de compilación en lugar de en tiempo de ejecución, lo que puede ayudar a los desarrolladores a escribir código más fiable. También admite funciones como clases, interfaces y módulos, que facilitan la escritura de código orientado a objetos y fomentan la reutilización del código. TypeScript puede compilarse en JavaScript plano, por lo que puede ejecutarse en cualquier navegador o dispositivo compatible con JavaScript."
+          },
+          {
+            "title": "SQL",
+            "iconPath": "/icons/sql.svg",
+            "url": "https://es.wikipedia.org/wiki/SQL",
+            "description": "SQL (Structured Query Language) es un lenguaje estándar utilizado para gestionar y manipular bases de datos relacionales. Permite crear, modificar y consultar bases de datos y sus tablas, que almacenan datos de forma estructurada. SQL se utiliza para realizar diversas operaciones en bases de datos, como insertar, actualizar y eliminar datos, así como recuperar datos de una o varias tablas mediante consultas complejas. SQL es esencial para gestionar datos en casi todos los tipos de aplicaciones web y se utiliza ampliamente en sectores como las finanzas, la sanidad y el comercio electrónico. Existen varias implementaciones de SQL, como MySQL, PostgreSQL, Oracle y Microsoft SQL Server."
+          }
+        ]
+      },
+      {
+        "title": "Frameworks",
+        "skillsData": [
+          {
+            "title": "React",
+            "iconPath": "/icons/react.svg",
+            "url": "https://react.dev/",
+            "description": "ReactJS es una popular biblioteca JavaScript utilizada para crear interfaces de usuario. Fue desarrollada por Facebook y su uso se ha extendido entre la comunidad de desarrolladores web. React permite a los desarrolladores crear componentes de interfaz de usuario reutilizables y gestionar el estado de estos componentes de forma predecible y eficiente. Utiliza un DOM (Document Object Model) virtual para actualizar y representar los cambios en la interfaz de usuario, lo que lo hace más rápido y eficiente que los métodos tradicionales."
+          },
+          {
+            "title": "Next",
+            "iconPath": "/icons/next.svg",
+            "url": "https://nextjs.org/",
+            "description": "Next.js es un popular fullstack-framework JavaScript de código abierto utilizado para construir aplicaciones React renderizadas del lado del servidor (SSR) y generadas estáticamente (SSG). Proporciona un conjunto de herramientas y funciones que simplifican el desarrollo de aplicaciones web complejas, incluida la división automática del código, la renderización del lado del servidor y la generación estática de sitios.",
+            "needInvertColor": true
+          },
+          {
+            "title": "Solid",
+            "iconPath": "/icons/solid.svg",
+            "url": "https://www.solidjs.com/",
+            "description": "SolidJS es una moderna biblioteca JavaScript para crear interfaces de usuario reactivas. Está diseñada para ser sencilla, rápida y escalable, y proporciona una pequeña superficie API y un motor de renderizado ligero. SolidJS utiliza un modelo de programación reactivo, lo que significa que la interfaz de usuario se actualiza automáticamente en respuesta a los cambios en el estado de la aplicación. A diferencia de otras bibliotecas frontales populares, SolidJS no utiliza un DOM virtual, sino que se basa en un enfoque de renderizado ligero e incremental basado en DOM, que mejora el rendimiento y reduce el uso de memoria."
+          },
+          {
+            "title": "Astro",
+            "iconPath": "/icons/astro.svg",
+            "url": "https://astro.build/",
+            "description": "Astro es el framework web todo en uno diseñado para la velocidad. Extraiga su contenido desde cualquier lugar e impleméntelo en todas partes, todo ello potenciado por sus componentes y bibliotecas de interfaz de usuario favoritos. Astro optimiza su sitio web como ningún otro framework puede hacerlo. Aproveche la arquitectura de frontend cero-JS única de Astro para desbloquear mayores tasas de conversión con mejor SEO."
+          },
+          {
+            "title": "Nest",
+            "iconPath": "/icons/nest.svg",
+            "url": "https://nestjs.com/",
+            "description": "NestJS es un framework backend para construir aplicaciones del lado del servidor escalables y eficientes con Node.js. Está construido sobre Express.js y utiliza TypeScript para proporcionar una arquitectura robusta y modular para el desarrollo de aplicaciones web complejas. NestJS proporciona un conjunto de características y herramientas, como inyección de dependencias, middleware y soporte integrado para GraphQL, que facilitan la creación de aplicaciones web escalables y mantenibles."
+          },
+          {
+            "title": "Express",
+            "iconPath": "/icons/express.svg",
+            "url": "https://expressjs.com/",
+            "description": "ExpressJS es un popular framework de aplicaciones web backend para Node.js. Proporciona un conjunto de funciones y herramientas para crear aplicaciones web y API, como enrutamiento, middleware y utilidades HTTP. Con ExpressJS, los desarrolladores pueden crear aplicaciones web robustas y escalables con un código mínimo. También es compatible con varios motores de plantillas, como EJS y Pug, para generar páginas HTML dinámicas. Es conocido por su sencillez, flexibilidad y facilidad de uso.",
+            "needInvertColor": true
+          }
+        ]
+      },
+      {
+        "title": "Frontend",
+        "skillsData": [
+          {
+            "title": "Tailwind",
+            "iconPath": "/icons/tailwind.svg",
+            "url": "https://tailwindcss.com/",
+            "description": "Tailwind CSS es un popular framework CSS que se utiliza para crear interfaces de usuario modernas y adaptables. Proporciona un conjunto de clases CSS predefinidas que pueden utilizarse para dar estilo a elementos HTML y crear diseños complejos sin necesidad de escribir CSS personalizado. Con Tailwind CSS, los desarrolladores pueden crear rápida y fácilmente diseños coherentes y visualmente atractivos para aplicaciones web. También incluye un sistema de cuadrícula adaptable y soporte para personalizar temas y paletas de colores."
+          },
+          {
+            "title": "Material UI",
+            "iconPath": "/icons/mui.svg",
+            "url": "https://mui.com/",
+            "description": "Material UI es un popular framework frontend basado en React que proporciona un conjunto de componentes y estilos React preconstruidos basados en las directrices de Material Design de Google. Permite a los desarrolladores crear de forma rápida y sencilla interfaces de usuario modernas y adaptables con el mínimo esfuerzo. Material UI incluye una variedad de componentes como botones, formularios, menús e iconos, así como un potente sistema de temas que permite personalizar fácilmente el aspecto de la aplicación."
+          },
+          {
+            "title": "Chakra UI",
+            "iconPath": "/icons/chakra-ui.svg",
+            "url": "https://chakra-ui.com/",
+            "description": "Chakra UI es una popular biblioteca de componentes de React que proporciona un conjunto de componentes de interfaz de usuario accesibles y personalizables para crear aplicaciones web. Está diseñada para ser simple, modular y con soporte a temas, e incluye una variedad de componentes como botones, formularios, modales y barras de navegación. Chakra UI también proporciona un potente sistema de temas que permite a los desarrolladores personalizar fácilmente el aspecto de los componentes para adaptarlos al diseño de su aplicación.",
+            "needInvertColor": true
+          },
+          {
+            "title": "Radix UI",
+            "iconPath": "/icons/radix-ui.svg",
+            "url": "https://www.radix-ui.com/",
+            "description": "Radix UI es una colección de componentes de interfaz de usuario modulares y de bajo nivel para crear sistemas de diseño y aplicaciones web. Proporciona un conjunto de componentes accesibles y personalizables que pueden utilizarse para crear interfaces de usuario complejas con el mínimo esfuerzo. Los componentes de Radix UI están diseñados para no tener estilo por defecto, lo que permite a los desarrolladores personalizar fácilmente la apariencia y el comportamiento de los componentes para que coincidan con el diseño de su aplicación. Radix UI también proporciona un conjunto de utilidades y herramientas para crear aplicaciones web accesibles y con capacidad de respuesta.",
+            "needInvertColor": true
+          },
+          {
+            "title": "Tanstack Query",
+            "iconPath": "/icons/tanstack-query.svg",
+            "url": "https://react-query.tanstack.com/",
+            "description": "Tanstack Query es una popular librería utilizada para gestionar el estado del servidor en aplicaciones React. Proporciona un conjunto de ganchos y utilidades que simplifican el proceso de obtención, almacenamiento en caché y actualización de datos de API remotas. React Query proporciona una API intuitiva y declarativa para realizar solicitudes de red que admite funciones como la paginación, el almacenamiento en caché y la gestión de errores. También se integra bien con otras bibliotecas y frameworks populares, como Redux, GraphQL y TypeScript."
+          },
+          {
+            "title": "React Hook Form",
+            "iconPath": "/icons/react-hook-form.svg",
+            "url": "https://react-hook-form.com/",
+            "description": "React Hook Form es una librería ligera y flexible utilizada para gestionar formularios en aplicaciones React. Proporciona una API sencilla e intuitiva para crear formularios utilizando ganchos React personalizados y admite varias entradas de formulario, como entradas de texto, casillas de verificación y botones de radio. React Hook Form está diseñado para ser eficaz y eficiente, con características como la validación condicional y el envío asíncrono de formularios. También se integra bien con otras bibliotecas y frameworks populares, como Zod para la validación de formularios y Material UI para el estilo."
+          },
+          {
+            "title": "Zustand",
+            "iconPath": "/icons/zustand.svg",
+            "url": "https://zustand.surge.sh/",
+            "description": "Zustand es una librería de gestión de estado simple y flexible para aplicaciones React. Proporciona una forma de gestionar el estado global de la aplicación utilizando una API mínima y un modelo de programación funcional. Zustand permite a los desarrolladores definir almacenes que contienen el estado de la aplicación y actualizarlo mediante acciones. También admite funciones como estado derivado, middleware y devtools, que facilitan la creación de aplicaciones complejas y escalables. Zustand está diseñado para ser ligero y eficaz, centrándose en la simplicidad y la experiencia del desarrollador."
+          },
+          {
+            "title": "Framer Motion",
+            "iconPath": "/icons/framer-motion.svg",
+            "url": "https://www.framer.com/motion/",
+            "description": "Framer Motion es una popular librería de animación para aplicaciones React. Proporciona una API sencilla e intuitiva para crear animaciones y gestos, como transiciones, fotogramas clave e interacciones de arrastrar y soltar. Framer Motion utiliza una sintaxis declarativa y admite funciones como la física de muelles, las animaciones de diseño y el reconocimiento de gestos."
+          },
+          {
+            "title": "NextAuth",
+            "iconPath": "/icons/next-auth.png",
+            "url": "https://next-auth.js.org/",
+            "description": "NextAuth.js es una biblioteca de autenticación de código abierto para aplicaciones Next.js. Proporciona una forma sencilla y flexible de implementar varios proveedores de autenticación, como Google, Facebook y GitHub, así como estrategias de autenticación personalizadas. NextAuth.js permite a los desarrolladores añadir fácilmente la autenticación a sus aplicaciones Next.js sin tener que gestionar las complejidades de los protocolos de autenticación y los problemas de seguridad. También proporciona un conjunto de funciones como la gestión de sesiones, la protección CSRF y la firma JWT."
+          },
+          {
+            "title": "React Router",
+            "iconPath": "/icons/react-router.svg",
+            "url": "https://reactrouter.com/en/main",
+            "description": "React Router es una biblioteca popular utilizada para el enrutamiento en aplicaciones React. Proporciona un conjunto de componentes y herramientas para gestionar la navegación y la estructura de URL de una aplicación React. React Router permite a los desarrolladores definir rutas y navegar entre ellas de forma declarativa utilizando sintaxis JSX. También proporciona funciones avanzadas como rutas anidadas, enrutamiento con parámetros y navegación programática."
+          },
+          {
+            "title": "Redux",
+            "iconPath": "/icons/redux.svg",
+            "url": "https://redux.js.org/",
+            "description": "Redux es una popular librería JavaScript utilizada para gestionar el estado de una aplicación. Proporciona una forma predecible y centralizada de gestionar el estado de la aplicación, lo que facilita el razonamiento sobre el comportamiento de una aplicación y la depuración de problemas. En Redux, todo el estado de una aplicación se almacena en un único objeto llamado almacén, que sólo puede ser modificado mediante el envío de acciones. Estas acciones son objetos JavaScript simples que describen lo que sucedió en la aplicación. Los reductores son funciones puras que toman el estado actual y una acción, y devuelven el nuevo estado de la aplicación. Redux también proporciona un conjunto de herramientas para la depuración, time-traveling, y middleware."
+          },
+          {
+            "title": "Socket.io",
+            "iconPath": "/icons/socketio.svg",
+            "url": "https://socket.io/",
+            "description": "Socket.IO es una biblioteca JavaScript que permite la comunicación en tiempo real, bidireccional y basada en eventos entre un cliente y un servidor. Consta de dos partes: una biblioteca del lado del cliente que se ejecuta en el navegador y una biblioteca del lado del servidor para Node.js. Ambos componentes tienen una API casi idéntica. Socket.IO utiliza principalmente el protocolo WebSocket con HTTP long-polling como opción alternativa. Ofrece funciones como la difusión a múltiples sockets, el almacenamiento de datos asociados a cada cliente y la E/S asíncrona. Socket.IO se utiliza en diversas aplicaciones, como aplicaciones de chat y mensajería, herramientas de colaboración, cuadros de mando en tiempo real y juegos multijugador.",
+            "needInvertColor": true
+          }
+        ]
+      },
+      {
+        "title": "Backend",
+        "skillsData": [
+          {
+            "title": "NodeJS",
+            "iconPath": "/icons/node.svg",
+            "url": "https://nodejs.org/",
+            "description": "Node.js es un popular motor de ejecución JavaScript basado en el motor JavaScript V8. Permite a los desarrolladores ejecutar código JavaScript en el lado del servidor, lo que les permite crear aplicaciones web escalables y eficientes. Node.js proporciona un conjunto de API para interactuar con el sistema de archivos, la red y otros recursos del sistema, así como un gestor de paquetes llamado npm para instalar y gestionar dependencias. Node.js se utiliza ampliamente en la comunidad de desarrollo web para crear servidores web, API y microservicios."
+          },
+          {
+            "title": "Docker",
+            "iconPath": "/icons/docker.svg",
+            "url": "https://www.docker.com/",
+            "description": "Docker es una plataforma de código abierto que permite a los desarrolladores crear, desplegar y ejecutar aplicaciones en contenedores aislados. Proporciona un entorno ligero y portátil para ejecutar aplicaciones, lo que elimina muchos de los problemas de compatibilidad que pueden surgir al ejecutar aplicaciones en diferentes sistemas. Los contenedores Docker pueden moverse fácilmente entre distintos entornos, como desarrollo, pruebas y producción, sin necesidad de realizar cambios en el código de la aplicación. Docker también proporciona un potente conjunto de herramientas para gestionar y escalar contenedores, incluidos Docker Compose y Kubernetes."
+          },
+          {
+            "title": "Prisma",
+            "iconPath": "/icons/prisma.svg",
+            "url": "https://www.prisma.io/",
+            "description": "Prisma es un moderno conjunto de herramientas de base de datos y ORM (Object-Relational Mapping) para la construcción de aplicaciones basadas en bases de datos. Proporciona una forma eficiente y segura de comunicarse con las bases de datos, y es compatible con varias bases de datos como MySQL, PostgreSQL, SQLite y MongoDB. Prisma permite a los desarrolladores modelar su esquema de base de datos utilizando una sintaxis declarativa, y genera consultas de base de datos seguras y eficientes basadas en el esquema. También proporciona un conjunto de herramientas para migraciones de bases de datos, gestión de esquemas y modelado de datos.",
+            "needInvertColor": true
+          },
+          {
+            "title": "TypeORM",
+            "iconPath": "/icons/typeorm.svg",
+            "url": "https://typeorm.io/",
+            "description": "TypeORM es una biblioteca de mapeo relacional de objetos (ORM) para aplicaciones TypeScript y JavaScript. Proporciona un conjunto de herramientas y funciones para interactuar con bases de datos relacionales, como MySQL, PostgreSQL y SQLite, utilizando un enfoque orientado a objetos. TypeORM permite a los desarrolladores definir modelos de bases de datos utilizando clases y decoradores de TypeScript, y proporciona un conjunto de API para consultar, actualizar y eliminar datos de la base de datos. También admite funciones como migraciones, transacciones y validación de datos.."
+          },
+          {
+            "title": "tRPC",
+            "iconPath": "/icons/trpc.svg",
+            "url": "https://trpc.io/",
+            "description": "tRPC es un marco de trabajo moderno basado en TypeScript para crear API de backend escalables y eficientes. Proporciona un enfoque ligero y flexible para el desarrollo de API, con un enfoque en la simplicidad, el rendimiento y la experiencia del desarrollador. tRPC permite a los desarrolladores definir puntos finales de API utilizando una sintaxis sencilla e intuitiva, y proporciona tipado y documentación automáticas de TypeScript. También es compatible con varios protocolos de transporte, como HTTP, WebSocket y gRPC. tRPC incluye un conjunto de funciones, como la validación de solicitudes, la compresión de respuestas y el almacenamiento en caché, que facilitan la creación de API sólidas y escalables."
+          },
+          {
+            "title": "Nats",
+            "iconPath": "/icons/nats.svg",
+            "url": "https://nats.io/",
+            "description": "NATS es un sistema de mensajería ligero y de alto rendimiento para construir sistemas distribuidos. Proporciona una forma sencilla y eficaz de conectar servicios y aplicaciones mediante patrones de publicación-suscripción y solicitud-respuesta. NATS está diseñado para ser rápido, seguro y escalable, con soporte para funciones como colas de mensajes, equilibrio de carga y tolerancia a fallos. Se utiliza ampliamente en aplicaciones nativas de la nube, arquitecturas de microservicios y aplicaciones IoT (Internet de las cosas)."
+          },
+          {
+            "title": "Supabase",
+            "iconPath": "/icons/supabase.svg",
+            "url": "https://supabase.io/",
+            "description": "Supabase es una plataforma de código abierto para crear y desplegar aplicaciones backend. Proporciona un conjunto de herramientas y servicios que simplifican el proceso de desarrollo, incluyendo una base de datos en tiempo real, autenticación y almacenamiento. Supabase se basa en PostgreSQL y proporciona un conjunto de API y SDK para interactuar con los servicios de base de datos, autenticación y almacenamiento. También incluye funciones como serverless functions, webhooks y monitorización, que facilitan la creación y escalado de aplicaciones backend."
+          },
+          {
+            "title": "Firebase",
+            "iconPath": "/icons/firebase.svg",
+            "url": "https://firebase.google.com/",
+            "description": "Firebase es una plataforma de desarrollo de aplicaciones móviles y web, propiedad de Google, que proporciona un conjunto de herramientas y servicios para crear, gestionar y hacer crecer aplicaciones web y móviles. Firebase incluye diversas funciones, como base de datos en tiempo real, almacenamiento en la nube, autenticación, alojamiento y análisis, que ayudan a los desarrolladores a crear, lanzar y escalar rápidamente sus aplicaciones sin tener que gestionar la infraestructura. Firebase también proporciona SDKs y APIs para varias plataformas, incluyendo web, iOS y Android, permitiendo a los desarrolladores integrar fácilmente los servicios de Firebase en sus aplicaciones."
+          },
+          {
+            "title": "Linux",
+            "iconPath": "/icons/linux.svg",
+            "url": "https://www.linux.org/",
+            "description": "Linux es un popular sistema operativo de código abierto muy utilizado en la comunidad de desarrolladores web para crear servidores web, alojar sitios web y ejecutar aplicaciones. Proporciona una plataforma estable y segura para ejecutar aplicaciones y servicios web, con soporte para varios lenguajes de programación, herramientas y marcos de trabajo. Linux es conocido por su fiabilidad, rendimiento y flexibilidad, y se utiliza en una amplia gama de aplicaciones, desde pequeños sitios web personales hasta aplicaciones empresariales a gran escala."
+          },
+          {
+            "title": "Vercel",
+            "iconPath": "/icons/vercel.svg",
+            "url": "https://vercel.com/",
+            "description": "Vercel es una plataforma en la nube para desplegar y alojar aplicaciones web. Proporciona un conjunto de herramientas y funciones que simplifican el proceso de despliegue, incluidas las compilaciones automáticas, las vistas previas y el escalado. Vercel admite varios marcos y bibliotecas frontales, como Next.js, Gatsby y React, así como funciones y API sin servidor. También proporciona una red global de entrega de contenidos (CDN) y cifrado SSL, que garantiza la entrega rápida y segura de aplicaciones web a usuarios de todo el mundo.",
+            "needInvertColor": true
+          },
+          {
+            "title": "Railway",
+            "iconPath": "/icons/railway.svg",
+            "url": "https://railway.app/",
+            "description": "Railway es una plataforma para desplegar y gestionar aplicaciones web. Proporciona una forma sencilla e intuitiva de desplegar aplicaciones en la nube, con soporte para varios lenguajes de programación, frameworks y bases de datos. Railway admite funciones como despliegues automáticos, variables de entorno y migraciones de bases de datos, que facilitan la gestión y el escalado de aplicaciones web. También proporciona un conjunto de herramientas para supervisar, registrar y depurar aplicaciones, lo que ayuda a los desarrolladores a identificar y solucionar problemas rápidamente.",
+            "needInvertColor": true
+          }
+        ]
+      },
+      {
+        "title": "Bases de datos",
+        "skillsData": [
+          {
+            "title": "PostgreSQL",
+            "iconPath": "/icons/postgresql.svg",
+            "url": "https://www.postgresql.org/",
+            "description": "PostgreSQL, también conocido como Postgres, es un potente sistema de base de datos objeto-relacional de código abierto que utiliza y amplía el lenguaje SQL. Ofrece muchas características que permiten almacenar y escalar con seguridad cargas de trabajo de datos complejas. PostgreSQL es conocido por su robusta arquitectura, fiabilidad e integridad de los datos. Es compatible con ACID y cuenta con potentes complementos, como el popular extensor de bases de datos geoespaciales PostGIS. PostgreSQL se utiliza como base de datos principal para muchas aplicaciones web, así como para aplicaciones móviles y analíticas. Es altamente extensible, lo que permite a los usuarios definir sus propios tipos de datos, tipos de índices, lenguajes funcionales y mucho más."
+          },
+          {
+            "title": "MySQL",
+            "iconPath": "/icons/mysql.svg",
+            "url": "https://www.mysql.com/",
+            "description": "MySQL es un popular sistema de gestión de bases de datos relacionales de código abierto que utiliza SQL (Structured Query Language) para gestionar y manipular datos. Proporciona una plataforma fiable y escalable para almacenar y recuperar datos de forma estructurada. MySQL admite varias funciones, como indexación, transacciones y replicación, que lo hacen adecuado para una amplia gama de aplicaciones. Es ampliamente utilizado en la comunidad de desarrollo web, en particular para la construcción de aplicaciones web y sitios web basados en datos.",
+            "needInvertColor": true
+          },
+          {
+            "title": "SQLite",
+            "iconPath": "/icons/sqlite.svg",
+            "url": "https://www.sqlite.org/",
+            "description": "SQLite es un sistema de gestión de bases de datos relacionales ligero y autónomo que se integra en muchas aplicaciones. No necesita servidor, no necesita configuración y es transaccional, lo que facilita su uso y despliegue en diversos entornos. SQLite almacena los datos en un único archivo, que puede compartirse y copiarse fácilmente entre distintos sistemas. Admite funciones SQL estándar, como transacciones, desencadenadores y vistas, y se utiliza ampliamente en aplicaciones móviles, aplicaciones de escritorio y sistemas integrados."
+          },
+          {
+            "title": "MongoDB",
+            "iconPath": "/icons/mongo.svg",
+            "url": "https://www.mongodb.com/",
+            "description": "MongoDB es una popular base de datos NoSQL que permite a los desarrolladores almacenar y gestionar datos no estructurados de forma flexible y escalable. Utiliza un modelo de datos basado en documentos, lo que significa que los datos se almacenan en documentos de tipo JSON que pueden tener diferentes estructuras y campos. MongoDB proporciona un conjunto de características y herramientas para la gestión de datos, incluyendo operaciones CRUD (Create, Read, Update, Delete), agregación, indexación y consulta. También admite varias funciones avanzadas, como replicación, fragmentación y escalado."
+          },
+          {
+            "title": "Redis",
+            "iconPath": "/icons/redis.svg",
+            "url": "https://redis.io/",
+            "description": "Redis es un almacén de estructuras de datos en memoria de código abierto que puede utilizarse como base de datos, caché y agente de mensajes. Admite varias estructuras de datos, como cadenas, listas, conjuntos y hashes, y proporciona un conjunto de comandos para gestionar y manipular estas estructuras de datos. Redis es conocido por su velocidad, escalabilidad y alta disponibilidad, lo que lo hace adecuado para casos de uso que requieren baja latencia y alto rendimiento. Se utiliza ampliamente en aplicaciones web, análisis en tiempo real y sistemas de almacenamiento en caché."
+          }
+        ]
+      },
+      {
+        "title": "Movil",
+        "skillsData": [
+          {
+            "title": "React Native",
+            "iconPath": "/icons/react.svg",
+            "url": "https://reactnative.dev/",
+            "description": "React Native es un popular marco de código abierto para crear aplicaciones móviles multiplataforma utilizando JavaScript y React. Permite a los desarrolladores escribir código una vez e implementarlo en múltiples plataformas, como iOS y Android, lo que reduce el tiempo y el esfuerzo de desarrollo. React Native proporciona un conjunto de componentes y API para crear interfaces de usuario nativas, acceder a las funciones del dispositivo e interactuar con módulos nativos. También admite funciones como la recarga en caliente, las actualizaciones push de código y las optimizaciones del rendimiento nativo."
+          },
+          {
+            "title": "Expo",
+            "iconPath": "/icons/expo.svg",
+            "url": "https://expo.dev/",
+            "description": "Expo es una plataforma gratuita y de código abierto para crear aplicaciones React universales con JavaScript y TypeScript. Proporciona un conjunto de herramientas y servicios que simplifican el proceso de desarrollo, incluido un servidor de desarrollo, herramientas de compilación y servicios en la nube. Expo es compatible con funciones como la recarga en caliente, las actualizaciones push de código y las optimizaciones de rendimiento nativas. También proporciona un conjunto de API para acceder a las funciones del dispositivo, como la cámara, la geolocalización y las notificaciones, lo que facilita la creación de aplicaciones móviles multiplataforma.",
+            "needInvertColor": true
+          },
+          {
+            "title": "React Native Paper",
+            "iconPath": "/icons/react-native-paper.svg",
+            "url": "https://callstack.github.io/react-native-paper/",
+            "description": "React Native Paper es una popular biblioteca de componentes de interfaz de usuario para crear aplicaciones móviles multiplataforma con React Native. Proporciona un conjunto de componentes personalizables y accesibles que siguen las directrices de Material Design de Google. React Native Paper incluye componentes como botones, tarjetas, cuadros de diálogo y menús, así como un potente sistema de temas que permite personalizar fácilmente el aspecto de la aplicación."
+          },
+          {
+            "title": "UI Kitten",
+            "iconPath": "/icons/uikitten.png",
+            "url": "https://akveo.github.io/react-native-ui-kitten/",
+            "description": "UI Kitten es una popular biblioteca de componentes de interfaz de usuario para crear aplicaciones móviles multiplataforma con React Native. Proporciona un conjunto de componentes personalizables y accesibles que siguen las directrices de Material Design de Google. UI Kitten incluye componentes como botones, tarjetas, cuadros de diálogo y menús, así como un potente sistema de temas que permite personalizar fácilmente el aspecto de la aplicación."
+          },
+          {
+            "title": "NativeWind",
+            "iconPath": "/icons/nativewind.svg",
+            "url": "https://www.nativewind.dev/",
+            "description": "NativeWind utiliza Tailwind CSS como lenguaje de scripting para crear un sistema de estilo universal para React Native. Los componentes de NativeWind se pueden compartir entre plataformas y mostrarán sus estilos como CSS StyleSheet en web y StyleSheet.create para nativo. Sus objetivos son proporcionar una experiencia de estilo consistente en todas las plataformas, mejorar la UX del desarrollador y la mantenibilidad del código. NativeWind logra esto mediante la pre-compilación de sus estilos y utiliza un tiempo de ejecución mínimo para aplicar selectivamente estilos de respuesta."
+          }
+        ]
+      },
+      {
+        "title": "Herramientas",
+        "skillsData": [
+          {
+            "title": "Figma",
+            "iconPath": "/icons/figma.svg",
+            "url": "https://www.figma.com/",
+            "description": "Figma es una herramienta de diseño y creación de prototipos basada en la nube que se utiliza para crear interfaces de usuario, diseños web y aplicaciones móviles. Proporciona una plataforma de colaboración que permite a varios diseñadores trabajar en el mismo proyecto en tiempo real, lo que facilita la colaboración y el intercambio de comentarios. Figma incluye diversas funciones, como redes vectoriales, bibliotecas de diseño y componentes interactivos, que facilitan la creación y gestión de diseños complejos. También permite a los desarrolladores inspeccionar los diseños, generar fragmentos de código y exportar activos para su desarrollo."
+          },
+          {
+            "title": "Git",
+            "iconPath": "/icons/git.svg",
+            "url": "https://git-scm.com/",
+            "description": "Git es un popular sistema de control de versiones que ayuda a los desarrolladores a gestionar los cambios en su código base a lo largo del tiempo. Permite a los desarrolladores realizar un seguimiento de los cambios en su código, colaborar con otros desarrolladores y revertir los cambios cuando sea necesario. Git proporciona un conjunto de comandos y herramientas para crear, ramificar, fusionar y gestionar repositorios de código, tanto local como remotamente. También ofrece un potente conjunto de funciones para resolver conflictos y gestionar revisiones del código. Git se utiliza ampliamente en la comunidad de desarrollo de software y es una herramienta esencial para gestionar bases de código de todos los tamaños.."
+          },
+          {
+            "title": "GitHub",
+            "iconPath": "/icons/github.svg",
+            "url": "https://github.com/",
+            "description": "GitHub es una popular plataforma de alojamiento de código que permite a los desarrolladores colaborar en proyectos, compartir código y crear software juntos. Ofrece un conjunto de herramientas y funciones para gestionar repositorios de código, como el control de versiones, el seguimiento de incidencias y las revisiones de código. GitHub también ofrece una plataforma para alojar sitios web estáticos, ejecutar procesos de integración y despliegue continuos y gestionar la documentación de los proyectos. Es ampliamente utilizado en la comunidad de código abierto y por empresas de todos los tamaños para crear y desplegar software.",
+            "needInvertColor": true
+          },
+          {
+            "title": "VSCode",
+            "iconPath": "/icons/vscode.svg",
+            "url": "https://code.visualstudio.com/",
+            "description": "Visual Studio Code es un popular editor de código de código abierto desarrollado por Microsoft. Ofrece un conjunto de funciones y herramientas para escribir, editar y depurar código, como resaltado de sintaxis, completado de código y terminal integrado. Visual Studio Code es compatible con varios lenguajes y marcos de programación, y proporciona extensiones para añadir funciones adicionales y personalizar el editor. También incluye funciones como el control de versiones, la depuración y la ejecución de tareas, que facilitan el desarrollo y mantenimiento de bases de código de todos los tamaños."
+          },
+          {
+            "title": "Jest",
+            "iconPath": "/icons/jest.svg",
+            "url": "https://jestjs.io/",
+            "description": "Jest es un popular framework de pruebas de JavaScript utilizado para probar código JavaScript, en particular para aplicaciones React. Está desarrollado por Facebook y proporciona un potente conjunto de características para probar código, incluyendo un ejecutor de pruebas, una biblioteca de aserciones y capacidades de mocking. Jest permite a los desarrolladores escribir pruebas de forma sencilla e intuitiva, utilizando una combinación de conjuntos de pruebas, casos de prueba y aserciones. También proporciona herramientas para el análisis de la cobertura del código, pruebas paralelas y pruebas instantáneas."
+          },
+          {
+            "title": "Playwright",
+            "iconPath": "/icons/playwright.svg",
+            "url": "https://playwright.dev/",
+            "description": "Playwright es una biblioteca Node.js para automatizar Chromium, Firefox y WebKit con una única API. Permite la automatización web entre navegadores que es siempre verde, capaz, fiable y rápida. Playwright se utiliza para pruebas web, web scrapping y automatización de tareas del navegador. Es compatible con varios lenguajes, como JavaScript, TypeScript, Python, C# y Java. Playwright se ejecuta por defecto en modo headless, pero puede configurarse para ejecutar navegadores completos (no headless). Puede generar capturas de pantalla y archivos PDF de las páginas y tiene un sólido soporte para las interacciones del usuario, incluyendo clics, tipos y desplazamientos."
+          },
+          {
+            "title": "Zod",
+            "iconPath": "/icons/zod.svg",
+            "url": "https://zod.dev/",
+            "description": "Zod es una biblioteca de validación de esquemas de TypeScript que se utiliza para validar objetos de datos en aplicaciones JavaScript y TypeScript. Proporciona una API sencilla e intuitiva para definir esquemas de datos y validar objetos de datos contra esos esquemas. Zod soporta varios tipos de datos, como cadenas, números, matrices y objetos, así como características avanzadas como tipos de unión, tipos de intersección y tipos condicionales. También proporciona un conjunto de herramientas para el análisis sintáctico, la serialización y la transformación de datos. Zod está diseñado para ser ligero y eficaz, con un enfoque en la seguridad de tipos y la experiencia del desarrollador."
+          }
+        ]
+      }
+    ],
+    "learnMore": "Aprende más"
   }
 }

@@ -27,7 +27,7 @@ export default async function Home({
           <div className="flex flex-col gap-12">
             <About dictionary={dictionary.about} />
 
-            <Skills />
+            <Skills dictionary={dictionary.skills} />
 
             <Projects />
 
