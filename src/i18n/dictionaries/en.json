@@ -1,5 +1,10 @@
 {
   "header": {
+    "selectLocale": {
+      "title": "Select language",
+      "spanish": "Spanish",
+      "english": "English"
+    },
     "toggleMode": {
       "title": "Toggle theme",
       "light": "Light",

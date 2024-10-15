@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { WMIcon } from "../icons";
 import { ModeToggle } from "./ModeToggle";
 import { Dictionary } from "@/i18n/getDictionary";
+import { SelectLocale } from "./SelectLocale";
 
 interface HeaderProps {
   dictionary: Dictionary["header"];
@@ -42,7 +43,11 @@ export default function Header({ dictionary }: HeaderProps) {
         <div className="flex items-center">
           <WMIcon className="h-auto w-16" />
         </div>
-        <ModeToggle dictionary={dictionary.toggleMode} />
+        <div className="flex items-center gap-4">
+          <SelectLocale dictionary={dictionary.selectLocale} />
+
+          <ModeToggle dictionary={dictionary.toggleMode} />
+        </div>
       </div>
     </motion.header>
   );
