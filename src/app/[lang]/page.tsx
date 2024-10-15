@@ -25,7 +25,7 @@ export default async function Home({
 
         <TracingBeam>
           <div className="flex flex-col gap-12">
-            <About />
+            <About dictionary={dictionary.about} />
 
             <Skills />
 

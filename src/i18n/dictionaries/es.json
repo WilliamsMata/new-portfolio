@@ -22,5 +22,9 @@
       "second": ""
     },
     "resume": "Curriculum"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "text": "Soy un desarrollador full-stack especializado en la creación de aplicaciones web y móviles que ofrecen experiencias de usuario optimizadas y eficientes. Con más de 2 años de experiencia en desarrollo de software, he trabajado tanto en proyectos independientes como en equipos multidisciplinares. Mi enfoque abarca desde la creación de interfaces intuitivas en el frontend hasta la implementación de arquitecturas robustas y escalables en el backend. \n Tengo un profundo interés por las tecnologías emergentes y siempre busco mejorar mis habilidades a través de nuevos retos y del aprendizaje continuo. Mi objetivo es crear soluciones tecnológicas innovadoras que no solo cumplan los requisitos empresariales, sino que superen las expectativas de los usuarios."
   }
 }

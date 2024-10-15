@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
+import { motion, stagger } from "framer-motion";
 import { cn } from "@/lib/utils";
+import useSafeAnimate from "@/hooks/useSafeAnimate";
 
 interface TextGenerateEffectProps {
   words: string;
@@ -20,7 +21,7 @@ export const TextGenerateEffect = ({
   stagerDuration = 0.2,
   onFinish,
 }: TextGenerateEffectProps) => {
-  const [scope, animate] = useAnimate();
+  const [scope, animate] = useSafeAnimate();
   const paragraphsArray = words.split("\n");
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isAnimating, setIsAnimating] = useState(true);
