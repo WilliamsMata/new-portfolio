@@ -17,7 +17,7 @@ export default async function Home({
   const dictionary = await getDictionary(lang);
 
   return (
-    <div className="flex min-h-screen flex-col font-[family-name:var(--font-geist-sans)]">
+    <div className="flex min-h-screen flex-col overflow-x-hidden font-[family-name:var(--font-geist-sans)]">
       <Header dictionary={dictionary.header} />
 
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
