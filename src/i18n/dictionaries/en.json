@@ -1,4 +1,12 @@
 {
+  "header": {
+    "toggleMode": {
+      "title": "Toggle theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
   "hero": {
     "title": {
       "developer": "Developer"

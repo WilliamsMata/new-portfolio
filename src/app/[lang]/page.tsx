@@ -18,7 +18,7 @@ export default async function Home({
 
   return (
     <div className="flex min-h-screen flex-col font-[family-name:var(--font-geist-sans)]">
-      <Header />
+      <Header dictionary={dictionary.header} />
 
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
         <Hero dictionary={dictionary.hero} />

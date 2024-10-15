@@ -1,4 +1,12 @@
 {
+  "header": {
+    "toggleMode": {
+      "title": "Cambiar el tema",
+      "light": "Dia",
+      "dark": "Noche",
+      "system": "Sistema"
+    }
+  },
   "hero": {
     "title": {
       "developer": "Desarrollador"

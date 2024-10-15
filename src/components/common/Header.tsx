@@ -4,8 +4,13 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { WMIcon } from "../icons";
 import { ModeToggle } from "./ModeToggle";
+import { Dictionary } from "@/i18n/getDictionary";
 
-export default function Header() {
+interface HeaderProps {
+  dictionary: Dictionary["header"];
+}
+
+export default function Header({ dictionary }: HeaderProps) {
   const lastScrollY = useRef(0);
   const controls = useAnimation();
 
@@ -37,7 +42,7 @@ export default function Header() {
         <div className="flex items-center">
           <WMIcon className="h-auto w-16" />
         </div>
-        <ModeToggle />
+        <ModeToggle dictionary={dictionary.toggleMode} />
       </div>
     </motion.header>
   );
