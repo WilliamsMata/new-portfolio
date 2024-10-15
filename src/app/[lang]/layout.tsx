@@ -5,6 +5,7 @@ import { Providers } from "@/providers/Providers";
 import { Toaster } from "@/components/ui/sonner";
 import { ConsoleLog } from "@/components/common/ConsoleLog";
 import { i18n, type Locale } from "@/i18n/i18n-config";
+import { getDictionary } from "@/i18n/getDictionary";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,19 +18,25 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Williams Mata",
-  description:
-    "I am a fullstack developer with experience creating modern, beautiful and dynamic websites and mobile apps. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together.",
-  openGraph: {
-    type: "website",
+export async function generateMetadata({
+  params,
+}: {
+  params: { lang: Locale };
+}): Promise<Metadata> {
+  const dictionary = await getDictionary(params.lang);
+
+  return {
     title: "Williams Mata",
-    description:
-      "I am a fullstack developer with experience creating modern, beautiful and dynamic websites and mobile apps. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together.",
-    url: "https://williamsmata.com",
-    siteName: "Williams Mata Rojas",
-  },
-};
+    description: dictionary.metadata.description,
+    openGraph: {
+      type: "website",
+      title: "Williams Mata",
+      description: dictionary.metadata.description,
+      url: "https://williamsmata.com",
+      siteName: "Williams Mata Rojas",
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
