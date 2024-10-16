@@ -16,7 +16,7 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
 
   return (
     <HeroHighlight containerClassName="h-screen">
-      <section className="flex flex-col items-center justify-center px-4 text-4xl sm:text-5xl md:text-6xl">
+      <section className="flex flex-col items-center justify-center px-4 text-3xl sm:text-5xl md:text-6xl">
         <h1 className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text font-semibold text-transparent">
           Williams Mata R
         </h1>
