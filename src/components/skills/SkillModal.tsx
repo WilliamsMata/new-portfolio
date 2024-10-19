@@ -16,6 +16,8 @@ import { BoxArrowUp } from "../icons";
 import { BackgroundGradient } from "../ui/background-gradient";
 
 interface SkillModalContextType {
+  open: boolean;
+  setOpen: (open: boolean) => void;
   activeSkill: SkillData | null;
   setActiveSkill: (skill: SkillData) => void;
 }
@@ -26,9 +28,12 @@ const SkillModalContext = createContext<SkillModalContextType | undefined>(
 
 export const SkillModalProvider = ({ children }: { children: ReactNode }) => {
   const [activeSkill, setActiveSkill] = useState<SkillData | null>(null);
+  const { open, setOpen } = useModal();
 
   return (
-    <SkillModalContext.Provider value={{ activeSkill, setActiveSkill }}>
+    <SkillModalContext.Provider
+      value={{ open, setOpen, activeSkill, setActiveSkill }}
+    >
       {children}
     </SkillModalContext.Provider>
   );
@@ -52,14 +57,14 @@ export const SkillModal: FC<SkillModalProps> = ({
   learnMoreText,
 }) => {
   return (
-    <SkillModalProvider>
-      <Modal>
+    <Modal>
+      <SkillModalProvider>
         {children}
         <SkillModalBody>
           <SkillModalContent learnMoreText={learnMoreText} />
         </SkillModalBody>
-      </Modal>
-    </SkillModalProvider>
+      </SkillModalProvider>
+    </Modal>
   );
 };
 
@@ -73,8 +78,7 @@ export const SkillModalTrigger: FC<SkillModalTriggerProps> = ({
   className,
   children,
 }) => {
-  const { setActiveSkill } = useSkillModal();
-  const { setOpen } = useModal();
+  const { setActiveSkill, setOpen } = useSkillModal();
   return (
     <div
       className={cn(
