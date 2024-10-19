@@ -23,17 +23,19 @@ export async function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Promise<Metadata> {
-  const dictionary = await getDictionary(params.lang);
+  const {
+    metadata: { description },
+  } = await getDictionary(params.lang);
 
   return {
     title: "Williams Mata",
-    description: dictionary.metadata.description,
+    description,
     openGraph: {
       type: "website",
       title: "Williams Mata",
-      description: dictionary.metadata.description,
+      description,
       url: "https://williamsmata.com",
-      siteName: "Williams Mata Rojas",
+      siteName: "Williams Mata Portfolio",
     },
   };
 }
