@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  useContext,
-  FC,
-  useEffect,
-  useState,
-  useMemo,
-} from "react";
+import { createContext, useContext, FC, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -61,10 +54,6 @@ export const Tabs: FC<TabsProps> = ({
     setActive(newTabs[0]);
   };
 
-  useEffect(() => {
-    if (!matches) setHovering(false);
-  }, [active, matches]);
-
   const contextValue = useMemo(
     () => ({ activeTab: active, setActiveTab: setActive }),
     [active],
@@ -84,7 +73,7 @@ export const Tabs: FC<TabsProps> = ({
             onClick={() => {
               moveSelectedTabToTop(idx);
             }}
-            onMouseEnter={() => setHovering(true)}
+            onMouseEnter={() => matches && setHovering(true)}
             onMouseLeave={() => setHovering(false)}
             className={cn("relative rounded-full px-4 py-2", tabClassName)}
             style={{
@@ -113,6 +102,7 @@ export const Tabs: FC<TabsProps> = ({
         active={active}
         key={active.value}
         hovering={hovering}
+        matches={matches}
         className={cn(contentClassName)}
       />
     </TabContext.Provider>
@@ -125,12 +115,14 @@ interface FadeInDivProps {
   tabs: Tab[];
   active: Tab;
   hovering?: boolean;
+  matches?: boolean;
 }
 
 export const FadeInDiv: FC<FadeInDivProps> = ({
   className,
   tabs,
   hovering,
+  matches = true,
 }) => {
   const { activeTab } = useTab();
 
@@ -151,7 +143,7 @@ export const FadeInDiv: FC<FadeInDivProps> = ({
             opacity: idx < 3 ? 1 - idx * 0.1 : 0,
           }}
           animate={{
-            y: isActive(tab) ? [0, 40, 0] : 0,
+            y: isActive(tab) && matches ? [0, 40, 0] : 0,
           }}
           className={cn(
             "absolute left-0 top-0 mt-32 h-full w-full",
