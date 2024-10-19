@@ -76,10 +76,7 @@ export const SkillModalTrigger: FC<SkillModalTriggerProps> = ({
 
   return (
     <div
-      className={cn(
-        "w-6/12 cursor-pointer rounded-xl p-4 transition-all hover:p-2 hover:shadow-2xl hover:shadow-purple-600 active:scale-90 sm:w-4/12 md:w-3/12 md:p-6 lg:w-2/12",
-        className,
-      )}
+      className={cn(className)}
       onClick={() => {
         setActiveSkill?.(skill);
         setOpen?.(true);

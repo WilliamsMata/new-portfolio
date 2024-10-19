@@ -17,12 +17,7 @@ export function SkillContentTabContainer({
   const isActive = title === activeTab.value;
 
   return (
-    <div
-      className={cn(
-        "relative h-[46rem] w-full md:h-[20rem]",
-        isActive && "h-auto md:h-auto",
-      )}
-    >
+    <div className={cn("relative h-[20rem] w-full", isActive && "h-auto")}>
       {children}
     </div>
   );

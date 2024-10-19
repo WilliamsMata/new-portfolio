@@ -131,7 +131,7 @@ export const FadeInDiv: FC<FadeInDivProps> = ({
   };
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full px-4 md:px-0">
       {tabs.map((tab, idx) => (
         <motion.div
           key={tab.value}
