@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { motion, stagger } from "framer-motion";
+import { useEffect, useState } from "react";
+import { type DynamicAnimationOptions, motion, stagger } from "framer-motion";
 import { cn } from "@/lib/utils";
 import useSafeAnimate from "@/hooks/useSafeAnimate";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 interface TextGenerateEffectProps {
   words: string;
@@ -23,8 +24,13 @@ export const TextGenerateEffect = ({
 }: TextGenerateEffectProps) => {
   const [scope, animate] = useSafeAnimate();
   const paragraphsArray = words.split("\n");
-  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const [isAnimating, setIsAnimating] = useState(true);
+
+  const [ref, inView] = useIntersectionObserver({
+    freezeOnceVisible: true,
+    threshold: 0.1,
+  });
 
   const totalWordsCount = paragraphsArray.reduce(
     (count, paragraph) => count + paragraph.split(" ").length,
@@ -33,7 +39,7 @@ export const TextGenerateEffect = ({
   const animationTime =
     totalWordsCount * stagerDuration * 1000 + duration * 1000;
 
-  const completeAnimation = () => {
+  const animateSpan = (options?: DynamicAnimationOptions) => {
     animate(
       "span",
       {
@@ -42,46 +48,28 @@ export const TextGenerateEffect = ({
       },
       {
         duration: 0,
+        ...options,
       },
     );
+  };
 
+  const completeAnimation = () => {
+    animateSpan();
     onFinish?.();
     setIsAnimating(false);
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          animate(
-            "span",
-            {
-              opacity: 1,
-              filter: filter ? "blur(0px)" : "none",
-            },
-            {
-              duration,
-              delay: stagger(stagerDuration),
-            },
-          );
+    if (inView) {
+      animateSpan({
+        duration,
+        delay: stagger(stagerDuration),
+      });
 
-          observer.disconnect();
-
-          setTimeout(() => completeAnimation(), animationTime);
-        }
-      },
-      { threshold: 0.1 },
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+      setTimeout(() => completeAnimation(), animationTime);
     }
-
-    return () => {
-      observer.disconnect();
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scope.current, words, onFinish]);
+  }, [inView]);
 
   const renderParagraphs = () => (
     <motion.div ref={scope}>
@@ -105,12 +93,12 @@ export const TextGenerateEffect = ({
 
   return (
     <div
+      ref={ref}
       className={cn(
         "text-2xl font-bold",
         isAnimating ? "cursor-pointer" : "",
         className,
       )}
-      ref={containerRef}
       onClick={completeAnimation}
     >
       <div className="mt-4">
