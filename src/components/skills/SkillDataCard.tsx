@@ -27,7 +27,7 @@ export function SkillDataCard({ skill, parentTitle }: SkillDataCardProps) {
         />
       </div>
 
-      <h3 className="mt-2 text-center text-base font-semibold md:text-lg">
+      <h3 className="mt-2 text-center text-sm font-semibold md:text-lg">
         {title}
       </h3>
     </SkillModalTrigger>

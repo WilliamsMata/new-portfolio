@@ -89,7 +89,7 @@ export const SkillModalTrigger: FC<SkillModalTriggerProps> = ({
 
 export const SkillModalBody: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <ModalBody className="rounded-3xl border-none md:rounded-3xl">
+    <ModalBody className="overflow-y-auto rounded-3xl border-none md:rounded-3xl">
       <BackgroundGradient>{children}</BackgroundGradient>
     </ModalBody>
   );
@@ -122,7 +122,7 @@ export const SkillModalContent: FC<SkillModalContentProps> = ({
             <h3 className="text-start text-4xl font-bold">
               {activeSkill.title}
             </h3>
-            <p className="text-sm text-muted-foreground">
+            <p className="mt-2 text-sm text-muted-foreground">
               {activeSkill.description}
             </p>
           </div>
