@@ -21,14 +21,14 @@ const links = [
     href: "https://github.com/WilliamsMata",
   },
   {
-    title: "Telegram",
-    icon: <TelegramIcon className="h-full w-full text-foreground" />,
-    href: "https://t.me/williams_rm",
-  },
-  {
     title: "LinkedIn",
     icon: <LinkedInLogoIcon className="h-full w-full text-foreground" />,
     href: "https://www.linkedin.com/in/williams-mata",
+  },
+  {
+    title: "Telegram",
+    icon: <TelegramIcon className="h-full w-full text-foreground" />,
+    href: "https://t.me/williams_rm",
   },
   {
     title: "Instagram",
