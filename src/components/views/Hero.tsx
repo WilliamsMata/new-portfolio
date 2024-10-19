@@ -16,8 +16,8 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
 
   return (
     <HeroHighlight containerClassName="h-screen">
-      <section className="flex flex-col items-center justify-center px-4 text-3xl sm:text-5xl md:text-6xl">
-        <h1 className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text font-semibold text-transparent">
+      <section className="flex flex-col items-center justify-center px-4">
+        <h1 className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-semibold text-transparent sm:text-5xl md:text-6xl">
           Williams Mata R
         </h1>
 
@@ -28,7 +28,7 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
 
         <div
           className={cn(
-            "flex items-center",
+            "flex items-center text-3xl sm:text-5xl md:text-6xl",
             title.developer === "Desarrollador" && "flex-row-reverse",
           )}
         >
