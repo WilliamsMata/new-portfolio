@@ -26,8 +26,6 @@ export const Skills: FC<SkillsProps> = ({ dictionary }) => {
       <SkillModal learnMoreText={learnMore}>
         <Tabs tabs={tabs} />
       </SkillModal>
-
-      <div className="h-[46rem]"></div>
     </section>
   );
 };

@@ -101,7 +101,7 @@ export const Tabs: FC<TabsProps> = ({
         active={active}
         key={active.value}
         hovering={hovering}
-        className={cn("mt-32", contentClassName)}
+        className={cn(contentClassName)}
       />
     </TabContext.Provider>
   );
@@ -134,14 +134,18 @@ export const FadeInDiv: FC<FadeInDivProps> = ({
           layoutId={tab.value}
           style={{
             scale: 1 - idx * 0.1,
-            top: hovering ? idx * -35 : idx < 3 ? -100 : 0,
+            top: hovering ? idx * -60 : idx < 3 ? -100 : 0,
             zIndex: -idx,
             opacity: idx < 3 ? 1 - idx * 0.1 : 0,
           }}
           animate={{
             y: isActive(tab) ? [0, 40, 0] : 0,
           }}
-          className={cn("absolute left-0 top-0 h-full w-full", className)}
+          className={cn(
+            "absolute left-0 top-0 mt-32 h-full w-full",
+            isActive(tab) && "relative h-auto",
+            className,
+          )}
         >
           {tab.content}
         </motion.div>
