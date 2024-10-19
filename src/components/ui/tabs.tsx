@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, FC, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  FC,
+  useEffect,
+  useState,
+  useMemo,
+} from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
@@ -58,8 +65,13 @@ export const Tabs: FC<TabsProps> = ({
     if (!matches) setHovering(false);
   }, [active, matches]);
 
+  const contextValue = useMemo(
+    () => ({ activeTab: active, setActiveTab: setActive }),
+    [active],
+  );
+
   return (
-    <TabContext.Provider value={{ activeTab: active, setActiveTab: setActive }}>
+    <TabContext.Provider value={contextValue}>
       <div
         className={cn(
           "no-visible-scrollbar relative z-10 flex w-full max-w-full flex-row flex-wrap items-center justify-center overflow-auto [perspective:1000px] sm:overflow-visible",
