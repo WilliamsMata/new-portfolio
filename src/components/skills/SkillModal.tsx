@@ -1,12 +1,6 @@
 "use client";
-import {
-  createContext,
-  FC,
-  PropsWithChildren,
-  ReactNode,
-  useContext,
-  useState,
-} from "react";
+import { FC, PropsWithChildren, ReactNode, useState } from "react";
+import { createContext, useContextSelector } from "use-context-selector";
 import Image from "next/image";
 import { SkillData } from "@/interfaces";
 import { buttonVariants } from "../ui/button";
@@ -37,14 +31,6 @@ export const SkillModalProvider = ({ children }: { children: ReactNode }) => {
       {children}
     </SkillModalContext.Provider>
   );
-};
-
-export const useSkillModal = () => {
-  const context = useContext(SkillModalContext);
-  if (!context) {
-    throw new Error("useModal must be used within a SkillModalProvider");
-  }
-  return context;
 };
 
 interface SkillModalProps {
@@ -78,7 +64,16 @@ export const SkillModalTrigger: FC<SkillModalTriggerProps> = ({
   className,
   children,
 }) => {
-  const { setActiveSkill, setOpen } = useSkillModal();
+  const setActiveSkill = useContextSelector(
+    SkillModalContext,
+    (context) => context?.setActiveSkill,
+  );
+
+  const setOpen = useContextSelector(
+    SkillModalContext,
+    (context) => context?.setOpen,
+  );
+
   return (
     <div
       className={cn(
@@ -86,8 +81,8 @@ export const SkillModalTrigger: FC<SkillModalTriggerProps> = ({
         className,
       )}
       onClick={() => {
-        setActiveSkill(skill);
-        setOpen(true);
+        setActiveSkill?.(skill);
+        setOpen?.(true);
       }}
     >
       {children}
@@ -110,7 +105,10 @@ interface SkillModalContentProps {
 export const SkillModalContent: FC<SkillModalContentProps> = ({
   learnMoreText,
 }) => {
-  const { activeSkill } = useSkillModal();
+  const activeSkill = useContextSelector(
+    SkillModalContext,
+    (context) => context?.activeSkill,
+  );
   return (
     <ModalContent className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-white dark:bg-neutral-950">
       {activeSkill && (
