@@ -11,7 +11,7 @@ export const GenerateText: FC<GenerateTextProps> = ({ text }) => {
       <TextGenerateEffect
         words={text}
         className="text-center text-lg font-normal md:text-2xl"
-        stagerDuration={0.15}
+        stagerDuration={0.1}
       />
     </div>
   );
