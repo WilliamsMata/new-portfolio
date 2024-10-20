@@ -23,7 +23,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
             alt={title}
             fill
             className="h-full object-cover"
-            sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, (max-width: 1280px) 40vw, 20vw"
+            sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, (max-width: 1280px) 40vw, 28vw"
           />
         </div>
 
