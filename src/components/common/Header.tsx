@@ -6,6 +6,7 @@ import { WMIcon } from "../icons";
 import { ModeToggle } from "./ModeToggle";
 import { Dictionary } from "@/i18n/getDictionary";
 import { SelectLocale } from "./SelectLocale";
+import Link from "next/link";
 
 interface HeaderProps {
   dictionary: Dictionary["header"];
@@ -40,9 +41,10 @@ export default function Header({ dictionary }: HeaderProps) {
       animate={controls}
     >
       <div className="container mx-auto flex items-center justify-between px-8 py-2">
-        <div className="flex items-center">
+        <Link href="/" className="flex items-center">
           <WMIcon className="h-auto w-16" />
-        </div>
+        </Link>
+
         <div className="flex items-center gap-4">
           <SelectLocale dictionary={dictionary.selectLocale} />
 

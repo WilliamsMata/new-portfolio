@@ -6,6 +6,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { ConsoleLog } from "@/components/common/ConsoleLog";
 import { i18n, type Locale } from "@/i18n/i18n-config";
 import { getDictionary } from "@/i18n/getDictionary";
+import Header from "@/components/common/Header";
+import FloatingDockComponent from "@/components/common/FloatingDockComponent";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,21 +46,32 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
   params: { lang: Locale };
 }>) {
+  const dictionary = await getDictionary(params.lang);
+
   return (
     <html lang={params.lang}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
       >
-        <Providers>{children}</Providers>
-        <Toaster />
-        <ConsoleLog />
+        <Providers>
+          <div className="flex min-h-screen flex-col overflow-hidden font-[family-name:var(--font-geist-sans)]">
+            <Header dictionary={dictionary.header} />
+
+            {children}
+
+            <FloatingDockComponent />
+          </div>
+
+          <Toaster />
+          <ConsoleLog />
+        </Providers>
       </body>
     </html>
   );

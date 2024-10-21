@@ -1,5 +1,3 @@
-import FloatingDockComponent from "@/components/common/FloatingDockComponent";
-import Header from "@/components/common/Header";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { About } from "@/components/views/About";
 import { Contact } from "@/components/views/Contact";
@@ -17,26 +15,20 @@ export default async function Home({
   const dictionary = await getDictionary(lang);
 
   return (
-    <div className="flex min-h-screen flex-col overflow-hidden font-[family-name:var(--font-geist-sans)]">
-      <Header dictionary={dictionary.header} />
+    <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
+      <Hero dictionary={dictionary.hero} />
 
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <Hero dictionary={dictionary.hero} />
+      <TracingBeam>
+        <div className="flex flex-col gap-12">
+          <About dictionary={dictionary.about} />
 
-        <TracingBeam>
-          <div className="flex flex-col gap-12">
-            <About dictionary={dictionary.about} />
+          <Skills dictionary={dictionary.skills} />
 
-            <Skills dictionary={dictionary.skills} />
+          <Projects dictionary={dictionary.projects} />
 
-            <Projects dictionary={dictionary.projects} />
-
-            <Contact dictionary={dictionary.contact} />
-          </div>
-        </TracingBeam>
-      </main>
-
-      <FloatingDockComponent />
-    </div>
+          <Contact dictionary={dictionary.contact} />
+        </div>
+      </TracingBeam>
+    </main>
   );
 }
