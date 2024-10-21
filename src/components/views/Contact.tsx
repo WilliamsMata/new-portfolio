@@ -3,6 +3,7 @@ import type { Dictionary } from "@/i18n/getDictionary";
 import ContactForm from "../contact/ContactForm";
 import { BackgroundBeamsWithCollision } from "../ui/background-beams-with-collision";
 import { BackgroundGradient } from "../ui/background-gradient";
+import { GradientText } from "../common/GradientText";
 
 interface ContactProps {
   dictionary: Dictionary["contact"];
@@ -13,9 +14,9 @@ export const Contact: FC<ContactProps> = ({ dictionary }) => {
   return (
     <section className="flex flex-col items-center">
       <BackgroundBeamsWithCollision>
-        <h2 className="mb-12 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-semibold text-transparent">
+        <GradientText as="h2" size="4xl" className="mb-12">
           {title}
-        </h2>
+        </GradientText>
 
         <BackgroundGradient
           className="flex w-full flex-col gap-4 rounded-3xl bg-background p-8"

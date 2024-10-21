@@ -15,7 +15,7 @@ export default async function Home({
   const dictionary = await getDictionary(lang);
 
   return (
-    <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
+    <main className="flex flex-col items-center gap-8">
       <Hero dictionary={dictionary.hero} />
 
       <TracingBeam>

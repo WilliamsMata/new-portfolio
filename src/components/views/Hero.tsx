@@ -4,6 +4,7 @@ import { FileIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import { FlipWords } from "../ui/flip-words";
+import { GradientText } from "../common/GradientText";
 
 const words = ["Frontend", "Backend", "Mobile"];
 
@@ -17,9 +18,9 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
   return (
     <HeroHighlight containerClassName="h-screen">
       <section className="flex flex-col items-center justify-center px-4">
-        <h1 className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-semibold text-transparent sm:text-5xl md:text-6xl">
+        <GradientText as="h1" size="4xl" className="sm:text-5xl md:text-6xl">
           Williams Mata R
-        </h1>
+        </GradientText>
 
         <div className="inset-x-06 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
         <div className="inset-x-06 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />

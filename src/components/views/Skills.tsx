@@ -3,6 +3,7 @@ import type { Dictionary } from "@/i18n/getDictionary";
 import { SkillContentTab } from "../skills/SkillContentTab";
 import { SkillModal } from "../skills/SkillModal";
 import { Tabs } from "../ui/tabs";
+import { GradientText } from "../common/GradientText";
 
 interface SkillsProps {
   dictionary: Dictionary["skills"];
@@ -19,9 +20,9 @@ export const Skills: FC<SkillsProps> = ({ dictionary }) => {
 
   return (
     <section className="flex flex-col items-center">
-      <h2 className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-semibold text-transparent">
+      <GradientText as="h2" size="4xl" className="mb-4">
         {title}
-      </h2>
+      </GradientText>
 
       <SkillModal learnMoreText={learnMore}>
         <Tabs tabs={tabs} />
