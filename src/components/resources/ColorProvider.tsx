@@ -23,11 +23,11 @@ export function ColorProvider({ children }: { children: React.ReactNode }) {
         case "hex":
           return hex;
         case "hsl":
-          const hsl = hexToHsl(hex);
-          return `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+          const { h, s, l } = hexToHsl(hex);
+          return `hsl(${h}, ${s}%, ${l}%)`;
         case "rgb":
-          const rgb = hexToRgb(hex);
-          return `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+          const { r, g, b } = hexToRgb(hex);
+          return `rgb(${r}, ${g}, ${b})`;
       }
     },
     [mode],
