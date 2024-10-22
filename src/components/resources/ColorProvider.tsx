@@ -1,7 +1,7 @@
 "use client";
 
-import { hexToHsl, hexToRgb } from "@/helpers/colors";
 import { createContext, useState, useContext, useCallback } from "react";
+import { hexToHsl, hexToRgb } from "@/helpers";
 
 export type Mode = "hex" | "hsl" | "rgb";
 
