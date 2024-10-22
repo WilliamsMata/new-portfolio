@@ -35,7 +35,7 @@ export const WMIcon: FC<SVGProps<SVGSVGElement>> = memo(function WMIcon({
           gradientUnits="userSpaceOnUse"
         >
           <stop offset="0.114583" stopColor="#FFE713" />
-          <stop offset="0.885417" stopColor="#007ACC" />
+          <stop offset="0.885417" stopColor="#2563EB" />
         </linearGradient>
       </defs>
     </svg>

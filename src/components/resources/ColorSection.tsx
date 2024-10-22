@@ -33,7 +33,7 @@ const colors: Color[] = [
   },
   {
     name: "White",
-    hex: "#FFFFFF",
+    hex: "#FDFDFF",
   },
 ];
 

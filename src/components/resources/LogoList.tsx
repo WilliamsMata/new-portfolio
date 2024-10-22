@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { DownloadIcon } from "@radix-ui/react-icons";
 
 export interface Logo {
@@ -35,14 +36,16 @@ export function LogoList({ logos = [] }: LogoListProps) {
                     <p className="text-center text-sm">{logo.size}</p>
                   </CardItem>
                   <CardItem translateZ="40">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => window.open(logo.src, "_blank")}
+                    <a
+                      className={cn(
+                        buttonVariants({ variant: "outline", size: "sm" }),
+                      )}
+                      href={logo.src}
+                      download
                     >
                       <DownloadIcon className="mr-2 h-4 w-4" />
                       Descargar
-                    </Button>
+                    </a>
                   </CardItem>
                 </div>
               </CardBody>
