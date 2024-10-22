@@ -1,5 +1,6 @@
 import { GradientText } from "@/components/common/GradientText";
 import { LogoSection } from "@/components/resources/LogoSection";
+import { Separator } from "@/components/ui/separator";
 
 export default async function ResourcePage() {
   return (
@@ -8,7 +9,11 @@ export default async function ResourcePage() {
         Resources
       </GradientText>
 
+      <Separator className="my-12" />
+
       <LogoSection />
+
+      <Separator className="my-12" />
     </main>
   );
 }

@@ -35,7 +35,7 @@ const logos: Logo[] = [
 
 export function LogoSection() {
   return (
-    <section className="flex flex-col items-center gap-4">
+    <section className="flex flex-col items-center gap-12">
       <h2 className="text-4xl font-semibold">Logos</h2>
 
       <LogoList logos={logos} />
