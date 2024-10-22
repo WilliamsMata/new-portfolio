@@ -85,15 +85,13 @@ export const Tabs: FC<TabsProps> = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 rounded-full bg-blue-100 dark:bg-purple-600",
+                  "dark:bg-purple absolute inset-0 rounded-full bg-blue-100",
                   activeTabClassName,
                 )}
               />
             )}
 
-            <span className="relative block text-black dark:text-white">
-              {tab.title}
-            </span>
+            <span className="relative block">{tab.title}</span>
           </button>
         ))}
       </div>

@@ -22,10 +22,10 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
           Williams Mata R
         </GradientText>
 
-        <div className="inset-x-06 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm" />
-        <div className="inset-x-06 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
-        <div className="inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm" />
-        <div className="inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
+        <div className="inset-x-06 via-blue top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent to-transparent blur-sm" />
+        <div className="inset-x-06 via-blue top-0 h-px w-3/4 bg-gradient-to-r from-transparent to-transparent" />
+        <div className="via-cyan inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent to-transparent blur-sm" />
+        <div className="via-cyan inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent to-transparent" />
 
         <div
           className={cn(
@@ -50,7 +50,7 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
             className="relative block p-[3px]"
             target="_blank"
           >
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500" />
+            <div className="from-blue to-purple absolute inset-0 rounded-lg bg-gradient-to-r" />
             <span className="group relative flex items-center rounded-[6px] bg-background px-8 py-2 text-base transition duration-200 hover:bg-transparent">
               {resume.title}
               <FileIcon className="ml-2 h-5 w-5" />

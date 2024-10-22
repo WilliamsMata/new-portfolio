@@ -107,13 +107,14 @@ export const SkillModalContent: FC<SkillModalContentProps> = ({
     (context) => context?.activeSkill,
   );
   return (
-    <ModalContent className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-white dark:bg-neutral-950">
+    <ModalContent className="flex flex-col items-center justify-center gap-4 rounded-3xl bg-background">
       {activeSkill && (
         <div className="flex flex-col items-center justify-center gap-4">
           <div
-            className={`relative aspect-square w-6/12 ${
-              activeSkill.needInvertColor ? "dark:invert" : ""
-            }`}
+            className={cn(
+              "relative aspect-square w-6/12",
+              activeSkill.needInvertColor && "dark:invert",
+            )}
           >
             <Image src={activeSkill.iconPath} alt={activeSkill.title} fill />
           </div>

@@ -8,7 +8,7 @@ const gradientTextVariants = cva(
   {
     variants: {
       variant: {
-        default: "from-blue-600 to-purple-600",
+        default: "from-blue to-purple",
       },
       size: {
         default: "text-base",
