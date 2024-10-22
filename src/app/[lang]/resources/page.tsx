@@ -1,4 +1,5 @@
 import { GradientText } from "@/components/common/GradientText";
+import { ColorSection } from "@/components/resources/ColorSection";
 import { LogoSection } from "@/components/resources/LogoSection";
 import { Separator } from "@/components/ui/separator";
 
@@ -14,6 +15,8 @@ export default async function ResourcePage() {
       <LogoSection />
 
       <Separator className="my-12" />
+
+      <ColorSection />
     </main>
   );
 }

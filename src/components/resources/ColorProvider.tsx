@@ -3,11 +3,12 @@
 import { hexToHsl, hexToRgb } from "@/helpers/colors";
 import { createContext, useState, useContext, useCallback } from "react";
 
-type Mode = "hex" | "hsl" | "rgb";
+export type Mode = "hex" | "hsl" | "rgb";
 
 interface ColorContextType {
   mode: Mode;
   setMode: (mode: Mode) => void;
+  getColorFromHex: (hex: string) => string;
   copyColorToClipboard: (hex: string) => void;
 }
 
@@ -16,31 +17,35 @@ const ColorContext = createContext<ColorContextType | undefined>(undefined);
 export function ColorProvider({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState<Mode>("hex");
 
-  const copyColorToClipboard = useCallback(
+  const getColorFromHex = useCallback(
     (hex: string) => {
-      let value: string;
-
       switch (mode) {
         case "hex":
-          value = hex;
-          break;
+          return hex;
         case "hsl":
           const hsl = hexToHsl(hex);
-          value = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
-          break;
+          return `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
         case "rgb":
           const rgb = hexToRgb(hex);
-          value = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
-          break;
+          return `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
       }
-
-      navigator.clipboard.writeText(value);
     },
     [mode],
   );
 
+  const copyColorToClipboard = useCallback(
+    (hex: string) => {
+      const value = getColorFromHex(hex);
+
+      navigator.clipboard.writeText(value);
+    },
+    [getColorFromHex],
+  );
+
   return (
-    <ColorContext.Provider value={{ mode, setMode, copyColorToClipboard }}>
+    <ColorContext.Provider
+      value={{ mode, setMode, getColorFromHex, copyColorToClipboard }}
+    >
       {children}
     </ColorContext.Provider>
   );
