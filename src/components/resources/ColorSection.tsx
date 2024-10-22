@@ -4,20 +4,36 @@ import { SelectMode } from "./SelectMode";
 
 const colors: Color[] = [
   {
-    name: "Primary",
-    hex: "#00D8FF",
+    name: "Blue",
+    hex: "#2563EB",
   },
   {
-    name: "Secondary",
+    name: "Purple",
+    hex: "#9333EA",
+  },
+  {
+    name: "Cyan",
+    hex: "#22d3EE",
+  },
+  {
+    name: "Yellow",
     hex: "#FFE713",
   },
   {
-    name: "Muted",
-    hex: "#1CA0FB",
+    name: "light-blue",
+    hex: "#DBEAFE",
   },
   {
-    name: "Accent",
-    hex: "#FF4154",
+    name: "Dark",
+    hex: "#09090B",
+  },
+  {
+    name: "Gray",
+    hex: "#171717",
+  },
+  {
+    name: "White",
+    hex: "#FFFFFF",
   },
 ];
 
