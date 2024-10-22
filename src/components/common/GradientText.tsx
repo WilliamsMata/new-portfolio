@@ -46,7 +46,8 @@ export interface GradientTextProps
 }
 
 export const GradientText = forwardRef<HTMLElement, GradientTextProps>(
-  ({ className, variant, size, as: Tag = "span", ...props }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ({ className, variant, size, as: Tag = "span", ...props }, ref) => {
     const Component = Tag;
 
     return (

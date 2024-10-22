@@ -28,7 +28,7 @@ function handleLocaleMiddleware(request: NextRequest) {
 
   // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
   // If you have one
-  const ignoredPaths = ["/files", "/icons", "/projects"];
+  const ignoredPaths = ["/files", "/icons", "/projects", "/resources"];
 
   if (ignoredPaths.some((prefix) => pathname.startsWith(prefix))) {
     return;
