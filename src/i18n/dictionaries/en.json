@@ -698,5 +698,10 @@
         }
       }
     }
+  },
+  "resources": {
+    "title": "Resources",
+    "logos": "Logos",
+    "colors": "Colors"
   }
 }

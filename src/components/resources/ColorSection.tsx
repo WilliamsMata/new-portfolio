@@ -37,10 +37,14 @@ const colors: Color[] = [
   },
 ];
 
-export function ColorSection() {
+interface ColorSectionProps {
+  title?: string;
+}
+
+export function ColorSection({ title = "Colors" }: ColorSectionProps) {
   return (
     <section className="mb-12 flex flex-col items-center gap-12">
-      <h2 className="text-4xl font-semibold">Colores</h2>
+      <h2 className="text-4xl font-semibold">{title}</h2>
 
       <ColorProvider>
         <SelectMode />

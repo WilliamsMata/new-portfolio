@@ -33,10 +33,14 @@ const logos: Logo[] = [
   },
 ];
 
-export function LogoSection() {
+interface LogoSectionProps {
+  title?: string;
+}
+
+export function LogoSection({ title = "Logos" }: LogoSectionProps) {
   return (
     <section className="flex flex-col items-center gap-12">
-      <h2 className="text-4xl font-semibold">Logos</h2>
+      <h2 className="text-4xl font-semibold">{title}</h2>
 
       <LogoList logos={logos} />
     </section>
