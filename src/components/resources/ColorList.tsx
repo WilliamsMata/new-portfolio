@@ -16,9 +16,13 @@ export interface Color {
 
 export interface ColorListProps {
   colors: Color[];
+  copyText?: string;
 }
 
-export const ColorList: FC<ColorListProps> = ({ colors }) => {
+export const ColorList: FC<ColorListProps> = ({
+  colors,
+  copyText = "Copy",
+}) => {
   const { getColorFromHex, copyColorToClipboard } = useColor();
 
   const handleColorClick = (hex: string) => {
@@ -33,7 +37,7 @@ export const ColorList: FC<ColorListProps> = ({ colors }) => {
           <Tooltip key={color.name}>
             <TooltipTrigger>
               <div
-                className="flex h-full w-64 cursor-pointer flex-col items-center justify-center gap-4 rounded-lg border border-border bg-background p-4 shadow-lg transition duration-200 hover:scale-105 hover:border-foreground/50 hover:shadow-xl active:scale-90"
+                className="hover:border-foreground/50 flex h-full w-64 cursor-pointer flex-col items-center justify-center gap-4 rounded-lg border border-border bg-background p-4 shadow-lg transition duration-200 hover:scale-105 hover:shadow-xl active:scale-90"
                 onClick={() => handleColorClick(color.hex)}
               >
                 <div
@@ -53,7 +57,7 @@ export const ColorList: FC<ColorListProps> = ({ colors }) => {
             </TooltipTrigger>
             <TooltipContent className="z-[999]">
               <div className="flex flex-col items-center justify-center gap-4">
-                <h3 className="text-center font-semibold">Click to copy</h3>
+                <h3 className="text-center font-semibold">{copyText}</h3>
               </div>
             </TooltipContent>
           </Tooltip>

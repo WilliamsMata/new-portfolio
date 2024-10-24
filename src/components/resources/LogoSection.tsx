@@ -1,4 +1,5 @@
 import { LogoList, type Logo } from "./LogoList";
+import type { Dictionary } from "@/i18n/getDictionary";
 
 const logos: Logo[] = [
   {
@@ -34,15 +35,16 @@ const logos: Logo[] = [
 ];
 
 interface LogoSectionProps {
-  title?: string;
+  dictionary: Dictionary["resources"]["logos"];
 }
 
-export function LogoSection({ title = "Logos" }: LogoSectionProps) {
+export function LogoSection({ dictionary }: LogoSectionProps) {
+  const { title, download } = dictionary;
   return (
     <section className="flex flex-col items-center gap-12">
       <h2 className="text-4xl font-semibold">{title}</h2>
 
-      <LogoList logos={logos} />
+      <LogoList logos={logos} downloadText={download} />
     </section>
   );
 }

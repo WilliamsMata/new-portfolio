@@ -701,7 +701,13 @@
   },
   "resources": {
     "title": "Resources",
-    "logos": "Logos",
-    "colors": "Colors"
+    "logos": {
+      "title": "Logos",
+      "download": "Download"
+    },
+    "colors": {
+      "title": "Colors",
+      "copy": "Click to copy"
+    }
   }
 }

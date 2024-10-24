@@ -21,11 +21,11 @@ export default async function ResourcePage({
 
       <Separator className="my-12" />
 
-      <LogoSection title={logos} />
+      <LogoSection dictionary={logos} />
 
       <Separator className="my-12" />
 
-      <ColorSection title={colors} />
+      <ColorSection dictionary={colors} />
     </main>
   );
 }

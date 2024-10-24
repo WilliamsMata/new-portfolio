@@ -1,3 +1,4 @@
+import { Dictionary } from "@/i18n/getDictionary";
 import { type Color, ColorList } from "./ColorList";
 import { ColorProvider } from "./ColorProvider";
 import { SelectMode } from "./SelectMode";
@@ -38,10 +39,11 @@ const colors: Color[] = [
 ];
 
 interface ColorSectionProps {
-  title?: string;
+  dictionary: Dictionary["resources"]["colors"];
 }
 
-export function ColorSection({ title = "Colors" }: ColorSectionProps) {
+export function ColorSection({ dictionary }: ColorSectionProps) {
+  const { title, copy } = dictionary;
   return (
     <section className="mb-12 flex flex-col items-center gap-12">
       <h2 className="text-4xl font-semibold">{title}</h2>
@@ -49,7 +51,7 @@ export function ColorSection({ title = "Colors" }: ColorSectionProps) {
       <ColorProvider>
         <SelectMode />
 
-        <ColorList colors={colors} />
+        <ColorList colors={colors} copyText={copy} />
       </ColorProvider>
     </section>
   );

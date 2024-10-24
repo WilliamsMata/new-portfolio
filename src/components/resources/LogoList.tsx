@@ -13,9 +13,13 @@ export interface Logo {
 
 export interface LogoListProps {
   logos: Logo[];
+  downloadText?: string;
 }
 
-export function LogoList({ logos = [] }: LogoListProps) {
+export function LogoList({
+  logos = [],
+  downloadText = "Download",
+}: LogoListProps) {
   return (
     <section className="w-full">
       <div className="container px-4 md:px-6">
@@ -44,7 +48,7 @@ export function LogoList({ logos = [] }: LogoListProps) {
                       download
                     >
                       <DownloadIcon className="mr-2 h-4 w-4" />
-                      Descargar
+                      {downloadText}
                     </a>
                   </CardItem>
                 </div>
