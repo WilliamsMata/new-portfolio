@@ -7,6 +7,7 @@ import { ModeToggle } from "./ModeToggle";
 import { Dictionary } from "@/i18n/getDictionary";
 import { SelectLocale } from "./SelectLocale";
 import Link from "next/link";
+import { Separator } from "../ui/separator";
 
 interface HeaderProps {
   dictionary: Dictionary["header"];
@@ -47,6 +48,8 @@ export default function Header({ dictionary }: HeaderProps) {
 
         <div className="flex items-center gap-4">
           <SelectLocale dictionary={dictionary.selectLocale} />
+
+          <Separator orientation="vertical" className="h-8" />
 
           <ModeToggle dictionary={dictionary.toggleMode} />
         </div>
