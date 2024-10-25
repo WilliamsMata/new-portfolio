@@ -42,7 +42,11 @@ export default function Header({ dictionary }: HeaderProps) {
       animate={controls}
     >
       <div className="container mx-auto flex items-center justify-between px-8 py-2">
-        <Link href="/" className="flex items-center">
+        <Link
+          href="/"
+          className="flex items-center"
+          aria-label={dictionary.home}
+        >
           <WMIcon className="h-auto w-16" />
         </Link>
 
