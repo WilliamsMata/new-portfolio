@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
-import { Button } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/hooks/useLocale";
 import type { Locale } from "@/i18n/i18n-config";
@@ -76,13 +76,13 @@ export default function ExpandableContent({
             transition={{ duration: 0.2 }}
             className="absolute bottom-0 left-0 right-0 flex justify-center bg-gradient-to-t from-background to-transparent pb-4 pt-16"
           >
-            <Button
+            <GradientButton
               onClick={() => setIsExpanded(true)}
               variant="outline"
               className="flex items-center gap-2"
             >
               {buttonText} <ArrowDownIcon className="h-4 w-4" />
-            </Button>
+            </GradientButton>
           </motion.div>
         )}
       </AnimatePresence>

@@ -16,6 +16,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { FC, useRef, useState } from "react";
+import { GradientButton } from "./button";
 
 interface FloatingDockProps {
   items: { title: string; icon: React.ReactNode; href: string }[];
@@ -82,16 +83,13 @@ const FloatingDockMobile = ({
           </motion.div>
         )}
       </AnimatePresence>
-      <button
+      <GradientButton
         onClick={() => setOpen(!open)}
-        className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px]"
+        className="h-12 rounded-full"
         aria-label="Toggle navigation"
       >
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-card px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-          <DashboardIcon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
-        </span>
-      </button>
+        <DashboardIcon className="h-5 w-5" />
+      </GradientButton>
     </div>
   );
 };
