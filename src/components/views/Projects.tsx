@@ -17,16 +17,16 @@ export const Projects: FC<ProjectsProps> = ({ dictionary }) => {
         {title}
       </GradientText>
 
-      <p className="mx-4 text-center text-muted-foreground">
-        {description}{" "}
+      <div className="mx-4 text-center text-muted-foreground">
+        <span>{description} </span>
         <LinkPreview
           url="https://github.com/WilliamsMata?tab=repositories&type=source"
           className="underline underline-offset-4"
         >
           github
         </LinkPreview>
-        .
-      </p>
+        <span>.</span>
+      </div>
 
       <ExpandableContent className="max-h-[1800px] md:max-h-[1200px] xl:max-h-full">
         <ProjectList projects={projects} />
