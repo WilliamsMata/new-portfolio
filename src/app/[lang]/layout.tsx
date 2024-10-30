@@ -62,9 +62,10 @@ export default async function RootLayout({
   const dictionary = await getDictionary(lang);
 
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
+        suppressHydrationWarning
       >
         <Providers>
           <div className="flex min-h-screen flex-col overflow-hidden font-[family-name:var(--font-geist-sans)]">
