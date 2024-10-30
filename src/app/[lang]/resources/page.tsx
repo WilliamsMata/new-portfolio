@@ -5,11 +5,13 @@ import { Separator } from "@/components/ui/separator";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/i18n-config";
 
-export default async function ResourcePage({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) {
+type Params = Promise<{ lang: Locale }>;
+
+export default async function ResourcePage(props: { params: Params }) {
+  const params = await props.params;
+
+  const { lang } = params;
+
   const dictionary = await getDictionary(lang);
   const { title, logos, colors } = dictionary.resources;
 

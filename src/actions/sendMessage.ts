@@ -22,7 +22,7 @@ export async function sendMessage(data: Input) {
 
   const { name, email, message } = result.data;
 
-  const headerStore = headers();
+  const headerStore = await headers();
 
   const ip =
     headerStore.get("x-forwarded-for") || headerStore.get("cf-connecting-ip");

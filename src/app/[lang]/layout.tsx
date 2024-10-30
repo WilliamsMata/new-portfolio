@@ -20,14 +20,18 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+type Params = Promise<{ lang: Locale }>;
+
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: Locale };
+  params: Params;
 }): Promise<Metadata> {
+  const { lang } = await params;
+
   const {
     metadata: { description },
-  } = await getDictionary(params.lang);
+  } = await getDictionary(lang);
 
   return {
     title: "Williams Mata",
@@ -51,12 +55,14 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: Locale };
+  params: Params;
 }>) {
-  const dictionary = await getDictionary(params.lang);
+  const { lang } = await params;
+
+  const dictionary = await getDictionary(lang);
 
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
       >

@@ -7,11 +7,11 @@ import { Skills } from "@/components/views/Skills";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/i18n-config";
 
-export default async function Home({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) {
+type Params = Promise<{ lang: Locale }>;
+
+export default async function Home({ params }: { params: Params }) {
+  const { lang } = await params;
+
   const dictionary = await getDictionary(lang);
 
   return (
