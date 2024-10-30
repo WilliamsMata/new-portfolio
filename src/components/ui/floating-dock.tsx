@@ -85,7 +85,7 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <GradientButton
         onClick={() => setOpen(!open)}
-        className="h-12 rounded-full"
+        className="aspect-square h-12 rounded-full"
         aria-label="Toggle navigation"
       >
         <DashboardIcon className="h-5 w-5" />
