@@ -695,7 +695,8 @@
       },
       "action": {
         "errors": {
-          "limitReached": "Has alcanzado el límite de 3 correos al dia"
+          "limitReached": "Has alcanzado el límite de 3 correos al dia",
+          "resendError": "Algo salió mal, por favor inténtalo de nuevo más tarde"
         }
       }
     }

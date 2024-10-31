@@ -56,7 +56,7 @@ export async function sendMessage(data: Input) {
   if (error) {
     console.error(error);
     return {
-      error: "Something went wrong, please try again later",
+      error: dictionary.contact.form.action.errors.resendError,
     };
   }
 
