@@ -34,14 +34,9 @@ export async function sendMessage(data: Input) {
     dayRateLimiter.limit(ip ?? email),
   ]);
 
-  if (!success && dictionary?.contact.form.action.errors.limitReached) {
+  if (!success) {
     return {
       error: dictionary.contact.form.action.errors.limitReached,
-      getLimit: true,
-    };
-  } else if (!success) {
-    return {
-      error: "You have reached the limit of 3 emails per day",
       getLimit: true,
     };
   }
