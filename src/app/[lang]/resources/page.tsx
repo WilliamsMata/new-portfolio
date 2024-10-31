@@ -8,11 +8,10 @@ import type { Locale } from "@/i18n/i18n-config";
 type Params = Promise<{ lang: Locale }>;
 
 export default async function ResourcePage(props: { params: Params }) {
-  const params = await props.params;
-
-  const { lang } = params;
+  const { lang } = await props.params;
 
   const dictionary = await getDictionary(lang);
+
   const { title, logos, colors } = dictionary.resources;
 
   return (
