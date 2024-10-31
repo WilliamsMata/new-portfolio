@@ -56,7 +56,7 @@ export async function sendMessage(data: Input) {
   if (error) {
     console.error(error);
     return {
-      error: error.message,
+      error: "Something went wrong, please try again later",
     };
   }
 
