@@ -62,15 +62,18 @@ const GradientButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Button
         ref={ref}
         className={cn(
-          buttonVariants({ variant, size, className }),
-          "relative overflow-hidden p-[1px]",
+          buttonVariants({ variant, size }),
+          "relative w-auto overflow-hidden p-[1.5px]",
+          className,
+          "h-full",
         )}
         {...props}
       >
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+
         <span
           className={cn(
-            "relative inline-flex h-full w-full items-center justify-center rounded-md bg-background px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl hover:bg-accent",
+            "relative inline-flex h-full w-full items-center justify-center rounded-md bg-background px-3 py-1 text-sm font-medium text-foreground backdrop-blur-3xl hover:bg-accent",
             className,
           )}
         >
