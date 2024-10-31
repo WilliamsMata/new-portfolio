@@ -58,7 +58,7 @@ export default function ExpandableContent({
               ? contentHeight
               : (initialHeight ?? "auto"),
         }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeIn" }}
         className={cn(
           "overflow-hidden pb-4",
           !isExpanded && className,
@@ -73,7 +73,7 @@ export default function ExpandableContent({
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute bottom-0 left-0 right-0 flex justify-center bg-gradient-to-t from-background to-transparent pb-4 pt-16"
           >
             <GradientButton
