@@ -18,16 +18,18 @@ export const Contact: FC<ContactProps> = ({ dictionary }) => {
           {title}
         </GradientText>
 
-        <BackgroundGradient
-          className="flex w-full flex-col gap-4 rounded-3xl bg-background p-8"
-          containerClassName="w-full max-w-96"
-        >
-          <h2 className="text-3xl font-bold">{card.title}</h2>
+        <div className="mx-4">
+          <BackgroundGradient
+            className="flex w-full flex-col gap-4 rounded-3xl bg-background p-8"
+            containerClassName="w-full max-w-96"
+          >
+            <h2 className="text-3xl font-bold">{card.title}</h2>
 
-          <p className="text-sm text-muted-foreground">{card.description}</p>
+            <p className="text-sm text-muted-foreground">{card.description}</p>
 
-          <ContactForm dictionary={form} />
-        </BackgroundGradient>
+            <ContactForm dictionary={form} />
+          </BackgroundGradient>
+        </div>
       </BackgroundBeamsWithCollision>
     </section>
   );
