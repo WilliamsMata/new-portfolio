@@ -85,7 +85,7 @@ export const Tabs: FC<TabsProps> = ({
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "dark:bg-purple absolute inset-0 rounded-full bg-blue-100",
+                  "absolute inset-0 rounded-full bg-blue-100 dark:bg-purple",
                   activeTabClassName,
                 )}
               />
@@ -144,7 +144,7 @@ export const FadeInDiv: FC<FadeInDivProps> = ({
             y: isActive(tab) && matches ? [0, 40, 0] : 0,
           }}
           className={cn(
-            "absolute left-0 top-0 mt-32 h-full w-full",
+            "absolute left-0 top-0 mt-32 h-full w-full will-change-transform",
             isActive(tab) && "relative h-auto",
             className,
           )}

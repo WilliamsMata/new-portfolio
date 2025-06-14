@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { cn } from "@/lib/utils";
@@ -149,10 +148,26 @@ const CollisionMechanism = React.forwardRef<
   const [beamKey, setBeamKey] = useState(0);
   const [cycleCollisionDetected, setCycleCollisionDetected] = useState(false);
 
+  const [relativeCollisionPointY, setRelativeCollisionPointY] = useState<
+    number | null
+  >(null);
+
   useEffect(() => {
+    if (isIntersecting && parentRef.current && containerRef.current) {
+      const parentRect = parentRef.current.getBoundingClientRect();
+      const containerRect = containerRef.current.getBoundingClientRect();
+
+      const relativeTop = containerRect.top - parentRect.top;
+      setRelativeCollisionPointY(relativeTop);
+    }
+  }, [isIntersecting, parentRef, containerRef]);
+
+  useEffect(() => {
+    if (relativeCollisionPointY === null) return;
+
     let rafId: number;
     let lastCheckTime = 0;
-    const checkInterval = 100; // 100ms
+    const checkInterval = 100;
 
     const checkCollision = () => {
       const now = performance.now();
@@ -160,27 +175,20 @@ const CollisionMechanism = React.forwardRef<
       if (now - lastCheckTime >= checkInterval) {
         lastCheckTime = now;
 
-        if (
-          beamRef.current &&
-          containerRef.current &&
-          parentRef.current &&
-          !cycleCollisionDetected
-        ) {
+        if (beamRef.current && parentRef.current && !cycleCollisionDetected) {
           const beamRect = beamRef.current.getBoundingClientRect();
-          const containerRect = containerRef.current.getBoundingClientRect();
           const parentRect = parentRef.current.getBoundingClientRect();
 
-          if (beamRect.bottom >= containerRect.top) {
+          const beamRelativeBottom = beamRect.bottom - parentRect.top;
+
+          if (beamRelativeBottom >= relativeCollisionPointY) {
             const relativeX =
               beamRect.left - parentRect.left + beamRect.width / 2;
             const relativeY = beamRect.bottom - parentRect.top;
 
             setCollision({
               detected: true,
-              coordinates: {
-                x: relativeX,
-                y: relativeY,
-              },
+              coordinates: { x: relativeX, y: relativeY },
             });
             setCycleCollisionDetected(true);
           }
@@ -194,10 +202,13 @@ const CollisionMechanism = React.forwardRef<
       rafId = requestAnimationFrame(checkCollision);
     }
 
-    // Limpiar el requestAnimationFrame al desmontar el componente
     return () => cancelAnimationFrame(rafId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cycleCollisionDetected, containerRef, parentRef, isIntersecting]);
+  }, [
+    cycleCollisionDetected,
+    parentRef,
+    isIntersecting,
+    relativeCollisionPointY,
+  ]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {
@@ -219,14 +230,14 @@ const CollisionMechanism = React.forwardRef<
         ref={beamRef}
         animate="animate"
         initial={{
-          translateY: beamOptions.initialY || "-200px",
-          translateX: beamOptions.initialX || "0px",
+          y: beamOptions.initialY || "-200px",
+          x: beamOptions.initialX || "0px",
           rotate: beamOptions.rotate || 0,
         }}
         variants={{
           animate: {
-            translateY: beamOptions.translateY || "1800px",
-            translateX: beamOptions.translateX || "0px",
+            y: beamOptions.translateY || "1800px",
+            x: beamOptions.translateX || "0px",
             rotate: beamOptions.rotate || 0,
           },
         }}
@@ -239,7 +250,7 @@ const CollisionMechanism = React.forwardRef<
           repeatDelay: beamOptions.repeatDelay || 0,
         }}
         className={cn(
-          "from-blue via-purple absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t to-transparent",
+          "absolute left-0 top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-blue via-purple to-transparent will-change-transform",
           beamOptions.className,
         )}
       />
@@ -278,7 +289,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="via-blue absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent to-transparent blur-sm"
+        className="will-change-opacity absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-blue to-transparent blur-sm"
       ></motion.div>
       {spans.map((span) => (
         <motion.span
@@ -290,7 +301,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
             opacity: 0,
           }}
           transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
-          className="from-blue to-purple absolute h-1 w-1 rounded-full bg-gradient-to-b"
+          className="will-change-transform-opacity absolute h-1 w-1 rounded-full bg-gradient-to-b from-blue to-purple"
         />
       ))}
     </div>
