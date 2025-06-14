@@ -108,6 +108,10 @@ body {
     will-change: opacity;
   }
 
+  .will-change-filter-opacity {
+    will-change: filter, opacity;
+  }
+
   .will-change-transform-opacity {
     will-change: transform, opacity;
   }

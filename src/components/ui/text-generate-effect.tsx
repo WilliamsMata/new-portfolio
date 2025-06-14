@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { type DynamicAnimationOptions, motion, stagger } from "framer-motion";
+import { type AnimationOptions, motion, stagger } from "framer-motion";
 import { cn } from "@/lib/utils";
 import useSafeAnimate from "@/hooks/useSafeAnimate";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
@@ -39,7 +39,7 @@ export const TextGenerateEffect = ({
   const animationTime =
     totalWordsCount * stagerDuration * 1000 + duration * 1000;
 
-  const animateSpan = (options?: DynamicAnimationOptions) => {
+  const animateSpan = (options?: AnimationOptions) => {
     animate(
       "span",
       {
@@ -78,7 +78,7 @@ export const TextGenerateEffect = ({
           {paragraph.split(" ").map((word, wIdx) => (
             <motion.span
               key={`${word}-${pIdx}-${wIdx}`}
-              className="opacity-0"
+              className="will-change-filter-opacity opacity-0"
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
