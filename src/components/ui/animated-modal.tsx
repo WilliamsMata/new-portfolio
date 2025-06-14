@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -91,20 +90,19 @@ export const ModalBody = ({
           }}
           animate={{
             opacity: 1,
-            backdropFilter: "blur(10px)",
           }}
           exit={{
             opacity: 0,
-            backdropFilter: "blur(0px)",
           }}
-          className="fixed inset-0 z-[999] flex h-full w-full items-center justify-center [perspective:800px] [transform-style:preserve-3d]"
+          className="will-change-opacity-backdrop fixed inset-0 z-[999] flex h-full w-full items-center justify-center bg-black/70 [perspective:800px] [transform-style:preserve-3d]"
+          style={{
+            backdropFilter: "blur(10px)",
+          }}
         >
-          <Overlay />
-
           <motion.div
             ref={modalRef}
             className={cn(
-              "relative z-[999] flex max-h-[95%] min-h-[50%] flex-1 flex-col overflow-hidden border border-transparent bg-white dark:border-neutral-800 dark:bg-neutral-950 md:max-w-[40%] md:rounded-2xl",
+              "will-change-transform-opacity relative z-[999] flex max-h-[95%] min-h-[50%] flex-1 flex-col overflow-hidden border border-transparent bg-white dark:border-neutral-800 dark:bg-neutral-950 md:max-w-[40%] md:rounded-2xl",
               className,
             )}
             initial={{
@@ -172,25 +170,6 @@ export const ModalFooter = ({
   );
 };
 
-const Overlay = ({ className }: { className?: string }) => {
-  return (
-    <motion.div
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-        backdropFilter: "blur(10px)",
-      }}
-      exit={{
-        opacity: 0,
-        backdropFilter: "blur(0px)",
-      }}
-      className={`fixed inset-0 z-50 h-full w-full bg-black bg-opacity-50 ${className}`}
-    ></motion.div>
-  );
-};
-
 const CloseIcon = () => {
   const { setOpen } = useModal();
   return (
@@ -222,7 +201,7 @@ const CloseIcon = () => {
 // Add it in a separate file, I've added here for simplicity
 export const useOutsideClick = (
   ref: React.RefObject<HTMLDivElement | null>,
-  callback: (event: any) => void,
+  callback: (event: MouseEvent | TouchEvent) => void,
 ) => {
   useEffect(() => {
     const listener = (event: any) => {
