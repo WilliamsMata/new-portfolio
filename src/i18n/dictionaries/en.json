@@ -1,6 +1,14 @@
 {
   "metadata": {
-    "description": "I am a fullstack developer with experience creating modern, beautiful and dynamic websites and mobile apps. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together.",
+    "description": "I am a fullstack developer with experience creating modern, beautiful and dynamic websites and mobile apps. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together."
+  },
+  "header": {
+    "home": "Home",
+    "selectLocale": {
+      "title": "Select Language",
+      "spanish": "Español",
+      "english": "English"
+    },
     "toggleMode": {
       "title": "Toggle theme",
       "light": "Light",
@@ -24,7 +32,7 @@
   },
   "about": {
     "title": "About Me",
-    "text": "I am a full-stack developer specialized in creating integrated web and mobile applications that deliver optimized and efficient user experiences. With over 3 years of experience in software development, I have worked both on independent projects and in multidisciplinary teams. My approach ranges from conceiving intuitive interfaces on the frontend to implementing robust and scalable architectures on the backend. \n I have a deep interest in emerging technologies and always seek to improve my skills through new challenges and continuous learning. My goal is to create innovative technological solutions that not only meet business requirements but exceed user expectations."
+    "text": "I am a full-stack developer passionate about creating solutions that truly help people and businesses. I specialize in building web and mobile applications using best practices, design patterns, and smart automation.\nI have experience applying Domain-Driven Design (DDD) and other patterns to make software easy to maintain and scale. I also integrate automation and AI tools like n8n to optimize processes and save time. My goal is for every client to feel confident and see clear results from day one."
   },
   "skills": {
     "title": "My skills",
@@ -72,6 +80,12 @@
             "iconPath": "/icons/react.svg",
             "url": "https://react.dev/",
             "description": "ReactJS is a popular JavaScript library used for building user interfaces. It was developed by Facebook and has gained widespread use in the web development community. React allows developers to create reusable UI components and manage the state of these components in a predictable and efficient way. It uses a virtual DOM (Document Object Model) to update and render changes to the UI, which makes it faster and more efficient than traditional methods."
+          },
+          {
+            "title": "Angular",
+            "iconPath": "/icons/angular.svg",
+            "url": "https://angular.io/",
+            "description": "Angular is a powerful open-source framework developed by Google for building scalable and high-performance web applications. It uses TypeScript and a component-based architecture, making it easy to create modular, maintainable, and testable code. Angular provides tools for routing, forms, HTTP communication, and state management, and is widely used for enterprise-level projects."
           },
           {
             "title": "Next",

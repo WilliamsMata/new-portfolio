@@ -7,11 +7,11 @@
     "selectLocale": {
       "title": "Seleccionar idioma",
       "spanish": "Español",
-      "english": "Inglés"
+      "english": "English"
     },
     "toggleMode": {
       "title": "Cambiar el tema",
-      "light": "Dia",
+      "light": "Día",
       "dark": "Noche",
       "system": "Sistema"
     }
@@ -32,7 +32,7 @@
   },
   "about": {
     "title": "Sobre mí",
-    "text": "Soy un desarrollador full-stack especializado en la creación de aplicaciones web y móviles que ofrecen experiencias de usuario optimizadas y eficientes. Con más de 3 años de experiencia en desarrollo de software, he trabajado tanto en proyectos independientes como en equipos multidisciplinares. Mi enfoque abarca desde la creación de interfaces intuitivas en el frontend hasta la implementación de arquitecturas robustas y escalables en el backend. \n Tengo un profundo interés por las tecnologías emergentes y siempre busco mejorar mis habilidades a través de nuevos retos y del aprendizaje continuo. Mi objetivo es crear soluciones tecnológicas innovadoras que no solo cumplan los requisitos empresariales, sino que superen las expectativas de los usuarios."
+    "text": "Soy un desarrollador full-stack apasionado por crear soluciones que realmente ayudan a las personas y empresas. Me especializo en construir aplicaciones web y móviles usando buenas prácticas, patrones de diseño y automatización inteligente.\nTengo experiencia aplicando Domain-Driven Design (DDD) y otros patrones para que el software sea fácil de mantener y escalar. Además, integro herramientas de automatización e IA como n8n para optimizar procesos y ahorrar tiempo. Mi meta es que cada cliente sienta confianza y vea resultados claros desde el primer día."
   },
   "skills": {
     "title": "Mis conocimientos",
@@ -80,6 +80,12 @@
             "iconPath": "/icons/react.svg",
             "url": "https://react.dev/",
             "description": "ReactJS es una popular biblioteca JavaScript utilizada para crear interfaces de usuario. Fue desarrollada por Facebook y su uso se ha extendido entre la comunidad de desarrolladores web. React permite a los desarrolladores crear componentes de interfaz de usuario reutilizables y gestionar el estado de estos componentes de forma predecible y eficiente. Utiliza un DOM (Document Object Model) virtual para actualizar y representar los cambios en la interfaz de usuario, lo que lo hace más rápido y eficiente que los métodos tradicionales."
+          },
+          {
+            "title": "Angular",
+            "iconPath": "/icons/angular.svg",
+            "url": "https://angular.io/",
+            "description": "Angular es un potente framework de código abierto desarrollado por Google para crear aplicaciones web escalables y de alto rendimiento. Utiliza TypeScript y una arquitectura basada en componentes, lo que facilita la creación de código modular, mantenible y testeable. Angular ofrece herramientas para enrutamiento, formularios, comunicación HTTP y gestión de estado, y es ampliamente utilizado en proyectos empresariales."
           },
           {
             "title": "Next",
