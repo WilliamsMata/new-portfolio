@@ -386,6 +386,12 @@
             "iconPath": "/icons/zod.svg",
             "url": "https://zod.dev/",
             "description": "Zod es una biblioteca de validación de esquemas de TypeScript que se utiliza para validar objetos de datos en aplicaciones JavaScript y TypeScript. Proporciona una API sencilla e intuitiva para definir esquemas de datos y validar objetos de datos contra esos esquemas. Zod soporta varios tipos de datos, como cadenas, números, matrices y objetos, así como características avanzadas como tipos de unión, tipos de intersección y tipos condicionales. También proporciona un conjunto de herramientas para el análisis sintáctico, la serialización y la transformación de datos. Zod está diseñado para ser ligero y eficaz, con un enfoque en la seguridad de tipos y la experiencia del desarrollador."
+          },
+          {
+            "title": "n8n",
+            "iconPath": "/icons/n8n.svg",
+            "url": "https://n8n.io/",
+            "description": "n8n es una herramienta de automatización de flujos de trabajo de código abierto basada en nodos. Te permite automatizar tareas, sincronizar datos entre diferentes servicios y APIs, y crear flujos de trabajo complejos visualmente. n8n ofrece más de 200 integraciones y puede alojarse por ti mismo o utilizar la oferta en la nube."
           }
         ]
       }

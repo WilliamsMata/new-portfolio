@@ -1,14 +1,6 @@
 {
   "metadata": {
-    "description": "I am a fullstack developer with experience creating modern, beautiful and dynamic websites and mobile apps. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together."
-  },
-  "header": {
-    "home": "Home",
-    "selectLocale": {
-      "title": "Select language",
-      "spanish": "Spanish",
-      "english": "English"
-    },
+    "description": "I am a fullstack developer with experience creating modern, beautiful and dynamic websites and mobile apps. Explore my portfolio to see some of the projects I have worked on and get in touch if you are interested in collaborating on a project together.",
     "toggleMode": {
       "title": "Toggle theme",
       "light": "Light",
@@ -386,6 +378,12 @@
             "iconPath": "/icons/zod.svg",
             "url": "https://zod.dev/",
             "description": "Zod is a TypeScript-first schema validation library used for validating data objects in JavaScript and TypeScript applications. It provides a simple and intuitive API for defining data schemas and validating data objects against those schemas. Zod supports various data types, such as strings, numbers, arrays, and objects, as well as advanced features like union types, intersection types, and conditional types. It also provides a set of tools for data parsing, serialization, and transformation. Zod is designed to be lightweight and performant, with a focus on type safety and developer experience."
+          },
+          {
+            "title": "n8n",
+            "iconPath": "/icons/n8n.svg",
+            "url": "https://n8n.io/",
+            "description": "n8n is a free and open node-based workflow automation tool. It enables you to automate tasks, sync data between different services and APIs, and build complex workflows visually. n8n supports over 200 integrations and allows you to host it yourself or use the cloud offering."
           }
         ]
       }
