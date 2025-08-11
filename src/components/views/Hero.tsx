@@ -22,10 +22,10 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
           Williams Mata R
         </GradientText>
 
-        <div className="inset-x-06 via-blue top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent to-transparent blur-sm" />
-        <div className="inset-x-06 via-blue top-0 h-px w-3/4 bg-gradient-to-r from-transparent to-transparent" />
-        <div className="via-cyan inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent to-transparent blur-sm" />
-        <div className="via-cyan inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent to-transparent" />
+        <div className="inset-x-06 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-blue to-transparent blur-sm" />
+        <div className="inset-x-06 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-blue to-transparent" />
+        <div className="inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-cyan to-transparent blur-sm" />
+        <div className="inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-cyan to-transparent" />
 
         <div
           className={cn(
@@ -44,7 +44,7 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
           </p>
         </div>
 
-        <div className="mt-4">
+        {/* <div className="mt-4">
           <a
             href={resume.path}
             className="relative block p-[3px]"
@@ -56,7 +56,7 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
               <FileIcon className="ml-2 h-5 w-5" />
             </span>
           </a>
-        </div>
+        </div> */}
       </section>
     </HeroHighlight>
   );
