@@ -8,6 +8,7 @@ import { Dictionary } from "@/i18n/getDictionary";
 import { SelectLocale } from "./SelectLocale";
 import Link from "next/link";
 import { Separator } from "../ui/separator";
+import { usePathname } from "next/navigation";
 
 interface HeaderProps {
   dictionary: Dictionary["header"];
@@ -16,21 +17,27 @@ interface HeaderProps {
 export default function Header({ dictionary }: HeaderProps) {
   const lastScrollY = useRef(0);
   const controls = useAnimation();
+  const pathname = usePathname();
+  const ticking = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const isScrollingDown = currentScrollY > lastScrollY.current;
-
-      controls.start({ y: isScrollingDown ? "-120%" : 0 });
-
-      lastScrollY.current = currentScrollY;
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const isScrollingDown = currentScrollY > lastScrollY.current;
+          controls.start({ y: isScrollingDown ? "-120%" : 0 });
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
+        ticking.current = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll as any);
     };
   }, [controls]);
 
@@ -43,7 +50,7 @@ export default function Header({ dictionary }: HeaderProps) {
     >
       <div className="container mx-auto flex items-center justify-between px-8 py-2">
         <Link
-          href="/"
+          href={`/${(pathname?.split("/")[1] || "").trim() || "es"}`}
           className="flex items-center"
           aria-label={dictionary.home}
         >

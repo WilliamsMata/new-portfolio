@@ -33,15 +33,36 @@ export async function generateMetadata({
     metadata: { description },
   } = await getDictionary(lang);
 
+  const baseUrl = new URL("https://williamsmata.com");
+
   return {
     title: "Williams Mata",
     description,
+    metadataBase: baseUrl,
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        en: "/en",
+        es: "/es",
+      },
+    },
     openGraph: {
       type: "website",
       title: "Williams Mata",
       description,
-      url: "https://williamsmata.com",
+      url: new URL(`/${lang}`, baseUrl).toString(),
       siteName: "Williams Mata Portfolio",
+      images: [
+        {
+          url: new URL(`/${lang}/opengraph-image.png`, baseUrl).toString(),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Williams Mata",
+      description,
+      images: [new URL(`/${lang}/twitter-image.png`, baseUrl).toString()],
     },
   };
 }

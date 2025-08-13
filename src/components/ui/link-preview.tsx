@@ -56,11 +56,14 @@ export const LinkPreview = ({
   }
 
   const [isOpen, setOpen] = React.useState(false);
+  const [shouldPreload, setShouldPreload] = React.useState(false);
+  const [canUsePreview, setCanUsePreview] = React.useState(true);
 
-  const [isMounted, setIsMounted] = React.useState(false);
-
+  // Respect reduced motion and disable on coarse pointers (mobile)
   React.useEffect(() => {
-    setIsMounted(true);
+    const mqlReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mqlPointer = window.matchMedia("(pointer: fine)");
+    setCanUsePreview(!mqlReduce.matches && mqlPointer.matches);
   }, []);
 
   const springConfig = { stiffness: 100, damping: 15 };
@@ -79,14 +82,14 @@ export const LinkPreview = ({
 
   return (
     <>
-      {isMounted ? (
-        <div className="hidden">
+      {canUsePreview && shouldPreload ? (
+        <div className="hidden" aria-hidden="true">
           <Image
             src={src}
             width={width}
             height={height}
             quality={quality}
-            alt="hidden image"
+            alt=""
           />
         </div>
       ) : null}
@@ -96,10 +99,14 @@ export const LinkPreview = ({
         closeDelay={100}
         onOpenChange={(open) => {
           setOpen(open);
+          if (open) setShouldPreload(true);
         }}
       >
         <HoverCardPrimitive.Trigger
-          onMouseMove={handleMouseMove}
+          onMouseMove={(e) => {
+            if (!canUsePreview) return;
+            handleMouseMove(e);
+          }}
           className={cn("text-black dark:text-white", className)}
           href={url}
           target="_blank"
@@ -114,7 +121,7 @@ export const LinkPreview = ({
           sideOffset={10}
         >
           <AnimatePresence>
-            {isOpen && (
+            {isOpen && canUsePreview && (
               <motion.div
                 initial={{ opacity: 0, y: 20, scale: 0.6 }}
                 animate={{

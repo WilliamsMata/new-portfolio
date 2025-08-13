@@ -27,10 +27,11 @@ export async function sendMessage(data: Input) {
   const ip =
     headerStore.get("x-forwarded-for") || headerStore.get("cf-connecting-ip");
 
-  const lang = headerStore.get("accept-language")?.split(",")[0] as Locale;
+  const rawAccept = headerStore.get("accept-language")?.split(",")[0] ?? "en";
+  const baseLang = rawAccept.split("-")[0] as Locale; // normalize like es-ES -> es
 
   const [dictionary, { success }] = await Promise.all([
-    getDictionary(lang),
+    getDictionary(baseLang),
     dayRateLimiter.limit(ip ?? email),
   ]);
 
@@ -45,6 +46,7 @@ export async function sendMessage(data: Input) {
     from: "message@williamsmata.com",
     to: "williams.rm99@gmail.com",
     subject: `New message from ${name}`,
+    replyTo: email,
     react: EmailTemplate({ name, email, message }),
   });
 
@@ -55,12 +57,9 @@ export async function sendMessage(data: Input) {
     };
   }
 
-  console.log({
-    emailData,
-    name,
-    email,
-    message,
-  });
+  if (process.env.NODE_ENV !== "production") {
+    console.log({ emailData, name, email, message });
+  }
 
   return {
     success: true,

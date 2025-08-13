@@ -28,7 +28,18 @@ function handleLocaleMiddleware(request: NextRequest) {
 
   // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
   // If you have one
-  const ignoredPaths = ["/files", "/icons", "/projects", "/resources"];
+  const ignoredPaths = [
+    "/files",
+    "/icons",
+    "/projects",
+    "/resources",
+    "/favicon.ico",
+    "/favicon.png",
+    "/apple-touch-icon.png",
+    "/sitemap.xml",
+    "/robots.txt",
+    "/manifest.webmanifest",
+  ];
 
   if (ignoredPaths.some((prefix) => pathname.startsWith(prefix))) {
     return;
@@ -63,5 +74,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|manifest.webmanifest).*)",
+  ],
 };
