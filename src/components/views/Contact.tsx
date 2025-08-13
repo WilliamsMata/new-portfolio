@@ -12,7 +12,7 @@ interface ContactProps {
 export const Contact: FC<ContactProps> = ({ dictionary }) => {
   const { title, card, form } = dictionary;
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center [contain-intrinsic-size:1px_700px] [content-visibility:auto]">
       <BackgroundBeamsWithCollision>
         <GradientText as="h2" size="4xl" className="mb-12">
           {title}

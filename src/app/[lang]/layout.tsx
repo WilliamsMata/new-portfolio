@@ -2,12 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/providers/Providers";
-import { Toaster } from "@/components/ui/sonner";
-import { ConsoleLog } from "@/components/common/ConsoleLog";
+import LayoutClientExtras from "@/components/common/LayoutClientExtras";
 import { i18n, type Locale } from "@/i18n/i18n-config";
 import { getDictionary } from "@/i18n/getDictionary";
 import Header from "@/components/common/Header";
-import FloatingDockComponent from "@/components/common/FloatingDockComponent";
 import Script from "next/script";
 
 const geistSans = localFont({
@@ -97,12 +95,9 @@ export default async function RootLayout({
             <Header dictionary={dictionary.header} />
 
             {children}
-
-            <FloatingDockComponent />
           </div>
 
-          <Toaster />
-          <ConsoleLog />
+          <LayoutClientExtras />
         </Providers>
         <Script
           id="ld-json"

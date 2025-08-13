@@ -23,9 +23,10 @@ export const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
             alt={`Proyecto ${title}`}
             fill
             className="h-full object-cover"
-            sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, (max-width: 1280px) 40vw, 28vw"
+            sizes="(max-width: 480px) 85vw, (max-width: 768px) 60vw, (max-width: 1024px) 40vw, 28vw"
             placeholder="blur"
             blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMzIwJyBoZWlnaHQ9JDE4MCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWxsPScjZWVlJy8+PC9zdmc+"
+            quality={70}
           />
         </div>
 

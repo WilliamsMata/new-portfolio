@@ -12,7 +12,7 @@ interface ProjectsProps {
 export const Projects: FC<ProjectsProps> = ({ dictionary }) => {
   const { title, description, projects } = dictionary;
   return (
-    <section className="flex flex-col items-center gap-8">
+    <section className="flex flex-col items-center gap-8 [contain-intrinsic-size:1px_1200px] [content-visibility:auto]">
       <GradientText as="h2" size="4xl">
         {title}
       </GradientText>

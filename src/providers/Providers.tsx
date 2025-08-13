@@ -2,12 +2,14 @@
 
 import * as React from "react";
 import { ThemeProvider } from "./ThemeProvider";
-import { MotionConfig } from "framer-motion";
+import { MotionConfig, LazyMotion, domAnimation } from "framer-motion";
 
 export function Providers({ children }: React.PropsWithChildren) {
   return (
     <ThemeProvider>
-      <MotionConfig reducedMotion="user">{children}</MotionConfig>
+      <LazyMotion features={domAnimation}>
+        <MotionConfig reducedMotion="user">{children}</MotionConfig>
+      </LazyMotion>
     </ThemeProvider>
   );
 }
