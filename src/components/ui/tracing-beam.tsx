@@ -9,6 +9,13 @@ interface TracingBeamProps extends PropsWithChildren {
 
 export const TracingBeam: FC<TracingBeamProps> = ({ children, className }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [enabled, setEnabled] = useState(true);
+
+  useEffect(() => {
+    const mqlReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mqlPointer = window.matchMedia("(pointer: fine)");
+    setEnabled(!mqlReduce.matches && mqlPointer.matches);
+  }, []);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -62,7 +69,12 @@ export const TracingBeam: FC<TracingBeamProps> = ({ children, className }) => {
       ref={ref}
       className={cn("container relative mx-auto h-full w-full", className)}
     >
-      <div className="absolute -left-4 top-3 z-[100] hidden md:-left-20 md:block">
+      <div
+        className={cn(
+          "absolute -left-4 top-3 z-[100] hidden md:-left-20 md:block",
+          !enabled && "hidden",
+        )}
+      >
         <motion.div
           transition={{
             duration: 0.2,

@@ -8,6 +8,7 @@ import { i18n, type Locale } from "@/i18n/i18n-config";
 import { getDictionary } from "@/i18n/getDictionary";
 import Header from "@/components/common/Header";
 import FloatingDockComponent from "@/components/common/FloatingDockComponent";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -88,6 +89,9 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
         suppressHydrationWarning
       >
+        <a href="#main" className="sr-only focus:not-sr-only">
+          Skip to content
+        </a>
         <Providers>
           <div className="flex min-h-screen flex-col overflow-hidden font-[family-name:var(--font-geist-sans)]">
             <Header dictionary={dictionary.header} />
@@ -100,6 +104,36 @@ export default async function RootLayout({
           <Toaster />
           <ConsoleLog />
         </Providers>
+        <Script
+          id="ld-json"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Williams Mata",
+              url: "https://williamsmata.com",
+              sameAs: [
+                "https://github.com/WilliamsMata",
+                "https://www.linkedin.com/in/williams-mata",
+                "https://x.com/williamsmata99",
+              ],
+            }),
+          }}
+        />
+        <Script
+          id="ld-json-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Williams Mata Portfolio",
+              url: "https://williamsmata.com",
+              inLanguage: lang,
+            }),
+          }}
+        />
       </body>
     </html>
   );

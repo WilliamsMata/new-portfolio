@@ -1,5 +1,7 @@
 "use client";
+import type React from "react";
 import type { FC, PropsWithChildren } from "react";
+import { useEffect, useState } from "react";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
@@ -16,6 +18,24 @@ export const HeroHighlight: FC<HeroHighlightProps> = ({
 }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [enabled, setEnabled] = useState(true);
+  const webkitMask = useMotionTemplate`
+            radial-gradient(
+              200px circle at ${mouseX}px ${mouseY}px,
+              black 0%,
+              transparent 100%
+            )`;
+  const mask = useMotionTemplate`
+            radial-gradient(
+              200px circle at ${mouseX}px ${mouseY}px,
+              black 0%,
+              transparent 100%
+            )`;
+  useEffect(() => {
+    const mqlReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mqlPointer = window.matchMedia("(pointer: fine)");
+    setEnabled(!mqlReduce.matches && mqlPointer.matches);
+  }, []);
 
   function handleMouseMove({
     currentTarget,
@@ -38,23 +58,11 @@ export const HeroHighlight: FC<HeroHighlightProps> = ({
     >
       <div className="pointer-events-none absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800" />
       <motion.div
-        className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 bg-dot-thick-indigo-500 group-hover:opacity-100 dark:bg-dot-thick-indigo-500"
-        style={{
-          WebkitMaskImage: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
-              black 0%,
-              transparent 100%
-            )
-          `,
-          maskImage: useMotionTemplate`
-            radial-gradient(
-              200px circle at ${mouseX}px ${mouseY}px,
-              black 0%,
-              transparent 100%
-            )
-          `,
-        }}
+        className={cn(
+          "pointer-events-none absolute inset-0 transition duration-300 bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500",
+          enabled ? "opacity-0 group-hover:opacity-100" : "opacity-0",
+        )}
+        style={{ WebkitMaskImage: webkitMask, maskImage: mask }}
       />
 
       <div className={cn("relative z-20", className)}>{children}</div>

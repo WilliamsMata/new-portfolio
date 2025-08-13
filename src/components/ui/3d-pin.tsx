@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -19,6 +19,13 @@ export const PinContainer = ({
   const [transform, setTransform] = useState(
     "translate(-50%,-50%) rotateX(0deg)",
   );
+  const [enabled, setEnabled] = useState(true);
+
+  useEffect(() => {
+    const mqlReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mqlPointer = window.matchMedia("(pointer: fine)");
+    setEnabled(!mqlReduce.matches && mqlPointer.matches);
+  }, []);
 
   const onMouseEnter = () => {
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
@@ -33,8 +40,8 @@ export const PinContainer = ({
         "group/pin relative block cursor-pointer",
         containerClassName,
       )}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
+      onMouseEnter={enabled ? onMouseEnter : undefined}
+      onMouseLeave={enabled ? onMouseLeave : undefined}
       href={href || "/"}
       target="_blank"
     >
@@ -49,7 +56,7 @@ export const PinContainer = ({
           style={{
             transform: transform,
           }}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border border-foreground/[0.1] bg-background shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-700 group-hover/pin:border-foreground/[0.2]"
+          className="border-foreground/[0.1] group-hover/pin:border-foreground/[0.2] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border bg-background shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-700"
         >
           <div className={cn("relative z-10", className)}>{children}</div>
         </div>
@@ -145,8 +152,8 @@ export const PinPerspective = ({ title }: { title?: string }) => {
         </div>
 
         <>
-          <motion.div className="to-cyan absolute bottom-1/2 right-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent blur-[2px] group-hover/pin:h-40" />
-          <motion.div className="to-cyan absolute bottom-1/2 right-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent group-hover/pin:h-40" />
+          <motion.div className="absolute bottom-1/2 right-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent to-cyan blur-[2px] group-hover/pin:h-40" />
+          <motion.div className="absolute bottom-1/2 right-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent to-cyan group-hover/pin:h-40" />
           <motion.div className="absolute bottom-1/2 right-1/2 z-40 h-[4px] w-[4px] translate-x-[1.5px] translate-y-[14px] rounded-full bg-cyan-600 blur-[3px]" />
           <motion.div className="absolute bottom-1/2 right-1/2 z-40 h-[2px] w-[2px] translate-x-[0.5px] translate-y-[14px] rounded-full bg-cyan-300" />
         </>
