@@ -19,7 +19,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-type Params = Promise<{ lang: Locale }>;
+type Params = Promise<{ lang: string }>;
 
 export async function generateMetadata({
   params,
@@ -30,7 +30,7 @@ export async function generateMetadata({
 
   const {
     metadata: { description },
-  } = await getDictionary(lang);
+  } = await getDictionary(lang as Locale);
 
   const baseUrl = new URL("https://williamsmata.com");
 
@@ -79,7 +79,7 @@ export default async function RootLayout({
 }>) {
   const { lang } = await params;
 
-  const dictionary = await getDictionary(lang);
+  const dictionary = await getDictionary(lang as Locale);
 
   return (
     <html lang={lang} suppressHydrationWarning>

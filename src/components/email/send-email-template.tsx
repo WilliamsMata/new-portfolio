@@ -6,11 +6,11 @@ interface EmailTemplateProps {
   message: string;
 }
 
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
+export const EmailTemplate = ({
   name,
   email,
   message,
-}) => (
+}: EmailTemplateProps): React.ReactNode => (
   <div style={styles.container}>
     <h1 style={styles.header}>{name}</h1>
     <h2 style={styles.subHeader}>{email}</h2>
