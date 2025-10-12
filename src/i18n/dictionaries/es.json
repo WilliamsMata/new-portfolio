@@ -409,6 +409,35 @@
     "description": "Sólo los proyectos personales se muestran aquí. Estos no son todos los que tengo, puedes encontrar más en mi",
     "projects": [
       {
+        "title": "TLDR Bot - Asistente IA",
+        "description": "Un bot de Telegram creado con n8n que utiliza IA (Google Gemini) para generar resúmenes inteligentes de chats de grupo. Permite resumir por cantidad de mensajes, tiempo o tema. También puede analizar y explicar en detalle mensajes, imágenes, videos y otros archivos, actuando como un asistente de conversación personal. Utiliza PostgreSQL para el historial de mensajes y Redis para la gestión de límites de uso.",
+        "githubUrl": "https://github.com/WilliamsMata/tldr-bot",
+        "projectUrl": "https://t.me/tldr_ai_pro_bot",
+        "imagePath": "/projects/tldr-bot.png",
+        "projectTech": [
+          {
+            "title": "n8n",
+            "color": "#9333ea"
+          },
+          {
+            "title": "Gemini",
+            "color": "#4285F4"
+          },
+          {
+            "title": "PostgreSQL",
+            "color": "#1486e0"
+          },
+          {
+            "title": "Redis",
+            "color": "#ff4278"
+          },
+          {
+            "title": "Telegram API",
+            "color": "#0088cc"
+          }
+        ]
+      },
+      {
         "title": "Breezili",
         "description": "Breezili es una red social diseñada para publicar diferentes lugares turísticos, donde la gente puede reseñarlos y puntuarlos. Cuenta con un panel de configuración, edición de usuarios y un panel de administración donde puedes añadir nuevas publicaciones y gestionar usuarios.",
         "githubUrl": "https://github.com/WilliamsMata/breezili",
