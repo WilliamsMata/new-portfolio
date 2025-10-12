@@ -84,14 +84,11 @@ export default async function RootLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden font-[family-name:var(--font-geist-sans)] antialiased`}
         suppressHydrationWarning
       >
-        <a href="#main" className="sr-only focus:not-sr-only">
-          Skip to content
-        </a>
         <Providers>
-          <div className="flex min-h-screen flex-col overflow-hidden font-[family-name:var(--font-geist-sans)]">
+          <div className="flex min-h-screen flex-col overflow-hidden">
             <Header dictionary={dictionary.header} />
 
             {children}
