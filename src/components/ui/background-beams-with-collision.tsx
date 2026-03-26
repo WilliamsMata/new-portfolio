@@ -13,6 +13,85 @@ interface Beam {
   className?: string;
 }
 
+interface ExplosionSpan {
+  id: number;
+  initialX: number;
+  initialY: number;
+  directionX: number;
+  directionY: number;
+  duration: number;
+}
+
+function calculateRelativePosition(viewportWidth: number, percentage: number) {
+  return (viewportWidth * percentage) / 100;
+}
+
+function createBeams(viewportWidth: number): Beam[] {
+  return [
+    {
+      initialX: calculateRelativePosition(viewportWidth, 1),
+      translateX: calculateRelativePosition(viewportWidth, 1),
+      duration: 7,
+      repeatDelay: 3,
+      delay: 2,
+    },
+    {
+      initialX: calculateRelativePosition(viewportWidth, 10),
+      translateX: calculateRelativePosition(viewportWidth, 10),
+      duration: 7,
+      repeatDelay: 7,
+      className: "h-6",
+    },
+    {
+      initialX: calculateRelativePosition(viewportWidth, 25),
+      translateX: calculateRelativePosition(viewportWidth, 25),
+      duration: 8,
+      repeatDelay: 14,
+      className: "h-12",
+      delay: 2,
+    },
+    {
+      initialX: calculateRelativePosition(viewportWidth, 40),
+      translateX: calculateRelativePosition(viewportWidth, 40),
+      duration: 5,
+      repeatDelay: 14,
+      delay: 4,
+    },
+    {
+      initialX: calculateRelativePosition(viewportWidth, 60),
+      translateX: calculateRelativePosition(viewportWidth, 60),
+      duration: 3,
+      repeatDelay: 3,
+      delay: 4,
+    },
+    {
+      initialX: calculateRelativePosition(viewportWidth, 80),
+      translateX: calculateRelativePosition(viewportWidth, 80),
+      duration: 11,
+      repeatDelay: 2,
+      className: "h-20",
+    },
+    {
+      initialX: calculateRelativePosition(viewportWidth, 100),
+      translateX: calculateRelativePosition(viewportWidth, 100),
+      duration: 3,
+      repeatDelay: 2,
+      className: "h-12",
+    },
+  ];
+}
+
+function createExplosionSpans(): ExplosionSpan[] {
+  return Array.from({ length: 20 }, (_, index) => ({
+    id: index,
+    initialX: 0,
+    initialY: 0,
+    directionX: Math.floor(Math.random() * 80 - 40),
+    directionY: Math.floor(Math.random() * -50 - 10),
+    duration: Math.random() * 1.5 + 0.5,
+  }));
+}
+
 export const BackgroundBeamsWithCollision = ({
   children,
   className,
@@ -22,65 +101,20 @@ export const BackgroundBeamsWithCollision = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const parentRef = useRef<HTMLDivElement>(null);
-  const [beams, setBeams] = useState<Beam[]>([]);
+  const [beams, setBeams] = useState<Beam[]>(() => createBeams(1200));
 
   useEffect(() => {
-    const calculateRelativePosition = (percentage: number) => {
-      return (window.innerWidth * percentage) / 100;
+    const handleResize = () => {
+      setBeams(createBeams(window.innerWidth));
     };
+    const rafId = window.requestAnimationFrame(handleResize);
 
-    setBeams([
-      {
-        initialX: calculateRelativePosition(1),
-        translateX: calculateRelativePosition(1),
-        duration: 7,
-        repeatDelay: 3,
-        delay: 2,
-      },
-      {
-        initialX: calculateRelativePosition(10),
-        translateX: calculateRelativePosition(10),
-        duration: 7,
-        repeatDelay: 7,
-        className: "h-6",
-      },
-      {
-        initialX: calculateRelativePosition(25),
-        translateX: calculateRelativePosition(25),
-        duration: 8,
-        repeatDelay: 14,
-        className: "h-12",
-        delay: 2,
-      },
-      {
-        initialX: calculateRelativePosition(40),
-        translateX: calculateRelativePosition(40),
-        duration: 5,
-        repeatDelay: 14,
-        delay: 4,
-      },
-      {
-        initialX: calculateRelativePosition(60),
-        translateX: calculateRelativePosition(60),
-        duration: 3,
-        repeatDelay: 3,
-        delay: 4,
-      },
-      {
-        initialX: calculateRelativePosition(80),
-        translateX: calculateRelativePosition(80),
-        duration: 11,
-        repeatDelay: 2,
-        className: "h-20",
-      },
-      {
-        initialX: calculateRelativePosition(100),
-        translateX: calculateRelativePosition(100),
-        duration: 3,
-        repeatDelay: 2,
-        className: "h-12",
-      },
-    ]);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const { isIntersecting, ref } = useIntersectionObserver();
@@ -118,25 +152,29 @@ export const BackgroundBeamsWithCollision = ({
   );
 };
 
-const CollisionMechanism = React.forwardRef<
-  HTMLDivElement,
-  {
-    containerRef: React.RefObject<HTMLDivElement | null>;
-    parentRef: React.RefObject<HTMLDivElement | null>;
-    beamOptions?: {
-      initialX?: number;
-      translateX?: number;
-      initialY?: number;
-      translateY?: number;
-      rotate?: number;
-      className?: string;
-      duration?: number;
-      delay?: number;
-      repeatDelay?: number;
-    };
-    isIntersecting: boolean;
-  }
->(({ parentRef, containerRef, beamOptions = {}, isIntersecting }, ref) => {
+interface CollisionMechanismProps {
+  containerRef: React.RefObject<HTMLDivElement | null>;
+  parentRef: React.RefObject<HTMLDivElement | null>;
+  beamOptions?: {
+    initialX?: number;
+    translateX?: number;
+    initialY?: number;
+    translateY?: number;
+    rotate?: number;
+    className?: string;
+    duration?: number;
+    delay?: number;
+    repeatDelay?: number;
+  };
+  isIntersecting: boolean;
+}
+
+const CollisionMechanism = ({
+  parentRef,
+  containerRef,
+  beamOptions = {},
+  isIntersecting,
+}: CollisionMechanismProps) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;
@@ -269,18 +307,10 @@ const CollisionMechanism = React.forwardRef<
       </AnimatePresence>
     </>
   );
-});
-
-CollisionMechanism.displayName = "CollisionMechanism";
+};
 
 const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
-  const spans = Array.from({ length: 20 }, (_, index) => ({
-    id: index,
-    initialX: 0,
-    initialY: 0,
-    directionX: Math.floor(Math.random() * 80 - 40),
-    directionY: Math.floor(Math.random() * -50 - 10),
-  }));
+  const [spans] = useState<ExplosionSpan[]>(createExplosionSpans);
 
   return (
     <div {...props} className={cn("absolute z-50 h-2 w-2", props.className)}>
@@ -300,7 +330,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
             y: span.directionY,
             opacity: 0,
           }}
-          transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
+          transition={{ duration: span.duration, ease: "easeOut" }}
           className="will-change-transform-opacity absolute h-1 w-1 rounded-full bg-gradient-to-b from-blue to-purple"
         />
       ))}

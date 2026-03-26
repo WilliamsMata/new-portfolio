@@ -38,6 +38,9 @@ export async function generateMetadata({
     title: "Williams Mata",
     description,
     metadataBase: baseUrl,
+    icons: {
+      icon: new URL("/icon.svg", baseUrl).toString(),
+    },
     alternates: {
       canonical: `/${lang}`,
       languages: {
@@ -82,9 +85,9 @@ export default async function RootLayout({
   const dictionary = await getDictionary(lang as Locale);
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning className="relative">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden font-[family-name:var(--font-geist-sans)] antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} relative overflow-x-hidden font-[family-name:var(--font-geist-sans)] antialiased`}
         suppressHydrationWarning
       >
         <Providers>

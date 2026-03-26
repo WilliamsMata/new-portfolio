@@ -9,12 +9,25 @@ interface TracingBeamProps extends PropsWithChildren {
 
 export const TracingBeam: FC<TracingBeamProps> = ({ children, className }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
     const mqlReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     const mqlPointer = window.matchMedia("(pointer: fine)");
-    setEnabled(!mqlReduce.matches && mqlPointer.matches);
+
+    const handleChange = () => {
+      setEnabled(!mqlReduce.matches && mqlPointer.matches);
+    };
+    const rafId = window.requestAnimationFrame(handleChange);
+
+    mqlReduce.addEventListener("change", handleChange);
+    mqlPointer.addEventListener("change", handleChange);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      mqlReduce.removeEventListener("change", handleChange);
+      mqlPointer.removeEventListener("change", handleChange);
+    };
   }, []);
   const { scrollYProgress } = useScroll({
     target: ref,

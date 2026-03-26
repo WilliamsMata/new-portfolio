@@ -23,7 +23,7 @@ function getLocale(request: NextRequest): string | undefined {
   return locale;
 }
 
-function handleLocaleMiddleware(request: NextRequest) {
+function handleLocaleProxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
@@ -66,8 +66,8 @@ function handleLocaleMiddleware(request: NextRequest) {
   }
 }
 
-export function middleware(request: NextRequest) {
-  const response = handleLocaleMiddleware(request);
+export function proxy(request: NextRequest) {
+  const response = handleLocaleProxy(request);
 
   if (response) return response;
 }

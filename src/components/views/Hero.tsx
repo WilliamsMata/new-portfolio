@@ -1,6 +1,5 @@
 import type { FC } from "react";
 import type { Dictionary } from "@/i18n/getDictionary";
-import { FileIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import { FlipWords } from "../ui/flip-words";
@@ -13,7 +12,7 @@ interface HeroProps {
 }
 
 export const Hero: FC<HeroProps> = ({ dictionary }) => {
-  const { title, description, resume } = dictionary;
+  const { title, description } = dictionary;
 
   return (
     <HeroHighlight containerClassName="h-screen">

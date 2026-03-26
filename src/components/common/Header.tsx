@@ -19,11 +19,31 @@ export default function Header({ dictionary }: HeaderProps) {
   const controls = useAnimation();
   const pathname = usePathname();
   const ticking = useRef(false);
-  const [animateHeader, setAnimateHeader] = useState(true);
+  const [animateHeader, setAnimateHeader] = useState(false);
 
   useEffect(() => {
     const mqlPointer = window.matchMedia("(pointer: fine)");
-    setAnimateHeader(mqlPointer.matches);
+    const handlePointerChange = (event: MediaQueryListEvent) => {
+      setAnimateHeader(event.matches);
+    };
+    const rafId = window.requestAnimationFrame(() => {
+      setAnimateHeader(mqlPointer.matches);
+    });
+
+    mqlPointer.addEventListener("change", handlePointerChange);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      mqlPointer.removeEventListener("change", handlePointerChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!animateHeader) {
+      void controls.start({ y: 0 });
+      return;
+    }
+
     const handleScroll = () => {
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
@@ -38,11 +58,10 @@ export default function Header({ dictionary }: HeaderProps) {
       }
     };
 
-    if (animateHeader)
-      window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll as any);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [controls, animateHeader]);
 
