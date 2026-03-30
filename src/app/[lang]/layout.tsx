@@ -54,17 +54,11 @@ export async function generateMetadata({
       description,
       url: new URL(`/${lang}`, baseUrl).toString(),
       siteName: "Williams Mata Portfolio",
-      images: [
-        {
-          url: new URL(`/${lang}/opengraph-image.png`, baseUrl).toString(),
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: "Williams Mata",
       description,
-      images: [new URL(`/${lang}/twitter-image.png`, baseUrl).toString()],
     },
   };
 }
