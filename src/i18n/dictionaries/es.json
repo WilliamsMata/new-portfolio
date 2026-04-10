@@ -32,7 +32,7 @@
   },
   "about": {
     "title": "Sobre mí",
-    "text": "Soy un desarrollador full-stack apasionado por crear soluciones que realmente ayudan a las personas y empresas. Me especializo en construir aplicaciones web y móviles usando buenas prácticas, patrones de diseño y automatización inteligente.\nTengo experiencia aplicando Domain-Driven Design (DDD) y otros patrones para que el software sea fácil de mantener y escalar. Además, integro herramientas de automatización e IA como n8n para optimizar procesos y ahorrar tiempo. Mi meta es que cada cliente sienta confianza y vea resultados claros desde el primer día."
+    "text": "Soy un desarrollador full-stack apasionado por crear soluciones que realmente ayudan a las personas y empresas. Me especializo en construir aplicaciones web y móviles usando buenas prácticas, patrones de diseño y automatización inteligente.\nTengo {{experienceYears}} de experiencia aplicando Domain-Driven Design (DDD) y otros patrones para que el software sea fácil de mantener y escalar. Además, integro herramientas de automatización e IA como n8n para optimizar procesos y ahorrar tiempo. Mi meta es que cada cliente sienta confianza y vea resultados claros desde el primer día."
   },
   "skills": {
     "title": "Mis conocimientos",

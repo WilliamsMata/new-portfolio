@@ -32,7 +32,7 @@
   },
   "about": {
     "title": "About Me",
-    "text": "I am a full-stack developer passionate about creating solutions that truly help people and businesses. I specialize in building web and mobile applications using best practices, design patterns, and smart automation.\nI have experience applying Domain-Driven Design (DDD) and other patterns to make software easy to maintain and scale. I also integrate automation and AI tools like n8n to optimize processes and save time. My goal is for every client to feel confident and see clear results from day one."
+    "text": "I am a full-stack developer passionate about creating solutions that truly help people and businesses. I specialize in building web and mobile applications using best practices, design patterns, and smart automation.\nI have {{experienceYears}} of professional experience applying Domain-Driven Design (DDD) and other patterns to make software easy to maintain and scale. I also integrate automation and AI tools like n8n to optimize processes and save time. My goal is for every client to feel confident and see clear results from day one."
   },
   "skills": {
     "title": "My skills",

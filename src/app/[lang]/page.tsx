@@ -20,7 +20,7 @@ export default async function Home({ params }: { params: Params }) {
 
       <TracingBeam>
         <div className="flex flex-col gap-12">
-          <About dictionary={dictionary.about} />
+          <About dictionary={dictionary.about} locale={lang} />
 
           <Skills dictionary={dictionary.skills} />
 
