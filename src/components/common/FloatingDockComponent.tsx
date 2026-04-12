@@ -6,7 +6,6 @@ import {
   InstagramLogoIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
-import { XIcon } from "../icons/social/XIcon";
 import { TelegramIcon } from "../icons";
 
 const links = [
@@ -34,11 +33,6 @@ const links = [
     title: "Instagram",
     icon: <InstagramLogoIcon className="h-full w-full text-foreground" />,
     href: "https://www.instagram.com/williams_rm/",
-  },
-  {
-    title: "X",
-    icon: <XIcon className="h-full w-full text-foreground" />,
-    href: "https://x.com/williamsmata99",
   },
 ];
 
