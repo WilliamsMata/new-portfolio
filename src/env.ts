@@ -3,7 +3,8 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    RESEND_API_KEY: z.string().min(1),
+    TELEGRAM_BOT_TOKEN: z.string().min(1),
+    TELEGRAM_CHAT_ID: z.string().min(1),
     UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
     UPSTASH_REDIS_REST_URL: z.string().url(),
   },
@@ -11,7 +12,8 @@ export const env = createEnv({
   client: {},
 
   runtimeEnv: {
-    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
+    TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID,
     UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
     UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
   },

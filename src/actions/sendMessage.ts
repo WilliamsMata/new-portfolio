@@ -2,10 +2,9 @@
 
 import { headers } from "next/headers";
 import { z } from "zod";
-import { sendMessageSchema } from "@/schema/send-message.schema";
-import { resend } from "@/lib/resend";
 import { dayRateLimiter } from "@/lib/redis";
-import { EmailTemplate } from "@/components/email/send-email-template";
+import { sendTelegramNotification } from "@/lib/telegram";
+import { sendMessageSchema } from "@/schema/send-message.schema";
 import type { Locale } from "@/i18n/i18n-config";
 import { getDictionary } from "@/i18n/getDictionary";
 
@@ -23,15 +22,18 @@ export async function sendMessage(data: Input) {
   const { name, email, message } = result.data;
 
   const headerStore = await headers();
+  const forwardedFor = headerStore.get("x-forwarded-for");
 
   const ip =
-    headerStore.get("x-forwarded-for") || headerStore.get("cf-connecting-ip");
+    forwardedFor?.split(",")[0]?.trim() ||
+    headerStore.get("cf-connecting-ip") ||
+    null;
 
   const rawAccept = headerStore.get("accept-language")?.split(",")[0] ?? "en";
-  const baseLang = rawAccept.split("-")[0] as Locale; // normalize like es-ES -> es
+  const locale: Locale = rawAccept.split("-")[0] === "es" ? "es" : "en";
 
   const [dictionary, { success }] = await Promise.all([
-    getDictionary(baseLang),
+    getDictionary(locale),
     dayRateLimiter.limit(ip ?? email),
   ]);
 
@@ -42,23 +44,17 @@ export async function sendMessage(data: Input) {
     };
   }
 
-  const { data: emailData, error } = await resend.emails.send({
-    from: "message@williamsmata.com",
-    to: "williams.rm99@gmail.com",
-    subject: `New message from ${name}`,
-    replyTo: email,
-    react: EmailTemplate({ name, email, message }),
-  });
-
-  if (error) {
+  try {
+    await sendTelegramNotification({
+      name,
+      email,
+      message,
+    });
+  } catch (error) {
     console.error(error);
     return {
-      error: dictionary.contact.form.action.errors.resendError,
+      error: dictionary.contact.form.action.errors.notificationError,
     };
-  }
-
-  if (process.env.NODE_ENV !== "production") {
-    console.log({ emailData, name, email, message });
   }
 
   return {

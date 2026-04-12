@@ -737,8 +737,8 @@
       },
       "action": {
         "errors": {
-          "limitReached": "You have reached the limit of 3 emails per day",
-          "resendError": "Something went wrong, please try again later"
+          "limitReached": "You have reached the limit of 3 messages per day",
+          "notificationError": "Could not send the notification, please try again later"
         }
       }
     }

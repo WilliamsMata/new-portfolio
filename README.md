@@ -2,6 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Create a `.env.local` file from `.env.example` and set these variables:
+
+- `TELEGRAM_BOT_TOKEN`: token for the Telegram bot that will send notifications
+- `TELEGRAM_CHAT_ID`: your private Telegram chat ID
+- `UPSTASH_REDIS_REST_TOKEN`: Upstash REST token used for the contact rate limit
+- `UPSTASH_REDIS_REST_URL`: Upstash REST URL used for the contact rate limit
+
 First, run the development server:
 
 ```bash
