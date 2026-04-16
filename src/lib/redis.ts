@@ -9,6 +9,11 @@ export const oneHourRateLimiter = new Ratelimit({
   limiter: Ratelimit.slidingWindow(1, "1 h"),
 });
 
+export const chatRateLimiter = new Ratelimit({
+  redis: redis,
+  limiter: Ratelimit.slidingWindow(20, "1 h"),
+});
+
 export const dayRateLimiter = new Ratelimit({
   redis: redis,
   limiter: Ratelimit.slidingWindow(3, "1 d"),

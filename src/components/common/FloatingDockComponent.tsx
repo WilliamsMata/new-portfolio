@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { FloatingDock } from "../ui/floating-dock";
 import {
   GitHubLogoIcon,
@@ -7,6 +7,14 @@ import {
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
 import { TelegramIcon } from "../icons";
+import { dockProfileLinks, type ProfileLinkKind } from "@/lib/profile-links";
+
+const iconByKind: Record<Exclude<ProfileLinkKind, "resume">, ReactNode> = {
+  github: <GitHubLogoIcon className="h-full w-full text-foreground" />,
+  instagram: <InstagramLogoIcon className="h-full w-full text-foreground" />,
+  linkedin: <LinkedInLogoIcon className="h-full w-full text-foreground" />,
+  telegram: <TelegramIcon className="h-full w-full text-foreground" />,
+};
 
 const links = [
   {
@@ -14,32 +22,17 @@ const links = [
     icon: <HomeIcon className="h-full w-full text-foreground" />,
     href: "#",
   },
-  {
-    title: "GitHub",
-    icon: <GitHubLogoIcon className="h-full w-full text-foreground" />,
-    href: "https://github.com/WilliamsMata",
-  },
-  {
-    title: "LinkedIn",
-    icon: <LinkedInLogoIcon className="h-full w-full text-foreground" />,
-    href: "https://www.linkedin.com/in/williams-mata",
-  },
-  {
-    title: "Telegram",
-    icon: <TelegramIcon className="h-full w-full text-foreground" />,
-    href: "https://t.me/williams_rm",
-  },
-  {
-    title: "Instagram",
-    icon: <InstagramLogoIcon className="h-full w-full text-foreground" />,
-    href: "https://www.instagram.com/williams_rm/",
-  },
+  ...dockProfileLinks.map((link) => ({
+    title: link.label,
+    icon: iconByKind[link.kind],
+    href: link.href,
+  })),
 ];
 
 const FloatingDockComponent = () => {
   return (
     <FloatingDock
-      mobileClassName="fixed bottom-8 right-8 z-[998]"
+      mobileClassName="fixed bottom-4 right-4 z-[998] sm:bottom-6 sm:right-6"
       desktopClassName="fixed bottom-8 right-8 z-[998]"
       items={links}
     />

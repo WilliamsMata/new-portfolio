@@ -743,6 +743,52 @@
       }
     }
   },
+  "chat": {
+    "launcher": {
+      "label": "Ask about Williams",
+      "badge": "AI",
+      "open": "Open AI assistant"
+    },
+    "panel": {
+      "eyebrow": "Portfolio AI",
+      "title": "Ask questions about Williams",
+      "description": "I answer using only the public content visible in this portfolio.",
+      "disclaimer": "I can help with experience, stack, projects, and official links. If explicit evidence is missing, I will label it as a cautious inference.",
+      "emptyState": "There are no messages yet. Try one of these prompts.",
+      "thinking": "Checking the portfolio..."
+    },
+    "roles": {
+      "assistant": "AI Assistant",
+      "user": "You"
+    },
+    "input": {
+      "placeholder": "Ask about experience, stack, projects, or how to get in touch...",
+      "send": "Send",
+      "stop": "Stop",
+      "clear": "Clear"
+    },
+    "prompts": {
+      "title": "Ways to start",
+      "items": [
+        "What kind of developer is Williams?",
+        "Which projects are strongest for a recruiter?",
+        "What stack does he use best?",
+        "How can I contact Williams?"
+      ]
+    },
+    "welcome": "Hello. I am Williams Mata's portfolio assistant. I can help with questions about his profile, experience, stack, projects, and official links.",
+    "errors": {
+      "generic": "The assistant could not complete the response. Please try again.",
+      "rateLimit": "The chat rate limit has been reached temporarily. Please try again later.",
+      "missingApiKey": "The chat is not configured on the server yet.",
+      "invalidRequest": "The chat request is invalid.",
+      "loadHistory": "The saved chat history could not be restored."
+    },
+    "links": {
+      "official": "Official links",
+      "open": "Open link"
+    }
+  },
   "resources": {
     "title": "Resources",
     "logos": {

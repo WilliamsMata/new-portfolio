@@ -4,6 +4,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 Create a `.env.local` file from `.env.example` and set these variables:
 
+- `OPENAI_API_KEY`: API key used by the portfolio AI chat
+- `OPENAI_CHAT_MODEL`: optional OpenAI chat model override (default: `gpt-4.1-mini`)
 - `TELEGRAM_BOT_TOKEN`: token for the Telegram bot that will send notifications
 - `TELEGRAM_CHAT_ID`: your private Telegram chat ID
 - `UPSTASH_REDIS_REST_TOKEN`: Upstash REST token used for the contact rate limit

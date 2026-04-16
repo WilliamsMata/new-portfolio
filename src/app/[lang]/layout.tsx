@@ -91,7 +91,10 @@ export default async function RootLayout({
             {children}
           </div>
 
-          <LayoutClientExtras />
+          <LayoutClientExtras
+            chatDictionary={dictionary.chat}
+            locale={lang as Locale}
+          />
         </Providers>
         <Script
           id="ld-json"

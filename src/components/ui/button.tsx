@@ -63,9 +63,8 @@ const GradientButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           buttonVariants({ variant, size }),
-          "relative w-auto overflow-hidden p-[1.5px]",
+          "relative w-auto overflow-hidden p-[1.5px] px-0",
           className,
-          "h-full",
         )}
         {...props}
       >
@@ -73,8 +72,7 @@ const GradientButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
         <span
           className={cn(
-            "relative inline-flex h-full w-full items-center justify-center rounded-md bg-background px-3 py-1 text-sm font-medium text-foreground backdrop-blur-3xl hover:bg-accent",
-            className,
+            "relative inline-flex h-full w-full items-center justify-center rounded-[inherit] bg-background px-3 py-1 text-sm font-medium text-foreground backdrop-blur-3xl hover:bg-accent",
           )}
         >
           {children}

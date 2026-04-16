@@ -742,6 +742,52 @@
       }
     }
   },
+  "chat": {
+    "launcher": {
+      "label": "Preguntame por Williams",
+      "badge": "AI",
+      "open": "Abrir asistente IA"
+    },
+    "panel": {
+      "eyebrow": "Portfolio AI",
+      "title": "Haz preguntas sobre Williams",
+      "description": "Respondo usando unicamente el contenido publico de este portfolio.",
+      "disclaimer": "Puedo ayudarte con experiencia, stack, proyectos y enlaces oficiales. Si falta evidencia explicita, lo marcare como inferencia cautelosa.",
+      "emptyState": "Todavia no hay mensajes. Prueba con una de estas preguntas.",
+      "thinking": "Consultando el portfolio..."
+    },
+    "roles": {
+      "assistant": "Asistente IA",
+      "user": "Tu"
+    },
+    "input": {
+      "placeholder": "Pregunta sobre experiencia, stack, proyectos o como contactar...",
+      "send": "Enviar",
+      "stop": "Detener",
+      "clear": "Limpiar"
+    },
+    "prompts": {
+      "title": "Ideas para empezar",
+      "items": [
+        "Que tipo de desarrollador es Williams?",
+        "Cuales son sus proyectos mas fuertes para un recruiter?",
+        "Que stack domina mejor?",
+        "Como puedo contactar a Williams?"
+      ]
+    },
+    "welcome": "Hola. Soy el asistente del portfolio de Williams Mata. Puedo ayudarte con preguntas sobre su perfil, experiencia, stack, proyectos y enlaces oficiales.",
+    "errors": {
+      "generic": "No se pudo completar la respuesta. Intentalo de nuevo.",
+      "rateLimit": "Has alcanzado temporalmente el limite del chat. Intentalo mas tarde.",
+      "missingApiKey": "El chat todavia no esta configurado en el servidor.",
+      "invalidRequest": "La solicitud del chat no es valida.",
+      "loadHistory": "No se pudo recuperar el historial guardado del chat."
+    },
+    "links": {
+      "official": "Enlaces oficiales",
+      "open": "Abrir enlace"
+    }
+  },
   "resources": {
     "title": "Recursos",
     "logos": {

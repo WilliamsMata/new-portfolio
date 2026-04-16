@@ -70,11 +70,32 @@ export const ModalBody = ({
   const { open, setOpen } = useModal();
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
+    if (!open) {
+      return;
     }
+
+    const { body } = document;
+    const activeModalCount = Number(body.dataset.modalOpenCount ?? "0") + 1;
+
+    body.dataset.modalOpenCount = String(activeModalCount);
+    body.dataset.modalOpen = "true";
+    body.style.overflow = "hidden";
+
+    return () => {
+      const nextModalCount = Math.max(
+        Number(body.dataset.modalOpenCount ?? "1") - 1,
+        0,
+      );
+
+      if (nextModalCount === 0) {
+        delete body.dataset.modalOpenCount;
+        delete body.dataset.modalOpen;
+        body.style.overflow = "auto";
+        return;
+      }
+
+      body.dataset.modalOpenCount = String(nextModalCount);
+    };
   }, [open]);
 
   const modalRef = useRef(null);

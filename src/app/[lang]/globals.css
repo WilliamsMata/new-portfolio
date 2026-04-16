@@ -95,6 +95,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  body[data-modal-open="true"] .portfolio-chat-launcher {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
   .no-visible-scrollbar {
     scrollbar-width: none;
     -ms-overflow-style: none;

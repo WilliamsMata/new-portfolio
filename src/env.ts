@@ -3,6 +3,8 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
+    OPENAI_API_KEY: z.string().min(1).optional(),
+    OPENAI_CHAT_MODEL: z.string().min(1).optional(),
     TELEGRAM_BOT_TOKEN: z.string().min(1),
     TELEGRAM_CHAT_ID: z.string().min(1),
     UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
@@ -12,6 +14,8 @@ export const env = createEnv({
   client: {},
 
   runtimeEnv: {
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    OPENAI_CHAT_MODEL: process.env.OPENAI_CHAT_MODEL,
     TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
     TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID,
     UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
