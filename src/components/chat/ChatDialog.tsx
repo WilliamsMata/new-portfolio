@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import type { UIMessage } from "@tanstack/ai-react";
-import {
-  ModalBody,
-  ModalContent,
-} from "@/components/ui/animated-modal";
+import { ModalBody, ModalContent } from "@/components/ui/animated-modal";
 import { Button } from "@/components/ui/button";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { ChatComposer } from "./ChatComposer";
@@ -56,9 +53,9 @@ export function ChatDialog({
         <div className="border-b border-zinc-200/80 px-4 py-4 dark:border-white/10 md:px-6">
           <div className="flex flex-wrap items-start justify-between gap-4 pr-8">
             <div className="max-w-2xl">
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-zinc-500 dark:text-neutral-400">
+              {/* <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-zinc-500 dark:text-neutral-400">
                 {dictionary.panel.eyebrow}
-              </p>
+              </p> */}
               <h2 className="mt-2 text-xl font-semibold md:text-2xl">
                 {dictionary.panel.title}
               </h2>
@@ -81,7 +78,7 @@ export function ChatDialog({
           </div>
         </div>
 
-        <ModalContent className="flex min-h-0 flex-1 flex-col gap-0 p-0">
+        <ModalContent className="flex min-h-0 flex-1 flex-col gap-0 p-0 md:p-0">
           <ChatMessageList
             dictionary={dictionary}
             messages={messages}

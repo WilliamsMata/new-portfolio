@@ -320,7 +320,9 @@ export function selectOfficialLinks(
 
   return {
     links: links.map((link) => ({
-      ...link,
+      kind: link.kind,
+      label: link.label,
+      url: link.href,
       recommendedFor:
         link.kind === "linkedin"
           ? knowledge.locale === "es"

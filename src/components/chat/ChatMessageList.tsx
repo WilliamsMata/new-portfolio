@@ -10,7 +10,8 @@ import { MarkdownMessage } from "./MarkdownMessage";
 interface OfficialLinksOutput {
   links: Array<{
     label: string;
-    url: string;
+    url?: string;
+    href?: string;
     kind: string;
     recommendedFor: string;
   }>;
@@ -123,18 +124,26 @@ export function ChatMessageList({
                           </p>
 
                           <div className="mt-3 flex flex-wrap gap-2">
-                            {part.output.links.map((link) => (
-                              <a
-                                key={`${message.id}-${link.kind}-${link.url}`}
-                                href={link.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-2 text-xs font-medium text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800"
-                              >
-                                <span>{link.label}</span>
-                                <BoxArrowUp className="h-3 w-3" />
-                              </a>
-                            ))}
+                            {part.output.links.map((link) => {
+                              const linkUrl = link.url ?? link.href;
+
+                              if (!linkUrl) {
+                                return null;
+                              }
+
+                              return (
+                                <a
+                                  key={`${message.id}-${link.kind}-${linkUrl}`}
+                                  href={linkUrl}
+                                  target="_blank"
+                                  rel="noreferrer noopener"
+                                  className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-2 text-xs font-medium text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800"
+                                >
+                                  <span>{link.label}</span>
+                                  <BoxArrowUp className="h-3 w-3" />
+                                </a>
+                              );
+                            })}
                           </div>
                         </div>
                       );
