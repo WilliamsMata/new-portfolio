@@ -115,7 +115,7 @@ export const ModalBody = ({
           exit={{
             opacity: 0,
           }}
-          className="will-change-opacity-backdrop fixed inset-0 z-[999] flex h-full w-full items-center justify-center bg-black/70 [perspective:800px] [transform-style:preserve-3d]"
+          className="will-change-opacity-backdrop fixed inset-0 z-[999] flex h-full w-full items-center justify-center bg-slate-950/35 [perspective:800px] [transform-style:preserve-3d] dark:bg-black/70"
           style={{
             backdropFilter: "blur(10px)",
           }}

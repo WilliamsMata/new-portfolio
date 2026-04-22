@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ComponentPropsWithoutRef } from "react";
 import {
   fetchServerSentEvents,
   type UIMessage,
   useChat,
 } from "@tanstack/ai-react";
+import ReactMarkdown, { type Components } from "react-markdown";
 import { Toaster } from "@/adapter/sonner.adapter";
 import { BoxArrowUp } from "@/components/icons";
 import {
@@ -19,6 +20,8 @@ import { Textarea } from "@/components/ui/textarea";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/i18n-config";
 import { cn } from "@/lib/utils";
+import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
 
 interface PortfolioChatProps {
   dictionary: Dictionary["chat"];
@@ -146,6 +149,109 @@ function hasOfficialLinksOutput(
   }
 
   return Array.isArray(output.links);
+}
+
+const markdownComponents: Components = {
+  a: ({ className, href, children, node, ...props }) => {
+    void node;
+
+    const isExternal = typeof href === "string" && /^https?:\/\//i.test(href);
+
+    return (
+      <a
+        {...props}
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noreferrer noopener" : undefined}
+        className={cn(
+          "font-medium text-primary underline decoration-primary/40 underline-offset-4 transition hover:decoration-primary",
+          className,
+        )}
+      >
+        {children}
+      </a>
+    );
+  },
+  code: ({ inline, className, children, node, ...props }: MarkdownCodeProps) => {
+    void node;
+
+    if (!inline) {
+      return (
+        <code
+          {...props}
+          className={cn("font-mono text-[0.9em] leading-6", className)}
+        >
+          {children}
+        </code>
+      );
+    }
+
+    return (
+      <code
+        {...props}
+        className={cn(
+          "rounded-md border border-zinc-200 bg-zinc-200/70 px-1.5 py-0.5 font-mono text-[0.85em] font-medium text-zinc-900 dark:border-white/10 dark:bg-white/10 dark:text-neutral-50",
+          className,
+        )}
+      >
+        {children}
+      </code>
+    );
+  },
+  pre: ({ className, children, node, ...props }) => {
+    void node;
+
+    return (
+      <pre
+        {...props}
+        className={cn(
+          "my-3 overflow-x-auto rounded-2xl border border-zinc-200 bg-zinc-100 p-4 text-[0.85rem] leading-6 text-zinc-900 shadow-sm dark:border-white/10 dark:bg-black/40 dark:text-neutral-50",
+          className,
+        )}
+      >
+        {children}
+      </pre>
+    );
+  },
+  table: ({ className, children, node, ...props }) => {
+    void node;
+
+    return (
+      <div className="my-3 w-full overflow-x-auto">
+        <table
+          {...props}
+          className={cn("w-full border-collapse text-left text-sm", className)}
+        >
+          {children}
+        </table>
+      </div>
+    );
+  },
+};
+
+type MarkdownCodeProps = ComponentPropsWithoutRef<"code"> & {
+  inline?: boolean;
+  node?: unknown;
+};
+
+const assistantMarkdownClassName = cn(
+  "prose prose-sm max-w-none text-zinc-900 dark:text-neutral-50",
+  "prose-zinc dark:prose-invert",
+  "prose-p:my-1 prose-headings:my-2 prose-headings:font-semibold prose-headings:tracking-tight",
+  "prose-h1:text-lg prose-h2:text-base prose-h3:text-sm",
+  "prose-ul:my-2 prose-ol:my-2 prose-li:my-0 prose-li:leading-7",
+  "prose-blockquote:my-2 prose-hr:my-4",
+  "prose-img:my-3 prose-img:rounded-2xl",
+);
+
+function MarkdownMessage({ content }: { content: string }) {
+  return (
+    <div className={assistantMarkdownClassName}>
+      <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]} components={markdownComponents}>
+        {content}
+      </ReactMarkdown>
+    </div>
+  );
 }
 
 function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
@@ -278,17 +384,17 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
       </GradientButton>
 
       <ModalBody className="mx-4 h-[min(760px,calc(100vh-2rem))] min-h-[520px] rounded-[28px] border-none bg-transparent p-0 md:min-h-[640px] md:max-w-[840px]">
-        <div className="bg-background/95 flex h-full flex-col overflow-hidden rounded-[28px] border border-border shadow-2xl backdrop-blur-xl">
-          <div className="border-b border-border px-4 py-4 md:px-6">
+        <div className="flex h-full flex-col overflow-hidden rounded-[28px] border border-black/10 bg-white text-zinc-950 shadow-[0_30px_80px_rgba(15,23,42,0.2)] dark:border-white/10 dark:bg-neutral-950 dark:text-neutral-50">
+          <div className="border-b border-zinc-200/80 px-4 py-4 dark:border-white/10 md:px-6">
             <div className="flex flex-wrap items-start justify-between gap-4 pr-8">
               <div className="max-w-2xl">
-                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-muted-foreground">
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-zinc-500 dark:text-neutral-400">
                   {dictionary.panel.eyebrow}
                 </p>
                 <h2 className="mt-2 text-xl font-semibold md:text-2xl">
                   {dictionary.panel.title}
                 </h2>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="mt-2 text-sm text-zinc-600 dark:text-neutral-400">
                   {dictionary.panel.description}
                 </p>
               </div>
@@ -324,39 +430,31 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
                         isUserMessage ? "items-end" : "items-start",
                       )}
                     >
-                      <span className="text-[0.65rem] font-medium uppercase tracking-[0.24em] text-muted-foreground">
-                        {isUserMessage
-                          ? dictionary.roles.user
-                          : dictionary.roles.assistant}
-                      </span>
+                        <span className="text-[0.65rem] font-medium uppercase tracking-[0.24em] text-zinc-500 dark:text-neutral-400">
+                          {isUserMessage
+                            ? dictionary.roles.user
+                            : dictionary.roles.assistant}
+                        </span>
 
                       <div
                         className={cn(
                           "max-w-[92%] rounded-3xl px-4 py-3 text-sm leading-7 shadow-sm md:max-w-[80%]",
                           isUserMessage
                             ? "bg-primary text-primary-foreground"
-                            : "border border-border bg-card text-card-foreground",
+                            : "border border-zinc-200 bg-zinc-50 text-zinc-900 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50",
                         )}
                       >
                         {message.parts.map((part, index) => {
                           if (part.type === "text") {
                             return (
                               <div key={`${message.id}-text-${index}`}>
-                                {part.content
-                                  .split("\n")
-                                  .map((paragraph, paragraphIndex) => (
-                                    <p
-                                      key={`${message.id}-paragraph-${paragraphIndex}`}
-                                      className={cn(
-                                        paragraphIndex > 0 ? "mt-3" : "",
-                                        isUserMessage
-                                          ? "text-primary-foreground"
-                                          : "text-card-foreground",
-                                      )}
-                                    >
-                                      {paragraph}
-                                    </p>
-                                  ))}
+                                {isUserMessage ? (
+                                  <p className="whitespace-pre-wrap break-words text-primary-foreground">
+                                    {part.content}
+                                  </p>
+                                ) : (
+                                  <MarkdownMessage content={part.content} />
+                                )}
                               </div>
                             );
                           }
@@ -365,7 +463,7 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
                             return (
                               <p
                                 key={`${message.id}-thinking-${index}`}
-                                className="mt-2 text-xs italic text-muted-foreground"
+                                className="mt-2 text-xs italic text-zinc-500 dark:text-neutral-400"
                               >
                                 {dictionary.panel.thinking}
                               </p>
@@ -377,9 +475,9 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
                               return (
                                 <div
                                   key={`${message.id}-links-${index}`}
-                                  className="bg-background/70 mt-4 rounded-2xl border border-border p-3"
+                                  className="mt-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-3 dark:border-white/10 dark:bg-neutral-950"
                                 >
-                                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-neutral-400">
                                     {dictionary.links.official}
                                   </p>
 
@@ -390,7 +488,7 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
                                         href={link.url}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-2 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+                                        className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-2 text-xs font-medium text-zinc-900 transition-colors hover:bg-zinc-100 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800"
                                       >
                                         <span>{link.label}</span>
                                         <BoxArrowUp className="h-3 w-3" />
@@ -404,7 +502,7 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
                             return part.state !== "approval-requested" ? (
                               <p
                                 key={`${message.id}-tool-call-${index}`}
-                                className="mt-2 text-xs text-muted-foreground"
+                                className="mt-2 text-xs text-zinc-500 dark:text-neutral-400"
                               >
                                 {dictionary.panel.thinking}
                               </p>
@@ -433,18 +531,18 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
                 })}
 
                 {hasOnlyWelcomeMessage ? (
-                  <div className="bg-card/50 rounded-3xl border border-dashed border-border px-4 py-4 text-sm text-muted-foreground">
+                  <div className="rounded-3xl border border-dashed border-zinc-200 bg-zinc-50/80 px-4 py-4 text-sm text-zinc-600 dark:border-white/10 dark:bg-neutral-900/80 dark:text-neutral-400">
                     {dictionary.panel.emptyState}
                   </div>
                 ) : null}
               </div>
             </div>
 
-            <div className="bg-background/95 border-t border-border px-4 py-4 md:px-6">
+            <div className="border-t border-zinc-200/80 bg-zinc-50/90 px-4 py-4 dark:border-white/10 dark:bg-neutral-950 md:px-6">
               <div className="mx-auto flex max-w-3xl flex-col gap-4">
                 {hasOnlyWelcomeMessage ? (
                   <div className="flex flex-col gap-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-neutral-400">
                       {dictionary.prompts.title}
                     </p>
 
@@ -458,7 +556,7 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
                           onClick={() => {
                             void submitMessage(prompt);
                           }}
-                          className="rounded-full"
+                          className="rounded-full border-zinc-200 bg-white text-zinc-900 hover:bg-zinc-100 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800"
                         >
                           {prompt}
                         </Button>
@@ -496,10 +594,11 @@ function ChatSurface({ dictionary, locale }: PortfolioChatProps) {
                     disabled={isLoading}
                     maxLength={400}
                     rows={3}
+                    className="border border-zinc-200 bg-white text-zinc-950 shadow-[0_12px_32px_rgba(15,23,42,0.08)] placeholder:text-zinc-400 focus-visible:ring-zinc-300 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500 dark:focus-visible:ring-neutral-600"
                   />
 
                   <div className="flex items-center justify-between gap-3">
-                    <p className="max-w-xl text-xs leading-5 text-muted-foreground">
+                    <p className="max-w-xl text-xs leading-5 text-zinc-500 dark:text-neutral-400">
                       {dictionary.panel.disclaimer}
                     </p>
 
