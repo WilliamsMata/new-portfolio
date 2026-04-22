@@ -1,7 +1,7 @@
 "use client";
 import type React from "react";
 import type { FC, PropsWithChildren } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
@@ -18,7 +18,12 @@ export const HeroHighlight: FC<HeroHighlightProps> = ({
 }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const [enabled, setEnabled] = useState(true);
+  const [enabled] = useState(() => {
+    if (typeof window === "undefined") return true;
+    const mqlReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mqlPointer = window.matchMedia("(pointer: fine)");
+    return !mqlReduce.matches && mqlPointer.matches;
+  });
   const webkitMask = useMotionTemplate`
             radial-gradient(
               200px circle at ${mouseX}px ${mouseY}px,
@@ -31,11 +36,6 @@ export const HeroHighlight: FC<HeroHighlightProps> = ({
               black 0%,
               transparent 100%
             )`;
-  useEffect(() => {
-    const mqlReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const mqlPointer = window.matchMedia("(pointer: fine)");
-    setEnabled(!mqlReduce.matches && mqlPointer.matches);
-  }, []);
 
   function handleMouseMove({
     currentTarget,

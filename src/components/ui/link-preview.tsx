@@ -57,14 +57,12 @@ export const LinkPreview = ({
 
   const [isOpen, setOpen] = React.useState(false);
   const [shouldPreload, setShouldPreload] = React.useState(false);
-  const [canUsePreview, setCanUsePreview] = React.useState(true);
-
-  // Respect reduced motion and disable on coarse pointers (mobile)
-  React.useEffect(() => {
+  const [canUsePreview] = React.useState(() => {
+    if (typeof window === "undefined") return true;
     const mqlReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     const mqlPointer = window.matchMedia("(pointer: fine)");
-    setCanUsePreview(!mqlReduce.matches && mqlPointer.matches);
-  }, []);
+    return !mqlReduce.matches && mqlPointer.matches;
+  });
 
   const springConfig = { stiffness: 100, damping: 15 };
   const x = useMotionValue(0);

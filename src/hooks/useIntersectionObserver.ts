@@ -44,7 +44,9 @@ export function useIntersectionObserver({
 
   const callbackRef = useRef<UseIntersectionObserverOptions["onChange"]>(undefined);
 
-  callbackRef.current = onChange;
+  useEffect(() => {
+    callbackRef.current = onChange;
+  }, [onChange]);
 
   const frozen = state.entry?.isIntersecting && freezeOnceVisible;
 
