@@ -63,7 +63,7 @@ const GradientButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           buttonVariants({ variant, size }),
-          "relative w-auto overflow-hidden p-[1.5px] px-0",
+          "relative w-auto overflow-hidden p-[1.5px] px-0.5",
           className,
         )}
         {...props}

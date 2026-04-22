@@ -16,6 +16,8 @@ import { chatRequestSchema } from "@/schema/chat-request.schema";
 
 export const runtime = "nodejs";
 
+const MAX_MESSAGE_LENGTH = 500;
+
 function extractRequestedLocale(body: unknown) {
   if (typeof body !== "object" || body === null || !("data" in body)) {
     return undefined;
@@ -49,6 +51,63 @@ function getClientAddress(request: Request) {
   );
 }
 
+function getLatestUserMessage(messages: Array<unknown>) {
+  for (let index = messages.length - 1; index >= 0; index -= 1) {
+    const message = messages[index];
+
+    if (
+      typeof message === "object" &&
+      message !== null &&
+      "role" in message &&
+      (message as { role?: unknown }).role === "user"
+    ) {
+      return message;
+    }
+  }
+
+  return messages[messages.length - 1];
+}
+
+function getMessageTextLength(message: unknown) {
+  if (typeof message === "string") {
+    return message.length;
+  }
+
+  if (Array.isArray(message)) {
+    return message.reduce(
+      (total, part) => total + getMessageTextLength(part),
+      0,
+    );
+  }
+
+  if (typeof message !== "object" || message === null) {
+    return 0;
+  }
+
+  const typedMessage = message as {
+    content?: unknown;
+    parts?: unknown;
+    text?: unknown;
+  };
+
+  if (typeof typedMessage.content === "string") {
+    return typedMessage.content.length;
+  }
+
+  if (typeof typedMessage.text === "string") {
+    return typedMessage.text.length;
+  }
+
+  if (!Array.isArray(typedMessage.parts)) {
+    return 0;
+  }
+
+  return typedMessage.parts.reduce(
+    (total, part) => total + getMessageTextLength(part),
+    0,
+  );
+}
+
 function createErrorResponse(
   message: string,
   status: number,
@@ -78,6 +137,16 @@ export async function POST(request: Request) {
   const parsed = chatRequestSchema.safeParse(body);
 
   if (!parsed.success) {
+    return createErrorResponse(
+      dictionary.chat.errors.invalidRequest,
+      400,
+      "Bad Request",
+    );
+  }
+
+  const latestUserMessage = getLatestUserMessage(parsed.data.messages);
+
+  if (getMessageTextLength(latestUserMessage) > MAX_MESSAGE_LENGTH) {
     return createErrorResponse(
       dictionary.chat.errors.invalidRequest,
       400,

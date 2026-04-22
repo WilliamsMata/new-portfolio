@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import type { Dictionary } from "@/i18n/getDictionary";
 
+const MAX_MESSAGE_LENGTH = 500;
+
 interface ChatComposerProps {
   dictionary: Dictionary["chat"];
   value: string;
@@ -45,7 +47,7 @@ export function ChatComposer({
   const submitMessage = async (message: string) => {
     const trimmedMessage = message.trim();
 
-    if (!trimmedMessage || isLoading) {
+    if (!trimmedMessage || message.length > MAX_MESSAGE_LENGTH || isLoading) {
       return;
     }
 
@@ -103,7 +105,7 @@ export function ChatComposer({
             }}
             placeholder={dictionary.input.placeholder}
             disabled={isLoading}
-            maxLength={400}
+            maxLength={MAX_MESSAGE_LENGTH}
             rows={3}
             className="border border-zinc-200 bg-white text-zinc-950 shadow-[0_12px_32px_rgba(15,23,42,0.08)] placeholder:text-zinc-400 focus-visible:ring-zinc-300 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500 dark:focus-visible:ring-neutral-600"
           />
