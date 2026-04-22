@@ -372,7 +372,6 @@
         ]
       },
 
-      
       {
         "title": "NestJS Microservicios de productos",
         "description": "Este proyecto es un backend de microservicios que proporciona una API RESTful para la gestión de productos, auth, pagos y pedidos. Los microservicios están construido con NestJS y utilizan MongoDB, Postgresql y mysql como base de datos.",
@@ -414,7 +413,7 @@
           }
         ]
       },
-      
+
       {
         "title": "Telegram Karma Bot",
         "description": "Karma Bot es un sencillo bot de Telegram para el seguimiento de puntos de karma en un chat de grupo. Los usuarios pueden darse puntos de karma unos a otros respondiendo a los mensajes con +1 o -1. El bot también proporciona comandos para comprobar la puntuación de karma actual de un usuario y para ver una tabla de clasificación de los usuarios con más karma. Construido con Node.js y MongoDB.",
@@ -433,31 +432,6 @@
           {
             "title": "MongoDB",
             "color": "#00a142"
-          }
-        ]
-      },
-      {
-        "title": "Telegram Trading bot",
-        "description": "Este proyecto es un bot de trading que utiliza la API de Binance para comprar y vender criptodivisas. El bot utiliza el análisis técnico para tomar decisiones y enviar alertas a un bot de telegram.",
-        "imagePath": "/projects/trading-bot.png",
-        "githubUrl": "https://github.com/WilliamsMata/nestjs-trading-bot.git",
-        "projectUrl": "https://t.me/trading_test_vzla_bot",
-        "projectTech": [
-          {
-            "title": "NestJS",
-            "color": "#00d9fe"
-          },
-          {
-            "title": "MongoDB",
-            "color": "#00a142"
-          },
-          {
-            "title": "Binance API",
-            "color": "#f9bd29"
-          },
-          {
-            "title": "Telegram",
-            "color": "#0088cc"
           }
         ]
       }
