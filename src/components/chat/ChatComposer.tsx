@@ -59,10 +59,6 @@ export function ChatComposer({
       <div className="mx-auto flex max-w-3xl flex-col gap-4">
         {hasOnlyWelcomeMessage ? (
           <div className="flex flex-col gap-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-neutral-400">
-              {dictionary.prompts.title}
-            </p>
-
             <div className="flex flex-wrap gap-2">
               {dictionary.prompts.items.map((prompt) => (
                 <Button
