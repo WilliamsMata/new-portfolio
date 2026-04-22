@@ -34,6 +34,33 @@
     "title": "About Me",
     "text": "I am a full-stack developer passionate about creating solutions that truly help people and businesses. I specialize in building web and mobile applications using best practices, design patterns, and smart automation.\nI have {{experienceYears}} of professional experience applying Domain-Driven Design (DDD) and other patterns to make software easy to maintain and scale. I also integrate automation and AI tools like n8n to optimize processes and save time. My goal is for every client to feel confident and see clear results from day one."
   },
+  "experience": {
+    "title": "Experience",
+    "description": "My professional journey building scalable applications and working with amazing teams.",
+    "entries": [
+      {
+        "period": "2023 - Present",
+        "role": "Senior Full-Stack Developer",
+        "company": "Tech Company A",
+        "responsibilities": "Leading development of microservices architecture, mentoring junior developers, and implementing CI/CD pipelines.",
+        "tech": ["Next.js", "NestJS", "PostgreSQL", "Docker"]
+      },
+      {
+        "period": "2021 - 2023",
+        "role": "Full-Stack Developer",
+        "company": "Startup B",
+        "responsibilities": "Built and maintained web applications using React and Node.js, integrated third-party APIs, and optimized database queries.",
+        "tech": ["React", "Express", "MongoDB", "Redis"]
+      },
+      {
+        "period": "2019 - 2021",
+        "role": "Junior Developer",
+        "company": "Agency C",
+        "responsibilities": "Developed responsive web pages, collaborated with designers, and learned best practices in code quality.",
+        "tech": ["HTML", "CSS", "JavaScript", "WordPress"]
+      }
+    ]
+  },
   "skills": {
     "title": "My skills",
     "skills": [
@@ -345,43 +372,7 @@
         ]
       },
 
-      {
-        "title": "Breezili",
-        "description": "Breezili is a social network designed to publish different tourist places, where people can review and rate them. It has a settings panel, user editing and an administration panel where you can add new posts and manage users.",
-        "githubUrl": "https://github.com/WilliamsMata/breezili",
-        "projectUrl": "https://breezili.williamsmata.com/",
-        "imagePath": "/projects/breezili.jpg",
-        "projectTech": [
-          {
-            "title": "NextJS",
-            "color": "#00d9fe"
-          },
-          {
-            "title": "Tailwind",
-            "color": "#00bdf7"
-          },
-          {
-            "title": "Prisma",
-            "color": "#60a5fa"
-          },
-          {
-            "title": "NextAuth",
-            "color": "#d03be6"
-          },
-          {
-            "title": "tRPC",
-            "color": "#f87171"
-          },
-          {
-            "title": "PostgreSQL",
-            "color": "#1486e0"
-          },
-          {
-            "title": "Redis",
-            "color": "#ff4278"
-          }
-        ]
-      },
+
       
       {
         "title": "NestJS Products Microservice",

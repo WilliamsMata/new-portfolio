@@ -1,6 +1,7 @@
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { About } from "@/components/views/About";
 import { Contact } from "@/components/views/Contact";
+import { Experience } from "@/components/views/Experience";
 import { Hero } from "@/components/views/Hero";
 import { Projects } from "@/components/views/Projects";
 import { Skills } from "@/components/views/Skills";
@@ -21,6 +22,8 @@ export default async function Home({ params }: { params: Params }) {
       <TracingBeam>
         <div className="flex flex-col gap-12">
           <About dictionary={dictionary.about} locale={lang} />
+
+          <Experience dictionary={dictionary.experience} />
 
           <Skills dictionary={dictionary.skills} />
 

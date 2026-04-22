@@ -34,6 +34,33 @@
     "title": "Sobre mí",
     "text": "Soy un desarrollador full-stack apasionado por crear soluciones que realmente ayudan a las personas y empresas. Me especializo en construir aplicaciones web y móviles usando buenas prácticas, patrones de diseño y automatización inteligente.\nTengo {{experienceYears}} de experiencia aplicando Domain-Driven Design (DDD) y otros patrones para que el software sea fácil de mantener y escalar. Además, integro herramientas de automatización e IA como n8n para optimizar procesos y ahorrar tiempo. Mi meta es que cada cliente sienta confianza y vea resultados claros desde el primer día."
   },
+  "experience": {
+    "title": "Experiencia",
+    "description": "Mi trayectoria profesional construyendo aplicaciones escalables y trabajando con equipos increíbles.",
+    "entries": [
+      {
+        "period": "2023 - Presente",
+        "role": "Desarrollador Full-Stack Senior",
+        "company": "Empresa Tech A",
+        "responsibilities": "Liderando el desarrollo de arquitectura de microservicios, mentorizando desarrolladores junior e implementando pipelines de CI/CD.",
+        "tech": ["Next.js", "NestJS", "PostgreSQL", "Docker"]
+      },
+      {
+        "period": "2021 - 2023",
+        "role": "Desarrollador Full-Stack",
+        "company": "Startup B",
+        "responsibilities": "Construí y mantuve aplicaciones web usando React y Node.js, integré APIs de terceros y optimicé consultas de base de datos.",
+        "tech": ["React", "Express", "MongoDB", "Redis"]
+      },
+      {
+        "period": "2019 - 2021",
+        "role": "Desarrollador Junior",
+        "company": "Agencia C",
+        "responsibilities": "Desarrollé páginas web responsivas, colaboré con diseñadores y aprendí mejores prácticas en calidad de código.",
+        "tech": ["HTML", "CSS", "JavaScript", "WordPress"]
+      }
+    ]
+  },
   "skills": {
     "title": "Mis conocimientos",
     "skills": [
@@ -344,43 +371,7 @@
           }
         ]
       },
-      {
-        "title": "Breezili",
-        "description": "Breezili es una red social diseñada para publicar diferentes lugares turísticos, donde la gente puede reseñarlos y puntuarlos. Cuenta con un panel de configuración, edición de usuarios y un panel de administración donde puedes añadir nuevas publicaciones y gestionar usuarios.",
-        "githubUrl": "https://github.com/WilliamsMata/breezili",
-        "projectUrl": "https://breezili.williamsmata.com/",
-        "imagePath": "/projects/breezili.jpg",
-        "projectTech": [
-          {
-            "title": "NextJS",
-            "color": "#00d9fe"
-          },
-          {
-            "title": "Tailwind",
-            "color": "#00bdf7"
-          },
-          {
-            "title": "Prisma",
-            "color": "#60a5fa"
-          },
-          {
-            "title": "NextAuth",
-            "color": "#d03be6"
-          },
-          {
-            "title": "tRPC",
-            "color": "#f87171"
-          },
-          {
-            "title": "PostgreSQL",
-            "color": "#1486e0"
-          },
-          {
-            "title": "Redis",
-            "color": "#ff4278"
-          }
-        ]
-      },
+
       
       {
         "title": "NestJS Microservicios de productos",
