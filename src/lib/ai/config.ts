@@ -4,7 +4,7 @@ import { env } from "@/env";
 
 type OpenAIChatModel = Parameters<typeof createOpenaiChat>[0];
 
-const DEFAULT_PORTFOLIO_CHAT_MODEL: OpenAIChatModel = "gpt-4.1-mini";
+const DEFAULT_PORTFOLIO_CHAT_MODEL: OpenAIChatModel = "gpt-5.4-nano";
 
 export const portfolioChatModel =
   (env.OPENAI_CHAT_MODEL as OpenAIChatModel | undefined) ??

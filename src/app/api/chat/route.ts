@@ -126,6 +126,12 @@ export async function POST(request: Request) {
     tools: createPortfolioTools(locale),
     agentLoopStrategy: maxIterations(4),
     abortController,
+    modelOptions: {
+      reasoning: {
+        effort: "high",
+        summary: "auto",
+      },
+    },
   });
 
   return toServerSentEventsResponse(stream, { abortController });
