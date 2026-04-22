@@ -95,12 +95,6 @@
             "needInvertColor": true
           },
           {
-            "title": "Solid",
-            "iconPath": "/icons/solid.svg",
-            "url": "https://www.solidjs.com/",
-            "description": "SolidJS is a modern JavaScript library for building reactive user interfaces. It is designed to be simple, fast, and scalable, and provides a small API surface and lightweight rendering engine. SolidJS uses a reactive programming model, which means that the UI automatically updates in response to changes in the application's state. Unlike other popular frontend libraries, SolidJS does not use a virtual DOM, but instead relies on a lightweight, incremental DOM-based approach to rendering, which improves performance and reduces memory usage."
-          },
-          {
             "title": "Astro",
             "iconPath": "/icons/astro.svg",
             "url": "https://astro.build/",
@@ -144,53 +138,10 @@
             "needInvertColor": true
           },
           {
-            "title": "Radix UI",
-            "iconPath": "/icons/radix-ui.svg",
-            "url": "https://www.radix-ui.com/",
-            "description": "Radix UI is a collection of low-level, modular UI components for building design systems and web applications. It provides a set of accessible and customizable components that can be used to create complex user interfaces with minimal effort. Radix UI components are designed to be unstyled by default, which allows developers to easily customize the appearance and behavior of the components to match the design of their application. Radix UI also provides a set of utilities and tools for building responsive and accessible web applications.",
-            "needInvertColor": true
-          },
-          {
-            "title": "Tanstack Query",
-            "iconPath": "/icons/tanstack-query.svg",
-            "url": "https://react-query.tanstack.com/",
-            "description": "Tanstack Query is a popular library used for managing server state in React applications. It provides a set of hooks and utilities that simplify the process of fetching, caching, and updating data from remote APIs. React Query provides an intuitive and declarative API for making network requests that supports features like pagination, caching, and error handling. It also integrates well with other popular libraries and frameworks, including Redux, GraphQL, and TypeScript."
-          },
-          {
-            "title": "React Hook Form",
-            "iconPath": "/icons/react-hook-form.svg",
-            "url": "https://react-hook-form.com/",
-            "description": "React Hook Form is a lightweight and flexible library used for managing forms in React applications. It provides a simple and intuitive API for building forms using custom React hooks and supports various form inputs, such as text inputs, checkboxes, and radio buttons. React Hook Form is designed to be performant and efficient, with features like conditional validation and asynchronous form submission. It also integrates well with other popular libraries and frameworks, such as Zod for form validation and Material UI for styling."
-          },
-          {
-            "title": "Zustand",
-            "iconPath": "/icons/zustand.svg",
-            "url": "https://zustand.surge.sh/",
-            "description": "Zustand is a simple and flexible state management library for React applications. It provides a way to manage global application state using a minimal API and a functional programming model. Zustand allows developers to define stores that hold application state and update it using actions. It also supports features like derived state, middleware, and devtools, which make it easier to build complex and scalable applications. Zustand is designed to be lightweight and performant, with a focus on simplicity and developer experience."
-          },
-          {
             "title": "Framer Motion",
             "iconPath": "/icons/framer-motion.svg",
             "url": "https://www.framer.com/motion/",
             "description": "Framer Motion is a popular animation library for React applications. It provides a simple and intuitive API for creating animations and gestures, such as transitions, keyframes, and drag-and-drop interactions. Framer Motion uses a declarative syntax and supports features like spring physics, layout animations, and gesture recognition."
-          },
-          {
-            "title": "NextAuth",
-            "iconPath": "/icons/next-auth.png",
-            "url": "https://next-auth.js.org/",
-            "description": "NextAuth.js is an open-source authentication library for Next.js applications. It provides a simple and flexible way to implement various authentication providers, such as Google, Facebook, and GitHub, as well as custom authentication strategies. NextAuth.js allows developers to easily add authentication to their Next.js applications without having to manage the complexities of authentication protocols and security concerns. It also provides a set of features such as session management, CSRF protection, and JWT signing."
-          },
-          {
-            "title": "React Router",
-            "iconPath": "/icons/react-router.svg",
-            "url": "https://reactrouter.com/en/main",
-            "description": "React Router is a popular library used for routing in React applications. It provides a set of components and tools for managing the navigation and URL structure of a React application. React Router allows developers to define routes and navigate between them declaratively using JSX syntax. It also provides advanced features such as nested routes, routing with parameters, and programmatic navigation."
-          },
-          {
-            "title": "Redux",
-            "iconPath": "/icons/redux.svg",
-            "url": "https://redux.js.org/",
-            "description": "Redux is a popular JavaScript library used for managing the state of an application. It provides a predictable and centralized way of managing application state, which makes it easier to reason about the behavior of an application and debug issues. In Redux, the entire state of an application is stored in a single object called the store, which can only be modified by dispatching actions. These actions are plain JavaScript objects that describe what happened in the application. Reducers are pure functions that take the current state and an action, and return the new state of the application. Redux also provides a set of tools for debugging, time-traveling, and middleware."
           },
           {
             "title": "Socket.io",
@@ -236,42 +187,10 @@
             "description": "tRPC is a modern TypeScript-based framework for building scalable and efficient backend APIs. It provides a lightweight and flexible approach to API development, with a focus on simplicity, performance, and developer experience. tRPC allows developers to define API endpoints using a simple and intuitive syntax, and provides automatic TypeScript typings and documentation. It also supports various transport protocols, including HTTP, WebSocket, and gRPC. tRPC includes a set of features such as request validation, response compression, and caching, which makes it easier to build robust and scalable APIs."
           },
           {
-            "title": "Nats",
-            "iconPath": "/icons/nats.svg",
-            "url": "https://nats.io/",
-            "description": "NATS is a lightweight and high-performance messaging system for building distributed systems. It provides a simple and efficient way to connect services and applications using publish-subscribe and request-reply patterns. NATS is designed to be fast, secure, and scalable, with support for features such as message queuing, load balancing, and fault tolerance. It is widely used in cloud-native applications, microservices architectures, and IoT (Internet of Things) applications."
-          },
-          {
             "title": "Supabase",
             "iconPath": "/icons/supabase.svg",
             "url": "https://supabase.io/",
             "description": "Supabase is an open-source platform for building and deploying backend applications. It provides a set of tools and services that simplify the development process, including a real-time database, authentication, and storage. Supabase is built on top of PostgreSQL and provides a set of APIs and SDKs for interacting with the database, authentication, and storage services. It also includes features such as serverless functions, webhooks, and monitoring, which make it easier to build and scale backend applications."
-          },
-          {
-            "title": "Firebase",
-            "iconPath": "/icons/firebase.svg",
-            "url": "https://firebase.google.com/",
-            "description": "Firebase is a mobile and web application development platform, owned by Google, that provides a set of tools and services for building, managing, and growing web and mobile applications. Firebase includes a variety of features such as real-time database, cloud storage, authentication, hosting, and analytics, which helps developers to quickly create, launch, and scale their applications without having to manage infrastructure. Firebase also provides SDKs and APIs for various platforms, including web, iOS, and Android, allowing developers to easily integrate Firebase services into their applications."
-          },
-          {
-            "title": "Linux",
-            "iconPath": "/icons/linux.svg",
-            "url": "https://www.linux.org/",
-            "description": "Linux is a popular open-source operating system that is widely used in the web development community for building web servers, hosting websites, and running applications. It provides a stable and secure platform for running web applications and services, with support for various programming languages, tools, and frameworks. Linux is known for its reliability, performance, and flexibility, and is used in a wide range of applications, from small personal websites to large-scale enterprise applications."
-          },
-          {
-            "title": "Vercel",
-            "iconPath": "/icons/vercel.svg",
-            "url": "https://vercel.com/",
-            "description": "Vercel is a cloud platform for deploying and hosting web applications. It provides a set of tools and features that simplify the deployment process, including automatic builds, previews, and scaling. Vercel supports various frontend frameworks and libraries, such as Next.js, Gatsby, and React, as well as serverless functions and APIs. It also provides a global content delivery network (CDN) and SSL encryption, which ensures fast and secure delivery of web applications to users around the world.",
-            "needInvertColor": true
-          },
-          {
-            "title": "Railway",
-            "iconPath": "/icons/railway.svg",
-            "url": "https://railway.app/",
-            "description": "Railway is a platform for deploying and managing web applications. It provides a simple and intuitive way to deploy applications to the cloud, with support for various programming languages, frameworks, and databases. Railway supports features such as automatic deployments, environment variables, and database migrations, which make it easier to manage and scale web applications. It also provides a set of tools for monitoring, logging, and debugging applications, which helps developers to quickly identify and fix issues.",
-            "needInvertColor": true
           }
         ]
       },
@@ -351,12 +270,6 @@
         "title": "Tools",
         "skillsData": [
           {
-            "title": "Figma",
-            "iconPath": "/icons/figma.svg",
-            "url": "https://www.figma.com/",
-            "description": "Figma is a cloud-based design and prototyping tool used for creating user interfaces, web designs, and mobile applications. It provides a collaborative platform that allows multiple designers to work on the same project in real-time, which makes it easier to collaborate and share feedback. Figma includes a variety of features such as vector networks, design libraries, and interactive components, which makes it easier to create and manage complex designs. It also allows developers to inspect designs, generate code snippets, and export assets for development."
-          },
-          {
             "title": "Git",
             "iconPath": "/icons/git.svg",
             "url": "https://git-scm.com/",
@@ -368,12 +281,6 @@
             "url": "https://github.com/",
             "description": "GitHub is a popular code hosting platform that allows developers to collaborate on projects, share code, and build software together. It provides a set of tools and features for managing code repositories, such as version control, issue tracking, and code reviews. GitHub also provides a platform for hosting static websites, running continuous integration and deployment pipelines, and managing project documentation. It is widely used in the open-source community and by companies of all sizes to build and deploy software.",
             "needInvertColor": true
-          },
-          {
-            "title": "VSCode",
-            "iconPath": "/icons/vscode.svg",
-            "url": "https://code.visualstudio.com/",
-            "description": "Visual Studio Code is a popular open-source code editor developed by Microsoft. It provides a set of features and tools for writing, editing, and debugging code, such as syntax highlighting, code completion, and integrated terminal. Visual Studio Code supports various programming languages and frameworks, and provides extensions for adding additional functionality and customizing the editor. It also includes features such as version control, debugging, and task running, which make it easier to develop and maintain codebases of all sizes."
           },
           {
             "title": "Jest",

@@ -95,12 +95,6 @@
             "needInvertColor": true
           },
           {
-            "title": "Solid",
-            "iconPath": "/icons/solid.svg",
-            "url": "https://www.solidjs.com/",
-            "description": "SolidJS es una moderna biblioteca JavaScript para crear interfaces de usuario reactivas. Está diseñada para ser sencilla, rápida y escalable, y proporciona una pequeña superficie API y un motor de renderizado ligero. SolidJS utiliza un modelo de programación reactivo, lo que significa que la interfaz de usuario se actualiza automáticamente en respuesta a los cambios en el estado de la aplicación. A diferencia de otras bibliotecas frontales populares, SolidJS no utiliza un DOM virtual, sino que se basa en un enfoque de renderizado ligero e incremental basado en DOM, que mejora el rendimiento y reduce el uso de memoria."
-          },
-          {
             "title": "Astro",
             "iconPath": "/icons/astro.svg",
             "url": "https://astro.build/",
@@ -144,53 +138,10 @@
             "needInvertColor": true
           },
           {
-            "title": "Radix UI",
-            "iconPath": "/icons/radix-ui.svg",
-            "url": "https://www.radix-ui.com/",
-            "description": "Radix UI es una colección de componentes de interfaz de usuario modulares y de bajo nivel para crear sistemas de diseño y aplicaciones web. Proporciona un conjunto de componentes accesibles y personalizables que pueden utilizarse para crear interfaces de usuario complejas con el mínimo esfuerzo. Los componentes de Radix UI están diseñados para no tener estilo por defecto, lo que permite a los desarrolladores personalizar fácilmente la apariencia y el comportamiento de los componentes para que coincidan con el diseño de su aplicación. Radix UI también proporciona un conjunto de utilidades y herramientas para crear aplicaciones web accesibles y con capacidad de respuesta.",
-            "needInvertColor": true
-          },
-          {
-            "title": "Tanstack Query",
-            "iconPath": "/icons/tanstack-query.svg",
-            "url": "https://react-query.tanstack.com/",
-            "description": "Tanstack Query es una popular librería utilizada para gestionar el estado del servidor en aplicaciones React. Proporciona un conjunto de ganchos y utilidades que simplifican el proceso de obtención, almacenamiento en caché y actualización de datos de API remotas. React Query proporciona una API intuitiva y declarativa para realizar solicitudes de red que admite funciones como la paginación, el almacenamiento en caché y la gestión de errores. También se integra bien con otras bibliotecas y frameworks populares, como Redux, GraphQL y TypeScript."
-          },
-          {
-            "title": "React Hook Form",
-            "iconPath": "/icons/react-hook-form.svg",
-            "url": "https://react-hook-form.com/",
-            "description": "React Hook Form es una librería ligera y flexible utilizada para gestionar formularios en aplicaciones React. Proporciona una API sencilla e intuitiva para crear formularios utilizando ganchos React personalizados y admite varias entradas de formulario, como entradas de texto, casillas de verificación y botones de radio. React Hook Form está diseñado para ser eficaz y eficiente, con características como la validación condicional y el envío asíncrono de formularios. También se integra bien con otras bibliotecas y frameworks populares, como Zod para la validación de formularios y Material UI para el estilo."
-          },
-          {
-            "title": "Zustand",
-            "iconPath": "/icons/zustand.svg",
-            "url": "https://zustand.surge.sh/",
-            "description": "Zustand es una librería de gestión de estado simple y flexible para aplicaciones React. Proporciona una forma de gestionar el estado global de la aplicación utilizando una API mínima y un modelo de programación funcional. Zustand permite a los desarrolladores definir almacenes que contienen el estado de la aplicación y actualizarlo mediante acciones. También admite funciones como estado derivado, middleware y devtools, que facilitan la creación de aplicaciones complejas y escalables. Zustand está diseñado para ser ligero y eficaz, centrándose en la simplicidad y la experiencia del desarrollador."
-          },
-          {
             "title": "Framer Motion",
             "iconPath": "/icons/framer-motion.svg",
             "url": "https://www.framer.com/motion/",
             "description": "Framer Motion es una popular librería de animación para aplicaciones React. Proporciona una API sencilla e intuitiva para crear animaciones y gestos, como transiciones, fotogramas clave e interacciones de arrastrar y soltar. Framer Motion utiliza una sintaxis declarativa y admite funciones como la física de muelles, las animaciones de diseño y el reconocimiento de gestos."
-          },
-          {
-            "title": "NextAuth",
-            "iconPath": "/icons/next-auth.png",
-            "url": "https://next-auth.js.org/",
-            "description": "NextAuth.js es una biblioteca de autenticación de código abierto para aplicaciones Next.js. Proporciona una forma sencilla y flexible de implementar varios proveedores de autenticación, como Google, Facebook y GitHub, así como estrategias de autenticación personalizadas. NextAuth.js permite a los desarrolladores añadir fácilmente la autenticación a sus aplicaciones Next.js sin tener que gestionar las complejidades de los protocolos de autenticación y los problemas de seguridad. También proporciona un conjunto de funciones como la gestión de sesiones, la protección CSRF y la firma JWT."
-          },
-          {
-            "title": "React Router",
-            "iconPath": "/icons/react-router.svg",
-            "url": "https://reactrouter.com/en/main",
-            "description": "React Router es una biblioteca popular utilizada para el enrutamiento en aplicaciones React. Proporciona un conjunto de componentes y herramientas para gestionar la navegación y la estructura de URL de una aplicación React. React Router permite a los desarrolladores definir rutas y navegar entre ellas de forma declarativa utilizando sintaxis JSX. También proporciona funciones avanzadas como rutas anidadas, enrutamiento con parámetros y navegación programática."
-          },
-          {
-            "title": "Redux",
-            "iconPath": "/icons/redux.svg",
-            "url": "https://redux.js.org/",
-            "description": "Redux es una popular librería JavaScript utilizada para gestionar el estado de una aplicación. Proporciona una forma predecible y centralizada de gestionar el estado de la aplicación, lo que facilita el razonamiento sobre el comportamiento de una aplicación y la depuración de problemas. En Redux, todo el estado de una aplicación se almacena en un único objeto llamado almacén, que sólo puede ser modificado mediante el envío de acciones. Estas acciones son objetos JavaScript simples que describen lo que sucedió en la aplicación. Los reductores son funciones puras que toman el estado actual y una acción, y devuelven el nuevo estado de la aplicación. Redux también proporciona un conjunto de herramientas para la depuración, time-traveling, y middleware."
           },
           {
             "title": "Socket.io",
@@ -236,42 +187,10 @@
             "description": "tRPC es un marco de trabajo moderno basado en TypeScript para crear API de backend escalables y eficientes. Proporciona un enfoque ligero y flexible para el desarrollo de API, con un enfoque en la simplicidad, el rendimiento y la experiencia del desarrollador. tRPC permite a los desarrolladores definir puntos finales de API utilizando una sintaxis sencilla e intuitiva, y proporciona tipado y documentación automáticas de TypeScript. También es compatible con varios protocolos de transporte, como HTTP, WebSocket y gRPC. tRPC incluye un conjunto de funciones, como la validación de solicitudes, la compresión de respuestas y el almacenamiento en caché, que facilitan la creación de API sólidas y escalables."
           },
           {
-            "title": "Nats",
-            "iconPath": "/icons/nats.svg",
-            "url": "https://nats.io/",
-            "description": "NATS es un sistema de mensajería ligero y de alto rendimiento para construir sistemas distribuidos. Proporciona una forma sencilla y eficaz de conectar servicios y aplicaciones mediante patrones de publicación-suscripción y solicitud-respuesta. NATS está diseñado para ser rápido, seguro y escalable, con soporte para funciones como colas de mensajes, equilibrio de carga y tolerancia a fallos. Se utiliza ampliamente en aplicaciones nativas de la nube, arquitecturas de microservicios y aplicaciones IoT (Internet de las cosas)."
-          },
-          {
             "title": "Supabase",
             "iconPath": "/icons/supabase.svg",
             "url": "https://supabase.io/",
             "description": "Supabase es una plataforma de código abierto para crear y desplegar aplicaciones backend. Proporciona un conjunto de herramientas y servicios que simplifican el proceso de desarrollo, incluyendo una base de datos en tiempo real, autenticación y almacenamiento. Supabase se basa en PostgreSQL y proporciona un conjunto de API y SDK para interactuar con los servicios de base de datos, autenticación y almacenamiento. También incluye funciones como serverless functions, webhooks y monitorización, que facilitan la creación y escalado de aplicaciones backend."
-          },
-          {
-            "title": "Firebase",
-            "iconPath": "/icons/firebase.svg",
-            "url": "https://firebase.google.com/",
-            "description": "Firebase es una plataforma de desarrollo de aplicaciones móviles y web, propiedad de Google, que proporciona un conjunto de herramientas y servicios para crear, gestionar y hacer crecer aplicaciones web y móviles. Firebase incluye diversas funciones, como base de datos en tiempo real, almacenamiento en la nube, autenticación, alojamiento y análisis, que ayudan a los desarrolladores a crear, lanzar y escalar rápidamente sus aplicaciones sin tener que gestionar la infraestructura. Firebase también proporciona SDKs y APIs para varias plataformas, incluyendo web, iOS y Android, permitiendo a los desarrolladores integrar fácilmente los servicios de Firebase en sus aplicaciones."
-          },
-          {
-            "title": "Linux",
-            "iconPath": "/icons/linux.svg",
-            "url": "https://www.linux.org/",
-            "description": "Linux es un popular sistema operativo de código abierto muy utilizado en la comunidad de desarrolladores web para crear servidores web, alojar sitios web y ejecutar aplicaciones. Proporciona una plataforma estable y segura para ejecutar aplicaciones y servicios web, con soporte para varios lenguajes de programación, herramientas y marcos de trabajo. Linux es conocido por su fiabilidad, rendimiento y flexibilidad, y se utiliza en una amplia gama de aplicaciones, desde pequeños sitios web personales hasta aplicaciones empresariales a gran escala."
-          },
-          {
-            "title": "Vercel",
-            "iconPath": "/icons/vercel.svg",
-            "url": "https://vercel.com/",
-            "description": "Vercel es una plataforma en la nube para desplegar y alojar aplicaciones web. Proporciona un conjunto de herramientas y funciones que simplifican el proceso de despliegue, incluidas las compilaciones automáticas, las vistas previas y el escalado. Vercel admite varios marcos y bibliotecas frontales, como Next.js, Gatsby y React, así como funciones y API sin servidor. También proporciona una red global de entrega de contenidos (CDN) y cifrado SSL, que garantiza la entrega rápida y segura de aplicaciones web a usuarios de todo el mundo.",
-            "needInvertColor": true
-          },
-          {
-            "title": "Railway",
-            "iconPath": "/icons/railway.svg",
-            "url": "https://railway.app/",
-            "description": "Railway es una plataforma para desplegar y gestionar aplicaciones web. Proporciona una forma sencilla e intuitiva de desplegar aplicaciones en la nube, con soporte para varios lenguajes de programación, frameworks y bases de datos. Railway admite funciones como despliegues automáticos, variables de entorno y migraciones de bases de datos, que facilitan la gestión y el escalado de aplicaciones web. También proporciona un conjunto de herramientas para supervisar, registrar y depurar aplicaciones, lo que ayuda a los desarrolladores a identificar y solucionar problemas rápidamente.",
-            "needInvertColor": true
           }
         ]
       },
@@ -351,12 +270,6 @@
         "title": "Herramientas",
         "skillsData": [
           {
-            "title": "Figma",
-            "iconPath": "/icons/figma.svg",
-            "url": "https://www.figma.com/",
-            "description": "Figma es una herramienta de diseño y creación de prototipos basada en la nube que se utiliza para crear interfaces de usuario, diseños web y aplicaciones móviles. Proporciona una plataforma de colaboración que permite a varios diseñadores trabajar en el mismo proyecto en tiempo real, lo que facilita la colaboración y el intercambio de comentarios. Figma incluye diversas funciones, como redes vectoriales, bibliotecas de diseño y componentes interactivos, que facilitan la creación y gestión de diseños complejos. También permite a los desarrolladores inspeccionar los diseños, generar fragmentos de código y exportar activos para su desarrollo."
-          },
-          {
             "title": "Git",
             "iconPath": "/icons/git.svg",
             "url": "https://git-scm.com/",
@@ -368,12 +281,6 @@
             "url": "https://github.com/",
             "description": "GitHub es una popular plataforma de alojamiento de código que permite a los desarrolladores colaborar en proyectos, compartir código y crear software juntos. Ofrece un conjunto de herramientas y funciones para gestionar repositorios de código, como el control de versiones, el seguimiento de incidencias y las revisiones de código. GitHub también ofrece una plataforma para alojar sitios web estáticos, ejecutar procesos de integración y despliegue continuos y gestionar la documentación de los proyectos. Es ampliamente utilizado en la comunidad de código abierto y por empresas de todos los tamaños para crear y desplegar software.",
             "needInvertColor": true
-          },
-          {
-            "title": "VSCode",
-            "iconPath": "/icons/vscode.svg",
-            "url": "https://code.visualstudio.com/",
-            "description": "Visual Studio Code es un popular editor de código de código abierto desarrollado por Microsoft. Ofrece un conjunto de funciones y herramientas para escribir, editar y depurar código, como resaltado de sintaxis, completado de código y terminal integrado. Visual Studio Code es compatible con varios lenguajes y marcos de programación, y proporciona extensiones para añadir funciones adicionales y personalizar el editor. También incluye funciones como el control de versiones, la depuración y la ejecución de tareas, que facilitan el desarrollo y mantenimiento de bases de código de todos los tamaños."
           },
           {
             "title": "Jest",
