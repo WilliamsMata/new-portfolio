@@ -36,28 +36,35 @@
   },
   "experience": {
     "title": "Experiencia",
-    "description": "Mi trayectoria profesional construyendo aplicaciones escalables y trabajando con equipos increíbles.",
+    "description": "Mi trayectoria profesional construyendo aplicaciones escalables e integrando Inteligencia Artificial para resolver problemas de negocio.",
     "entries": [
       {
-        "period": "2023 - Presente",
-        "role": "Desarrollador Full-Stack Senior",
-        "company": "Empresa Tech A",
-        "responsibilities": "Liderando el desarrollo de arquitectura de microservicios, mentorizando desarrolladores junior e implementando pipelines de CI/CD.",
-        "tech": ["Next.js", "NestJS", "PostgreSQL", "Docker"]
+        "period": "Oct 2025 - Presente",
+        "role": "Creador & Lead Developer",
+        "company": "Loadify (SaaS B2B para Logística)",
+        "responsibilities": "Diseñé e implementé un sistema de agentes basados en RAG (OpenAI), reduciendo el tiempo de búsqueda manual en un 90%. Integré RetellAI y n8n para crear un agente de voz autónomo que negocia tarifas en tiempo real. Construí la arquitectura de la plataforma desde cero.",
+        "tech": [
+          "Next.js",
+          "Supabase",
+          "PostgreSQL",
+          "OpenAI",
+          "RetellAI",
+          "n8n"
+        ]
       },
       {
-        "period": "2021 - 2023",
-        "role": "Desarrollador Full-Stack",
-        "company": "Startup B",
-        "responsibilities": "Construí y mantuve aplicaciones web usando React y Node.js, integré APIs de terceros y optimicé consultas de base de datos.",
-        "tech": ["React", "Express", "MongoDB", "Redis"]
+        "period": "Mar 2024 - Oct 2025",
+        "role": "Lead Full Stack Developer",
+        "company": "Cercademi",
+        "responsibilities": "Lideré el desarrollo end-to-end de un sistema integral de citas médicas. Implementé flujos de pago seguros con MercadoPago y traduje requerimientos complejos de negocio en funcionalidades técnicas de forma ágil trabajando estrechamente con el cliente.",
+        "tech": ["Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS"]
       },
       {
-        "period": "2019 - 2021",
-        "role": "Desarrollador Junior",
-        "company": "Agencia C",
-        "responsibilities": "Desarrollé páginas web responsivas, colaboré con diseñadores y aprendí mejores prácticas en calidad de código.",
-        "tech": ["HTML", "CSS", "JavaScript", "WordPress"]
+        "period": "Jul 2023 - Feb 2024",
+        "role": "Full Stack Developer",
+        "company": "Argxp",
+        "responsibilities": "Diseñé la arquitectura y desarrollé desde cero 2 aplicaciones web escalables. Trabajé bajo estricta metodología ágil SCRUM, colaborando estrechamente con el equipo para entregar los hitos del proyecto bajo altos estándares de calidad.",
+        "tech": ["Next.js", "Node.js", "PostgreSQL", "SCRUM"]
       }
     ]
   },

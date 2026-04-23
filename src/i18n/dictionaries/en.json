@@ -36,28 +36,35 @@
   },
   "experience": {
     "title": "Experience",
-    "description": "My professional journey building scalable applications and working with amazing teams.",
+    "description": "My professional journey building scalable applications and integrating Artificial Intelligence to solve business problems.",
     "entries": [
       {
-        "period": "2023 - Present",
-        "role": "Senior Full-Stack Developer",
-        "company": "Tech Company A",
-        "responsibilities": "Leading development of microservices architecture, mentoring junior developers, and implementing CI/CD pipelines.",
-        "tech": ["Next.js", "NestJS", "PostgreSQL", "Docker"]
+        "period": "Oct 2025 - Present",
+        "role": "Creator & Lead Developer",
+        "company": "Loadify (B2B Logistics SaaS)",
+        "responsibilities": "Designed and implemented a RAG-based agent system (OpenAI), reducing manual search time by 90%. Integrated RetellAI and n8n to create an autonomous voice agent that negotiates rates in real-time. Built the platform architecture from scratch.",
+        "tech": [
+          "Next.js",
+          "Supabase",
+          "PostgreSQL",
+          "OpenAI",
+          "RetellAI",
+          "n8n"
+        ]
       },
       {
-        "period": "2021 - 2023",
-        "role": "Full-Stack Developer",
-        "company": "Startup B",
-        "responsibilities": "Built and maintained web applications using React and Node.js, integrated third-party APIs, and optimized database queries.",
-        "tech": ["React", "Express", "MongoDB", "Redis"]
+        "period": "Mar 2024 - Oct 2025",
+        "role": "Lead Full Stack Developer",
+        "company": "Cercademi",
+        "responsibilities": "Led the end-to-end development of a comprehensive medical appointment system. Implemented secure payment flows with MercadoPago and translated complex business requirements into technical features using agile methodologies.",
+        "tech": ["Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS"]
       },
       {
-        "period": "2019 - 2021",
-        "role": "Junior Developer",
-        "company": "Agency C",
-        "responsibilities": "Developed responsive web pages, collaborated with designers, and learned best practices in code quality.",
-        "tech": ["HTML", "CSS", "JavaScript", "WordPress"]
+        "period": "Jul 2023 - Feb 2024",
+        "role": "Full Stack Developer",
+        "company": "Argxp",
+        "responsibilities": "Designed the architecture and developed 2 scalable web applications from scratch. Worked under strict SCRUM agile methodology, collaborating closely with the team to deliver project milestones under high-quality standards.",
+        "tech": ["Next.js", "Node.js", "PostgreSQL", "SCRUM"]
       }
     ]
   },
