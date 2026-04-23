@@ -18,12 +18,12 @@
   },
   "hero": {
     "title": {
-      "developer": "Developer"
+      "developer": "Full Stack & AI Engineer"
     },
     "description": {
-      "first": "I'm a software developer specialized in building",
-      "highlight": "beautiful, scalable and high-performing",
-      "second": "web and mobile applications."
+      "first": "I build scalable web applications and",
+      "highlight": "enterprise solutions powered by AI,",
+      "second": "focusing on robust architectures and intelligent automation."
     },
     "resume": {
       "title": "Resume",
@@ -32,7 +32,7 @@
   },
   "about": {
     "title": "About Me",
-    "text": "I am a full-stack developer passionate about creating solutions that truly help people and businesses. I specialize in building web and mobile applications using best practices, design patterns, and smart automation.\nI have {{experienceYears}} of professional experience applying Domain-Driven Design (DDD) and other patterns to make software easy to maintain and scale. I also integrate automation and AI tools like n8n to optimize processes and save time. My goal is for every client to feel confident and see clear results from day one."
+    "text": "I am a Full Stack developer focused on solving complex business problems through clean code, scalable architectures (DDD), and Artificial Intelligence integration.\nI have {{experienceYears}} of professional experience. My approach combines the React/Next.js and Node/NestJS ecosystems with the creation of advanced AI agents (RAG) and voice automations for B2B SaaS products."
   },
   "experience": {
     "title": "Experience",

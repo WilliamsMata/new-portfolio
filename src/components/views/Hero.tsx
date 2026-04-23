@@ -32,7 +32,7 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
             title.developer === "Desarrollador" && "flex-row-reverse",
           )}
         >
-          <FlipWords words={words} duration={1500} />
+          {/* <FlipWords words={words} duration={1500} /> */}
           <span>{title.developer}</span>
         </div>
 

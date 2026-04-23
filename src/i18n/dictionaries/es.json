@@ -18,12 +18,12 @@
   },
   "hero": {
     "title": {
-      "developer": "Desarrollador"
+      "developer": "Full Stack & AI Engineer"
     },
     "description": {
-      "first": "Soy un desarrollador de software especializado en crear aplicaciones web y móviles",
-      "highlight": "modernas, escalables y de alto rendimiento.",
-      "second": ""
+      "first": "Construyo aplicaciones web escalables y",
+      "highlight": "soluciones empresariales potenciadas por IA,",
+      "second": "centradas en arquitecturas robustas y automatización inteligente."
     },
     "resume": {
       "title": "Curriculum",
@@ -32,7 +32,7 @@
   },
   "about": {
     "title": "Sobre mí",
-    "text": "Soy un desarrollador full-stack apasionado por crear soluciones que realmente ayudan a las personas y empresas. Me especializo en construir aplicaciones web y móviles usando buenas prácticas, patrones de diseño y automatización inteligente.\nTengo {{experienceYears}} de experiencia aplicando Domain-Driven Design (DDD) y otros patrones para que el software sea fácil de mantener y escalar. Además, integro herramientas de automatización e IA como n8n para optimizar procesos y ahorrar tiempo. Mi meta es que cada cliente sienta confianza y vea resultados claros desde el primer día."
+    "text": "Soy un desarrollador Full Stack orientado a resolver problemas complejos de negocio mediante código limpio, arquitecturas escalables (DDD) y la integración de Inteligencia Artificial.\nTengo {{experienceYears}} de experiencia profesional. Mi enfoque combina el ecosistema React/Next.js y Node/NestJS con la creación de agentes de IA avanzados (RAG) y automatizaciones de voz para productos SaaS B2B."
   },
   "experience": {
     "title": "Experiencia",
