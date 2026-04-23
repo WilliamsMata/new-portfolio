@@ -3,10 +3,8 @@ import { FC, PropsWithChildren, ReactNode, useState } from "react";
 import { createContext, useContextSelector } from "use-context-selector";
 import Image from "next/image";
 import { SkillData } from "@/interfaces";
-import { buttonVariants } from "../ui/button";
 import { Modal, ModalBody, ModalContent, useModal } from "../ui/animated-modal";
 import { cn } from "@/lib/utils";
-import { BoxArrowUp } from "../icons";
 import { BackgroundGradient } from "../ui/background-gradient";
 
 interface SkillModalContextType {
@@ -35,19 +33,15 @@ export const SkillModalProvider = ({ children }: { children: ReactNode }) => {
 
 interface SkillModalProps {
   children: React.ReactNode;
-  learnMoreText: string;
 }
 
-export const SkillModal: FC<SkillModalProps> = ({
-  children,
-  learnMoreText,
-}) => {
+export const SkillModal: FC<SkillModalProps> = ({ children }) => {
   return (
     <Modal>
       <SkillModalProvider>
         {children}
         <SkillModalBody>
-          <SkillModalContent learnMoreText={learnMoreText} />
+          <SkillModalContent />
         </SkillModalBody>
       </SkillModalProvider>
     </Modal>
@@ -95,13 +89,7 @@ export const SkillModalBody: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-interface SkillModalContentProps {
-  learnMoreText: string;
-}
-
-export const SkillModalContent: FC<SkillModalContentProps> = ({
-  learnMoreText,
-}) => {
+export const SkillModalContent = () => {
   const activeSkill = useContextSelector(
     SkillModalContext,
     (context) => context?.activeSkill,
@@ -127,17 +115,6 @@ export const SkillModalContent: FC<SkillModalContentProps> = ({
               {activeSkill.description}
             </p>
           </div>
-
-          <a
-            href={activeSkill.url}
-            target="_blank"
-            className={cn(
-              buttonVariants({ size: "sm" }),
-              "flex items-center self-end transition-transform active:scale-90",
-            )}
-          >
-            {learnMoreText} <BoxArrowUp className="mb-1 ml-2 h-4 w-4" />
-          </a>
         </div>
       )}
     </ModalContent>

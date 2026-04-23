@@ -10,7 +10,7 @@ interface SkillsProps {
 }
 
 export const Skills: FC<SkillsProps> = ({ dictionary }) => {
-  const { title, skills, learnMore } = dictionary;
+  const { title, skills } = dictionary;
 
   const tabs = skills.map(({ title, skillsData }) => ({
     title,
@@ -24,7 +24,7 @@ export const Skills: FC<SkillsProps> = ({ dictionary }) => {
         {title}
       </GradientText>
 
-      <SkillModal learnMoreText={learnMore}>
+      <SkillModal>
         <Tabs tabs={tabs} />
       </SkillModal>
     </section>
