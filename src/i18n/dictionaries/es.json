@@ -213,7 +213,8 @@
         "title": "Loadify - IA Core & Voice Automations",
         "description": "Plataforma SaaS B2B para logística. Diseñé e implementé el core de IA con agentes RAG (OpenAI) para analizar cargas, reduciendo el tiempo de búsqueda manual en un 90%. Integra un agente de voz autónomo (RetellAI) que negocia tarifas en tiempo real. Arquitectura Full Stack construida desde cero.",
         "imagePath": "/projects/loadify.png",
-        "projectTech":[
+        "projectUrl": "https://loadify.net",
+        "projectTech": [
           { "title": "Next.js", "color": "#ffffff" },
           { "title": "Supabase", "color": "#3ecf8e" },
           { "title": "OpenAI", "color": "#10a37f" },
@@ -313,7 +314,7 @@
             "color": "#00a142"
           }
         ]
-},
+      },
       {
         "title": "Graggle Bot - Telegram Mini App",
         "description": "Juego de farming estilo 'Mini App' nativo en Telegram. Construido desde cero utilizando Next.js y PostgreSQL. El sistema integra caché de alto rendimiento con Redis para soportar alta concurrencia y Server Actions fuertemente tipados (ZSA). Incluye un panel administrativo para gestionar la economía y lógica del juego en tiempo real.",

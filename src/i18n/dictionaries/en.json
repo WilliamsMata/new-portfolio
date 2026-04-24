@@ -213,7 +213,8 @@
         "title": "Loadify - AI Core & Voice Automations",
         "description": "B2B SaaS platform for logistics. Designed and implemented the AI core with RAG agents (OpenAI) to analyze loads, reducing manual search time by 90%. Integrates an autonomous voice agent (RetellAI) that negotiates rates in real time. Full Stack architecture built from scratch.",
         "imagePath": "/projects/loadify.png",
-        "projectTech":[
+        "projectUrl": "https://loadify.net",
+        "projectTech": [
           { "title": "Next.js", "color": "#ffffff" },
           { "title": "Supabase", "color": "#3ecf8e" },
           { "title": "OpenAI", "color": "#10a37f" },
@@ -319,7 +320,7 @@
         "description": "Native Telegram Mini App farming game. Built from scratch using Next.js and PostgreSQL. The system integrates high-performance caching with Redis to handle high concurrency and uses strongly-typed Server Actions (ZSA). Includes a real-time admin dashboard to manage the game economy and logic.",
         "projectUrl": "https://t.me/graggleeggbot",
         "imagePath": "/projects/graggle.png",
-        "projectTech":[
+        "projectTech": [
           { "title": "Next.js", "color": "#ffffff" },
           { "title": "PostgreSQL", "color": "#1486e0" },
           { "title": "Redis", "color": "#ff4278" },
