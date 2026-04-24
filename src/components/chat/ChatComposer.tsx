@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useModal } from "@/components/ui/animated-modal";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import type { Dictionary } from "@/i18n/getDictionary";
+import { PaperPlaneIcon } from "@radix-ui/react-icons";
 
 const MAX_MESSAGE_LENGTH = 500;
 
@@ -29,6 +30,12 @@ export function ChatComposer({
 }: ChatComposerProps) {
   const { open } = useModal();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const [rows, setRows] = useState(1);
+
+  const getRowCount = useCallback((text: string) => {
+    const lineCount = (text.match(/\n/g) || []).length + 1;
+    return Math.min(Math.max(lineCount, 1), 4);
+  }, []);
 
   useEffect(() => {
     if (!open) {
@@ -83,38 +90,49 @@ export function ChatComposer({
         ) : null}
 
         <form
-          className="flex flex-col gap-3"
+          className="flex w-full flex-col gap-3"
           onSubmit={(event) => {
             event.preventDefault();
             void submitMessage(value);
           }}
         >
-          <Textarea
-            ref={textareaRef}
-            value={value}
-            onChange={(event) => onValueChange(event.target.value)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter" && !event.shiftKey) {
-                event.preventDefault();
-                void submitMessage(value);
-              }
-            }}
-            placeholder={dictionary.input.placeholder}
-            disabled={isLoading}
-            maxLength={MAX_MESSAGE_LENGTH}
-            rows={3}
-            className="border border-zinc-200 bg-white text-zinc-950 shadow-[0_12px_32px_rgba(15,23,42,0.08)] placeholder:text-zinc-400 focus-visible:ring-zinc-300 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500 dark:focus-visible:ring-neutral-600"
-          />
+          <div className="flex justify-between gap-4">
+            <Textarea
+              ref={textareaRef}
+              value={value}
+              onChange={(event) => {
+                onValueChange(event.target.value);
+                setRows(getRowCount(event.target.value));
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" && !event.shiftKey) {
+                  event.preventDefault();
+                  void submitMessage(value);
+                }
+              }}
+              placeholder={dictionary.input.placeholder}
+              disabled={isLoading}
+              maxLength={MAX_MESSAGE_LENGTH}
+              rows={rows}
+              className="flex-1 resize-none border border-zinc-200 bg-white text-zinc-950 shadow-[0_12px_32px_rgba(15,23,42,0.08)] placeholder:text-zinc-400 focus-visible:ring-zinc-300 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:placeholder:text-neutral-500 dark:focus-visible:ring-neutral-600"
+            />
 
-          <div className="flex items-center justify-between gap-3">
+            <Button
+              type="submit"
+              disabled={!value.trim() || isLoading}
+              className="self-end"
+              size="icon"
+              aria-label={dictionary.input.send}
+            >
+              <PaperPlaneIcon className="h-5 w-5" />
+            </Button>
+          </div>
+
+          {/* <div className="flex items-center justify-between gap-3">
             <p className="hidden max-w-xl text-xs leading-5 text-zinc-500 dark:text-neutral-400 md:block">
               {dictionary.panel.disclaimer}
             </p>
-
-            <Button type="submit" disabled={!value.trim() || isLoading}>
-              {dictionary.input.send}
-            </Button>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

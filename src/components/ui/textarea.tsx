@@ -38,7 +38,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setVisible(true)}
         onMouseLeave={() => setVisible(false)}
-        className="group/textarea rounded-lg p-[2px] transition duration-300"
+        className="group/textarea w-full rounded-lg p-[2px] transition duration-300"
       >
         <textarea
           className={cn(
