@@ -107,7 +107,7 @@ export function ChatComposer({
           />
 
           <div className="flex items-center justify-between gap-3">
-            <p className="max-w-xl text-xs leading-5 text-zinc-500 dark:text-neutral-400">
+            <p className="hidden max-w-xl text-xs leading-5 text-zinc-500 dark:text-neutral-400 md:block">
               {dictionary.panel.disclaimer}
             </p>
 
