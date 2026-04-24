@@ -207,11 +207,23 @@
   },
   "projects": {
     "title": "My Projects",
-    "description": "Only personal projects are listed here. These are not all I have, you can find more on my",
+    "description": "These are some of my projects, you can find more on my",
     "projects": [
       {
+        "title": "Loadify - AI Core & Voice Automations",
+        "description": "B2B SaaS platform for logistics. Designed and implemented the AI core with RAG agents (OpenAI) to analyze loads, reducing manual search time by 90%. Integrates an autonomous voice agent (RetellAI) that negotiates rates in real time. Full Stack architecture built from scratch.",
+        "imagePath": "/projects/loadify.png",
+        "projectTech":[
+          { "title": "Next.js", "color": "#ffffff" },
+          { "title": "Supabase", "color": "#3ecf8e" },
+          { "title": "OpenAI", "color": "#10a37f" },
+          { "title": "RetellAI", "color": "#6366f1" },
+          { "title": "n8n", "color": "#9333ea" }
+        ]
+      },
+      {
         "title": "TLDR Bot - AI Assistant",
-        "description": "A Telegram bot built with n8n that uses AI (Google Gemini) to generate intelligent summaries of group chats. It can summarize by message count, time range, or topic. It can also analyze and explain messages, images, videos and other files in detail, acting as a personal conversational assistant. Uses PostgreSQL for message history and Redis for rate limiting.",
+        "description": "A Telegram bot built with n8n that uses AI (Google Gemini) to generate intelligent summaries of group chats. It can summarize by message count, time range, or topic. It can also analyze and explain messages, images, videos and other files in detail, acting as a personal conversational assistant.",
         "githubUrl": "https://github.com/WilliamsMata/tldr-bot",
         "projectUrl": "https://t.me/tldr_ai_pro_bot",
         "imagePath": "/projects/tldr-bot.png",
@@ -282,7 +294,7 @@
       },
 
       {
-        "title": "Telegram Karma Bot",
+        "title": "Karma Bot",
         "description": "Karma Bot is a simple Telegram bot for tracking karma points in a group chat. Users can give each other karma points by responding to messages with +1 or -1. The bot also provides commands for checking a user's current karma score and for seeing a leaderboard of the top users with the most karma. Built with Node.js and MongoDB.",
         "imagePath": "/projects/karma-bot.png",
         "githubUrl": "https://github.com/WilliamsMata/karma_bot",
@@ -300,6 +312,19 @@
             "title": "MongoDB",
             "color": "#00a142"
           }
+        ]
+      },
+      {
+        "title": "Graggle Bot - Telegram Mini App",
+        "description": "Native Telegram Mini App farming game. Built from scratch using Next.js and PostgreSQL. The system integrates high-performance caching with Redis to handle high concurrency and uses strongly-typed Server Actions (ZSA). Includes a real-time admin dashboard to manage the game economy and logic.",
+        "projectUrl": "https://t.me/graggleeggbot",
+        "imagePath": "/projects/graggle.png",
+        "projectTech":[
+          { "title": "Next.js", "color": "#ffffff" },
+          { "title": "PostgreSQL", "color": "#1486e0" },
+          { "title": "Redis", "color": "#ff4278" },
+          { "title": "Tailwind CSS", "color": "#38bdf8" },
+          { "title": "ZSA", "color": "#facc15" }
         ]
       }
     ]
