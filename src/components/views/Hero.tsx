@@ -2,10 +2,7 @@ import type { FC } from "react";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { cn } from "@/lib/utils";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
-import { FlipWords } from "../ui/flip-words";
 import { GradientText } from "../common/GradientText";
-
-const words = ["Frontend", "Backend", "Mobile"];
 
 interface HeroProps {
   dictionary: Dictionary["hero"];

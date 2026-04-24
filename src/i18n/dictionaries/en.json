@@ -190,6 +190,12 @@
             "needInvertColor": true
           },
           {
+            "title": "OpenClaw",
+            "iconPath": "/icons/openclaw.png",
+            "url": "https://openclaw.dev/",
+            "description": "Open-source personal AI assistant that controls your computer via chat apps like Telegram or WhatsApp. Manages emails, calendars, and builds custom skills autonomously."
+          },
+          {
             "title": "n8n",
             "iconPath": "/icons/n8n.svg",
             "url": "https://n8n.io/",
