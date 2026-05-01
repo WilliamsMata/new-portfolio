@@ -54,22 +54,8 @@ function buildHeadline(hero: Dictionary["hero"]) {
     .trim();
 }
 
-function buildSpecialties(locale: Locale) {
-  if (locale === "es") {
-    return [
-      "Desarrollo full-stack para web y mobile",
-      "Arquitecturas escalables con DDD y patrones de diseno",
-      "Automatizacion e integracion de IA con n8n",
-      "Software mantenible con foco en rendimiento",
-    ];
-  }
-
-  return [
-    "Full-stack web and mobile development",
-    "Scalable architectures with DDD and design patterns",
-    "Automation and AI integration with n8n",
-    "Maintainable software with a performance focus",
-  ];
+function buildSpecialties(specialties: Array<string>) {
+  return specialties;
 }
 
 function buildRecruiterHighlights(
@@ -94,12 +80,28 @@ function buildRecruiterHighlights(
   ];
 }
 
-function buildWorkHistoryNote(locale: Locale) {
-  if (locale === "es") {
-    return "El portfolio no enumera empresas ni cargos por empresa; la evidencia publica se centra en anos de experiencia, stack, automatizacion y proyectos.";
+function buildWorkHistoryNote(
+  locale: Locale,
+  entries: Dictionary["experience"]["entries"],
+) {
+  if (entries.length === 0) {
+    return locale === "es"
+      ? "No hay historial laboral registrado en el portfolio."
+      : "No work history is recorded in the portfolio.";
   }
 
-  return "The portfolio does not list companies or company-by-company roles; the public evidence focuses on years of experience, stack, automation, and projects.";
+  const history = entries.map((entry) => {
+    const period = locale === "es" ? entry.period : entry.period;
+    const role = entry.role;
+    const company = entry.company;
+    return `${period}: ${role} at ${company}`;
+  });
+
+  if (locale === "es") {
+    return `Experiencia laboral: ${history.join(" | ")}.`;
+  }
+
+  return `Work history: ${history.join(" | ")}.`;
 }
 
 function normalize(value?: string) {
@@ -168,13 +170,16 @@ export async function getPortfolioKnowledge(
     headline: buildHeadline(dictionary.hero),
     about: renderAboutText(dictionary.about.text, locale, experienceYears),
     experienceYears,
-    specialties: buildSpecialties(locale),
+    specialties: buildSpecialties(dictionary.about.specialties),
     recruiterHighlights: buildRecruiterHighlights(
       locale,
       experienceYears,
       projects.length,
     ),
-    workHistoryNote: buildWorkHistoryNote(locale),
+    workHistoryNote: buildWorkHistoryNote(
+      locale,
+      dictionary.experience.entries,
+    ),
     projects,
     skills,
     links: getProfileLinks(locale),

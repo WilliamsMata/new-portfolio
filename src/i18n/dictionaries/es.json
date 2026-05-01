@@ -32,7 +32,13 @@
   },
   "about": {
     "title": "Sobre mí",
-    "text": "Soy un desarrollador Full Stack orientado a resolver problemas complejos de negocio mediante código limpio, arquitecturas escalables (DDD) y la integración de Inteligencia Artificial.\nTengo {{experienceYears}} de experiencia profesional. Mi enfoque combina el ecosistema React/Next.js y Node/NestJS con la creación de agentes de IA avanzados (RAG) y automatizaciones de voz para productos SaaS B2B."
+    "text": "Soy un desarrollador Full Stack orientado a resolver problemas complejos de negocio mediante código limpio, arquitecturas escalables (DDD) y la integración de Inteligencia Artificial.\nTengo {{experienceYears}} de experiencia profesional. Mi enfoque combina el ecosistema React/Next.js y Node/NestJS con la creación de agentes de IA avanzados (RAG) y automatizaciones de voz para productos SaaS B2B.",
+    "specialties": [
+      "Desarrollo full-stack para web y mobile",
+      "Arquitecturas escalables con DDD y patrones de diseño",
+      "Automatización e integración de IA con n8n",
+      "Software mantenible con foco en rendimiento"
+    ]
   },
   "experience": {
     "title": "Experiencia",
