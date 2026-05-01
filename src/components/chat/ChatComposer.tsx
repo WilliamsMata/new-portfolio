@@ -66,7 +66,7 @@ export function ChatComposer({
       <div className="mx-auto flex max-w-3xl flex-col gap-4">
         {hasOnlyWelcomeMessage ? (
           <div className="flex flex-col gap-3">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-col gap-2">
               {dictionary.prompts.items.map((prompt) => (
                 <Button
                   key={prompt}
@@ -76,7 +76,7 @@ export function ChatComposer({
                   onClick={() => {
                     void submitMessage(prompt);
                   }}
-                  className="rounded-full border-zinc-200 bg-white text-zinc-900 hover:bg-zinc-100 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800"
+                  className="h-auto text-wrap rounded-lg border-zinc-200 bg-white py-1.5 text-zinc-900 hover:bg-zinc-100 dark:border-white/10 dark:bg-neutral-900 dark:text-neutral-50 dark:hover:bg-neutral-800"
                 >
                   {prompt}
                 </Button>
