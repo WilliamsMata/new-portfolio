@@ -150,7 +150,7 @@
         ]
       },
       {
-        "title": "Infrastructure & Data",
+        "title": "Databases",
         "skillsData": [
           {
             "title": "PostgreSQL",
@@ -233,7 +233,7 @@
         "description": "A high-precision RAG system for massive Telegram chat histories. I optimized information retrieval by implementing Hybrid Search (combining pgvector semantic search and tsvector lexical search) with a Re-ranking layer. This architecture ensures highly relevant context for the LLM while significantly reducing token costs and latency.",
         "imagePath": "/projects/tldr-bot.png",
         "projectTech": [
-          { "title": "PostgreSQL (Hybrid Search)", "color": "#1486e0" },
+          { "title": "PostgreSQL", "color": "#1486e0" },
           { "title": "Gemini", "color": "#4285F4" },
           { "title": "Redis", "color": "#ff4278" },
           { "title": "n8n", "color": "#9333ea" }

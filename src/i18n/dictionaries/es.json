@@ -150,7 +150,7 @@
         ]
       },
       {
-        "title": "Infrastructure & Data",
+        "title": "Databases",
         "skillsData": [
           {
             "title": "PostgreSQL",
@@ -217,7 +217,7 @@
     "projects": [
       {
         "title": "Loadify AI - Orquestador Logístico",
-        "description": "Arquitecté un SaaS B2B que utiliza agentes RAG para automatizar la búsqueda de cargas. Integré un agente de IA de voz para negociación de tarifas, logrando una reducción del 90% en el tiempo operativo manual. Enfoque en alta disponibilidad y consumo optimizado de LLMs.",
+        "description": "Desarrollé un SaaS B2B que utiliza agentes RAG para automatizar la búsqueda de cargas. Integré un agente de IA de voz para negociación de tarifas, logrando una reducción del 90% en el tiempo operativo manual. Enfoque en alta disponibilidad y consumo optimizado de LLMs.",
         "imagePath": "/projects/loadify.png",
         "projectUrl": "https://loadify.net",
         "projectTech": [
@@ -230,10 +230,10 @@
       },
       {
         "title": "TLDR Bot - Asistente RAG Avanzado",
-        "description": "Sistema RAG de alta precisión para historiales masivos de chats en Telegram. Optimicé la recuperación de información implementando Búsqueda Híbrida (combinando búsqueda semántica con pgvector y léxica con tsvector) junto a una capa de Re-ranking. Esta arquitectura garantiza contextos altamente relevantes para el LLM, reduciendo significativamente los costos de tokens y la latencia.",
+        "description": "Sistema RAG de alta precisión para historiales masivos de Telegram. Optimicé la recuperación implementando Búsqueda Híbrida (semántica con pgvector y léxica con tsvector) junto a Re-ranking. Esta arquitectura garantiza contextos relevantes para el LLM, reduciendo significativamente los costos de tokens y la latencia.",
         "imagePath": "/projects/tldr-bot.png",
         "projectTech": [
-          { "title": "PostgreSQL (Hybrid Search)", "color": "#1486e0" },
+          { "title": "PostgreSQL", "color": "#1486e0" },
           { "title": "Gemini", "color": "#4285F4" },
           { "title": "Redis", "color": "#ff4278" },
           { "title": "n8n", "color": "#9333ea" }
