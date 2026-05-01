@@ -11,9 +11,10 @@ export const Experience: FC<ExperienceProps> = ({ dictionary }) => {
   const { title, entries } = dictionary;
 
   const data = entries.map((entry) => ({
+    key: entry.company,
     title: entry.period,
     content: (
-      <div className="flex w-full flex-col gap-2">
+      <div key={entry.company} className="flex w-full flex-col gap-2">
         <h3 className="text-xl font-bold text-neutral-500 dark:text-neutral-300">
           {entry.role}
         </h3>
@@ -24,9 +25,9 @@ export const Experience: FC<ExperienceProps> = ({ dictionary }) => {
           {entry.responsibilities}
         </p>
         <div className="mt-2 flex flex-wrap gap-2">
-          {entry.tech.map((tech, index) => (
+          {entry.tech.map((tech) => (
             <span
-              key={index}
+              key={tech}
               className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300"
             >
               {tech}
@@ -39,7 +40,11 @@ export const Experience: FC<ExperienceProps> = ({ dictionary }) => {
 
   return (
     <section className="flex flex-col items-center">
-      <GradientText as="h2" size="4xl" className="z-[100] md:translate-y-12">
+      <GradientText
+        as="h2"
+        size="4xl"
+        className="z-[100] text-center md:translate-y-12"
+      >
         {title}
       </GradientText>
 

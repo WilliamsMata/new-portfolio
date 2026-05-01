@@ -30,7 +30,11 @@ export const About: FC<AboutProps> = ({ dictionary, locale }) => {
 
   return (
     <section className="flex h-full flex-col items-center [contain-intrinsic-size:1px_600px]">
-      <GradientText as="h2" size="4xl" className="z-[100] translate-y-12">
+      <GradientText
+        as="h2"
+        size="4xl"
+        className="z-[100] translate-y-12 text-center"
+      >
         {title}
       </GradientText>
 

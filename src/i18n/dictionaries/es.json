@@ -1,16 +1,16 @@
 {
   "metadata": {
-    "description": "Soy un desarrollador fullstack con experiencia en la creación de sitios web y aplicaciones móviles modernas, rápidas y dinámicas. Explora mi portfolio para ver algunos de los proyectos en los que he trabajado y ponte en contacto conmigo si estás interesado en colaborar en un proyecto juntos."
+    "description": "Ingeniero Fullstack & AI Senior especializado en arquitecturas RAG, agentes autónomos y sistemas distribuidos de alto tráfico. Experto en soluciones SaaS listas para producción que optimizan la eficiencia operativa mediante IA."
   },
   "header": {
     "home": "Inicio",
     "selectLocale": {
-      "title": "Seleccionar idioma",
+      "title": "Idioma",
       "spanish": "Español",
-      "english": "English"
+      "english": "Inglés"
     },
     "toggleMode": {
-      "title": "Cambiar el tema",
+      "title": "Cambiar tema",
       "light": "Día",
       "dark": "Noche",
       "system": "Sistema"
@@ -18,103 +18,103 @@
   },
   "hero": {
     "title": {
-      "developer": "Full Stack & AI Engineer"
+      "developer": "Senior Fullstack & AI Engineer "
     },
     "description": {
-      "first": "Construyo aplicaciones web escalables y",
-      "highlight": "soluciones empresariales potenciadas por IA,",
-      "second": "centradas en arquitecturas robustas y automatización inteligente."
+      "first": "Arquitecto sistemas distribuidos y",
+      "highlight": "soluciones de software de alto rendimiento,",
+      "second": "integrando arquitecturas de IA avanzadas como RAG y flujos agénticos."
     },
     "resume": {
-      "title": "Curriculum",
+      "title": "Descargar CV",
       "path": "/files/curriculum.pdf"
     }
   },
   "about": {
-    "title": "Sobre mí",
-    "text": "Soy un desarrollador Full Stack orientado a resolver problemas complejos de negocio mediante código limpio, arquitecturas escalables (DDD) y la integración de Inteligencia Artificial.\nTengo {{experienceYears}} de experiencia profesional. Mi enfoque combina el ecosistema React/Next.js y Node/NestJS con la creación de agentes de IA avanzados (RAG) y automatizaciones de voz para productos SaaS B2B.",
+    "title": "Perfil Profesional",
+    "text": "Soy un Ingeniero de Software Senior enfocado en la construcción de aplicaciones robustas, escalables y mantenibles. Mi experiencia base reside en el desarrollo Fullstack moderno (Next.js, NestJS, PostgreSQL) y arquitecturas distribuidas. Me especializo en elevar el software tradicional integrando capacidades nativas de IA, como sistemas RAG y agentes autónomos, asegurando que la innovación siempre esté al servicio de la escalabilidad y los estándares de código limpio.",
     "specialties": [
-      "Desarrollo full-stack para web y mobile",
-      "Arquitecturas escalables con DDD y patrones de diseño",
-      "Automatización e integración de IA con n8n",
-      "Software mantenible con foco en rendimiento"
+      "Arquitectura de Software: DDD, Microservicios y diseño orientado a eventos",
+      "Excelencia Fullstack: Ecosistemas Next.js y NestJS de alto rendimiento",
+      "Ingeniería de IA: RAG, Workflows Agénticos y ciclos ReAct",
+      "Infraestructura Robusta: SQL/NoSQL escalable y despliegues cloud-native"
     ]
   },
   "experience": {
-    "title": "Experiencia",
-    "description": "Mi trayectoria profesional construyendo aplicaciones escalables e integrando Inteligencia Artificial para resolver problemas de negocio.",
+    "title": "Experiencia Profesional",
+    "description": "Trayectoria comprobada diseñando plataformas nativas de IA e infraestructuras web escalables.",
     "entries": [
       {
         "period": "Oct 2025 - Presente",
-        "role": "Creador & Lead Developer",
-        "company": "Loadify (SaaS B2B para Logística)",
-        "responsibilities": "Diseñé e implementé un sistema de agentes basados en RAG (OpenAI), reduciendo el tiempo de búsqueda manual en un 90%. Integré RetellAI y n8n para crear un agente de voz autónomo que negocia tarifas en tiempo real. Construí la arquitectura de la plataforma desde cero.",
+        "role": "Lead AI Engineer",
+        "company": "Loadify (SaaS Logístico)",
+        "responsibilities": "Arquitecté un sistema de agentes autónomos basado en ciclos ReAct y Tool-Calling para la automatización de operaciones logísticas. Integré agentes de voz en tiempo real (RetellAI) y orquestaciones complejas en n8n, permitiendo que la IA ejecute llamadas, verifique datos y gestione errores de forma autónoma, reduciendo la carga operativa manual en un 90%.",
         "tech": [
           "Next.js",
-          "Supabase",
-          "PostgreSQL",
-          "OpenAI",
+          "OpenAI (Function Calling)",
+          "Patrón ReAct",
           "RetellAI",
-          "n8n"
+          "n8n",
+          "Supabase"
         ]
       },
       {
         "period": "Mar 2024 - Oct 2025",
         "role": "Lead Full Stack Developer",
         "company": "Cercademi",
-        "responsibilities": "Lideré el desarrollo end-to-end de un sistema integral de citas médicas. Implementé flujos de pago seguros con MercadoPago y traduje requerimientos complejos de negocio en funcionalidades técnicas de forma ágil trabajando estrechamente con el cliente.",
-        "tech": ["Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS"]
+        "responsibilities": "Lideré el desarrollo integral de un ecosistema crítico de citas médicas. Implementé orquestaciones de pago complejas con MercadoPago y optimicé consultas de base de datos para manejar alta concurrencia. Reduje la deuda técnica migrando a una arquitectura modular en TypeScript.",
+        "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind"]
       },
       {
         "period": "Jul 2023 - Feb 2024",
         "role": "Full Stack Developer",
         "company": "Argxp",
-        "responsibilities": "Diseñé la arquitectura y desarrollé desde cero 2 aplicaciones web escalables. Trabajé bajo estricta metodología ágil SCRUM, colaborando estrechamente con el equipo para entregar los hitos del proyecto bajo altos estándares de calidad.",
-        "tech": ["Next.js", "Node.js", "PostgreSQL", "SCRUM"]
+        "responsibilities": "Desarrollé desde cero 2 aplicaciones web de alto tráfico bajo metodología SCRUM. Diseñé librerías de componentes reutilizables y establecí mejores prácticas de CI/CD, asegurando un 99.9% de disponibilidad y altos estándares de calidad mediante pruebas unitarias.",
+        "tech": ["Next.js", "Node.js", "PostgreSQL", "SCRUM", "Docker"]
       }
     ]
   },
   "skills": {
-    "title": "Mis conocimientos",
+    "title": "Especialización Técnica",
     "skills": [
       {
-        "title": "Frontend",
+        "title": "Frontend & UI",
         "skillsData": [
           {
             "title": "TypeScript",
             "iconPath": "/icons/typescript.svg",
             "url": "https://www.typescriptlang.org/",
-            "description": "Superconjunto de JavaScript que añade tipado estático, mejorando la mantenibilidad, escalabilidad y detección de errores en el código."
+            "description": "Garantizando seguridad de tipos y mantenibilidad en bases de código empresariales."
           },
           {
             "title": "React",
             "iconPath": "/icons/react.svg",
             "url": "https://react.dev/",
-            "description": "Librería líder para construir interfaces de usuario interactivas y basadas en componentes reutilizables."
+            "description": "Construcción de interfaces dinámicas y de alto rendimiento con foco en la excelencia UX/UI."
           },
           {
             "title": "Next.js",
             "iconPath": "/icons/next.svg",
             "url": "https://nextjs.org/",
-            "description": "Framework de React para aplicaciones web escalables con renderizado del servidor (SSR), generación estática y optimización SEO.",
+            "description": "Experto en SSR, SSG y App Router para aplicaciones web ultrarrápidas y optimizadas para SEO.",
             "needInvertColor": true
           },
           {
             "title": "Tailwind CSS",
             "iconPath": "/icons/tailwind.svg",
             "url": "https://tailwindcss.com/",
-            "description": "Framework CSS utility-first para estilizar aplicaciones de forma rápida, coherente y altamente personalizable."
+            "description": "Estilizado utility-first para prototipado rápido y sistemas de diseño coherentes."
           },
           {
             "title": "Zustand",
             "iconPath": "/icons/zustand.svg",
             "url": "https://zustand-demo.pmnd.rs/",
-            "description": "Gestor de estado global para React, minimalista y rápido, ideal para manejar estados complejos sin boilerplate."
+            "description": "Gestión de estado ligera y escalable para lógica de aplicación compleja."
           }
         ]
       },
       {
-        "title": "Backend",
+        "title": "Backend & Cloud",
         "skillsData": [
           {
             "title": "Node.js",
@@ -150,7 +150,7 @@
         ]
       },
       {
-        "title": "Bases de Datos",
+        "title": "Infrastructure & Data",
         "skillsData": [
           {
             "title": "PostgreSQL",
@@ -173,133 +173,97 @@
         ]
       },
       {
-        "title": "IA & Automatización",
+        "title": "AI & Automation",
         "skillsData": [
           {
-            "title": "OpenAI",
+            "title": "OpenAI & RAG",
             "iconPath": "/icons/openai.svg",
             "url": "https://openai.com/",
-            "description": "Integración de modelos GPT para procesamiento de lenguaje natural, generación de texto y creación de agentes RAG para automatización.",
+            "description": "Desarrollo de sistemas RAG con tool-calling para eliminar alucinaciones y conectar datos reales.",
             "needInvertColor": true
           },
           {
             "title": "Gemini",
             "iconPath": "/icons/gemini.svg",
             "url": "https://deepmind.google/technologies/gemini/",
-            "description": "Uso de modelos multimodales de Google para análisis de contextos largos, procesamiento de imágenes y asistencia inteligente."
+            "description": "Modelos multimodales de Google para análisis de contextos largos, procesamiento de imágenes y asistencia inteligente."
           },
           {
             "title": "RetellAI",
             "iconPath": "/icons/retellai.svg",
             "url": "https://www.retellai.com/",
-            "description": "Desarrollo de agentes de voz autónomos y conversacionales en tiempo real, integrando LLMs para flujos B2B.",
+            "description": "Diseño de agentes de voz conversacionales autónomos para interacciones B2B en tiempo real.",
             "needInvertColor": true
           },
           {
             "title": "OpenClaw",
             "iconPath": "/icons/openclaw.png",
             "url": "https://openclaw.dev/",
-            "description": "Asistente de IA personal de código abierto que controla tu computadora a través de apps de chat como Telegram o WhatsApp. Gestiona correos electrónicos, calendarios y crea habilidades personalizadas de forma autónoma."
+            "description": "Asistente de IA personal de código abierto que controla tu computadora a través de apps de chat."
           },
           {
             "title": "n8n",
             "iconPath": "/icons/n8n.svg",
             "url": "https://n8n.io/",
-            "description": "Automatización de flujos de trabajo basados en nodos. Creación de pipelines complejos conectando APIs, bases de datos y modelos de IA."
+            "description": "Orquestación de flujos de IA complejos e integraciones de API mediante automatización visual."
           }
         ]
       }
     ]
   },
   "projects": {
-    "title": "Mis proyectos",
-    "description": "Estos son algunos de mis proyectos, puedes encontrar más en mi",
+    "title": "Proyectos Destacados",
+    "description": "Soluciones de alto impacto que combinan excelencia en ingeniería e innovación en IA.",
     "projects": [
       {
-        "title": "Loadify - IA Core & Voice Automations",
-        "description": "Plataforma SaaS B2B para logística. Diseñé e implementé el core de IA con agentes RAG (OpenAI) para analizar cargas, reduciendo el tiempo de búsqueda manual en un 90%. Integra un agente de voz autónomo (RetellAI) que negocia tarifas en tiempo real. Arquitectura Full Stack construida desde cero.",
+        "title": "Loadify AI - Orquestador Logístico",
+        "description": "Arquitecté un SaaS B2B que utiliza agentes RAG para automatizar la búsqueda de cargas. Integré un agente de IA de voz para negociación de tarifas, logrando una reducción del 90% en el tiempo operativo manual. Enfoque en alta disponibilidad y consumo optimizado de LLMs.",
         "imagePath": "/projects/loadify.png",
         "projectUrl": "https://loadify.net",
         "projectTech": [
           { "title": "Next.js", "color": "#ffffff" },
           { "title": "Supabase", "color": "#3ecf8e" },
-          { "title": "OpenAI", "color": "#10a37f" },
+          { "title": "OpenAI RAG", "color": "#10a37f" },
           { "title": "RetellAI", "color": "#6366f1" },
           { "title": "n8n", "color": "#9333ea" }
         ]
       },
       {
-        "title": "TLDR Bot - Asistente IA",
-        "description": "Un bot de Telegram creado con n8n que utiliza IA (Google Gemini) para generar resúmenes inteligentes de chats de grupo. Permite resumir por cantidad de mensajes, tiempo o tema. También puede analizar y explicar en detalle mensajes, imágenes, videos y otros archivos, actuando como un asistente de conversación personal.",
-        "githubUrl": "https://github.com/WilliamsMata/tldr-bot",
-        "projectUrl": "https://t.me/tldr_ai_pro_bot",
+        "title": "TLDR Bot - Asistente RAG Avanzado",
+        "description": "Sistema RAG de alta precisión para historiales masivos de chats en Telegram. Optimicé la recuperación de información implementando Búsqueda Híbrida (combinando búsqueda semántica con pgvector y léxica con tsvector) junto a una capa de Re-ranking. Esta arquitectura garantiza contextos altamente relevantes para el LLM, reduciendo significativamente los costos de tokens y la latencia.",
         "imagePath": "/projects/tldr-bot.png",
         "projectTech": [
-          {
-            "title": "n8n",
-            "color": "#9333ea"
-          },
-          {
-            "title": "Gemini",
-            "color": "#4285F4"
-          },
-          {
-            "title": "PostgreSQL",
-            "color": "#1486e0"
-          },
-          {
-            "title": "Redis",
-            "color": "#ff4278"
-          },
-          {
-            "title": "Telegram API",
-            "color": "#0088cc"
-          }
+          { "title": "PostgreSQL (Hybrid Search)", "color": "#1486e0" },
+          { "title": "Gemini", "color": "#4285F4" },
+          { "title": "Redis", "color": "#ff4278" },
+          { "title": "n8n", "color": "#9333ea" }
         ]
       },
-
       {
-        "title": "NestJS Microservicios de productos",
-        "description": "Este proyecto es un backend de microservicios que proporciona una API RESTful para la gestión de productos, auth, pagos y pedidos. Los microservicios están construido con NestJS y utilizan MongoDB, Postgresql y mysql como base de datos.",
+        "title": "Event-Driven Microservices Architecture",
+        "description": "Diseñé un ecosistema backend escalable usando NestJS y NATS para comunicación entre servicios. Implementé persistencia multi-database (PostgreSQL, MongoDB) e integración con Stripe para procesamiento de alto volumen de transacciones, empaquetado con Docker.",
         "imagePath": "/projects/microservices.png",
         "githubUrl": "https://github.com/nest-microservices-williams/products-launcher",
         "projectUrl": "https://github.com/nest-microservices-williams/products-launcher",
         "projectTech": [
-          {
-            "title": "NestJS",
-            "color": "#00d9fe"
-          },
-          {
-            "title": "Prisma",
-            "color": "#60a5fa"
-          },
-          {
-            "title": "Docker",
-            "color": "#0db7ed"
-          },
-          {
-            "title": "PostgreSQL",
-            "color": "#1486e0"
-          },
-          {
-            "title": "SQLite",
-            "color": "#f9bd29"
-          },
-          {
-            "title": "MongoDB",
-            "color": "#00a142"
-          },
-          {
-            "title": "NATS",
-            "color": "#ff0000"
-          },
-          {
-            "title": "Stripe",
-            "color": "#008cdd"
-          }
+          { "title": "NestJS", "color": "#00d9fe" },
+          { "title": "NATS", "color": "#ff0000" },
+          { "title": "Docker", "color": "#0db7ed" },
+          { "title": "Prisma", "color": "#60a5fa" }
         ]
       },
-
+      {
+        "title": "Graggle - Mini App de Alta Concurrencia",
+        "description": "Mini App de juegos nativa de Telegram diseñada para engagement masivo de usuarios. Construida con Next.js Server Actions y gestión de estado con Redis para manejar concurrencia en tiempo real. Incluye un dashboard de análisis para monitoreo de la economía del juego y ajustes en vivo.",
+        "projectUrl": "https://t.me/graggleeggbot",
+        "imagePath": "/projects/graggle.png",
+        "projectTech": [
+          { "title": "Next.js", "color": "#ffffff" },
+          { "title": "Redis", "color": "#ff4278" },
+          { "title": "ZSA", "color": "#facc15" },
+          { "title": "PostgreSQL", "color": "#1486e0" }
+        ]
+      },
       {
         "title": "Karma Bot",
         "description": "Karma Bot es un bot de Telegram para el seguimiento de puntos de karma en un chat de grupo. Los usuarios pueden darse puntos de karma unos a otros respondiendo a los mensajes con +1 o -1. El bot también proporciona comandos para comprobar la puntuación de karma actual de un usuario y para ver una tabla de clasificación de los usuarios con más karma. Construido con Node.js y MongoDB.",
@@ -307,31 +271,9 @@
         "githubUrl": "https://github.com/WilliamsMata/karma_bot",
         "projectUrl": "https://t.me/karma_tg_bot",
         "projectTech": [
-          {
-            "title": "NodeJS",
-            "color": "#00d9fe"
-          },
-          {
-            "title": "Telegraf",
-            "color": "#00bdf7"
-          },
-          {
-            "title": "MongoDB",
-            "color": "#00a142"
-          }
-        ]
-      },
-      {
-        "title": "Graggle Bot - Telegram Mini App",
-        "description": "Juego de farming estilo 'Mini App' nativo en Telegram. Construido desde cero utilizando Next.js y PostgreSQL. El sistema integra caché de alto rendimiento con Redis para soportar alta concurrencia y Server Actions fuertemente tipados (ZSA). Incluye un panel administrativo para gestionar la economía y lógica del juego en tiempo real.",
-        "projectUrl": "https://t.me/graggleeggbot",
-        "imagePath": "/projects/graggle.png",
-        "projectTech": [
-          { "title": "Next.js", "color": "#ffffff" },
-          { "title": "PostgreSQL", "color": "#1486e0" },
-          { "title": "Redis", "color": "#ff4278" },
-          { "title": "Tailwind CSS", "color": "#38bdf8" },
-          { "title": "ZSA", "color": "#facc15" }
+          { "title": "NodeJS", "color": "#00d9fe" },
+          { "title": "Telegraf", "color": "#00bdf7" },
+          { "title": "MongoDB", "color": "#00a142" }
         ]
       }
     ]
@@ -339,8 +281,8 @@
   "contact": {
     "title": "Contacto",
     "card": {
-      "title": "Ponte en contacto conmigo",
-      "description": "Envíeme un mensaje y le responderé lo antes posible."
+      "title": "Construyamos el futuro",
+      "description": "Abierto a colaboraciones en proyectos de IA y ingeniería Fullstack de alto impacto."
     },
     "form": {
       "button": {
@@ -384,24 +326,24 @@
   },
   "chat": {
     "launcher": {
-      "label": "Preguntame por Williams",
+      "label": "Pregunta a mi Twin IA",
       "badge": "AI",
-      "open": "Abrir asistente IA"
+      "open": "Lanzar Asistente IA"
     },
     "panel": {
-      "eyebrow": "Portfolio AI",
-      "title": "Haz preguntas sobre Williams",
-      "description": "Respondo usando unicamente el contenido publico de este portfolio.",
-      "disclaimer": "Puedo ayudarte con experiencia, stack, proyectos y enlaces oficiales. Si falta evidencia explicita, lo marcare como inferencia cautelosa.",
-      "emptyState": "Todavia no hay mensajes. Prueba con una de estas preguntas.",
+      "eyebrow": "Portfolio Agéntico",
+      "title": "Asistente IA de Williams",
+      "description": "Puedo darte detalles sobre la experiencia técnica, proyectos pasados y filosofía arquitectónica de Williams.",
+      "disclaimer": "Estoy entrenado con el historial profesional de Williams. Para consultas de negocio, puedo facilitarte el contacto directo.",
+      "emptyState": "Aún no hay mensajes. Prueba con una de estas preguntas.",
       "thinking": "Consultando el portfolio..."
     },
     "roles": {
       "assistant": "Asistente IA",
-      "user": "Tu"
+      "user": "Tú"
     },
     "input": {
-      "placeholder": "Pregunta sobre experiencia, stack, proyectos o como contactar...",
+      "placeholder": "Pregunta sobre experiencia, stack, proyectos o cómo contactar...",
       "send": "Enviar",
       "stop": "Detener",
       "clear": "Limpiar"
@@ -409,18 +351,18 @@
     "prompts": {
       "title": "Ideas para empezar",
       "items": [
-        "Que tipo de desarrollador es Williams?",
-        "Cuales son sus proyectos mas fuertes para un recruiter?",
-        "Que stack domina mejor?",
-        "Como puedo contactar a Williams?"
+        "Qué tipo de desarrollador es Williams?",
+        "Cuáles son sus proyectos más fuertes para un recruiter?",
+        "Qué stack domina mejor?",
+        "Cómo puedo contactar a Williams?"
       ]
     },
     "welcome": "Hola. Soy el asistente del portfolio de Williams Mata. Puedo ayudarte con preguntas sobre su perfil, experiencia, stack, proyectos y enlaces oficiales.",
     "errors": {
-      "generic": "No se pudo completar la respuesta. Intentalo de nuevo.",
-      "rateLimit": "Has alcanzado temporalmente el limite del chat. Intentalo mas tarde.",
-      "missingApiKey": "El chat todavia no esta configurado en el servidor.",
-      "invalidRequest": "La solicitud del chat no es valida.",
+      "generic": "No se pudo completar la respuesta. Inténtalo de nuevo.",
+      "rateLimit": "Has alcanzado temporalmente el límite del chat. Inténtalo más tarde.",
+      "missingApiKey": "El chat aún no está configurado en el servidor.",
+      "invalidRequest": "La solicitud del chat no es válida.",
       "loadHistory": "No se pudo recuperar el historial guardado del chat."
     },
     "links": {

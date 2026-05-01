@@ -25,7 +25,7 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
 
         <div
           className={cn(
-            "flex items-center text-3xl sm:text-5xl md:text-6xl",
+            "flex items-center text-center text-3xl sm:text-5xl md:text-6xl",
             title.developer === "Desarrollador" && "flex-row-reverse",
           )}
         >
