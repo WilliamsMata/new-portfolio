@@ -6,6 +6,7 @@ import { BoxArrowUp } from "@/components/icons";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { cn } from "@/lib/utils";
 import { MarkdownMessage } from "./MarkdownMessage";
+import { Spinner } from "@/components/ui/spinner";
 
 interface OfficialLinksOutput {
   links: Array<{
@@ -88,28 +89,22 @@ export function ChatMessageList({
               >
                 {message.parts.map((part, index) => {
                   if (part.type === "text") {
-                    return (
-                      <div key={`${message.id}-text-${index}`}>
-                        {isUserMessage ? (
-                          <p className="whitespace-pre-wrap break-words text-primary-foreground">
-                            {part.content}
-                          </p>
-                        ) : (
-                          <MarkdownMessage content={part.content} />
-                        )}
-                      </div>
+                    return isUserMessage ? (
+                      <p key={`${message.id}-text-${index}`} className="whitespace-pre-wrap break-words text-primary-foreground">
+                        {part.content}
+                      </p>
+                    ) : (
+                      <MarkdownMessage key={`${message.id}-text-${index}`} content={part.content} />
                     );
                   }
 
                   if (part.type === "thinking") {
-                    return (
-                      <p
-                        key={`${message.id}-thinking-${index}`}
-                        className="mt-2 text-xs italic text-zinc-500 dark:text-neutral-400"
-                      >
-                        {dictionary.panel.thinking}
-                      </p>
-                    );
+                    return isLoading ? (
+                      <div key={`${message.id}-thinking-${index}`} className="mt-2 flex items-center gap-2 text-xs text-zinc-500 dark:text-neutral-400">
+                        <Spinner className="h-3 w-3" />
+                        <span>{dictionary.panel.thinking}</span>
+                      </div>
+                    ) : null;
                   }
 
                   if (part.type === "tool-call") {
@@ -149,14 +144,7 @@ export function ChatMessageList({
                       );
                     }
 
-                    return part.state !== "approval-requested" ? (
-                      <p
-                        key={`${message.id}-tool-call-${index}`}
-                        className="mt-2 text-xs text-zinc-500 dark:text-neutral-400"
-                      >
-                        {dictionary.panel.thinking}
-                      </p>
-                    ) : null;
+                    return null;
                   }
 
                   if (part.type === "tool-result" && part.state === "error") {
