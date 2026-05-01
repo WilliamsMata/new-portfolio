@@ -33,7 +33,7 @@ export const About: FC<AboutProps> = ({ dictionary, locale }) => {
       <GradientText
         as="h2"
         size="4xl"
-        className="z-[100] translate-y-12 text-center"
+        className="z-[100] mx-2 translate-y-12 text-center"
       >
         {title}
       </GradientText>

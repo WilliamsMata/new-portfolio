@@ -20,7 +20,7 @@ export const Skills: FC<SkillsProps> = ({ dictionary }) => {
 
   return (
     <section className="flex flex-col items-center [contain-intrinsic-size:1px_800px]">
-      <GradientText as="h2" size="4xl" className="mb-4 text-center">
+      <GradientText as="h2" size="4xl" className="mx-2 mb-4 text-center">
         {title}
       </GradientText>
 

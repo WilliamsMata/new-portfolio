@@ -232,6 +232,7 @@
         "title": "TLDR Bot - Asistente RAG Avanzado",
         "description": "Sistema RAG de alta precisión para historiales masivos de Telegram. Optimicé la recuperación implementando Búsqueda Híbrida (semántica con pgvector y léxica con tsvector) junto a Re-ranking. Esta arquitectura garantiza contextos relevantes para el LLM, reduciendo significativamente los costos de tokens y la latencia.",
         "imagePath": "/projects/tldr-bot.png",
+        "projectUrl": "https://t.me/tldr_ai_pro_bot",
         "projectTech": [
           { "title": "PostgreSQL", "color": "#1486e0" },
           { "title": "Gemini", "color": "#4285F4" },
@@ -349,12 +350,12 @@
       "clear": "Limpiar"
     },
     "prompts": {
-      "title": "Ideas para empezar",
+      "title": "Consultas estratégicas",
       "items": [
-        "Qué tipo de desarrollador es Williams?",
-        "Cuáles son sus proyectos más fuertes para un recruiter?",
-        "Qué stack domina mejor?",
-        "Cómo puedo contactar a Williams?"
+        "Háblame de la experiencia de Williams en Fullstack e Ingeniería de IA.",
+        "¿Cómo implementa Williams sistemas RAG avanzados y agentes autónomos?",
+        "¿Cuál es su enfoque para construir backends escalables y distribuidos?",
+        "¿Cómo puede Williams aportar valor a un equipo técnico de alto rendimiento?"
       ]
     },
     "welcome": "Hola. Soy el asistente del portfolio de Williams Mata. Puedo ayudarte con preguntas sobre su perfil, experiencia, stack, proyectos y enlaces oficiales.",

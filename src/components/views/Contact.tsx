@@ -14,7 +14,7 @@ export const Contact: FC<ContactProps> = ({ dictionary }) => {
   return (
     <section className="flex flex-col items-center [contain-intrinsic-size:1px_700px] [content-visibility:auto]">
       <BackgroundBeamsWithCollision>
-        <GradientText as="h2" size="4xl" className="mb-12">
+        <GradientText as="h2" size="4xl" className="mx-2 mb-12 text-center">
           {title}
         </GradientText>
 

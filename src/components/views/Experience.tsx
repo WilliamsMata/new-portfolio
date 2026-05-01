@@ -43,7 +43,7 @@ export const Experience: FC<ExperienceProps> = ({ dictionary }) => {
       <GradientText
         as="h2"
         size="4xl"
-        className="z-[100] text-center md:translate-y-12"
+        className="z-[100] mx-2 text-center md:translate-y-12"
       >
         {title}
       </GradientText>
