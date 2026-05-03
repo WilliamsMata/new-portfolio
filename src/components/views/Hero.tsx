@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import { GradientText } from "../common/GradientText";
 
@@ -9,7 +10,7 @@ interface HeroProps {
 }
 
 export const Hero: FC<HeroProps> = ({ dictionary }) => {
-  const { title, description } = dictionary;
+  const { title, description, resume } = dictionary;
 
   return (
     <HeroHighlight containerClassName="h-screen">
@@ -40,19 +41,37 @@ export const Hero: FC<HeroProps> = ({ dictionary }) => {
           </p>
         </div>
 
-        {/* <div className="mt-4">
+        <div className="mt-4">
           <a
             href={resume.path}
-            className="relative block p-[3px]"
             target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "sm" }),
+              "gap-2",
+            )}
           >
-            <div className="from-blue to-purple absolute inset-0 rounded-lg bg-gradient-to-r" />
-            <span className="group relative flex items-center rounded-[6px] bg-background px-8 py-2 text-base transition duration-200 hover:bg-transparent">
-              {resume.title}
-              <FileIcon className="ml-2 h-5 w-5" />
-            </span>
+            {resume.title}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+              <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+              <path d="M10 9H8" />
+              <path d="M16 13H8" />
+              <path d="M16 17H8" />
+            </svg>
           </a>
-        </div> */}
+        </div>
       </section>
     </HeroHighlight>
   );
