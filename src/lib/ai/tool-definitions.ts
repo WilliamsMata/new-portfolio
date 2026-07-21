@@ -193,9 +193,110 @@ export const getOfficialLinksDef = toolDefinition({
   },
 });
 
+export const submitContactLeadDef = toolDefinition({
+  name: "submit_contact_lead",
+  description:
+    "Submit a direct contact lead or message to Williams Mata's personal Telegram when a recruiter or client wants to schedule an interview or discuss a project.",
+  inputSchema: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      name: { type: "string" },
+      email: { type: "string" },
+      message: { type: "string" },
+      company: { type: "string" },
+    },
+    required: ["name", "email", "message"],
+  },
+  outputSchema: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      success: { type: "boolean" },
+      statusMessage: { type: "string" },
+    },
+    required: ["success", "statusMessage"],
+  },
+});
+
+export const getWorkPreferencesDef = toolDefinition({
+  name: "get_work_preferences",
+  description:
+    "Get Williams Mata's work preferences, remote availability, notice period, timezone (UTC-4/Caracas/EST), and accepted contract types (B2B/USD).",
+  inputSchema: {
+    type: "object",
+    additionalProperties: false,
+    properties: {},
+    required: [],
+  },
+  outputSchema: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      workMode: { type: "string" },
+      availability: { type: "string" },
+      noticePeriod: { type: "string" },
+      timezone: { type: "string" },
+      scheduleFlexibility: { type: "string" },
+      contractTypes: stringArraySchema,
+    },
+    required: [
+      "workMode",
+      "availability",
+      "noticePeriod",
+      "timezone",
+      "scheduleFlexibility",
+      "contractTypes",
+    ],
+  },
+});
+
+export const getArchitectureDeepDiveDef = toolDefinition({
+  name: "get_architecture_deep_dive",
+  description:
+    "Get in-depth architectural details, design patterns (Hexagonal Architecture, DDD, SOLID), and technical trade-offs for Williams Mata's projects.",
+  inputSchema: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      projectTitle: { type: "string" },
+    },
+    required: [],
+  },
+  outputSchema: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      deepDives: {
+        type: "array",
+        items: {
+          type: "object",
+          additionalProperties: false,
+          properties: {
+            project: { type: "string" },
+            architecturePattern: { type: "string" },
+            keyHighlights: stringArraySchema,
+            decouplingStrategy: { type: "string" },
+          },
+          required: [
+            "project",
+            "architecturePattern",
+            "keyHighlights",
+            "decouplingStrategy",
+          ],
+        },
+      },
+    },
+    required: ["deepDives"],
+  },
+});
+
 export const portfolioChatToolDefinitions = [
   getProfileOverviewDef,
   searchProjectsDef,
   searchSkillsDef,
   getOfficialLinksDef,
+  submitContactLeadDef,
+  getWorkPreferencesDef,
+  getArchitectureDeepDiveDef,
 ] as const;
