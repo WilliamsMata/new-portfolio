@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Senior Fullstack & AI Engineer specializing in RAG architectures, autonomous agents, and high-scale distributed systems. Expert in building production-ready SaaS solutions that leverage AI to drive business efficiency."
+    "description": "Senior Software Engineer specializing in Hexagonal Architecture, DDD, distributed systems, and production-ready AI solutions. I build maintainable, scalable software."
   },
   "header": {
     "home": "Home",
@@ -18,12 +18,12 @@
   },
   "hero": {
     "title": {
-      "developer": "Senior Fullstack & AI Engineer "
+      "developer": "Senior Software & AI Engineer "
     },
     "description": {
-      "first": "I architect scalable distributed systems and",
-      "highlight": "high-performance software solutions,",
-      "second": "integrating advanced AI architectures like RAG and Agentic workflows."
+      "first": "I architect maintainable software systems with",
+      "highlight": "Hexagonal Architecture, DDD, and SOLID,",
+      "second": "integrating production-grade AI solutions."
     },
     "resume": {
       "title": "Download CV",
@@ -32,23 +32,23 @@
   },
   "about": {
     "title": "Professional Profile",
-    "text": "I am a Senior Software Engineer with a focus on building robust, scalable, and maintainable applications. My core expertise lies in modern Fullstack development (Next.js, NestJS, PostgreSQL) and distributed architectures. I specialize in elevating traditional software by integrating AI-native capabilities, such as RAG systems and autonomous agents, ensuring that innovation always serves business scalability and clean code standards.",
+    "text": "I am a Senior Software Engineer specializing in building distributed, scalable, and highly maintainable systems. My core strength lies in combining solid software architecture foundations (Hexagonal Architecture, Domain-Driven Design, and SOLID Principles) with cutting-edge AI capabilities (Hybrid RAG, Autonomous Agents, and LLM Orchestration). I ensure every AI integration is backed by a clean, decoupled, and production-ready architecture.",
     "specialties": [
-      "Software Architecture: DDD, Microservices & Event-driven design",
-      "Fullstack Excellence: High-performance Next.js & NestJS ecosystems",
-      "AI Engineering: RAG, Agentic Workflows & ReAct loops",
-      "Reliable Infrastructure: Scalable SQL/NoSQL & Cloud-native deployments"
+      "Software Architecture: Hexagonal (Ports & Adapters), DDD, SOLID & Design Patterns",
+      "AI Engineering: Hybrid RAG (pgvector + tsvector), Autonomous Agents & ReAct Loops",
+      "Fullstack Excellence: High-performance Next.js, NestJS & TypeScript ecosystems",
+      "Data & Infrastructure: PostgreSQL, Redis, Docker & Cloud-Native deployments"
     ]
   },
   "experience": {
     "title": "Professional Experience",
-    "description": "Proven track record in architecting AI-native platforms and scalable web infrastructures.",
+    "description": "Proven track record in architecting maintainable web infrastructures, enterprise platforms, and AI-native systems.",
     "entries": [
       {
         "period": "Oct 2025 - Present",
         "role": "Lead AI Engineer",
         "company": "Loadify (Logistics SaaS)",
-        "responsibilities": "Architected an autonomous agent system based on ReAct loops and Tool-Calling to automate logistics operations. Integrated real-time voice agents (RetellAI) and complex n8n orchestrations, enabling the AI to execute calls, verify data, and handle errors autonomously, which reduced manual operational load by 90%.",
+        "responsibilities": "Architected an autonomous agent system based on ReAct loops and Tool-Calling to automate logistics operations. Integrated real-time voice agents (RetellAI) and complex n8n orchestrations, enabling the AI to execute calls, verify data, and handle errors autonomously under a resilient infrastructure, reducing manual operational load by 90%.",
         "tech": [
           "Next.js",
           "OpenAI (Function Calling)",
@@ -62,14 +62,14 @@
         "period": "Mar 2024 - Oct 2025",
         "role": "Lead Full Stack Developer",
         "company": "Cercademi",
-        "responsibilities": "Spearheaded the end-to-end development of a mission-critical medical appointment ecosystem. Implemented complex payment orchestrations with MercadoPago and optimized database queries for high-concurrency handling. Reduced technical debt by migrating to a modular TypeScript architecture.",
+        "responsibilities": "Spearheaded the end-to-end development of a mission-critical medical appointment ecosystem. Implemented complex payment orchestrations with MercadoPago and optimized database queries for high-concurrency handling. Reduced technical debt by migrating to a modular TypeScript architecture built on SOLID principles.",
         "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind"]
       },
       {
         "period": "Jul 2023 - Feb 2024",
         "role": "Full Stack Developer",
         "company": "Argxp",
-        "responsibilities": "Developed 2 high-traffic web applications from the ground up using SCRUM. Engineered reusable component libraries and established CI/CD best practices, ensuring 99.9% deployment uptime and high-quality code standards through rigorous unit testing.",
+        "responsibilities": "Developed 2 high-traffic web applications from the ground up using SCRUM. Engineered reusable component libraries and established CI/CD best practices, ensuring 99.9% deployment uptime and high-quality code standards through modular development and unit testing.",
         "tech": ["Next.js", "Node.js", "PostgreSQL", "SCRUM", "Docker"]
       }
     ]
@@ -129,6 +129,12 @@
             "description": "Architecting modular microservices following DDD principles and Clean Architecture."
           },
           {
+            "title": "Hexagonal Architecture & SOLID",
+            "iconPath": "/icons/solid.svg",
+            "url": "https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)",
+            "description": "Decoupled ports & adapters design, SOLID principles, and DDD for highly maintainable systems."
+          },
+          {
             "title": "Supabase",
             "iconPath": "/icons/supabase.svg",
             "url": "https://supabase.com/",
@@ -179,8 +185,7 @@
             "title": "OpenAI & RAG",
             "iconPath": "/icons/openai.svg",
             "url": "https://openai.com/",
-            "description": "Developing RAG systems with tool-calling and function-calling to eliminate hallucinations.",
-            "needInvertColor": true
+            "description": "Developing RAG systems with tool-calling and function-calling to eliminate hallucinations."
           },
           {
             "title": "Gemini",
@@ -192,8 +197,7 @@
             "title": "RetellAI",
             "iconPath": "/icons/retellai.svg",
             "url": "https://www.retellai.com/",
-            "description": "Designing autonomous conversational voice agents for real-time B2B interactions.",
-            "needInvertColor": true
+            "description": "Designing autonomous conversational voice agents for real-time B2B interactions."
           },
           {
             "title": "OpenClaw",
@@ -213,11 +217,11 @@
   },
   "projects": {
     "title": "Featured Projects",
-    "description": "High-impact solutions combining engineering excellence and AI innovation.",
+    "description": "High-impact solutions combining software architecture excellence and AI innovation.",
     "projects": [
       {
         "title": "Loadify AI - Logistics Orchestrator",
-        "description": "Architected an end-to-end B2B SaaS that leverages RAG agents to automate freight discovery. Integrated a real-time Voice AI agent for rate negotiation, resulting in a 90% reduction in manual operational time. Built with a focus on high-availability and cost-optimized LLM consumption.",
+        "description": "Architected an enterprise B2B SaaS leveraging RAG agents to automate freight discovery. Integrated a real-time Voice AI agent for rate negotiation, resulting in a 90% reduction in manual operational time. Built with a focus on high availability, resilience, and cost-optimized LLM consumption.",
         "imagePath": "/projects/loadify.png",
         "projectUrl": "https://loadify.net",
         "projectTech": [
@@ -229,8 +233,8 @@
         ]
       },
       {
-        "title": "TLDR Bot - Advanced RAG Assistant",
-        "description": "A high-precision RAG system for massive Telegram chat histories. I optimized information retrieval by implementing Hybrid Search (combining pgvector semantic search and tsvector lexical search) with a Re-ranking layer. This architecture ensures highly relevant context for the LLM while significantly reducing token costs and latency.",
+        "title": "TLDR Bot - RAG Assistant & Hexagonal Architecture",
+        "description": "High-precision RAG system for Telegram chat histories, refactored using Hexagonal Architecture (Ports & Adapters). Decoupled the core RAG domain from AI providers and the presentation layer (Telegram/Discord), enabling seamless integration with new platforms with minimal code changes. Features Hybrid Search (semantic pgvector + lexical tsvector) and Re-ranking.",
         "imagePath": "/projects/tldr-bot.png",
         "projectUrl": "https://t.me/tldr_ai_pro_bot",
         "projectTech": [
@@ -242,7 +246,7 @@
       },
       {
         "title": "Event-Driven Microservices Architecture",
-        "description": "Designed a scalable backend ecosystem using NestJS and NATS for inter-service communication. Implemented multi-database persistence (PostgreSQL, MongoDB) and Stripe integration for high-volume transaction processing, packaged with Docker for seamless orchestration.",
+        "description": "Designed a scalable backend ecosystem using NestJS and NATS for event-driven inter-service communication. Implemented multi-database persistence (PostgreSQL, MongoDB) and Stripe integration for high-volume transaction processing, packaged with Docker for seamless orchestration.",
         "imagePath": "/projects/microservices.png",
         "githubUrl": "https://github.com/nest-microservices-williams/products-launcher",
         "projectUrl": "https://github.com/nest-microservices-williams/products-launcher",
@@ -255,7 +259,7 @@
       },
       {
         "title": "Graggle - High-Concurrency Mini App",
-        "description": "Native Telegram gaming Mini App engineered for mass user engagement. Built with Next.js Server Actions and Redis-backed state management to handle real-time concurrency. Includes a real-time analytics dashboard for game economy monitoring and live tuning.",
+        "description": "Native Telegram gaming Mini App engineered for mass user engagement. Built with Next.js Server Actions and Redis-backed async state management to handle real-time concurrency. Includes a real-time analytics dashboard for game economy monitoring and live tuning.",
         "projectUrl": "https://t.me/graggleeggbot",
         "imagePath": "/projects/graggle.png",
         "projectTech": [
@@ -266,8 +270,8 @@
         ]
       },
       {
-        "title": "Karma Bot",
-        "description": "Karma Bot is a simple Telegram bot for tracking karma points in a group chat. Users can give each other karma points by responding to messages with +1 or -1. The bot also provides commands for checking a user's current karma score and for seeing a leaderboard of the top users with the most karma. Built with Node.js and MongoDB.",
+        "title": "Karma Bot - Event-Driven Engagement",
+        "description": "Micro-rewards and community engagement system for Telegram. Built with Node.js and MongoDB, optimized for real-time asynchronous event handling, lightweight persistence, and leaderboard analytics in high-traffic groups.",
         "imagePath": "/projects/karma-bot.png",
         "githubUrl": "https://github.com/WilliamsMata/karma_bot",
         "projectUrl": "https://t.me/karma_tg_bot",
@@ -292,7 +296,7 @@
     "title": "Contact",
     "card": {
       "title": "Let's build the future",
-      "description": "Open for collaborations on high-impact AI and Fullstack engineering projects."
+      "description": "Open for collaborations on software architecture, AI engineering, and high-impact Fullstack projects."
     },
     "form": {
       "button": {
@@ -304,7 +308,7 @@
       "form": {
         "name": {
           "label": "Name",
-          "placeholder": "Name",
+          "placeholder": "Your name or company",
           "errors": {
             "tooSmall": "Name is too short",
             "tooBig": "Name is too long"
@@ -319,7 +323,7 @@
         },
         "message": {
           "label": "Message",
-          "placeholder": "Your message here...",
+          "placeholder": "What project or technical challenge can we collaborate on?",
           "errors": {
             "tooSmall": "Message is too short",
             "tooBig": "Message is too long"
@@ -329,7 +333,7 @@
       "action": {
         "errors": {
           "limitReached": "You have reached the limit of 3 messages per day",
-          "notificationError": "Could not send the notification, please try again later"
+          "notificationError": "Could not send the notification, please try again later."
         }
       }
     }
@@ -343,7 +347,7 @@
     "panel": {
       "eyebrow": "Agentic Portfolio",
       "title": "Williams' AI Assistant",
-      "description": "I can provide detailed insights into Williams' technical expertise, past projects, and architectural philosophy.",
+      "description": "I can provide detailed insights into Williams' software architecture, design principles, technical expertise, and projects.",
       "disclaimer": "I am trained on Williams' professional background. For specific business inquiries, I can facilitate a direct contact.",
       "emptyState": "There are no messages yet. Try one of these prompts.",
       "thinking": "Consulting the portfolio..."
@@ -353,7 +357,7 @@
       "user": "You"
     },
     "input": {
-      "placeholder": "Ask about experience, stack, projects, or how to get in touch...",
+      "placeholder": "Ask about architecture, stack, projects, or how to get in touch...",
       "send": "Send",
       "stop": "Stop",
       "clear": "Clear"
@@ -361,13 +365,13 @@
     "prompts": {
       "title": "Strategic insights",
       "items": [
-        "Tell me about Williams' expertise in Fullstack and AI Engineering.",
-        "How does Williams handle advanced RAG and autonomous agents?",
-        "What is his approach to building scalable and distributed backends?",
-        "How can Williams add value to a high-growth tech team?"
+        "Tell me about Williams' expertise in Software Architecture and AI Engineering.",
+        "How does Williams apply Hexagonal Architecture and DDD in projects like TLDR Bot?",
+        "What is his approach to building scalable, distributed, and maintainable backends?",
+        "How can Williams add value to a high-growth technical team?"
       ]
     },
-    "welcome": "Hello. I am Williams Mata's portfolio assistant. I can help with questions about his profile, experience, stack, projects, and official links.",
+    "welcome": "Hello. I am Williams Mata's portfolio assistant. I can help with questions about his technical profile, software architecture, stack, projects, and contact.",
     "errors": {
       "generic": "Could not complete the response. Please try again.",
       "rateLimit": "You have temporarily reached the chat limit. Please try again later.",

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Ingeniero Fullstack & AI Senior especializado en arquitecturas RAG, agentes autónomos y sistemas distribuidos de alto tráfico. Experto en soluciones SaaS listas para producción que optimizan la eficiencia operativa mediante IA."
+    "description": "Ingeniero de Software Senior especializado en Arquitectura Hexagonal, DDD, sistemas distribuidos y soluciones de IA en producción. Construyo software altamente mantenible y escalable."
   },
   "header": {
     "home": "Inicio",
@@ -18,12 +18,12 @@
   },
   "hero": {
     "title": {
-      "developer": "Senior Fullstack & AI Engineer "
+      "developer": "Senior Software & AI Engineer "
     },
     "description": {
-      "first": "Desarrollo sistemas escalables y",
-      "highlight": "soluciones de software de alto rendimiento,",
-      "second": "integrando arquitecturas de IA avanzadas como RAG y flujos agénticos."
+      "first": "Diseño arquitecturas de software mantenibles con",
+      "highlight": "Arquitectura Hexagonal, DDD y SOLID,",
+      "second": "integrando soluciones avanzadas de IA para producción."
     },
     "resume": {
       "title": "Descargar CV",
@@ -32,23 +32,23 @@
   },
   "about": {
     "title": "Perfil Profesional",
-    "text": "Soy un Ingeniero de Software Senior enfocado en la construcción de aplicaciones robustas, escalables y mantenibles. Mi experiencia base reside en el desarrollo Fullstack moderno (Next.js, NestJS, PostgreSQL) y arquitecturas distribuidas. Me especializo en elevar el software tradicional integrando capacidades nativas de IA, como sistemas RAG y agentes autónomos, asegurando que la innovación siempre esté al servicio de la escalabilidad y los estándares de código limpio.",
+    "text": "Soy un Ingeniero de Software Senior enfocado en la construcción de sistemas distribuidos, escalables y mantenibles. Mi valor diferencial reside en combinar sólidos fundamentos de ingeniería de software (Arquitectura Hexagonal, Domain-Driven Design y Principios SOLID) con capacidades de IA de vanguardia (RAG Híbrido, Agentes Autónomos y Orquestación de LLMs). Garantizo que cada integración de IA esté respaldada por una arquitectura limpia, desacoplada y preparada para producción.",
     "specialties": [
-      "Arquitectura de Software: DDD, Microservicios y diseño orientado a eventos",
-      "Excelencia Fullstack: Ecosistemas Next.js y NestJS de alto rendimiento",
-      "Ingeniería de IA: RAG, Workflows Agénticos y ciclos ReAct",
-      "Infraestructura Robusta: SQL/NoSQL escalable y despliegues cloud-native"
+      "Arquitectura de Software: Hexagonal Architecture, DDD, SOLID & Design Patterns",
+      "Ingeniería de IA: RAG Híbrido (pgvector + tsvector), Agentes Autónomos & ReAct Loops",
+      "Desarrollo Fullstack: Ecosistemas de alto rendimiento con Next.js, NestJS y TypeScript",
+      "Infraestructura & Datos: PostgreSQL, Redis, Docker y Despliegues Cloud-Native"
     ]
   },
   "experience": {
     "title": "Experiencia Profesional",
-    "description": "Trayectoria comprobada diseñando plataformas nativas de IA e infraestructuras web escalables.",
+    "description": "Trayectoria comprobada diseñando plataformas nativas de IA e infraestructuras web escalables y mantenibles.",
     "entries": [
       {
         "period": "Oct 2025 - Presente",
         "role": "Lead AI Engineer",
         "company": "Loadify (SaaS Logístico)",
-        "responsibilities": "Arquitecté un sistema de agentes autónomos basado en ciclos ReAct y Tool-Calling para la automatización de operaciones logísticas. Integré agentes de voz en tiempo real (RetellAI) y orquestaciones complejas en n8n, permitiendo que la IA ejecute llamadas, verifique datos y gestione errores de forma autónoma, reduciendo la carga operativa manual en un 90%.",
+        "responsibilities": "Arquitecté un sistema de agentes autónomos basado en ciclos ReAct y Tool-Calling para la automatización de operaciones logísticas. Integré agentes de voz en tiempo real (RetellAI) y orquestaciones complejas en n8n, permitiendo que la IA ejecute llamadas, verifique datos y gestione errores de forma autónoma bajo una infraestructura resiliente, reduciendo la carga operativa manual en un 90%.",
         "tech": [
           "Next.js",
           "OpenAI (Function Calling)",
@@ -62,14 +62,14 @@
         "period": "Mar 2024 - Oct 2025",
         "role": "Lead Full Stack Developer",
         "company": "Cercademi",
-        "responsibilities": "Lideré el desarrollo integral de un ecosistema crítico de citas médicas. Implementé orquestaciones de pago complejas con MercadoPago y optimicé consultas de base de datos para manejar alta concurrencia. Reduje la deuda técnica migrando a una arquitectura modular en TypeScript.",
+        "responsibilities": "Lideré el desarrollo integral de un ecosistema crítico de citas médicas. Implementé orquestaciones de pago complejas con MercadoPago y optimicé consultas de base de datos para manejar alta concurrencia. Reduje la deuda técnica migrando a una arquitectura modular en TypeScript basada en principios SOLID.",
         "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind"]
       },
       {
         "period": "Jul 2023 - Feb 2024",
         "role": "Full Stack Developer",
         "company": "Argxp",
-        "responsibilities": "Desarrollé desde cero 2 aplicaciones web de alto tráfico bajo metodología SCRUM. Diseñé librerías de componentes reutilizables y establecí mejores prácticas de CI/CD, asegurando un 99.9% de disponibilidad y altos estándares de calidad mediante pruebas unitarias.",
+        "responsibilities": "Desarrollé desde cero 2 aplicaciones web de alto tráfico bajo metodología SCRUM. Diseñé librerías de componentes reutilizables y establecí mejores prácticas de CI/CD, asegurando un 99.9% de disponibilidad y altos estándares de calidad mediante pruebas unitarias y desarrollo modular.",
         "tech": ["Next.js", "Node.js", "PostgreSQL", "SCRUM", "Docker"]
       }
     ]
@@ -129,6 +129,12 @@
             "description": "Framework Node.js para construir aplicaciones backend eficientes y escalables usando arquitectura modular (DDD)."
           },
           {
+            "title": "Arquitectura Hexagonal & SOLID",
+            "iconPath": "/icons/solid.svg",
+            "url": "https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)",
+            "description": "Diseño desacoplado basado en puertos y adaptadores, principios SOLID y DDD para sistemas mantenibles."
+          },
+          {
             "title": "Supabase",
             "iconPath": "/icons/supabase.svg",
             "url": "https://supabase.com/",
@@ -179,8 +185,7 @@
             "title": "OpenAI & RAG",
             "iconPath": "/icons/openai.svg",
             "url": "https://openai.com/",
-            "description": "Desarrollo de sistemas RAG con tool-calling para eliminar alucinaciones y conectar datos reales.",
-            "needInvertColor": true
+            "description": "Desarrollo de sistemas RAG con tool-calling para eliminar alucinaciones y conectar datos reales."
           },
           {
             "title": "Gemini",
@@ -192,8 +197,7 @@
             "title": "RetellAI",
             "iconPath": "/icons/retellai.svg",
             "url": "https://www.retellai.com/",
-            "description": "Diseño de agentes de voz conversacionales autónomos para interacciones B2B en tiempo real.",
-            "needInvertColor": true
+            "description": "Diseño de agentes de voz conversacionales autónomos para interacciones B2B en tiempo real."
           },
           {
             "title": "OpenClaw",
@@ -213,11 +217,11 @@
   },
   "projects": {
     "title": "Proyectos Destacados",
-    "description": "Soluciones de alto impacto que combinan excelencia en ingeniería e innovación en IA.",
+    "description": "Soluciones de alto impacto que combinan excelencia en arquitectura de software e innovación en IA.",
     "projects": [
       {
         "title": "Loadify AI - Orquestador Logístico",
-        "description": "Desarrollé un SaaS B2B que utiliza agentes RAG para automatizar la búsqueda de cargas. Integré un agente de IA de voz para negociación de tarifas, logrando una reducción del 90% en el tiempo operativo manual. Enfoque en alta disponibilidad y consumo optimizado de LLMs.",
+        "description": "SaaS B2B empresarial que utiliza agentes autónomos RAG para automatizar la búsqueda de cargas. Integré un agente de IA de voz para negociación de tarifas, logrando una reducción del 90% en el tiempo operativo manual. Diseñado con enfoque en alta disponibilidad, resiliencia y consumo optimizado de LLMs.",
         "imagePath": "/projects/loadify.png",
         "projectUrl": "https://loadify.net",
         "projectTech": [
@@ -229,8 +233,8 @@
         ]
       },
       {
-        "title": "TLDR Bot - Asistente RAG Avanzado",
-        "description": "Sistema RAG de alta precisión para historiales masivos de Telegram. Optimicé la recuperación implementando Búsqueda Híbrida (semántica con pgvector y léxica con tsvector) junto a Re-ranking. Esta arquitectura garantiza contextos relevantes para el LLM, reduciendo significativamente los costos de tokens y la latencia.",
+        "title": "TLDR Bot - Asistente RAG & Arquitectura Hexagonal",
+        "description": "Sistema RAG de alta precisión para historiales masivos de Telegram, refactorizado bajo Arquitectura Hexagonal (Puertos y Adaptadores). Desacopló el motor de dominio RAG de los proveedores de IA y de la capa de presentación (Telegram/Discord), permitiendo integrar nuevas plataformas con cambios mínimos. Implementa Búsqueda Híbrida (pgvector semántico + tsvector léxico) y Re-ranking.",
         "imagePath": "/projects/tldr-bot.png",
         "projectUrl": "https://t.me/tldr_ai_pro_bot",
         "projectTech": [
@@ -242,7 +246,7 @@
       },
       {
         "title": "Event-Driven Microservices Architecture",
-        "description": "Diseñé un ecosistema backend escalable usando NestJS y NATS para comunicación entre servicios. Implementé persistencia multi-database (PostgreSQL, MongoDB) e integración con Stripe para procesamiento de alto volumen de transacciones, empaquetado con Docker.",
+        "description": "Diseñé un ecosistema backend distribuido usando NestJS y NATS para comunicación entre servicios basada en eventos. Implementé persistencia multi-database (PostgreSQL, MongoDB), integración con Stripe para alto volumen transaccional y arquitectura limpia empaquetada en Docker.",
         "imagePath": "/projects/microservices.png",
         "githubUrl": "https://github.com/nest-microservices-williams/products-launcher",
         "projectUrl": "https://github.com/nest-microservices-williams/products-launcher",
@@ -255,7 +259,7 @@
       },
       {
         "title": "Graggle - Mini App de Alta Concurrencia",
-        "description": "Mini App de juegos nativa de Telegram diseñada para engagement masivo de usuarios. Construida con Next.js Server Actions y gestión de estado con Redis para manejar concurrencia en tiempo real. Incluye un dashboard de análisis para monitoreo de la economía del juego y ajustes en vivo.",
+        "description": "Mini App de juegos nativa de Telegram diseñada para engagement masivo. Construida con Next.js Server Actions y gestión de estado asíncrona con Redis para manejar concurrencia en tiempo real. Incluye un dashboard de analíticas para monitoreo de la economía del juego y ajustes en vivo.",
         "projectUrl": "https://t.me/graggleeggbot",
         "imagePath": "/projects/graggle.png",
         "projectTech": [
@@ -266,8 +270,8 @@
         ]
       },
       {
-        "title": "Karma Bot",
-        "description": "Karma Bot es un bot de Telegram para el seguimiento de puntos de karma en un chat de grupo. Los usuarios pueden darse puntos de karma unos a otros respondiendo a los mensajes con +1 o -1. El bot también proporciona comandos para comprobar la puntuación de karma actual de un usuario y para ver una tabla de clasificación de los usuarios con más karma. Construido con Node.js y MongoDB.",
+        "title": "Karma Bot - Event-Driven Engagement",
+        "description": "Sistema de micro-recompensas e interacciones comunitarias para Telegram. Construido con Node.js y MongoDB, optimizado para el procesamiento asíncrono de eventos en tiempo real, persistencia ligera y generación de métricas de reputación en grupos de alto tráfico.",
         "imagePath": "/projects/karma-bot.png",
         "githubUrl": "https://github.com/WilliamsMata/karma_bot",
         "projectUrl": "https://t.me/karma_tg_bot",
@@ -283,7 +287,7 @@
     "title": "Contacto",
     "card": {
       "title": "Construyamos el futuro",
-      "description": "Abierto a colaboraciones en proyectos de IA y ingeniería Fullstack de alto impacto."
+      "description": "Abierto a colaboraciones en proyectos de arquitectura de software, ingeniería de IA y desarrollo Fullstack de alto impacto."
     },
     "form": {
       "button": {
@@ -295,7 +299,7 @@
       "form": {
         "name": {
           "label": "Nombre",
-          "placeholder": "Nombre",
+          "placeholder": "Tu nombre o empresa",
           "errors": {
             "tooSmall": "El nombre es demasiado corto",
             "tooBig": "El nombre es demasiado largo"
@@ -310,7 +314,7 @@
         },
         "message": {
           "label": "Mensaje",
-          "placeholder": "Tu mensaje aquí...",
+          "placeholder": "¿En qué proyecto o desafío técnico podemos colaborar?",
           "errors": {
             "tooSmall": "El mensaje es demasiado corto",
             "tooBig": "El mensaje es demasiado largo"
@@ -319,8 +323,8 @@
       },
       "action": {
         "errors": {
-          "limitReached": "Has alcanzado el limite de 3 mensajes por dia",
-          "notificationError": "No se pudo enviar la notificacion, por favor intentalo de nuevo mas tarde"
+          "limitReached": "Has alcanzado el límite de 3 mensajes por día",
+          "notificationError": "No se pudo enviar la notificación. Por favor, inténtalo de nuevo más tarde."
         }
       }
     }
@@ -334,7 +338,7 @@
     "panel": {
       "eyebrow": "Portfolio Agéntico",
       "title": "Asistente IA de Williams",
-      "description": "Puedo darte detalles sobre la experiencia técnica, proyectos pasados y filosofía arquitectónica de Williams.",
+      "description": "Puedo darte detalles sobre la arquitectura de software, principios de diseño, experiencia técnica y proyectos de Williams.",
       "disclaimer": "Estoy entrenado con el historial profesional de Williams. Para consultas de negocio, puedo facilitarte el contacto directo.",
       "emptyState": "Aún no hay mensajes. Prueba con una de estas preguntas.",
       "thinking": "Consultando el portfolio..."
@@ -344,7 +348,7 @@
       "user": "Tú"
     },
     "input": {
-      "placeholder": "Pregunta sobre experiencia, stack, proyectos o cómo contactar...",
+      "placeholder": "Pregunta sobre arquitectura, stack, proyectos o cómo contactar...",
       "send": "Enviar",
       "stop": "Detener",
       "clear": "Limpiar"
@@ -352,13 +356,13 @@
     "prompts": {
       "title": "Consultas estratégicas",
       "items": [
-        "Háblame de la experiencia de Williams en Fullstack e Ingeniería de IA.",
-        "¿Cómo implementa Williams sistemas RAG avanzados y agentes autónomos?",
-        "¿Cuál es su enfoque para construir backends escalables y distribuidos?",
+        "Háblame de la experiencia de Williams en Arquitectura de Software e Ingeniería de IA.",
+        "¿Cómo aplica Williams la Arquitectura Hexagonal y DDD en proyectos como TLDR Bot?",
+        "¿Cuál es su enfoque para construir backends escalables, distribuidos y mantenibles?",
         "¿Cómo puede Williams aportar valor a un equipo técnico de alto rendimiento?"
       ]
     },
-    "welcome": "Hola. Soy el asistente del portfolio de Williams Mata. Puedo ayudarte con preguntas sobre su perfil, experiencia, stack, proyectos y enlaces oficiales.",
+    "welcome": "Hola. Soy el asistente del portfolio de Williams Mata. Puedo ayudarte con preguntas sobre su perfil técnico, arquitectura de software, stack, proyectos y contacto.",
     "errors": {
       "generic": "No se pudo completar la respuesta. Inténtalo de nuevo.",
       "rateLimit": "Has alcanzado temporalmente el límite del chat. Inténtalo más tarde.",
