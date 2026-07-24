@@ -196,7 +196,8 @@ const CloseIcon = () => {
   return (
     <button
       onClick={() => setOpen(false)}
-      className="group absolute right-4 top-4 z-50"
+      className="group absolute right-3 top-2.5 z-50 flex h-7 w-7 items-center justify-center rounded-full border border-border/40 bg-background/60 text-muted-foreground backdrop-blur-md transition-all hover:border-border hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+      aria-label="Close modal"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +209,7 @@ const CloseIcon = () => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="h-4 w-4 text-black transition duration-200 group-hover:rotate-3 group-hover:scale-125 dark:text-white"
+        className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-90"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
         <path d="M18 6l-12 12" />
