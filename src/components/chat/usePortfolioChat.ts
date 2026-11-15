@@ -10,7 +10,6 @@ import { Toaster } from "@/adapter/sonner.adapter";
 import type { Dictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/i18n-config";
 import {
-  CHAT_STORAGE_PREFIX,
   getConversationStorageKey,
   loadStoredState,
   persistMessages,
@@ -22,7 +21,7 @@ export interface PortfolioChatProps {
 }
 
 interface UsePortfolioChatResult {
-  messages: Array<UIMessage>;
+  messages: ReadonlyArray<UIMessage>;
   isLoading: boolean;
   errorMessage: string | null;
   hasOnlyWelcomeMessage: boolean;
@@ -82,10 +81,10 @@ export function usePortfolioChat({
 
   const { clear, error, isLoading, messages, sendMessage, setMessages, stop } =
     useChat({
-      id: `${CHAT_STORAGE_PREFIX}:${locale}`,
+      threadId: initialState.conversationId,
       connection,
       initialMessages: initialState.messages,
-      body: {
+      forwardedProps: {
         locale,
         conversationId: initialState.conversationId,
       },

@@ -8,7 +8,10 @@ import {
 } from "@tanstack/ai";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/i18n-config";
-import { getPortfolioChatAdapter } from "@/lib/ai/config";
+import {
+  getPortfolioChatAdapter,
+  portfolioChatReasoning,
+} from "@/lib/ai/config";
 import { buildPortfolioSystemPrompt } from "@/lib/ai/prompt";
 import { createPortfolioTools } from "@/lib/ai/server-tools";
 import { chatRateLimiter } from "@/lib/redis";
@@ -19,17 +22,21 @@ export const runtime = "nodejs";
 const MAX_MESSAGE_LENGTH = 500;
 
 function extractRequestedLocale(body: unknown) {
-  if (typeof body !== "object" || body === null || !("data" in body)) {
+  if (typeof body !== "object" || body === null || !("forwardedProps" in body)) {
     return undefined;
   }
 
-  const data = body.data;
+  const forwardedProps = body.forwardedProps;
 
-  if (typeof data !== "object" || data === null || !("locale" in data)) {
+  if (
+    typeof forwardedProps !== "object" ||
+    forwardedProps === null ||
+    !("locale" in forwardedProps)
+  ) {
     return undefined;
   }
 
-  return data.locale;
+  return forwardedProps.locale;
 }
 
 function resolveLocale(request: Request, requestedLocale?: unknown): Locale {
@@ -165,7 +172,9 @@ export async function POST(request: Request) {
   }
 
   const clientAddress = getClientAddress(request);
-  const conversationId = parsed.data.data?.conversationId;
+  const conversationId = parsed.data.forwardedProps?.conversationId;
+  const threadId =
+    parsed.data.threadId ?? conversationId ?? crypto.randomUUID();
   const { success } = await chatRateLimiter.limit(
     clientAddress ?? conversationId ?? `portfolio-chat:${locale}`,
   );
@@ -191,16 +200,12 @@ export async function POST(request: Request) {
   const stream = chat({
     adapter,
     messages: modelMessages,
+    threadId,
     systemPrompts: [buildPortfolioSystemPrompt(locale)],
     tools: createPortfolioTools(locale),
     agentLoopStrategy: maxIterations(4),
     abortController,
-    modelOptions: {
-      reasoning: {
-        effort: "high",
-        summary: "auto",
-      },
-    },
+    reasoning: portfolioChatReasoning,
   });
 
   return toServerSentEventsResponse(stream, { abortController });

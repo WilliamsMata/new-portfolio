@@ -1,0 +1,10 @@
+allowBuilds:
+  '@openrouter/sdk': true
+  # sharp ships prebuilt binaries; its fallback source build needs
+  # node-addon-api, which is not installed.
+  sharp: false
+  unrs-resolver: true
+
+overrides:
+  '@types/react': 19.2.14
+  '@types/react-dom': 19.2.3

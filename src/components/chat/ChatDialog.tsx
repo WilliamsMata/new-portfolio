@@ -11,7 +11,7 @@ import { ResetIcon, StopIcon } from "@radix-ui/react-icons";
 
 interface ChatDialogProps {
   dictionary: Dictionary["chat"];
-  messages: Array<UIMessage>;
+  messages: ReadonlyArray<UIMessage>;
   isLoading: boolean;
   errorMessage: string | null;
   hasOnlyWelcomeMessage: boolean;

@@ -6,7 +6,6 @@ import { BoxArrowUp } from "@/components/icons";
 import type { Dictionary } from "@/i18n/getDictionary";
 import { cn } from "@/lib/utils";
 import { MarkdownMessage } from "./MarkdownMessage";
-import { Spinner } from "@/components/ui/spinner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link2Icon } from "@radix-ui/react-icons";
@@ -24,7 +23,7 @@ interface OfficialLinksOutput {
 
 interface ChatMessageListProps {
   dictionary: Dictionary["chat"];
-  messages: Array<UIMessage>;
+  messages: ReadonlyArray<UIMessage>;
   isLoading: boolean;
   hasOnlyWelcomeMessage: boolean;
 }
@@ -209,7 +208,10 @@ export function ChatMessageList({
                         key={`${message.id}-tool-error-${index}`}
                         className="mt-2 text-xs font-medium text-destructive"
                       >
-                        {part.error || part.content}
+                        {part.error ||
+                          (typeof part.content === "string"
+                            ? part.content
+                            : "")}
                       </p>
                     );
                   }

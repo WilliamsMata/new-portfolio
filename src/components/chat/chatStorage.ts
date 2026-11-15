@@ -73,7 +73,10 @@ export function loadStoredState(
   };
 }
 
-export function persistMessages(locale: Locale, messages: Array<UIMessage>) {
+export function persistMessages(
+  locale: Locale,
+  messages: ReadonlyArray<UIMessage>,
+) {
   try {
     window.localStorage.setItem(
       getMessagesStorageKey(locale),
