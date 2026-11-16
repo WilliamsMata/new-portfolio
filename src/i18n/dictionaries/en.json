@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "description": "Senior Software Engineer specializing in Hexagonal Architecture, DDD, distributed systems, and production-ready AI solutions. I build maintainable, scalable software."
+    "description": "Senior Software & AI Product Engineer shipping multimodal GenAI pipelines (image, video, voice, RAG), resilient backends, and mobile-first interfaces."
   },
   "header": {
     "home": "Home",
@@ -18,12 +18,12 @@
   },
   "hero": {
     "title": {
-      "developer": "Senior Software & AI Engineer "
+      "developer": "Senior Software & AI Product Engineer"
     },
     "description": {
-      "first": "I architect maintainable software systems with",
-      "highlight": "Hexagonal Architecture, DDD, and SOLID,",
-      "second": "integrating production-grade AI solutions."
+      "first": "I ship production AI products with",
+      "highlight": "multimodal orchestration, FinOps cost control, and adaptive UX,",
+      "second": "backed by clean, decoupled software architecture."
     },
     "resume": {
       "title": "Download CV",
@@ -32,23 +32,51 @@
   },
   "about": {
     "title": "Professional Profile",
-    "text": "I am a Senior Software Engineer specializing in building distributed, scalable, and highly maintainable systems. My core strength lies in combining solid software architecture foundations (Hexagonal Architecture, Domain-Driven Design, and SOLID Principles) with cutting-edge AI capabilities (Hybrid RAG, Autonomous Agents, and LLM Orchestration). I ensure every AI integration is backed by a clean, decoupled, and production-ready architecture.",
+    "text": "I am a Senior Software & AI Product Engineer focused on turning unstable foundation models into fast, reliable products users actually pay for. By pairing decoupled Ports & Adapters architecture with practical product execution, I enable teams to swap AI providers in hours, control token and media generation costs, and deliver responsive experiences that feel native from mobile to desktop.",
     "specialties": [
-      "Software Architecture: Hexagonal (Ports & Adapters), DDD, SOLID & Design Patterns",
-      "AI Engineering: Hybrid RAG (pgvector + tsvector), Autonomous Agents & ReAct Loops",
-      "Fullstack Excellence: High-performance Next.js, NestJS & TypeScript ecosystems",
-      "Data & Infrastructure: PostgreSQL, Redis, Docker & Cloud-Native deployments"
+      "Multimodal AI Systems: Multi-model image, video, voice & Hybrid RAG orchestration (OpenRouter, OpenAI, Gemini)",
+      "AI FinOps & Reliability: Pre-reserved budget guardrails, capability validation, async job polling & Vision QA loops",
+      "Adaptive Product UX: Mobile-first native-style interfaces, progressive disclosure & real-time media playback",
+      "Decoupled Architecture: Hexagonal (Ports & Adapters), Next.js, NestJS, PostgreSQL & Redis for high-concurrency scale"
     ]
   },
   "experience": {
     "title": "Professional Experience",
-    "description": "Proven track record in architecting maintainable web infrastructures, enterprise platforms, and AI-native systems.",
+    "description": "Proven track record taking AI-native products, multi-platform apps, and mission-critical backends from zero to production.",
     "entries": [
       {
-        "period": "Oct 2025 - Present",
+        "period": "Jun 2026 - Present",
+        "role": "Founder & Lead Fullstack Engineer",
+        "company": "SomosFlet (Freight & Escrow Marketplace)",
+        "responsibilities": "Architected and shipped a two-sided heavy-freight marketplace and escrow platform (somosflet.com) across web and mobile using agentic coding workflows. Built a DDD-structured Bun + Elysia + Drizzle backend powering a double-entry accounting ledger, dual-currency settlement (USD/VES rate locking), tax withholdings, and an OTP/photo delivery state machine, alongside Astro, Next.js, and React Native clients.",
+        "tech": [
+          "Bun",
+          "Elysia",
+          "Drizzle",
+          "DDD",
+          "Next.js",
+          "React Native",
+          "Astro"
+        ]
+      },
+      {
+        "period": "Mar 2026 - Jun 2026",
+        "role": "Software & AI Systems Engineer (Contract)",
+        "company": "Confidential US Client (Remote)",
+        "responsibilities": "Applied formal verification principles in Dafny, Domain-Driven Design (DDD), and Clean Architecture to high-integrity transactional gaming prototypes. Engineered internal AI coding-agent workflows that enforced Clean Code boundaries, domain invariants, and automated quality checks across rapid R&D iterations.",
+        "tech": [
+          "Dafny",
+          "DDD",
+          "Clean Architecture",
+          "AI Coding Agents",
+          "TypeScript"
+        ]
+      },
+      {
+        "period": "Oct 2025 - Feb 2026",
         "role": "Lead AI Engineer",
         "company": "Loadify (Logistics SaaS)",
-        "responsibilities": "Architected an autonomous agent system based on ReAct loops and Tool-Calling to automate logistics operations. Integrated real-time voice agents (RetellAI) and complex n8n orchestrations, enabling the AI to execute calls, verify data, and handle errors autonomously under a resilient infrastructure, reducing manual operational load by 90%.",
+        "responsibilities": "Owned the production AI infrastructure powering autonomous freight workflows. Engineered resilient ReAct + tool-calling agents, real-time conversational voice orchestration (RetellAI), and n8n recovery pipelines with strict latency monitoring and cost-optimized model routing.",
         "tech": [
           "Next.js",
           "OpenAI (Function Calling)",
@@ -62,15 +90,22 @@
         "period": "Mar 2024 - Oct 2025",
         "role": "Lead Full Stack Developer",
         "company": "Cercademi",
-        "responsibilities": "Spearheaded the end-to-end development of a mission-critical medical appointment ecosystem. Implemented complex payment orchestrations with MercadoPago and optimized database queries for high-concurrency handling. Reduced technical debt by migrating to a modular TypeScript architecture built on SOLID principles.",
+        "responsibilities": "Spearheaded end-to-end delivery of a high-concurrency medical booking ecosystem. Built fault-tolerant payment orchestrations with MercadoPago, eliminated database bottlenecks under peak load, and refactored core modules into strict TypeScript to accelerate feature velocity.",
         "tech": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind"]
       },
       {
         "period": "Jul 2023 - Feb 2024",
         "role": "Full Stack Developer",
         "company": "Argxp",
-        "responsibilities": "Developed 2 high-traffic web applications from the ground up using SCRUM. Engineered reusable component libraries and established CI/CD best practices, ensuring 99.9% deployment uptime and high-quality code standards through modular development and unit testing.",
-        "tech": ["Next.js", "Node.js", "PostgreSQL", "SCRUM", "Docker"]
+        "responsibilities": "Built 2 high-traffic web applications from the ground up in agile cross-functional teams. Standardized reusable UI component libraries, automated CI/CD release pipelines, and maintained 99.9% production uptime with strong test coverage.",
+        "tech": [
+          "Next.js",
+          "TypeScript",
+          "Node.js",
+          "PostgreSQL",
+          "Docker",
+          "CI/CD"
+        ]
       }
     ]
   },
@@ -84,32 +119,32 @@
             "title": "TypeScript",
             "iconPath": "/icons/typescript.svg",
             "url": "https://www.typescriptlang.org/",
-            "description": "Ensuring type-safety and maintainability across large-scale enterprise codebases."
+            "description": "End-to-end strict type safety across AI schemas, async media pipelines, and complex client state."
           },
           {
             "title": "React",
             "iconPath": "/icons/react.svg",
             "url": "https://react.dev/",
-            "description": "Building dynamic, high-performance user interfaces with a focus on UX/UI excellence."
+            "description": "Responsive, zero-layout-shift creative studios, streaming interfaces, and native-feeling mobile workflows."
           },
           {
             "title": "Next.js",
             "iconPath": "/icons/next.svg",
             "url": "https://nextjs.org/",
-            "description": "Expertise in SSR, SSG, and App Router for SEO-optimized, lightning-fast web applications.",
+            "description": "App Router, secure server-side media proxies, edge caching, and full-stack product delivery.",
             "needInvertColor": true
           },
           {
             "title": "Tailwind CSS",
             "iconPath": "/icons/tailwind.svg",
             "url": "https://tailwindcss.com/",
-            "description": "Utility-first styling for rapid prototyping and consistent design systems."
+            "description": "Cohesive shadcn/ui design systems engineered for clean Mobile, Tablet, and Desktop ergonomics."
           },
           {
             "title": "Zustand",
             "iconPath": "/icons/zustand.svg",
             "url": "https://zustand-demo.pmnd.rs/",
-            "description": "Scalable and lightweight state management for complex application logic."
+            "description": "Predictable client orchestration for multi-stage AI workflows, job polling, and live cost tracking."
           }
         ]
       },
@@ -120,38 +155,38 @@
             "title": "Node.js",
             "iconPath": "/icons/node.svg",
             "url": "https://nodejs.org/",
-            "description": "Building high-throughput, non-blocking asynchronous server-side applications."
+            "description": "High-throughput asynchronous APIs, webhook handlers, and streaming media proxies."
           },
           {
             "title": "NestJS",
             "iconPath": "/icons/nest.svg",
             "url": "https://nestjs.com/",
-            "description": "Architecting modular microservices following DDD principles and Clean Architecture."
+            "description": "Modular microservices, queue workers, and clean domain boundaries built for horizontal scale."
           },
           {
             "title": "Hexagonal Architecture & SOLID",
             "iconPath": "/icons/solid.svg",
             "url": "https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)",
-            "description": "Decoupled ports & adapters design, SOLID principles, and DDD for highly maintainable systems."
+            "description": "Ports & Adapters design that lets teams swap AI models, media vendors, or billing engines without rewriting product logic."
           },
           {
             "title": "Supabase",
             "iconPath": "/icons/supabase.svg",
             "url": "https://supabase.com/",
-            "description": "Accelerating development with BaaS, specializing in Auth and Real-time data sync."
+            "description": "Rapid BaaS delivery with Postgres, Auth, Storage, and real-time state synchronization."
           },
           {
             "title": "Prisma",
             "iconPath": "/icons/prisma.svg",
             "url": "https://www.prisma.io/",
-            "description": "Type-safe database ORM for accelerated development and reliable migrations.",
+            "description": "Type-safe relational modeling, zero-downtime migrations, and predictable query performance.",
             "needInvertColor": true
           },
           {
             "title": "Docker",
             "iconPath": "/icons/docker.svg",
             "url": "https://www.docker.com/",
-            "description": "Containerization for consistent development environments and scalable cloud deployments."
+            "description": "Reproducible container environments for predictable staging and scalable cloud deployments."
           }
         ]
       },
@@ -162,19 +197,19 @@
             "title": "PostgreSQL",
             "iconPath": "/icons/postgresql.svg",
             "url": "https://www.postgresql.org/",
-            "description": "Expertise in relational modeling, indexing, and advanced query optimization."
+            "description": "Relational architecture, Hybrid RAG indexing (pgvector + tsvector), and high-concurrency tuning."
           },
           {
             "title": "MongoDB",
             "iconPath": "/icons/mongo.svg",
             "url": "https://www.mongodb.com/",
-            "description": "Designing flexible schemas for high-velocity unstructured data management."
+            "description": "Flexible document persistence for high-velocity event logs and real-time community data."
           },
           {
             "title": "Redis",
             "iconPath": "/icons/redis.svg",
             "url": "https://redis.io/",
-            "description": "Implementation of high-speed caching layers and message brokering for low latency."
+            "description": "Sub-millisecond caching, rate limiting, async job state management, and pub/sub messaging."
           }
         ]
       },
@@ -182,34 +217,37 @@
         "title": "AI & Automation",
         "skillsData": [
           {
+            "title": "Multimodal AI",
+            "iconPath": "/icons/openrouter.svg",
+            "url": "https://openrouter.ai/",
+            "description": "Capability-aware routing across image, video, vision, and LLM providers with FinOps budget guardrails.",
+            "needInvertColor": true
+          },
+          {
             "title": "OpenAI & RAG",
             "iconPath": "/icons/openai.svg",
             "url": "https://openai.com/",
-            "description": "Developing RAG systems with tool-calling and function-calling to eliminate hallucinations."
+            "description": "Structured outputs, tool-calling agents, and grounded RAG pipelines engineered to prevent hallucinations.",
+            "needInvertColor": true
           },
           {
             "title": "Gemini",
             "iconPath": "/icons/gemini.svg",
             "url": "https://deepmind.google/technologies/gemini/",
-            "description": "Multimodal analysis and long-context processing for advanced data extraction."
+            "description": "Multimodal visual DNA extraction, automated Vision QA scoring, and long-context reasoning."
           },
           {
             "title": "RetellAI",
             "iconPath": "/icons/retellai.svg",
             "url": "https://www.retellai.com/",
-            "description": "Designing autonomous conversational voice agents for real-time B2B interactions."
-          },
-          {
-            "title": "OpenClaw",
-            "iconPath": "/icons/openclaw.png",
-            "url": "https://openclaw.dev/",
-            "description": "Leveraging OS agents to automate computer-level tasks and custom skill synthesis."
+            "description": "Low-latency autonomous conversational voice agents integrated into real-time B2B operations.",
+            "needInvertColor": true
           },
           {
             "title": "n8n",
             "iconPath": "/icons/n8n.svg",
             "url": "https://n8n.io/",
-            "description": "Orchestrating complex AI workflows and API integrations with visual automation."
+            "description": "Reliable multi-step AI workflow automation connecting webhooks, CRMs, and retry pipelines."
           }
         ]
       }
@@ -217,11 +255,25 @@
   },
   "projects": {
     "title": "Featured Projects",
-    "description": "High-impact solutions combining software architecture excellence and AI innovation.",
+    "description": "Production-ready AI systems and high-concurrency products combining clean architecture with measurable business impact.",
     "projects": [
       {
+        "title": "DriftZero Studio - Multimodal AI Ad Pipeline",
+        "description": "End-to-end e-commerce commercial studio turning a single product photo into consistent multi-shot video ads. Features capability-aware OpenRouter routing across text, vision, image, and video models, visual DNA extraction with a self-healing Vision QA retry loop, pre-reserved FinOps budget guardrails, and an adaptive 3-tier Mobile-Native Stack, Tablet, and Desktop UX.",
+        "imagePath": "/projects/driftzero.png",
+        "githubUrl": "https://github.com/WilliamsMata/DriftZero-Studio",
+        "projectUrl": "https://dzstudio.williamsmata.com",
+        "projectTech": [
+          { "title": "Next.js", "color": "#ffffff" },
+          { "title": "OpenRouter", "color": "#6467f2" },
+          { "title": "TypeScript", "color": "#3178c6" },
+          { "title": "Zustand", "color": "#f59e0b" },
+          { "title": "Tailwind", "color": "#38bdf8" }
+        ]
+      },
+      {
         "title": "Loadify AI - Logistics Orchestrator",
-        "description": "Architected an enterprise B2B SaaS leveraging RAG agents to automate freight discovery. Integrated a real-time Voice AI agent for rate negotiation, resulting in a 90% reduction in manual operational time. Built with a focus on high availability, resilience, and cost-optimized LLM consumption.",
+        "description": "Enterprise B2B SaaS automating freight discovery and live carrier rate negotiation via Hybrid RAG and Voice AI agents. Cut manual operational time by 90% while maintaining high availability, predictable latency, and cost-controlled inference.",
         "imagePath": "/projects/loadify.png",
         "projectUrl": "https://loadify.net",
         "projectTech": [
@@ -233,8 +285,8 @@
         ]
       },
       {
-        "title": "TLDR Bot - RAG Assistant & Hexagonal Architecture",
-        "description": "High-precision RAG system for Telegram chat histories, refactored using Hexagonal Architecture (Ports & Adapters). Decoupled the core RAG domain from AI providers and the presentation layer (Telegram/Discord), enabling seamless integration with new platforms with minimal code changes. Features Hybrid Search (semantic pgvector + lexical tsvector) and Re-ranking.",
+        "title": "TLDR Bot - Hexagonal RAG Assistant",
+        "description": "High-precision RAG assistant refactored with Ports & Adapters to decouple core retrieval logic from AI providers and chat surfaces (Telegram/Discord), allowing instant platform expansion. Combines semantic (pgvector) + lexical (tsvector) Hybrid Search with re-ranking.",
         "imagePath": "/projects/tldr-bot.png",
         "projectUrl": "https://t.me/tldr_ai_pro_bot",
         "projectTech": [
@@ -245,8 +297,20 @@
         ]
       },
       {
+        "title": "Graggle - High-Concurrency Mobile Mini App",
+        "description": "Mobile-first Telegram gaming Mini App built for mass concurrency inside constrained mobile webviews. Powered by Next.js Server Actions and Redis-backed async state management, plus a live analytics dashboard for real-time economy balancing.",
+        "projectUrl": "https://t.me/graggleeggbot",
+        "imagePath": "/projects/graggle.png",
+        "projectTech": [
+          { "title": "Next.js", "color": "#ffffff" },
+          { "title": "Redis", "color": "#ff4278" },
+          { "title": "TypeScript", "color": "#3178c6" },
+          { "title": "PostgreSQL", "color": "#1486e0" }
+        ]
+      },
+      {
         "title": "Event-Driven Microservices Architecture",
-        "description": "Designed a scalable backend ecosystem using NestJS and NATS for event-driven inter-service communication. Implemented multi-database persistence (PostgreSQL, MongoDB) and Stripe integration for high-volume transaction processing, packaged with Docker for seamless orchestration.",
+        "description": "Distributed backend ecosystem built with NestJS and NATS for resilient inter-service event messaging. Features polyglot persistence (PostgreSQL, MongoDB), Stripe transaction processing, and containerized Docker orchestration.",
         "imagePath": "/projects/microservices.png",
         "githubUrl": "https://github.com/nest-microservices-williams/products-launcher",
         "projectUrl": "https://github.com/nest-microservices-williams/products-launcher",
@@ -258,20 +322,8 @@
         ]
       },
       {
-        "title": "Graggle - High-Concurrency Mini App",
-        "description": "Native Telegram gaming Mini App engineered for mass user engagement. Built with Next.js Server Actions and Redis-backed async state management to handle real-time concurrency. Includes a real-time analytics dashboard for game economy monitoring and live tuning.",
-        "projectUrl": "https://t.me/graggleeggbot",
-        "imagePath": "/projects/graggle.png",
-        "projectTech": [
-          { "title": "Next.js", "color": "#ffffff" },
-          { "title": "Redis", "color": "#ff4278" },
-          { "title": "ZSA", "color": "#facc15" },
-          { "title": "PostgreSQL", "color": "#1486e0" }
-        ]
-      },
-      {
-        "title": "Karma Bot - Event-Driven Engagement",
-        "description": "Micro-rewards and community engagement system for Telegram. Built with Node.js and MongoDB, optimized for real-time asynchronous event handling, lightweight persistence, and leaderboard analytics in high-traffic groups.",
+        "title": "Karma Bot - Real-Time Engagement Engine",
+        "description": "Production community micro-rewards engine actively serving high-traffic Telegram groups. Built on Node.js and MongoDB for low-latency asynchronous event processing, anti-abuse tracking, and live leaderboard analytics.",
         "imagePath": "/projects/karma-bot.png",
         "githubUrl": "https://github.com/WilliamsMata/karma_bot",
         "projectUrl": "https://t.me/karma_tg_bot",
@@ -295,8 +347,8 @@
   "contact": {
     "title": "Contact",
     "card": {
-      "title": "Let's build the future",
-      "description": "Open for collaborations on software architecture, AI engineering, and high-impact Fullstack projects."
+      "title": "Let's ship AI products that scale",
+      "description": "Open to senior AI product engineering, multimodal GenAI systems, and high-growth Fullstack teams."
     },
     "form": {
       "button": {
@@ -323,7 +375,7 @@
         },
         "message": {
           "label": "Message",
-          "placeholder": "What project or technical challenge can we collaborate on?",
+          "placeholder": "What AI product or technical challenge can we ship together?",
           "errors": {
             "tooSmall": "Message is too short",
             "tooBig": "Message is too long"
@@ -347,8 +399,8 @@
     "panel": {
       "eyebrow": "Agentic Portfolio",
       "title": "Williams' AI Assistant",
-      "description": "I can provide detailed insights into Williams' software architecture, design principles, technical expertise, and projects.",
-      "disclaimer": "I am trained on Williams' professional background. For specific business inquiries, I can facilitate a direct contact.",
+      "description": "Ask about Williams' multimodal AI pipelines, FinOps cost control, mobile-first UX craft, and production systems.",
+      "disclaimer": "Trained on Williams' engineering background and shipped projects. For hiring or collaborations, I can connect you directly.",
       "emptyState": "There are no messages yet. Try one of these prompts.",
       "thinking": "Consulting the portfolio..."
     },
@@ -357,7 +409,7 @@
       "user": "You"
     },
     "input": {
-      "placeholder": "Ask about architecture, stack, projects, or how to get in touch...",
+      "placeholder": "Ask about multimodal AI, mobile UX, architecture, or projects...",
       "send": "Send",
       "stop": "Stop",
       "clear": "Clear"
@@ -365,13 +417,13 @@
     "prompts": {
       "title": "Strategic insights",
       "items": [
-        "Tell me about Williams' expertise in Software Architecture and AI Engineering.",
-        "How does Williams apply Hexagonal Architecture and DDD in projects like TLDR Bot?",
-        "What is his approach to building scalable, distributed, and maintainable backends?",
-        "How can Williams add value to a high-growth technical team?"
+        "How does Williams prevent visual drift and control AI media costs in DriftZero Studio?",
+        "How does he design complex AI studios that feel native on both desktop and mobile?",
+        "How does Williams use decoupled architecture to swap AI providers quickly in production?",
+        "What measurable impact has he delivered across Voice AI, Hybrid RAG, and high-concurrency apps?"
       ]
     },
-    "welcome": "Hello. I am Williams Mata's portfolio assistant. I can help with questions about his technical profile, software architecture, stack, projects, and contact.",
+    "welcome": "Hello. I am Williams Mata's portfolio assistant. Ask me about his multimodal GenAI pipelines, DriftZero Studio, mobile-first product engineering, or production systems.",
     "errors": {
       "generic": "Could not complete the response. Please try again.",
       "rateLimit": "You have temporarily reached the chat limit. Please try again later.",
