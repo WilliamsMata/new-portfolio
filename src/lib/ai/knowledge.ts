@@ -215,30 +215,35 @@ export function findPortfolioProjects(
   const normalizedTokens = tokenize(query);
   const cappedLimit = clamp(limit, 4, 6);
 
-  const rankedProjects = knowledge.projects
-    .map((project) => {
-      const haystack = normalize(
-        [project.title, project.description, ...project.tech].join(" "),
-      );
+  const scoredProjects = knowledge.projects.map((project) => {
+    const haystack = normalize(
+      [project.title, project.description, ...project.tech].join(" "),
+    );
 
-      return {
-        project,
-        score: scoreMatch(haystack, normalizedTokens),
-      };
-    })
+    return {
+      project,
+      score: scoreMatch(haystack, normalizedTokens),
+    };
+  });
+
+  const matchingProjects = scoredProjects
     .filter((entry) => normalizedTokens.length === 0 || entry.score > 0)
     .sort((left, right) => right.score - left.score);
 
-  const projects = rankedProjects
-    .slice(0, cappedLimit)
-    .map((entry) => entry.project);
+  const usedFallback = matchingProjects.length === 0;
+  const rankedProjects = (
+    usedFallback
+      ? [...scoredProjects].sort((left, right) => right.score - left.score)
+      : matchingProjects
+  ).slice(0, cappedLimit);
 
-  const note =
-    projects.length > 0
-      ? undefined
-      : knowledge.locale === "es"
-        ? "No hubo una coincidencia exacta en los proyectos visibles del portfolio."
-        : "There was no exact match in the public projects listed in the portfolio.";
+  const projects = rankedProjects.map((entry) => entry.project);
+
+  const note = usedFallback
+    ? knowledge.locale === "es"
+      ? "No hubo una coincidencia exacta en los proyectos visibles del portfolio; se muestran los proyectos más relevantes."
+      : "No exact match was found in the public projects listed in the portfolio; the most relevant projects are shown instead."
+    : undefined;
 
   return {
     projects,
@@ -257,20 +262,21 @@ export function findPortfolioSkills(
   const normalizedCategory = normalize(category);
   const cappedLimit = clamp(limit, 6, 8);
 
-  const rankedSkills = knowledge.skills
-    .map((skill) => {
-      const haystack = normalize(
-        [skill.title, skill.category, skill.description].join(" "),
-      );
-      const categoryScore = normalizedCategory
-        ? scoreMatch(normalize(skill.category), [normalizedCategory])
-        : 1;
+  const scoredSkills = knowledge.skills.map((skill) => {
+    const haystack = normalize(
+      [skill.title, skill.category, skill.description].join(" "),
+    );
+    const categoryScore = normalizedCategory
+      ? scoreMatch(normalize(skill.category), [normalizedCategory])
+      : 1;
 
-      return {
-        skill,
-        score: scoreMatch(haystack, normalizedTokens) + categoryScore,
-      };
-    })
+    return {
+      skill,
+      score: scoreMatch(haystack, normalizedTokens) + categoryScore,
+    };
+  });
+
+  const matchingSkills = scoredSkills
     .filter((entry) => {
       const matchesCategory = normalizedCategory
         ? normalize(entry.skill.category).includes(normalizedCategory)
@@ -284,14 +290,30 @@ export function findPortfolioSkills(
     })
     .sort((left, right) => right.score - left.score);
 
-  const skills = rankedSkills.slice(0, cappedLimit).map((entry) => entry.skill);
+  const categorySkills = normalizedCategory
+    ? scoredSkills.filter((entry) =>
+        normalize(entry.skill.category).includes(normalizedCategory),
+      )
+    : scoredSkills;
 
-  const note =
-    skills.length > 0
-      ? undefined
-      : knowledge.locale === "es"
-        ? "No hubo una coincidencia exacta en las habilidades visibles del portfolio."
-        : "There was no exact match in the public skills listed in the portfolio.";
+  const usedFallback = matchingSkills.length === 0;
+  const fallbackSkills = (
+    categorySkills.length > 0 ? categorySkills : scoredSkills
+  )
+    .slice()
+    .sort((left, right) => right.score - left.score);
+  const rankedSkills = (usedFallback ? fallbackSkills : matchingSkills).slice(
+    0,
+    cappedLimit,
+  );
+
+  const skills = rankedSkills.map((entry) => entry.skill);
+
+  const note = usedFallback
+    ? knowledge.locale === "es"
+      ? "No hubo una coincidencia exacta en las habilidades visibles del portfolio; se muestran las habilidades más relevantes."
+      : "No exact match was found in the public skills listed in the portfolio; the most relevant skills are shown instead."
+    : undefined;
 
   return {
     skills,
