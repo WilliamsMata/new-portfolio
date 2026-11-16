@@ -164,6 +164,7 @@ export function ChatComposer({
                           }
                         }}
                         placeholder={dictionary.input.placeholder}
+                        dir="auto"
                         disabled={isLoading}
                         maxLength={MAX_MESSAGE_LENGTH}
                         rows={rows}

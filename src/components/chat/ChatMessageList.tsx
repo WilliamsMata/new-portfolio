@@ -108,6 +108,7 @@ export function ChatMessageList({
               )}
             >
               <div
+                dir="auto"
                 className={cn(
                   "max-w-[90%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm md:max-w-[80%]",
                   isUserMessage

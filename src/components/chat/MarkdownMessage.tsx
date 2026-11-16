@@ -37,6 +37,7 @@ const markdownComponents: Components = {
       return (
         <code
           {...props}
+          dir="ltr"
           className={cn("font-mono text-[0.88em] leading-6 text-foreground", className)}
         >
           {children}
@@ -47,6 +48,7 @@ const markdownComponents: Components = {
     return (
       <code
         {...props}
+        dir="ltr"
         className={cn(
           "rounded-md border border-border/60 bg-muted/60 px-1.5 py-0.5 font-mono text-[0.85em] font-medium text-foreground",
           className,
@@ -62,6 +64,7 @@ const markdownComponents: Components = {
     return (
       <pre
         {...props}
+        dir="ltr"
         className={cn(
           "my-3 overflow-x-auto rounded-2xl border border-border/70 bg-card/90 p-4 text-[0.85rem] leading-6 text-card-foreground shadow-sm backdrop-blur-md dark:border-white/10 dark:bg-black/50",
           className,
@@ -78,7 +81,7 @@ const markdownComponents: Components = {
       <div className="my-3 w-full overflow-x-auto rounded-xl border border-border/60">
         <table
           {...props}
-          className={cn("w-full border-collapse text-left text-sm", className)}
+          className={cn("w-full border-collapse text-start text-sm", className)}
         >
           {children}
         </table>
@@ -99,7 +102,7 @@ const assistantMarkdownClassName = cn(
 
 export function MarkdownMessage({ content }: { content: string }) {
   return (
-    <div className={assistantMarkdownClassName}>
+    <div dir="auto" className={assistantMarkdownClassName}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm, remarkBreaks]}
         components={markdownComponents}
