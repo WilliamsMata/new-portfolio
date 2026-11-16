@@ -21,31 +21,55 @@ export const runtime = "nodejs";
 
 const MAX_MESSAGE_LENGTH = 500;
 
+function isSupportedLocale(value: unknown): value is Locale {
+  return value === "es" || value === "en";
+}
+
+function readLocale(value: unknown) {
+  if (typeof value !== "object" || value === null || !("locale" in value)) {
+    return undefined;
+  }
+
+  const { locale } = value as { locale?: unknown };
+
+  return isSupportedLocale(locale) ? locale : undefined;
+}
+
 function extractRequestedLocale(body: unknown) {
-  if (typeof body !== "object" || body === null || !("forwardedProps" in body)) {
+  if (typeof body !== "object" || body === null) {
     return undefined;
   }
 
-  const forwardedProps = body.forwardedProps;
+  const forwardedLocale = readLocale(
+    (body as { forwardedProps?: unknown }).forwardedProps,
+  );
 
-  if (
-    typeof forwardedProps !== "object" ||
-    forwardedProps === null ||
-    !("locale" in forwardedProps)
-  ) {
-    return undefined;
+  if (forwardedLocale) {
+    return forwardedLocale;
   }
 
-  return forwardedProps.locale;
+  // Legacy TanStack AI < 1.x wire format. Older client bundles that are still
+  // open in a tab send `data.locale` instead of `forwardedProps.locale`.
+  return readLocale((body as { data?: unknown }).data);
 }
 
 function resolveLocale(request: Request, requestedLocale?: unknown): Locale {
-  if (requestedLocale === "es" || requestedLocale === "en") {
+  if (isSupportedLocale(requestedLocale)) {
     return requestedLocale;
   }
 
-  const rawAcceptLanguage = request.headers.get("accept-language") ?? "en";
-  return rawAcceptLanguage.toLowerCase().startsWith("es") ? "es" : "en";
+  const rawAcceptLanguage = request.headers.get("accept-language");
+  const acceptLanguageLocale: Locale = rawAcceptLanguage
+    ?.toLowerCase()
+    .startsWith("es")
+    ? "es"
+    : "en";
+
+  console.warn(
+    `[chat] Missing supported client locale; falling back to Accept-Language "${rawAcceptLanguage ?? ""}" -> "${acceptLanguageLocale}".`,
+  );
+
+  return acceptLanguageLocale;
 }
 
 function getClientAddress(request: Request) {
